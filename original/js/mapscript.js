@@ -87,6 +87,69 @@ function mapscript_exec(map_id) {
   return false;
 }
 
+function mapscript_export(map_id, map_data) {
+  mapscript_place_current_map = map_data;
+
+  var result = false;
+  switch (map_id) {
+
+    case 0: // Serf Quarters
+      result = mapscript_place_sleep(1,1);
+      // result = result || mapscript_message(1,2,"serfmsg","This place is no longer safe");
+      return result;
+
+    case 1: // Gar'ashi Monastery
+      return false;
+
+    case 2: // Monk Quarters
+      return mapscript_place_chest(1,1,"stick", "Wood Stick", 1);
+
+    case 3: // Meditation Point
+      return mapscript_place_chest(2,1,"heal", "Spellbook: Heal", 1);
+
+    case 4: // Monastery Trail
+      return mapscript_place_chest(2,2,"hp1", "Magic Emerald (HP Up)", 1);
+
+    case 5: // Cedar Village
+      return mapscript_place_chest(7,10,"g1", "Gold", 10);
+
+    case 6: // Zuruth Plains
+      return mapscript_place_chest(9,4,"mp1", "Magic Sapphire (MP Up)", 1);
+
+    case 7: // Canal Boneyard
+      return mapscript_place_chest(13,5,"def1", "Magic Diamond (Def Up)", 1);
+
+    case 8: // Mausoleum
+      //mapscript_bone_pile_load(8);
+      //mapscript_locked_door_load(8);
+      result = mapscript_place_sleep(11,9);
+      result = result || mapscript_place_chest(3,2,"atk1", "Magic Ruby (Atk Up)", 1);
+      result = result || mapscript_place_chest(3,12,"mp2", "Magic Sapphire (MP Up)", 1);
+      result = result || mapscript_place_chest(6,9, "g2", "Gold", 25);
+
+      return result;
+    
+    case 9: // Dead Walkways
+      //mapscript_bone_pile_load(9);
+     // boss_alter_map();
+      result = mapscript_place_enemy(4,9, ENEMY_MIMIC, "");
+      result = result || mapscript_place_enemy(11,5, ENEMY_DEATH_SPEAKER, "dspeak");
+      return result;
+
+    case 10: // Trade Tunnel
+      //mapscript_locked_door_load(10);
+      //mapscript_bone_pile_load(10);
+      
+      result = mapscript_place_chest(11,2, "hp2", "Magic Emerald (HP Up)", 1);
+      result = result || mapscript_place_chest(13,2, "g3", "Gold", 100);
+      result = result || mapscript_place_enemy(14,9, ENEMY_MIMIC, "");
+      result = result || mapscript_place_enemy(6,4, ENEMY_MIMIC, "");
+
+      return result;
+  }
+  return false;
+}
+
 // general script types
 function mapscript_message(x, y, status, message) {
   if (avatar.x == x && avatar.y == y) {

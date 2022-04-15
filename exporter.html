@@ -18,7 +18,7 @@
         <script src="original/js/tileset.js"></script>
         <script src="original/js/info.js"></script>
         <script src="original/js/mapscript.js"></script>
-        <p>Exporting...</p>
+        <p>Exporting... (should go to 'web/world.json')</p>
         <textarea id="main_export" cols="80" rows="24"></textarea>
         <script>
             function clean_obj(src) {
@@ -47,13 +47,35 @@
                 shop.item = items;
                 return shop;
             }
+            var mapscript_place_current_map = null;
+            function mapscript_place_generic(x,y,item) {
+                var tile = mapscript_place_current_map.tiles[y][x];
+                tile.thing = item;
+            }
+            function mapscript_place_sleep(x,y) {
+                mapscript_place_generic(x,y, {
+                    type: "sleep", name:"Haybale"
+                });
+            }
+            function mapscript_place_chest(x,y,stat,name,count) {
+                mapscript_place_generic(x,y, {
+                    type:"chest", stat:stat, name:name, count:count
+                });
+            }
+            function mapscript_place_enemy(x, y, enemy_id, extra) {
+                mapscript_place_generic(x,y, {
+                    type: "enemy", enemy_id:enemy_id, extra:extra
+                });
+            }
             function export_world_atlas() {
                 var world = {
-                    maps : [],
+                    summary : [],
                     backgrounds : [],
                     tile_types : [ { index:0, walkable: false, } ],
-                    items : {},
+                    equipment : {},
+                    people : [],
                     enemies : [],
+                    maps : [],
                 };
                 // export backgrounds and tile types:
                 tileset_init();
@@ -76,9 +98,9 @@
                 }
                 // export equipment:
                 info_init();
-                world.items.weapons = info.weapons;
-                world.items.armors = info.armors;
-                world.items.spells = info.spells;
+                world.equipment.weapons = info.weapons;
+                world.equipment.armors = info.armors;
+                world.equipment.spells = info.spells;
                 // export npcs:
                 enemy_init();
                 var powers_by_id = [ "attack", "fire", "hpdrain", "mpdrain" ];
@@ -125,19 +147,28 @@
                     for (var ei in from.shops) {
                         var ex = from.shops[ei];
                         var tile = to.tiles[ex.exit_y][ex.exit_x];
-                        tile.shop = clean_shop( shop[ex.shop_id] );
+                        var person = clean_shop( shop[ex.shop_id] );
+                        person.index = world.people.length;
+                        world.people.push(person);
+                        tile.person_id = person.index;
                     }
+                    // export items:
+                    mapscript_export(1*mi, to);
                 }
                 // export things to map:
                 for (var ii in mapscript.bone_piles) {
                     var item = mapscript.bone_piles[ii];
                     var tile = world.maps[item.map_id].tiles[item.y][item.x];
-                    tile.thing = { type:"block", status: item.status };
+                    tile.thing = { type:"bones", status: item.status };
                 }
                 for (var ii in mapscript.locked_doors) {
                     var item = mapscript.locked_doors[ii];
                     var tile = world.maps[item.map_id].tiles[item.y][item.x];
-                    tile.thing = { type:"block", status: item.status };
+                    tile.thing = { type:"locked_door", status: item.status };
+                }
+                // build summary:
+                for (var wi in world) {
+                    world.summary.push(wi);
                 }
                 // export world to JSON:
                 main_export.value = JSON.stringify(world,null,2);
