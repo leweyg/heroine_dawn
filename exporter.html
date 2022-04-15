@@ -10,13 +10,14 @@
                 // normally:
                 return new Image();
             }
-
         </script>
+        <script src="original/js/power.js"></script>
         <script src="original/js/enemy.js"></script>
         <script src="original/js/atlas.js"></script>
         <script src="original/js/shop.js"></script>
         <script src="original/js/tileset.js"></script>
         <script src="original/js/info.js"></script>
+        <script src="original/js/mapscript.js"></script>
         <p>Exporting...</p>
         <textarea id="main_export" cols="80" rows="24"></textarea>
         <script>
@@ -48,10 +49,11 @@
             }
             function export_world_atlas() {
                 var world = {
+                    maps : [],
                     backgrounds : [],
                     tile_types : [ { index:0, walkable: false, } ],
                     items : {},
-                    maps : [],
+                    enemies : [],
                 };
                 // export backgrounds and tile types:
                 tileset_init();
@@ -77,6 +79,18 @@
                 world.items.weapons = info.weapons;
                 world.items.armors = info.armors;
                 world.items.spells = info.spells;
+                // export npcs:
+                enemy_init();
+                var powers_by_id = [ "attack", "fire", "hpdrain", "mpdrain" ];
+                for (var ei in enemy.stats) {
+                    var from = enemy.stats[ei];
+                    from.index = ei*1;
+                    from.image_src = enemy.img[ei].src;
+                    for (var pi in from.powers) {
+                        from.powers[pi] = powers_by_id[from.powers[pi]];
+                    }
+                    world.enemies.push( from );
+                }
                 // export maps:
                 for (var mi in atlas.maps) {
                     var from = atlas.maps[mi];
@@ -84,6 +98,7 @@
                         index: mi*1,
                         name: from.name,
                         music: from.music,
+                        enemies: from.enemies,
                         width: from.width,
                         height: from.height,
                         background: from.background,
@@ -113,6 +128,18 @@
                         tile.shop = clean_shop( shop[ex.shop_id] );
                     }
                 }
+                // export things to map:
+                for (var ii in mapscript.bone_piles) {
+                    var item = mapscript.bone_piles[ii];
+                    var tile = world.maps[item.map_id].tiles[item.y][item.x];
+                    tile.thing = { type:"block", status: item.status };
+                }
+                for (var ii in mapscript.locked_doors) {
+                    var item = mapscript.locked_doors[ii];
+                    var tile = world.maps[item.map_id].tiles[item.y][item.x];
+                    tile.thing = { type:"block", status: item.status };
+                }
+                // export world to JSON:
                 main_export.value = JSON.stringify(world,null,2);
             }
 

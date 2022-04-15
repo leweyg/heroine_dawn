@@ -30,7 +30,7 @@ enemy.render_offset = {x:0, y:0};
 
 function enemy_init() {
   for (i=0; i<ENEMY_COUNT; i++) {
-    enemy.img[i] = new Image();
+    enemy.img[i] = createImageOrObject();
   }
 
   // load enemy images
