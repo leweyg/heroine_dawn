@@ -17,11 +17,11 @@ tileset.render_offset = {x:0, y:0};
 
 // notice we skip 0 which means "no tile"
 for (i=1; i<=TILE_COUNT; i++) {
-  tileset.tile_img[i] = new Image();
+  tileset.tile_img[i] = createImageOrObject();
 }
 
 for (i=0; i<BACKGROUND_COUNT; i++) {
-  tileset.background_img[i] = new Image();
+  tileset.background_img[i] = createImageOrObject();
 }
 
 // image loader progress

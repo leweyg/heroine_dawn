@@ -16,9 +16,9 @@ var TYPE_WEAPON = 1;
 var info = new Object();
 
 // image setup
-info.avatar_img = new Image();
+info.avatar_img = createImageOrObject();
 info.avatar_img_loaded = false;
-info.button_img = new Image();
+info.button_img = createImageOrObject();
 info.button_img_loaded = false;
 
 info.weapons = new Array();
