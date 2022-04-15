@@ -1,0 +1,83 @@
+<html>
+    <head><title>Exporter</title></head>
+    <body>
+        <h1>Exporter</h1>
+        <p>Loading...</p>
+        <script src="original/js/enemy.js"></script>
+        <script src="original/js/atlas.js"></script>
+        <script src="original/js/shop.js"></script>
+        <p>Exporting...</p>
+        <textarea id="main_export" cols="80" rows="24"></textarea>
+        <script>
+            function clean_obj(src) {
+                var res = {};
+                for (var i in src) {
+                    if ((i == "exit_x") || (i == "exit_y")) continue;
+                    res[i] = src[i];
+                }
+                return res;
+            }
+            function clean_shop(shop) {
+                var item_type_to_name = {
+                    0 : "weapon",
+                    1 : "armor",
+                    2 : "spell",
+                    3 : "room",
+                    4 : "message",
+                };
+                var items = [];
+                for (var i in shop.item) {
+                    var from = shop.item[i];
+                    if (!from) continue;
+                    from.type = item_type_to_name[from.type];
+                    items.push(from);
+                }
+                shop.item = items;
+                return shop;
+            }
+            function export_world_atlas() {
+                var world = {
+                    maps : [],
+                    backgrounds : [],
+                };
+                for (var mi in atlas.maps) {
+                    var from = atlas.maps[mi];
+                    var to = { 
+                        index: mi*1,
+                        name: from.name,
+                        music: from.music,
+                        width: from.width,
+                        height: from.height,
+                        tiles: [],
+                    };
+                    world.maps.push(to);
+                    // export tile types:
+                    for (var yi=0; yi<from.height; yi++) {
+                        var row = [];
+                        to.tiles.push(row);
+                        for (var xi=0; xi<from.width; xi++) {
+                            var type = from.tiles[yi][xi];
+                            var tile = { t:type };
+                            row.push(tile);
+                        }
+                    }
+                    // export exits:
+                    for (var ei in from.exits) {
+                        var ex = from.exits[ei];
+                        var tile = to.tiles[ex.exit_y][ex.exit_x];
+                        tile.exit = clean_obj(ex);
+                    }
+                    // export shops:
+                    for (var ei in from.shops) {
+                        var ex = from.shops[ei];
+                        var tile = to.tiles[ex.exit_y][ex.exit_x];
+                        tile.shop = clean_shop( shop[ex.shop_id] );
+                    }
+                }
+                main_export.value = JSON.stringify(world,null,2);
+            }
+
+            export_world_atlas();
+        </script>
+    </body>
+</html>
