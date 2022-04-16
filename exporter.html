@@ -18,7 +18,6 @@
         <script src="original/js/tileset.js"></script>
         <script src="original/js/info.js"></script>
         <script src="original/js/mapscript.js"></script>
-        <script src="web/scripts/render.js"></script>
         <p>Exporting... (should go to 'web/world.json')</p>
         <textarea id="main_export" cols="80" rows="24"></textarea>
         <script>
@@ -107,6 +106,7 @@
                     summary : [],
                     backgrounds : [],
                     tile_types : [ { index:0, walkable: false, } ],
+                    avatar : avatar_default(),
                     equipment : {},
                     people : [],
                     enemies : [],
@@ -232,7 +232,225 @@
                 // export world to JSON:
                 main_export.value = custom_JSON_stringify(world);
             }
-
+        </script>
+        <script>
+            function avatar_default() {
+                var avatar = {};
+  avatar.x = 1;
+  avatar.y = 1;
+  avatar.facing = "south";
+  avatar.moved = false;
+  avatar.map_id = 0;
+  avatar.weapon = 0;
+  avatar.armor = 1;
+  avatar.hp = 25;
+  avatar.max_hp = 25;
+  avatar.mp = 4;
+  avatar.max_mp = 4;
+  avatar.gold = 0;
+  avatar.bonus_atk = 0;
+  avatar.bonus_def = 0;
+  avatar.spellbook = 0;
+  avatar.sleeploc = [0,1,1]; // map_id, x, y
+  return avatar;
+}
+        </script>
+        <script>
+  var renderer = {
+    "visible_cells_north": [
+      {
+        "dx": -2,
+        "dy": -2,
+        "index": 0
+      },
+      {
+        "dx": 2,
+        "dy": -2,
+        "index": 1
+      },
+      {
+        "dx": -1,
+        "dy": -2,
+        "index": 2
+      },
+      {
+        "dx": 1,
+        "dy": -2,
+        "index": 3
+      },
+      {
+        "dx": 0,
+        "dy": -2,
+        "index": 4
+      },
+      {
+        "dx": -2,
+        "dy": -1,
+        "index": 5
+      },
+      {
+        "dx": 2,
+        "dy": -1,
+        "index": 6
+      },
+      {
+        "dx": -1,
+        "dy": -1,
+        "index": 7
+      },
+      {
+        "dx": 1,
+        "dy": -1,
+        "index": 8
+      },
+      {
+        "dx": 0,
+        "dy": -1,
+        "index": 9
+      },
+      {
+        "dx": -1,
+        "dy": 0,
+        "index": 10
+      },
+      {
+        "dx": 1,
+        "dy": 0,
+        "index": 11
+      },
+      {
+        "dx": 0,
+        "dy": 0,
+        "index": 12
+      }
+    ],
+    "transform_by_direction": {
+      "north": {
+        "x": "+x",
+        "y": "+y"
+      },
+      "east": {
+        "x": "+y",
+        "y": "+y"
+      },
+      "south": {
+        "x": "-x",
+        "y": "-y"
+      },
+      "west": {
+        "x": "-y",
+        "y": "-x"
+      }
+    },
+    "tile_parts_by_visible_cell": [
+      {
+        "width": 80,
+        "height": 120,
+        "src_x": 0,
+        "src_y": 0,
+        "dest_x": 0,
+        "dest_y": 0
+      },
+      {
+        "width": 80,
+        "height": 120,
+        "src_x": 80,
+        "src_y": 0,
+        "dest_x": 80,
+        "dest_y": 0
+      },
+      {
+        "width": 80,
+        "height": 120,
+        "src_x": 160,
+        "src_y": 0,
+        "dest_x": 0,
+        "dest_y": 0
+      },
+      {
+        "width": 80,
+        "height": 120,
+        "src_x": 240,
+        "src_y": 0,
+        "dest_x": 80,
+        "dest_y": 0
+      },
+      {
+        "width": 160,
+        "height": 120,
+        "src_x": 320,
+        "src_y": 0,
+        "dest_x": 0,
+        "dest_y": 0
+      },
+      {
+        "width": 80,
+        "height": 120,
+        "src_x": 480,
+        "src_y": 0,
+        "dest_x": 0,
+        "dest_y": 0
+      },
+      {
+        "width": 80,
+        "height": 120,
+        "src_x": 560,
+        "src_y": 0,
+        "dest_x": 80,
+        "dest_y": 0
+      },
+      {
+        "width": 80,
+        "height": 120,
+        "src_x": 0,
+        "src_y": 120,
+        "dest_x": 0,
+        "dest_y": 0
+      },
+      {
+        "width": 80,
+        "height": 120,
+        "src_x": 80,
+        "src_y": 120,
+        "dest_x": 80,
+        "dest_y": 0
+      },
+      {
+        "width": 160,
+        "height": 120,
+        "src_x": 160,
+        "src_y": 120,
+        "dest_x": 0,
+        "dest_y": 0
+      },
+      {
+        "width": 80,
+        "height": 120,
+        "src_x": 320,
+        "src_y": 120,
+        "dest_x": 0,
+        "dest_y": 0
+      },
+      {
+        "width": 80,
+        "height": 120,
+        "src_x": 400,
+        "src_y": 120,
+        "dest_x": 80,
+        "dest_y": 0
+      },
+      {
+        "width": 160,
+        "height": 120,
+        "src_x": 480,
+        "src_y": 120,
+        "dest_x": 0,
+        "dest_y": 0
+      }
+    ]
+  }
+        </script>
+        <script>
             export_world_atlas();
         </script>
     </body>

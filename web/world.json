@@ -3,6 +3,7 @@
     "summary",
     "backgrounds",
     "tile_types",
+    "avatar",
     "equipment",
     "people",
     "enemies",
@@ -128,6 +129,24 @@
       "walkable": true
     }
   ],
+  "avatar": {
+    "x": 1,
+    "y": 1,
+    "facing": "south",
+    "moved": false,
+    "map_id": 0,
+    "weapon": 0,
+    "armor": 1,
+    "hp": 25,
+    "max_hp": 25,
+    "mp": 4,
+    "max_mp": 4,
+    "gold": 0,
+    "bonus_atk": 0,
+    "bonus_def": 0,
+    "spellbook": 0,
+    "sleeploc": [ 0, 1, 1]
+  },
   "equipment": {
     "weapons": [
       {
