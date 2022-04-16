@@ -1260,19 +1260,26 @@
     "transform_by_direction": {
       "north": {
         "x": "+x",
-        "y": "+y"
+        "y": "+y",
+        "fx": 0,
+        "fy": -1
       },
       "east": {
         "x": "+y",
-        "y": "+y"
+        "y": "+y",
+        "fx": 1,
+        "fy": 0
       },
       "south": {
         "x": "-x",
-        "y": "-y"
+        "y": "-y",
+        "fx": 0,
+        "fy": 1
       },
       "west": {
         "x": "-y",
-        "y": "-x"
+        "y": "-x",
+        "fy": 0
       }
     },
     "tile_parts_by_visible_cell": [
@@ -1380,6 +1387,12 @@
         "dest_x": 0,
         "dest_y": 0
       }
+    ],
+    "directions_right": [
+      "north",
+      "east",
+      "south",
+      "west"
     ]
   }
 }

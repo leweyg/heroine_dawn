@@ -2,10 +2,14 @@
     <head><title>Heroine Dawn</title></head>
     <body>
         <h1>Heroine Dawn</h1>
-        <img src="images/backgrounds/nightsky.png" />
         <br/>
-        <canvas id="main_canvas" width="160" height="120" style="width:640px;"></canvas>
-        <br/>
+        <center>
+            <canvas id="main_canvas" width="160" height="120" style="width:640px;"></canvas>
+            <br/>
+            <input type="button" value="  <  " onclick="dawnGame.doInput('left');" />
+            <input type="button" value="  ^  " onclick="dawnGame.doInput('forward');"  />
+            <input type="button" value="  >  " onclick="dawnGame.doInput('right');" />
+        </center>
         <p id="main_status">Loading...</p>
         <script src="scripts/game.js"></script>
         <script src="scripts/render.js"></script>

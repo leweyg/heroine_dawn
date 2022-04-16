@@ -21,6 +21,9 @@ var dawnRenderer_prototype = {
         for (var i in world.tile_types) {
             this.images.tiles[i] = this.preloadImage(world.tile_types[i].src);
         }
+
+        var _this = this;
+        this.game.onChanged = (() => { _this.redraw(); });
     },
     redraw : function() {
         if (!this.game) return;
