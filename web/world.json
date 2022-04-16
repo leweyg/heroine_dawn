@@ -148,6 +148,83 @@
     "sleeploc": [ 0, 1, 1]
   },
   "equipment": {
+    "treasures": [
+      {
+        "index": 0,
+        "name": "Gold (1)",
+        "gold": 1
+      },
+      {
+        "index": 1,
+        "name": "Gold (2)",
+        "gold": 2
+      },
+      {
+        "index": 2,
+        "name": "Gold (4)",
+        "gold": 4
+      },
+      {
+        "index": 3,
+        "name": "Gold (8)",
+        "gold": 8
+      },
+      {
+        "index": 4,
+        "name": "Gold (16)",
+        "gold": 16
+      },
+      {
+        "index": 5,
+        "name": "Grail"
+      },
+      {
+        "index": 6,
+        "name": "Bars of Gold"
+      },
+      {
+        "index": 7,
+        "name": "Gold Chest"
+      },
+      {
+        "index": 8,
+        "name": "Crown"
+      },
+      {
+        "index": 9,
+        "name": "Treasures"
+      },
+      {
+        "index": 10,
+        "name": "Wood Stick",
+        "stat": "stick"
+      },
+      {
+        "index": 11,
+        "name": "Spellbook: Heal",
+        "stat": "heal"
+      },
+      {
+        "index": 12,
+        "name": "Magic Sapphire (MP Up)",
+        "stat": "mp2"
+      },
+      {
+        "index": 13,
+        "name": "Magic Emerald (HP Up)",
+        "stat": "hp2"
+      },
+      {
+        "index": 14,
+        "name": "Magic Ruby (Atk Up)",
+        "stat": "atk1"
+      },
+      {
+        "index": 15,
+        "name": "Magic Diamond (Def Up)",
+        "stat": "def1"
+      }
+    ],
     "weapons": [
       {
         "name": "Bare Fists",
@@ -629,6 +706,7 @@
           "stat": "stick",
           "name": "Wood Stick",
           "count": 1,
+          "treasure_id": 10,
           "x": 1,
           "y": 1
         },
@@ -664,6 +742,7 @@
           "stat": "heal",
           "name": "Spellbook: Heal",
           "count": 1,
+          "treasure_id": 11,
           "x": 2,
           "y": 1
         },
@@ -717,6 +796,7 @@
           "stat": "hp1",
           "name": "Magic Emerald (HP Up)",
           "count": 1,
+          "treasure_id": 13,
           "x": 2,
           "y": 2
         },
@@ -849,6 +929,7 @@
           "stat": "mp1",
           "name": "Magic Sapphire (MP Up)",
           "count": 1,
+          "treasure_id": 12,
           "x": 9,
           "y": 4
         },
@@ -913,6 +994,7 @@
           "stat": "def1",
           "name": "Magic Diamond (Def Up)",
           "count": 1,
+          "treasure_id": 15,
           "x": 13,
           "y": 5
         }
@@ -949,6 +1031,7 @@
           "stat": "atk1",
           "name": "Magic Ruby (Atk Up)",
           "count": 1,
+          "treasure_id": 14,
           "x": 3,
           "y": 2
         },
@@ -1011,6 +1094,7 @@
           "stat": "mp2",
           "name": "Magic Sapphire (MP Up)",
           "count": 1,
+          "treasure_id": 12,
           "x": 3,
           "y": 12
         },
@@ -1125,6 +1209,7 @@
           "stat": "hp2",
           "name": "Magic Emerald (HP Up)",
           "count": 1,
+          "treasure_id": 13,
           "x": 11,
           "y": 2
         },
@@ -1394,6 +1479,13 @@
       "east",
       "south",
       "west"
-    ]
+    ],
+    "treasures": {
+      "src": "images/treasure/treasure.png",
+      "icon_width": 32,
+      "icon_height": 32,
+      "screen_x": 64,
+      "screen_y": 84
+    }
   }
 }

@@ -48,6 +48,7 @@
                 return shop;
             }
             var mapscript_place_current_map = null;
+            var mapscript_world = null;
             function mapscript_place_generic(x,y,item) {
                 var tile = mapscript_place_current_map.tiles[y][x];
                 tile.thing = item;
@@ -58,9 +59,24 @@
                 });
             }
             function mapscript_place_chest(x,y,stat,name,count) {
-                mapscript_place_generic(x,y, {
+                var item = {
                     type:"chest", stat:stat, name:name, count:count
-                });
+                };
+                mapscript_place_generic(x,y,item);
+                var treasures = mapscript_world.equipment.treasures;
+                var found = false;
+                if (name == "Gold") found = true;
+                for (var ti in treasures) {
+                  var tr = treasures[ti];
+                  if (tr.name == name) {
+                    tr.stat = stat;
+                    item.treasure_id = tr.index;
+                    found = true;
+                  }
+                }
+                if (!found) {
+                  alert("Didn't find " + name);
+                }
             }
             function mapscript_place_enemy(x, y, enemy_id, extra) {
                 mapscript_place_generic(x,y, {
@@ -134,6 +150,27 @@
                 }
                 // export equipment:
                 info_init();
+                mapscript_world = world;
+                var treasureNames = [
+                  "Gold (1)", "Gold (2)", "Gold (4)", "Gold (8)", "Gold (16)",
+                  "Grail", "Bars of Gold", "Gold Chest", "Crown", "Treasures",
+                  "Wood Stick", "Spellbook: Heal", "Magic Sapphire (MP Up)", 
+                  "Magic Emerald (HP Up)", "Magic Ruby (Atk Up)",
+                  "Magic Diamond (Def Up)"
+                ];
+                world.equipment.treasures = [];
+                for (var ti in treasureNames) {
+                  var treasure = {
+                    index: 1*ti,
+                    name: treasureNames[ti],
+                  };
+                  if (treasure.name.startsWith("Gold (")) {
+                    var count = 1*(treasure.name.substring("Gold (".length).replace(")",""));
+                    treasure.gold = count;
+                  }
+                  world.equipment.treasures.push(treasure);
+                }
+                
                 world.equipment.weapons = info.weapons;
                 world.equipment.armors = info.armors;
                 world.equipment.spells = info.spells;
@@ -457,6 +494,13 @@
       }
     ],
     "directions_right" : [ "north", "east", "south", "west" ],
+    treasures:{
+      src:"images/treasure/treasure.png",
+      icon_width:32,
+      icon_height:32,
+      screen_x:64,
+      screen_y:84,
+    }
   }
         </script>
         <script>
