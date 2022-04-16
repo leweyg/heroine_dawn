@@ -18,6 +18,7 @@
         <script src="original/js/tileset.js"></script>
         <script src="original/js/info.js"></script>
         <script src="original/js/mapscript.js"></script>
+        <script src="web/scripts/render.js"></script>
         <p>Exporting... (should go to 'web/world.json')</p>
         <textarea id="main_export" cols="80" rows="24"></textarea>
         <script>
@@ -67,6 +68,40 @@
                     type: "enemy", enemy_id:enemy_id, extra:extra
                 });
             }
+            var remove_quote = "<rmq>";
+            function custom_replacer(key,value) {
+                if (Array.isArray(value)) {
+                    for (var i in value) {
+                        if (typeof(value[i])!="number") {
+                            return value;
+                        }
+                    }
+                    //return remove_quote + JSON.stringify(value) + remove_quote;
+                    var res = "";
+                    for (var i in value) {
+                        var str = "" + value[i];
+                        if (str.length < 2) {
+                            str = " " + str;
+                        }
+                        if (i != 0) res += ",";
+                        res += str;
+                    }
+                    return remove_quote + "[" + res + "]" + remove_quote;
+                }
+                return value;
+            }
+            function replace_all(str, from, to) {
+                while (str.includes(from)) {
+                    str = str.replace(from, to);
+                }
+                return str;
+            }
+            function custom_JSON_stringify(obj) {
+                var str = JSON.stringify(obj, custom_replacer, 2);
+                str = replace_all(str, "\"" + remove_quote, "");
+                str = replace_all(str, remove_quote + "\"", "");
+                return str;
+            }
             function export_world_atlas() {
                 var world = {
                     summary : [],
@@ -76,6 +111,7 @@
                     people : [],
                     enemies : [],
                     maps : [],
+                    rendering : {},
                 };
                 // export backgrounds and tile types:
                 tileset_init();
@@ -141,7 +177,9 @@
                     for (var ei in from.exits) {
                         var ex = from.exits[ei];
                         var tile = to.tiles[ex.exit_y][ex.exit_x];
-                        tile.exit = clean_obj(ex);
+                        var exit = clean_obj(ex);
+                        exit.type = 'exit';
+                        tile.thing = exit;
                     }
                     // export shops:
                     for (var ei in from.shops) {
@@ -150,7 +188,7 @@
                         var person = clean_shop( shop[ex.shop_id] );
                         person.index = world.people.length;
                         world.people.push(person);
-                        tile.person_id = person.index;
+                        tile.thing = {type:"person", person_id:person.index };
                     }
                     // export items:
                     mapscript_export(1*mi, to);
@@ -166,12 +204,33 @@
                     var tile = world.maps[item.map_id].tiles[item.y][item.x];
                     tile.thing = { type:"locked_door", status: item.status };
                 }
+                // collect things:
+                for (var mi in world.maps) {
+                    var map = world.maps[mi];
+                    map.things = [];
+                    var rows = [];
+                    for (var y in map.tiles) {
+                        var row = []; rows.push(row);
+                        for (var x in map.tiles[y]) {
+                            var tile = map.tiles[y][x];
+                            if (tile.thing) {
+                                tile.thing.x = 1*x;
+                                tile.thing.y = 1*y;
+                                map.things.push(tile.thing);
+                            }
+                            row.push(tile.t);
+                        }
+                    }
+                    map.tiles = rows;
+                }
+                // export rendering data:
+                world.rendering = renderer;
                 // build summary:
                 for (var wi in world) {
                     world.summary.push(wi);
                 }
                 // export world to JSON:
-                main_export.value = JSON.stringify(world,null,2);
+                main_export.value = custom_JSON_stringify(world);
             }
 
             export_world_atlas();

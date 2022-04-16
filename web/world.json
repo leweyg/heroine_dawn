@@ -1,5847 +1,1366 @@
 {
-    "summary": [
-      "summary",
-      "backgrounds",
-      "tile_types",
-      "equipment",
-      "people",
-      "enemies",
-      "maps"
-    ],
-    "backgrounds": [
+  "summary": [
+    "summary",
+    "backgrounds",
+    "tile_types",
+    "equipment",
+    "people",
+    "enemies",
+    "maps",
+    "rendering"
+  ],
+  "backgrounds": [
+    {
+      "index": 0,
+      "src": "images/backgrounds/black.png"
+    },
+    {
+      "index": 1,
+      "src": "images/backgrounds/nightsky.png"
+    },
+    {
+      "index": 2,
+      "src": "images/backgrounds/tempest.png"
+    },
+    {
+      "index": 3,
+      "src": "images/backgrounds/interior.png"
+    }
+  ],
+  "tile_types": [
+    {
+      "index": 0,
+      "walkable": false
+    },
+    {
+      "index": 1,
+      "src": "images/tiles/dungeon_floor.png",
+      "walkable": true
+    },
+    {
+      "index": 2,
+      "src": "images/tiles/dungeon_wall.png",
+      "walkable": false
+    },
+    {
+      "index": 3,
+      "src": "images/tiles/dungeon_door.png",
+      "walkable": true
+    },
+    {
+      "index": 4,
+      "src": "images/tiles/pillar_exterior.png",
+      "walkable": false
+    },
+    {
+      "index": 5,
+      "src": "images/tiles/dungeon_ceiling.png",
+      "walkable": true
+    },
+    {
+      "index": 6,
+      "src": "images/tiles/grass.png",
+      "walkable": true
+    },
+    {
+      "index": 7,
+      "src": "images/tiles/pillar_interior.png",
+      "walkable": false
+    },
+    {
+      "index": 8,
+      "src": "images/tiles/chest_interior.png",
+      "walkable": true
+    },
+    {
+      "index": 9,
+      "src": "images/tiles/chest_exterior.png",
+      "walkable": true
+    },
+    {
+      "index": 10,
+      "src": "images/tiles/medieval_house.png",
+      "walkable": false
+    },
+    {
+      "index": 11,
+      "src": "images/tiles/medieval_door.png",
+      "walkable": true
+    },
+    {
+      "index": 12,
+      "src": "images/tiles/tree_evergreen.png",
+      "walkable": false
+    },
+    {
+      "index": 13,
+      "src": "images/tiles/grave_cross.png",
+      "walkable": false
+    },
+    {
+      "index": 14,
+      "src": "images/tiles/grave_stone.png",
+      "walkable": false
+    },
+    {
+      "index": 15,
+      "src": "images/tiles/water.png",
+      "walkable": false
+    },
+    {
+      "index": 16,
+      "src": "images/tiles/skull_pile.png",
+      "walkable": false
+    },
+    {
+      "index": 17,
+      "src": "images/tiles/hay_pile.png",
+      "walkable": true
+    },
+    {
+      "index": 18,
+      "src": "images/tiles/locked_door.png",
+      "walkable": false
+    },
+    {
+      "index": 19,
+      "src": "images/tiles/death_speaker.png",
+      "walkable": true
+    }
+  ],
+  "equipment": {
+    "weapons": [
       {
-        "index": 0,
-        "src": "images/backgrounds/black.png"
+        "name": "Bare Fists",
+        "atk_min": 1,
+        "atk_max": 4,
+        "gold": 0
       },
       {
-        "index": 1,
-        "src": "images/backgrounds/nightsky.png"
+        "name": "Wood Stick",
+        "atk_min": 2,
+        "atk_max": 6,
+        "gold": 0
       },
       {
-        "index": 2,
-        "src": "images/backgrounds/tempest.png"
+        "name": "Iron Knife",
+        "atk_min": 3,
+        "atk_max": 8,
+        "gold": 50
       },
       {
-        "index": 3,
-        "src": "images/backgrounds/interior.png"
+        "name": "Bronze Mace",
+        "atk_min": 4,
+        "atk_max": 10,
+        "gold": 200
+      },
+      {
+        "name": "Steel Sword",
+        "atk_min": 5,
+        "atk_max": 12,
+        "gold": 1000
+      },
+      {
+        "name": "War Hammer",
+        "atk_min": 6,
+        "atk_max": 14,
+        "gold": 5000
+      },
+      {
+        "name": "Battle Axe",
+        "atk_min": 7,
+        "atk_max": 16,
+        "gold": 20000
+      },
+      {
+        "name": "Great Sword",
+        "atk_min": 8,
+        "atk_max": 18,
+        "gold": 100000
       }
     ],
-    "tile_types": [
+    "armors": [
       {
-        "index": 0,
-        "walkable": false
+        "name": "No Armor",
+        "def": 0,
+        "gold": 0
       },
       {
-        "index": 1,
-        "src": "images/tiles/dungeon_floor.png",
-        "walkable": true
+        "name": "Serf Rags",
+        "def": 2,
+        "gold": 0
       },
       {
-        "index": 2,
-        "src": "images/tiles/dungeon_wall.png",
-        "walkable": false
+        "name": "Travel Cloak",
+        "def": 4,
+        "gold": 50
       },
       {
-        "index": 3,
-        "src": "images/tiles/dungeon_door.png",
-        "walkable": true
+        "name": "Hide Cuirass",
+        "def": 6,
+        "gold": 200
       },
       {
-        "index": 4,
-        "src": "images/tiles/pillar_exterior.png",
-        "walkable": false
+        "name": "Rivet Leather",
+        "def": 8,
+        "gold": 1000
       },
       {
-        "index": 5,
-        "src": "images/tiles/dungeon_ceiling.png",
-        "walkable": true
+        "name": "Chain Maille",
+        "def": 10,
+        "gold": 5000
       },
       {
-        "index": 6,
-        "src": "images/tiles/grass.png",
-        "walkable": true
+        "name": "Plate Armor",
+        "def": 12,
+        "gold": 20000
       },
       {
-        "index": 7,
-        "src": "images/tiles/pillar_interior.png",
-        "walkable": false
-      },
-      {
-        "index": 8,
-        "src": "images/tiles/chest_interior.png",
-        "walkable": true
-      },
-      {
-        "index": 9,
-        "src": "images/tiles/chest_exterior.png",
-        "walkable": true
-      },
-      {
-        "index": 10,
-        "src": "images/tiles/medieval_house.png",
-        "walkable": false
-      },
-      {
-        "index": 11,
-        "src": "images/tiles/medieval_door.png",
-        "walkable": true
-      },
-      {
-        "index": 12,
-        "src": "images/tiles/tree_evergreen.png",
-        "walkable": false
-      },
-      {
-        "index": 13,
-        "src": "images/tiles/grave_cross.png",
-        "walkable": false
-      },
-      {
-        "index": 14,
-        "src": "images/tiles/grave_stone.png",
-        "walkable": false
-      },
-      {
-        "index": 15,
-        "src": "images/tiles/water.png",
-        "walkable": false
-      },
-      {
-        "index": 16,
-        "src": "images/tiles/skull_pile.png",
-        "walkable": false
-      },
-      {
-        "index": 17,
-        "src": "images/tiles/hay_pile.png",
-        "walkable": true
-      },
-      {
-        "index": 18,
-        "src": "images/tiles/locked_door.png",
-        "walkable": false
-      },
-      {
-        "index": 19,
-        "src": "images/tiles/death_speaker.png",
-        "walkable": true
+        "name": "Wyvern Scale",
+        "def": 14,
+        "gold": 100000
       }
     ],
-    "equipment": {
-      "weapons": [
+    "spells": [
+      {
+        "name": "No Spell",
+        "gold": 0
+      },
+      {
+        "name": "Heal",
+        "gold": 0
+      },
+      {
+        "name": "Burn",
+        "gold": 100
+      },
+      {
+        "name": "Unlock",
+        "gold": 500
+      },
+      {
+        "name": "Light",
+        "gold": 2500
+      },
+      {
+        "name": "Freeze",
+        "gold": 10000
+      },
+      {
+        "name": "Reflect",
+        "gold": 50000
+      }
+    ]
+  },
+  "people": [
+    {
+      "item": [
         {
-          "name": "Bare Fists",
-          "atk_min": 1,
-          "atk_max": 4,
-          "gold": 0
-        },
-        {
-          "name": "Wood Stick",
-          "atk_min": 2,
-          "atk_max": 6,
-          "gold": 0
-        },
-        {
-          "name": "Iron Knife",
-          "atk_min": 3,
-          "atk_max": 8,
-          "gold": 50
-        },
-        {
-          "name": "Bronze Mace",
-          "atk_min": 4,
-          "atk_max": 10,
-          "gold": 200
-        },
-        {
-          "name": "Steel Sword",
-          "atk_min": 5,
-          "atk_max": 12,
-          "gold": 1000
-        },
-        {
-          "name": "War Hammer",
-          "atk_min": 6,
-          "atk_max": 14,
-          "gold": 5000
-        },
-        {
-          "name": "Battle Axe",
-          "atk_min": 7,
-          "atk_max": 16,
-          "gold": 20000
-        },
-        {
-          "name": "Great Sword",
-          "atk_min": 8,
-          "atk_max": 18,
-          "gold": 100000
+          "type": "message",
+          "msg1": "I'm staying right here",
+          "msg2": "until the sun comes back."
         }
       ],
-      "armors": [
+      "name": "Woodsman",
+      "background": 3,
+      "index": 0
+    },
+    {
+      "item": [
         {
-          "name": "No Armor",
-          "def": 0,
-          "gold": 0
+          "type": "weapon",
+          "value": 2
         },
         {
-          "name": "Serf Rags",
-          "def": 2,
-          "gold": 0
-        },
-        {
-          "name": "Travel Cloak",
-          "def": 4,
-          "gold": 50
-        },
-        {
-          "name": "Hide Cuirass",
-          "def": 6,
-          "gold": 200
-        },
-        {
-          "name": "Rivet Leather",
-          "def": 8,
-          "gold": 1000
-        },
-        {
-          "name": "Chain Maille",
-          "def": 10,
-          "gold": 5000
-        },
-        {
-          "name": "Plate Armor",
-          "def": 12,
-          "gold": 20000
-        },
-        {
-          "name": "Wyvern Scale",
-          "def": 14,
-          "gold": 100000
+          "type": "weapon",
+          "value": 3
         }
       ],
-      "spells": [
+      "name": "Cedar Arms",
+      "background": 3,
+      "index": 1
+    },
+    {
+      "item": [
         {
-          "name": "No Spell",
-          "gold": 0
+          "type": "armor",
+          "value": 2
         },
         {
-          "name": "Heal",
-          "gold": 0
+          "type": "armor",
+          "value": 3
+        }
+      ],
+      "name": "Simmons Fine Clothier",
+      "background": 3,
+      "index": 2
+    },
+    {
+      "item": [
+        {
+          "type": "message",
+          "msg1": "We saw dead walking",
+          "msg2": "from the Canal Boneyard."
         },
         {
-          "name": "Burn",
-          "gold": 100
+          "type": "room",
+          "value": 10
+        }
+      ],
+      "name": "The Pilgrim Inn",
+      "background": 3,
+      "index": 3
+    },
+    {
+      "item": [
+        {
+          "type": "message",
+          "msg1": "Fire magic is effective",
+          "msg2": "against undead and bone."
         },
         {
-          "name": "Unlock",
-          "gold": 500
+          "type": "spell",
+          "value": 2
+        }
+      ],
+      "name": "Sage Therel",
+      "background": 3,
+      "index": 4
+    },
+    {
+      "item": [
+        {
+          "type": "message",
+          "msg1": "No one allowed in or",
+          "msg2": "out of the city."
         },
         {
-          "name": "Light",
-          "gold": 2500
+          "type": "message",
+          "msg1": "(The demo ends here.",
+          "msg2": "Thanks for playing!)"
+        }
+      ],
+      "name": "Stonegate Entrance",
+      "background": 3,
+      "index": 5
+    },
+    {
+      "item": [
+        {
+          "type": "message",
+          "msg1": "Unlock magic opens doors",
+          "msg2": "and harms automatons."
         },
         {
-          "name": "Freeze",
-          "gold": 10000
+          "type": "spell",
+          "value": 3
+        }
+      ],
+      "name": "Thomas the Fence",
+      "background": 3,
+      "index": 6
+    },
+    {
+      "item": [
+        {
+          "type": "message",
+          "msg1": "For a small fee we can",
+          "msg2": "sneak you to Stonegate."
         },
         {
-          "name": "Reflect",
-          "gold": 50000
+          "type": "message",
+          "msg1": "(Support indie devs!",
+          "msg2": "Full version soon!)"
+        }
+      ],
+      "name": "Thieves Guild",
+      "background": 3,
+      "index": 7
+    }
+  ],
+  "enemies": [
+    {
+      "name": "Shadow Tendrils",
+      "hp": 6,
+      "atk_min": 2,
+      "atk_max": 5,
+      "gold_min": 1,
+      "gold_max": 2,
+      "category": 0,
+      "powers": [
+        "attack"
+      ],
+      "index": 0,
+      "image_src": "images/enemies/shadow_tendrils.png"
+    },
+    {
+      "name": "Imp",
+      "hp": 7,
+      "atk_min": 2,
+      "atk_max": 6,
+      "gold_min": 1,
+      "gold_max": 3,
+      "category": 1,
+      "powers": [
+        "attack",
+        "attack",
+        "fire"
+      ],
+      "index": 1,
+      "image_src": "images/enemies/imp.png"
+    },
+    {
+      "name": "Shadow Soul",
+      "hp": 8,
+      "atk_min": 3,
+      "atk_max": 8,
+      "gold_min": 2,
+      "gold_max": 4,
+      "category": 0,
+      "powers": [
+        "attack",
+        "attack",
+        "mpdrain"
+      ],
+      "index": 2,
+      "image_src": "images/enemies/shadow_soul.png"
+    },
+    {
+      "name": "Zombie",
+      "hp": 12,
+      "atk_min": 4,
+      "atk_max": 10,
+      "gold_min": 3,
+      "gold_max": 6,
+      "category": 2,
+      "powers": [
+        "attack",
+        "attack",
+        "hpdrain"
+      ],
+      "index": 3,
+      "image_src": "images/enemies/zombie.png"
+    },
+    {
+      "name": "Skeleton",
+      "hp": 18,
+      "atk_min": 6,
+      "atk_max": 12,
+      "gold_min": 5,
+      "gold_max": 8,
+      "category": 2,
+      "powers": [
+        "attack"
+      ],
+      "index": 4,
+      "image_src": "images/enemies/skeleton.png"
+    },
+    {
+      "name": "Druid",
+      "hp": 16,
+      "atk_min": 7,
+      "atk_max": 14,
+      "gold_min": 7,
+      "gold_max": 12,
+      "category": 1,
+      "powers": [
+        "attack",
+        "fire",
+        "hpdrain",
+        "mpdrain"
+      ],
+      "index": 5,
+      "image_src": "images/enemies/druid.png"
+    },
+    {
+      "name": "Mimic",
+      "hp": 30,
+      "atk_min": 10,
+      "atk_max": 16,
+      "gold_min": 16,
+      "gold_max": 25,
+      "category": 3,
+      "powers": [
+        "attack"
+      ],
+      "index": 6,
+      "image_src": "images/enemies/mimic.png"
+    },
+    {
+      "name": "Death Speaker",
+      "hp": 84,
+      "atk_min": 8,
+      "atk_max": 15,
+      "gold_min": 225,
+      "gold_max": 275,
+      "category": 1,
+      "powers": [
+        "attack",
+        "fire"
+      ],
+      "index": 7,
+      "image_src": "images/enemies/death_speaker.png"
+    }
+  ],
+  "maps": [
+    {
+      "index": 0,
+      "name": "Serf Quarters",
+      "music": "m31",
+      "enemies": [],
+      "width": 3,
+      "height": 4,
+      "background": 2,
+      "tiles": [
+        [ 2, 2, 2],
+        [ 2,17, 2],
+        [ 3, 5, 2],
+        [ 2, 2, 2]
+      ],
+      "things": [
+        {
+          "type": "sleep",
+          "name": "Haybale",
+          "x": 1,
+          "y": 1
+        },
+        {
+          "dest_map": 1,
+          "dest_x": 6,
+          "dest_y": 6,
+          "type": "exit",
+          "x": 0,
+          "y": 2
         }
       ]
     },
-    "people": [
+    {
+      "index": 1,
+      "name": "Gar'ashi Monastery",
+      "music": "m31",
+      "enemies": [ 0, 1],
+      "width": 9,
+      "height": 11,
+      "background": 1,
+      "tiles": [
+        [ 0, 0, 2, 2, 3, 2, 2, 0, 0],
+        [ 0, 0, 2, 4, 1, 4, 2, 0, 0],
+        [ 2, 2, 2, 1, 1, 1, 2, 2, 2],
+        [ 2, 6, 6, 4, 1, 4, 6, 6, 2],
+        [ 2, 6, 6, 1, 1, 1, 6, 6, 2],
+        [ 2, 2, 6, 4, 1, 4, 6, 2, 2],
+        [ 2, 3, 1, 1, 1, 1, 1, 3, 2],
+        [ 2, 2, 6, 4, 1, 4, 6, 2, 2],
+        [ 2, 6, 6, 1, 1, 1, 6, 6, 2],
+        [ 2, 6, 6, 4, 1, 4, 6, 6, 2],
+        [ 2, 2, 2, 2, 3, 2, 2, 2, 2]
+      ],
+      "things": [
+        {
+          "dest_map": 3,
+          "dest_x": 2,
+          "dest_y": 4,
+          "type": "exit",
+          "x": 4,
+          "y": 0
+        },
+        {
+          "dest_map": 2,
+          "dest_x": 1,
+          "dest_y": 2,
+          "type": "exit",
+          "x": 1,
+          "y": 6
+        },
+        {
+          "dest_map": 0,
+          "dest_x": 1,
+          "dest_y": 2,
+          "type": "exit",
+          "x": 7,
+          "y": 6
+        },
+        {
+          "dest_map": 4,
+          "dest_x": 6,
+          "dest_y": 2,
+          "type": "exit",
+          "x": 4,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Monk Quarters",
+      "music": "m31",
+      "enemies": [],
+      "width": 3,
+      "height": 4,
+      "background": 0,
+      "tiles": [
+        [ 2, 2, 2],
+        [ 2, 8, 2],
+        [ 2, 5, 3],
+        [ 2, 2, 2]
+      ],
+      "things": [
+        {
+          "type": "chest",
+          "stat": "stick",
+          "name": "Wood Stick",
+          "count": 1,
+          "x": 1,
+          "y": 1
+        },
+        {
+          "dest_map": 1,
+          "dest_x": 2,
+          "dest_y": 6,
+          "type": "exit",
+          "x": 2,
+          "y": 2
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Meditation Point",
+      "music": "m31",
+      "enemies": [],
+      "width": 5,
+      "height": 6,
+      "background": 2,
+      "tiles": [
+        [ 0, 0, 0, 0, 0],
+        [ 0, 0, 9, 0, 0],
+        [ 0, 7, 5, 7, 0],
+        [ 0, 5, 5, 5, 0],
+        [ 0, 7, 5, 7, 0],
+        [ 2, 2, 3, 2, 2]
+      ],
+      "things": [
+        {
+          "type": "chest",
+          "stat": "heal",
+          "name": "Spellbook: Heal",
+          "count": 1,
+          "x": 2,
+          "y": 1
+        },
+        {
+          "dest_map": 1,
+          "dest_x": 4,
+          "dest_y": 1,
+          "type": "exit",
+          "x": 2,
+          "y": 5
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Monastery Trail",
+      "music": "m31",
+      "enemies": [ 0, 1, 2],
+      "width": 14,
+      "height": 16,
+      "background": 1,
+      "tiles": [
+        [ 0,12,12, 2, 0, 0, 0, 0, 0, 2,12, 0, 0, 0],
+        [12,12,12, 2, 2, 2, 3, 2, 2, 2,12, 0, 0, 0],
+        [12,12, 9, 6,12, 6, 1, 6, 6,12,12,12, 0, 0],
+        [12,12,12, 6, 6, 6, 1,12, 6, 6,12,12, 0, 0],
+        [ 0,12,12,12,12, 6, 1, 6, 6,12,12,12, 0, 0],
+        [ 0, 0,12,12,12,12, 6, 6,12,12,12,12, 0, 0],
+        [ 0, 0, 0,12,12, 6, 6, 6, 6,12,12,12,12, 0],
+        [ 0, 0,12,12,12, 6, 6,12, 6, 6, 6,12,12, 0],
+        [ 0,12,12,12, 6, 6,12,12,12, 6,12,12,12, 0],
+        [ 0,12,12, 6, 6, 6,12,12, 6, 6, 6,12,12, 0],
+        [ 0,12,12,12, 6, 6, 6, 6, 6, 6,12,12,12, 0],
+        [ 0, 0,12,12, 6, 6, 6,12, 6, 6, 6,12,12,12],
+        [ 0, 0,12,12,12, 6,12,12,12, 6, 1, 6,12,12],
+        [ 0, 0, 0,12,10,11,12,12,12,12, 1, 6,12,12],
+        [ 0, 0, 0, 0,12,12,12,12,12, 6, 1, 6,12,12],
+        [ 0, 0, 0, 0, 0, 0, 0,12,12, 2, 3, 2,12,12]
+      ],
+      "things": [
+        {
+          "dest_map": 1,
+          "dest_x": 4,
+          "dest_y": 9,
+          "type": "exit",
+          "x": 6,
+          "y": 1
+        },
+        {
+          "type": "chest",
+          "stat": "hp1",
+          "name": "Magic Emerald (HP Up)",
+          "count": 1,
+          "x": 2,
+          "y": 2
+        },
+        {
+          "type": "person",
+          "person_id": 0,
+          "x": 5,
+          "y": 13
+        },
+        {
+          "dest_map": 5,
+          "dest_x": 3,
+          "dest_y": 1,
+          "type": "exit",
+          "x": 10,
+          "y": 15
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "name": "Cedar Village",
+      "music": "haply",
+      "enemies": [],
+      "width": 12,
+      "height": 12,
+      "background": 1,
+      "tiles": [
+        [ 2, 2, 2, 3, 2, 2, 2, 2, 0, 0, 0, 0],
+        [ 2, 6,12, 1,12, 6, 6, 2, 0, 0, 0, 0],
+        [ 2, 6, 6, 1, 6, 6,12, 2, 0, 0, 0, 0],
+        [ 2,12, 6, 1, 6,10,10, 2, 2, 2, 2, 2],
+        [ 2,10,10, 1,10,10,11,10,10, 1,10, 2],
+        [ 2,10,10, 1,10, 1, 1, 1,10, 1,10, 2],
+        [ 2, 1, 1, 1, 1, 1,12, 1, 1, 1, 1, 2],
+        [ 2,10, 6,10,10, 1, 1, 1,10, 1,10, 2],
+        [ 2,11, 6,10,10,10,11,10,11, 1,10, 2],
+        [ 2,10, 6,10,10,10,10,10,10, 1, 6, 2],
+        [ 2,12, 6, 6, 6, 6, 6, 9,12, 1,12, 2],
+        [ 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2]
+      ],
+      "things": [
+        {
+          "dest_map": 4,
+          "dest_x": 10,
+          "dest_y": 14,
+          "type": "exit",
+          "x": 3,
+          "y": 0
+        },
+        {
+          "type": "person",
+          "person_id": 1,
+          "x": 6,
+          "y": 4
+        },
+        {
+          "type": "person",
+          "person_id": 4,
+          "x": 1,
+          "y": 8
+        },
+        {
+          "type": "person",
+          "person_id": 2,
+          "x": 6,
+          "y": 8
+        },
+        {
+          "type": "person",
+          "person_id": 3,
+          "x": 8,
+          "y": 8
+        },
+        {
+          "type": "chest",
+          "stat": "g1",
+          "name": "Gold",
+          "count": 10,
+          "x": 7,
+          "y": 10
+        },
+        {
+          "dest_map": 6,
+          "dest_x": 4,
+          "dest_y": 3,
+          "type": "exit",
+          "x": 9,
+          "y": 11
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "name": "Zuruth Plains",
+      "music": "m31",
+      "enemies": [ 1, 2, 3],
+      "width": 16,
+      "height": 16,
+      "background": 2,
+      "tiles": [
+        [ 0, 0, 0, 0, 0, 0, 2,12,12,12,12,12,12,15,15,15],
+        [ 0, 0, 0, 0, 0, 0, 2,12,12,12,12,12,12,15,15,15],
+        [ 2, 2, 2, 2, 3, 2, 2, 6, 6, 6, 6, 6, 6,15,15,15],
+        [12,12,12, 6, 1, 6, 6, 6, 7, 5, 7, 6, 6,15,15,15],
+        [12,12, 6, 6, 1, 6,12, 6, 5, 8, 5, 6, 6,15,15,15],
+        [12,12, 6,12, 1, 6, 6, 6, 7, 5, 7, 6, 6,15,15,15],
+        [12,12, 6, 6, 1, 6, 6, 6, 6, 6, 6, 6, 4,15,15,15],
+        [12,12, 6, 6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [12,12,12, 6, 6, 6, 6, 6, 1, 6, 6, 6, 4,15,15,15],
+        [12,12, 6, 6, 6, 6,12, 6, 1, 6,12, 6, 6,15,15,15],
+        [12,12, 6, 6, 6,12, 6, 6, 1, 6, 6, 6, 6,15,15,15],
+        [12,12,12, 6, 6, 6, 6,12, 1, 6, 6, 6,12,15,15,15],
+        [12,12, 6, 6, 6, 6, 6, 6, 1, 6, 6, 6, 6,15,15,15],
+        [12, 7, 5, 7, 5, 7, 5, 7, 5, 7, 5, 7, 6, 4,15, 4],
+        [12, 2, 5, 5, 5, 2, 5, 5, 5, 5, 5, 2, 6,15, 9,15],
+        [ 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2]
+      ],
+      "things": [
+        {
+          "dest_map": 5,
+          "dest_x": 9,
+          "dest_y": 10,
+          "type": "exit",
+          "x": 4,
+          "y": 2
+        },
+        {
+          "type": "chest",
+          "stat": "mp1",
+          "name": "Magic Sapphire (MP Up)",
+          "count": 1,
+          "x": 9,
+          "y": 4
+        },
+        {
+          "dest_map": 7,
+          "dest_x": 2,
+          "dest_y": 5,
+          "type": "exit",
+          "x": 14,
+          "y": 7
+        },
+        {
+          "dest_map": 10,
+          "dest_x": 2,
+          "dest_y": 1,
+          "type": "exit",
+          "x": 8,
+          "y": 15
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "name": "Canal Boneyard",
+      "music": "m31",
+      "enemies": [ 2, 3, 4],
+      "width": 15,
+      "height": 11,
+      "background": 2,
+      "tiles": [
+        [ 0,15,15,15, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+        [ 0,15,15,15,12, 6, 6, 6, 6, 6,14,14,13,14, 2],
+        [ 0,15,15,15,13, 6,14, 1,14, 6,13,13,14,13, 2],
+        [ 6,15,15,15, 6, 6,14, 1,13, 6, 6, 6, 6, 6, 2],
+        [ 4,15,15,15, 4, 6,13, 1,14, 6, 2, 2, 2, 5, 2],
+        [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 2, 2, 8, 2],
+        [ 4,15,15,15, 4, 6,14, 1,13, 6, 2, 2, 2, 5, 2],
+        [ 6,15,15,15, 6, 6,13, 1,14, 6, 6, 6, 6, 6, 2],
+        [ 0,15,15,15,13, 6,14, 1,13, 6,14,13,13,14, 2],
+        [ 0,15,15,15,12, 6, 6, 6, 6, 6,14,13,14,13, 2],
+        [ 0,15,15,15, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+      ],
+      "things": [
+        {
+          "dest_map": 6,
+          "dest_x": 13,
+          "dest_y": 7,
+          "type": "exit",
+          "x": 1,
+          "y": 5
+        },
+        {
+          "dest_map": 8,
+          "dest_x": 1,
+          "dest_y": 7,
+          "type": "exit",
+          "x": 10,
+          "y": 5
+        },
+        {
+          "type": "chest",
+          "stat": "def1",
+          "name": "Magic Diamond (Def Up)",
+          "count": 1,
+          "x": 13,
+          "y": 5
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "name": "Mausoleum",
+      "music": "elegy_dm",
+      "enemies": [ 3, 4, 5],
+      "width": 16,
+      "height": 15,
+      "background": 2,
+      "tiles": [
+        [ 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+        [ 0, 0, 2, 2, 2, 7, 5, 5, 5, 5, 5, 5, 7,15,15, 2],
+        [ 0, 0, 2, 8,16, 5, 5, 5,15,15, 5, 5, 5, 5,15, 2],
+        [ 0, 0, 2, 2, 2, 2, 2, 5, 2, 2, 5, 2, 2, 5, 2, 2],
+        [ 0, 0, 0, 0, 0, 2, 2, 5, 2, 2, 5, 2, 7, 5, 2, 0],
+        [ 2, 2, 2, 2, 2, 2, 5, 5, 5, 5, 5,16, 2, 5, 2, 0],
+        [ 2, 5, 7, 5, 2, 2, 5, 6, 6, 6, 6, 5, 2, 5, 7, 2],
+        [ 3, 5, 5, 5,16, 5, 5, 6, 6, 6, 6, 5, 5,16, 5, 3],
+        [ 2, 5, 7, 5, 2, 2, 5, 6, 6, 6, 6, 5, 2, 5, 7, 2],
+        [ 2, 2, 2, 2, 2, 2, 8, 5, 5, 5, 5,17, 2, 5, 2, 0],
+        [ 0, 0, 0, 0, 0, 2, 2, 5, 2, 2, 5, 2, 7, 5, 2, 0],
+        [ 0, 0, 2, 2, 2, 2, 2, 5, 2, 2, 5, 2, 2, 5, 2, 2],
+        [ 0, 0, 2, 8,18, 5, 5, 5,15,15, 5, 5, 5, 5,15, 2],
+        [ 0, 0, 2, 2, 2, 7, 5, 5, 5, 5, 5, 5, 7,15,15, 2],
+        [ 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+      ],
+      "things": [
+        {
+          "type": "chest",
+          "stat": "atk1",
+          "name": "Magic Ruby (Atk Up)",
+          "count": 1,
+          "x": 3,
+          "y": 2
+        },
+        {
+          "type": "bones",
+          "status": "bone2",
+          "x": 4,
+          "y": 2
+        },
+        {
+          "type": "bones",
+          "status": "bone4",
+          "x": 11,
+          "y": 5
+        },
+        {
+          "dest_map": 7,
+          "dest_x": 9,
+          "dest_y": 5,
+          "type": "exit",
+          "x": 0,
+          "y": 7
+        },
+        {
+          "type": "bones",
+          "status": "bone1",
+          "x": 4,
+          "y": 7
+        },
+        {
+          "type": "bones",
+          "status": "bone3",
+          "x": 13,
+          "y": 7
+        },
+        {
+          "dest_map": 9,
+          "dest_x": 1,
+          "dest_y": 5,
+          "type": "exit",
+          "x": 15,
+          "y": 7
+        },
+        {
+          "type": "chest",
+          "stat": "g2",
+          "name": "Gold",
+          "count": 25,
+          "x": 6,
+          "y": 9
+        },
+        {
+          "type": "sleep",
+          "name": "Haybale",
+          "x": 11,
+          "y": 9
+        },
+        {
+          "type": "chest",
+          "stat": "mp2",
+          "name": "Magic Sapphire (MP Up)",
+          "count": 1,
+          "x": 3,
+          "y": 12
+        },
+        {
+          "type": "locked_door",
+          "status": "door1",
+          "x": 4,
+          "y": 12
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "name": "Dead Walkways",
+      "music": "elegy_dm",
+      "enemies": [ 3, 4, 5, 5],
+      "width": 13,
+      "height": 10,
+      "background": 2,
+      "tiles": [
+        [ 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0],
+        [ 0, 0, 0, 0, 0, 0, 1, 2, 2, 1, 0, 0, 0],
+        [ 0, 4, 0, 0, 4, 0, 1, 5,16, 1, 0, 4, 0],
+        [ 0, 0, 0, 1, 0, 0, 1, 2, 2, 1, 0, 0, 0],
+        [ 2, 0, 0, 1, 2, 2, 1, 0, 0, 1,13,14,13],
+        [ 3, 1, 1, 1, 5,16, 1, 0, 0, 1, 6,19,14],
+        [ 2, 0, 0, 1, 2, 2, 1, 0, 0, 1,14,13,14],
+        [ 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+        [ 0, 4, 0, 0, 0, 0, 1, 0, 0, 0, 0, 4, 0],
+        [ 0, 0, 0, 0, 9, 1, 1, 1, 1, 0, 0, 0, 0]
+      ],
+      "things": [
+        {
+          "type": "bones",
+          "status": "bone6",
+          "x": 8,
+          "y": 2
+        },
+        {
+          "dest_map": 8,
+          "dest_x": 14,
+          "dest_y": 7,
+          "type": "exit",
+          "x": 0,
+          "y": 5
+        },
+        {
+          "type": "bones",
+          "status": "bone5",
+          "x": 5,
+          "y": 5
+        },
+        {
+          "type": "enemy",
+          "enemy_id": 7,
+          "extra": "dspeak",
+          "x": 11,
+          "y": 5
+        },
+        {
+          "type": "enemy",
+          "enemy_id": 6,
+          "extra": "",
+          "x": 4,
+          "y": 9
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "name": "Trade Tunnel",
+      "music": "kawarayu",
+      "enemies": [ 3, 4, 5],
+      "width": 16,
+      "height": 16,
+      "background": 2,
+      "tiles": [
+        [ 2, 2, 3, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0],
+        [ 2, 5, 5, 5, 2, 5, 5, 5, 2, 0, 2, 2, 2, 2, 2, 0],
+        [ 2, 5, 5, 5,16, 5,15, 5, 2, 0, 2, 8, 2, 8, 2, 0],
+        [ 2, 5, 5, 5, 2, 5,15, 5, 2, 2, 2,18, 2,18, 2, 0],
+        [ 2, 2,16, 2, 2, 5, 9, 5, 5, 5, 5, 5, 5, 5, 2, 0],
+        [ 2, 5, 5, 5, 2, 5,15, 5, 2, 2, 2, 2, 2, 2, 2, 0],
+        [ 2, 5, 5, 5, 2, 5,15, 5, 2, 0, 0, 0, 0, 0, 0, 0],
+        [ 2, 5, 5, 5, 2, 5, 1, 5, 2, 0, 0, 2, 2, 3, 2, 2],
+        [ 2, 7, 5, 5, 2, 5,15, 5, 2, 0, 0, 2, 5, 5, 5, 2],
+        [ 2, 5, 5, 5, 2, 5,15, 5, 2, 0, 0, 3, 5, 5, 8, 2],
+        [ 2, 5, 5, 5, 5, 5, 1, 5, 2, 0, 0, 2, 5, 5, 5, 2],
+        [ 2, 5, 5, 5, 2, 5,15, 5, 2, 2, 2, 2, 2, 5, 2, 2],
+        [ 2, 2, 5, 2, 2, 5,15, 5, 5, 5, 5, 5, 5, 5, 5, 2],
+        [ 2, 7, 5, 7, 2, 5,15,15, 1,15,15, 1,15,15, 5, 2],
+        [ 2, 2, 5, 2, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 2],
+        [ 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+      ],
+      "things": [
+        {
+          "dest_map": 6,
+          "dest_x": 8,
+          "dest_y": 14,
+          "type": "exit",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "type": "bones",
+          "status": "bone8",
+          "x": 4,
+          "y": 2
+        },
+        {
+          "type": "chest",
+          "stat": "hp2",
+          "name": "Magic Emerald (HP Up)",
+          "count": 1,
+          "x": 11,
+          "y": 2
+        },
+        {
+          "type": "chest",
+          "stat": "g3",
+          "name": "Gold",
+          "count": 100,
+          "x": 13,
+          "y": 2
+        },
+        {
+          "type": "locked_door",
+          "status": "door2",
+          "x": 11,
+          "y": 3
+        },
+        {
+          "type": "locked_door",
+          "status": "door3",
+          "x": 13,
+          "y": 3
+        },
+        {
+          "type": "bones",
+          "status": "bone7",
+          "x": 2,
+          "y": 4
+        },
+        {
+          "type": "enemy",
+          "enemy_id": 6,
+          "extra": "",
+          "x": 6,
+          "y": 4
+        },
+        {
+          "type": "person",
+          "person_id": 7,
+          "x": 13,
+          "y": 7
+        },
+        {
+          "type": "person",
+          "person_id": 6,
+          "x": 11,
+          "y": 9
+        },
+        {
+          "type": "enemy",
+          "enemy_id": 6,
+          "extra": "",
+          "x": 14,
+          "y": 9
+        },
+        {
+          "type": "person",
+          "person_id": 5,
+          "x": 2,
+          "y": 15
+        }
+      ]
+    }
+  ],
+  "rendering": {
+    "visible_cells_north": [
       {
-        "item": [
-          {
-            "type": "message",
-            "msg1": "I'm staying right here",
-            "msg2": "until the sun comes back."
-          }
-        ],
-        "name": "Woodsman",
-        "background": 3,
+        "dx": -2,
+        "dy": -2,
         "index": 0
       },
       {
-        "item": [
-          {
-            "type": "weapon",
-            "value": 2
-          },
-          {
-            "type": "weapon",
-            "value": 3
-          }
-        ],
-        "name": "Cedar Arms",
-        "background": 3,
+        "dx": 2,
+        "dy": -2,
         "index": 1
       },
       {
-        "item": [
-          {
-            "type": "armor",
-            "value": 2
-          },
-          {
-            "type": "armor",
-            "value": 3
-          }
-        ],
-        "name": "Simmons Fine Clothier",
-        "background": 3,
+        "dx": -1,
+        "dy": -2,
         "index": 2
       },
       {
-        "item": [
-          {
-            "type": "message",
-            "msg1": "We saw dead walking",
-            "msg2": "from the Canal Boneyard."
-          },
-          {
-            "type": "room",
-            "value": 10
-          }
-        ],
-        "name": "The Pilgrim Inn",
-        "background": 3,
+        "dx": 1,
+        "dy": -2,
         "index": 3
       },
       {
-        "item": [
-          {
-            "type": "message",
-            "msg1": "Fire magic is effective",
-            "msg2": "against undead and bone."
-          },
-          {
-            "type": "spell",
-            "value": 2
-          }
-        ],
-        "name": "Sage Therel",
-        "background": 3,
+        "dx": 0,
+        "dy": -2,
         "index": 4
       },
       {
-        "item": [
-          {
-            "type": "message",
-            "msg1": "No one allowed in or",
-            "msg2": "out of the city."
-          },
-          {
-            "type": "message",
-            "msg1": "(The demo ends here.",
-            "msg2": "Thanks for playing!)"
-          }
-        ],
-        "name": "Stonegate Entrance",
-        "background": 3,
+        "dx": -2,
+        "dy": -1,
         "index": 5
       },
       {
-        "item": [
-          {
-            "type": "message",
-            "msg1": "Unlock magic opens doors",
-            "msg2": "and harms automatons."
-          },
-          {
-            "type": "spell",
-            "value": 3
-          }
-        ],
-        "name": "Thomas the Fence",
-        "background": 3,
+        "dx": 2,
+        "dy": -1,
         "index": 6
       },
       {
-        "item": [
-          {
-            "type": "message",
-            "msg1": "For a small fee we can",
-            "msg2": "sneak you to Stonegate."
-          },
-          {
-            "type": "message",
-            "msg1": "(Support indie devs!",
-            "msg2": "Full version soon!)"
-          }
-        ],
-        "name": "Thieves Guild",
-        "background": 3,
+        "dx": -1,
+        "dy": -1,
         "index": 7
+      },
+      {
+        "dx": 1,
+        "dy": -1,
+        "index": 8
+      },
+      {
+        "dx": 0,
+        "dy": -1,
+        "index": 9
+      },
+      {
+        "dx": -1,
+        "dy": 0,
+        "index": 10
+      },
+      {
+        "dx": 1,
+        "dy": 0,
+        "index": 11
+      },
+      {
+        "dx": 0,
+        "dy": 0,
+        "index": 12
       }
     ],
-    "enemies": [
-      {
-        "name": "Shadow Tendrils",
-        "hp": 6,
-        "atk_min": 2,
-        "atk_max": 5,
-        "gold_min": 1,
-        "gold_max": 2,
-        "category": 0,
-        "powers": [
-          "attack"
-        ],
-        "index": 0,
-        "image_src": "images/enemies/shadow_tendrils.png"
+    "transform_by_direction": {
+      "north": {
+        "x": "+x",
+        "y": "+y"
       },
-      {
-        "name": "Imp",
-        "hp": 7,
-        "atk_min": 2,
-        "atk_max": 6,
-        "gold_min": 1,
-        "gold_max": 3,
-        "category": 1,
-        "powers": [
-          "attack",
-          "attack",
-          "fire"
-        ],
-        "index": 1,
-        "image_src": "images/enemies/imp.png"
+      "east": {
+        "x": "+y",
+        "y": "+y"
       },
-      {
-        "name": "Shadow Soul",
-        "hp": 8,
-        "atk_min": 3,
-        "atk_max": 8,
-        "gold_min": 2,
-        "gold_max": 4,
-        "category": 0,
-        "powers": [
-          "attack",
-          "attack",
-          "mpdrain"
-        ],
-        "index": 2,
-        "image_src": "images/enemies/shadow_soul.png"
+      "south": {
+        "x": "-x",
+        "y": "-y"
       },
-      {
-        "name": "Zombie",
-        "hp": 12,
-        "atk_min": 4,
-        "atk_max": 10,
-        "gold_min": 3,
-        "gold_max": 6,
-        "category": 2,
-        "powers": [
-          "attack",
-          "attack",
-          "hpdrain"
-        ],
-        "index": 3,
-        "image_src": "images/enemies/zombie.png"
-      },
-      {
-        "name": "Skeleton",
-        "hp": 18,
-        "atk_min": 6,
-        "atk_max": 12,
-        "gold_min": 5,
-        "gold_max": 8,
-        "category": 2,
-        "powers": [
-          "attack"
-        ],
-        "index": 4,
-        "image_src": "images/enemies/skeleton.png"
-      },
-      {
-        "name": "Druid",
-        "hp": 16,
-        "atk_min": 7,
-        "atk_max": 14,
-        "gold_min": 7,
-        "gold_max": 12,
-        "category": 1,
-        "powers": [
-          "attack",
-          "fire",
-          "hpdrain",
-          "mpdrain"
-        ],
-        "index": 5,
-        "image_src": "images/enemies/druid.png"
-      },
-      {
-        "name": "Mimic",
-        "hp": 30,
-        "atk_min": 10,
-        "atk_max": 16,
-        "gold_min": 16,
-        "gold_max": 25,
-        "category": 3,
-        "powers": [
-          "attack"
-        ],
-        "index": 6,
-        "image_src": "images/enemies/mimic.png"
-      },
-      {
-        "name": "Death Speaker",
-        "hp": 84,
-        "atk_min": 8,
-        "atk_max": 15,
-        "gold_min": 225,
-        "gold_max": 275,
-        "category": 1,
-        "powers": [
-          "attack",
-          "fire"
-        ],
-        "index": 7,
-        "image_src": "images/enemies/death_speaker.png"
+      "west": {
+        "x": "-y",
+        "y": "-x"
       }
-    ],
-    "maps": [
+    },
+    "tile_parts_by_visible_cell": [
       {
-        "index": 0,
-        "name": "Serf Quarters",
-        "music": "m31",
-        "enemies": [],
-        "width": 3,
-        "height": 4,
-        "background": 2,
-        "tiles": [
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 17,
-              "thing": {
-                "type": "sleep",
-                "name": "Haybale"
-              }
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 3,
-              "exit": {
-                "dest_map": 1,
-                "dest_x": 6,
-                "dest_y": 6
-              }
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ]
-        ]
+        "width": 80,
+        "height": 120,
+        "src_x": 0,
+        "src_y": 0,
+        "dest_x": 0,
+        "dest_y": 0
       },
       {
-        "index": 1,
-        "name": "Gar'ashi Monastery",
-        "music": "m31",
-        "enemies": [
-          0,
-          1
-        ],
-        "width": 9,
-        "height": 11,
-        "background": 1,
-        "tiles": [
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 3,
-              "exit": {
-                "dest_map": 3,
-                "dest_x": 2,
-                "dest_y": 4
-              }
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 4
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 4
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 4
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 4
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 4
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 4
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 3,
-              "exit": {
-                "dest_map": 2,
-                "dest_x": 1,
-                "dest_y": 2
-              }
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 3,
-              "exit": {
-                "dest_map": 0,
-                "dest_x": 1,
-                "dest_y": 2
-              }
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 4
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 4
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 4
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 4
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 3,
-              "exit": {
-                "dest_map": 4,
-                "dest_x": 6,
-                "dest_y": 2
-              }
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ]
-        ]
+        "width": 80,
+        "height": 120,
+        "src_x": 80,
+        "src_y": 0,
+        "dest_x": 80,
+        "dest_y": 0
       },
       {
-        "index": 2,
-        "name": "Monk Quarters",
-        "music": "m31",
-        "enemies": [],
-        "width": 3,
-        "height": 4,
-        "background": 0,
-        "tiles": [
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 8,
-              "thing": {
-                "type": "chest",
-                "stat": "stick",
-                "name": "Wood Stick",
-                "count": 1
-              }
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 3,
-              "exit": {
-                "dest_map": 1,
-                "dest_x": 2,
-                "dest_y": 6
-              }
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ]
-        ]
+        "width": 80,
+        "height": 120,
+        "src_x": 160,
+        "src_y": 0,
+        "dest_x": 0,
+        "dest_y": 0
       },
       {
-        "index": 3,
-        "name": "Meditation Point",
-        "music": "m31",
-        "enemies": [],
-        "width": 5,
-        "height": 6,
-        "background": 2,
-        "tiles": [
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 9,
-              "thing": {
-                "type": "chest",
-                "stat": "heal",
-                "name": "Spellbook: Heal",
-                "count": 1
-              }
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 3,
-              "exit": {
-                "dest_map": 1,
-                "dest_x": 4,
-                "dest_y": 1
-              }
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ]
-        ]
+        "width": 80,
+        "height": 120,
+        "src_x": 240,
+        "src_y": 0,
+        "dest_x": 80,
+        "dest_y": 0
       },
       {
-        "index": 4,
-        "name": "Monastery Trail",
-        "music": "m31",
-        "enemies": [
-          0,
-          1,
-          2
-        ],
-        "width": 14,
-        "height": 16,
-        "background": 1,
-        "tiles": [
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 3,
-              "exit": {
-                "dest_map": 1,
-                "dest_x": 4,
-                "dest_y": 9
-              }
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 9,
-              "thing": {
-                "type": "chest",
-                "stat": "hp1",
-                "name": "Magic Emerald (HP Up)",
-                "count": 1
-              }
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 11,
-              "person_id": 0
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 3,
-              "exit": {
-                "dest_map": 5,
-                "dest_x": 3,
-                "dest_y": 1
-              }
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            }
-          ]
-        ]
+        "width": 160,
+        "height": 120,
+        "src_x": 320,
+        "src_y": 0,
+        "dest_x": 0,
+        "dest_y": 0
       },
       {
-        "index": 5,
-        "name": "Cedar Village",
-        "music": "haply",
-        "enemies": [],
-        "width": 12,
-        "height": 12,
-        "background": 1,
-        "tiles": [
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 3,
-              "exit": {
-                "dest_map": 4,
-                "dest_x": 10,
-                "dest_y": 14
-              }
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 11,
-              "person_id": 1
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 11,
-              "person_id": 4
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 11,
-              "person_id": 2
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 11,
-              "person_id": 3
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 10
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 9,
-              "thing": {
-                "type": "chest",
-                "stat": "g1",
-                "name": "Gold",
-                "count": 10
-              }
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 3,
-              "exit": {
-                "dest_map": 6,
-                "dest_x": 4,
-                "dest_y": 3
-              }
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ]
-        ]
+        "width": 80,
+        "height": 120,
+        "src_x": 480,
+        "src_y": 0,
+        "dest_x": 0,
+        "dest_y": 0
       },
       {
-        "index": 6,
-        "name": "Zuruth Plains",
-        "music": "m31",
-        "enemies": [
-          1,
-          2,
-          3
-        ],
-        "width": 16,
-        "height": 16,
-        "background": 2,
-        "tiles": [
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 3,
-              "exit": {
-                "dest_map": 5,
-                "dest_x": 9,
-                "dest_y": 10
-              }
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            }
-          ],
-          [
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            }
-          ],
-          [
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 8,
-              "thing": {
-                "type": "chest",
-                "stat": "mp1",
-                "name": "Magic Sapphire (MP Up)",
-                "count": 1
-              }
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            }
-          ],
-          [
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            }
-          ],
-          [
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 4
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            }
-          ],
-          [
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1,
-              "exit": {
-                "dest_map": 7,
-                "dest_x": 2,
-                "dest_y": 5
-              }
-            },
-            {
-              "t": 1
-            }
-          ],
-          [
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 4
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            }
-          ],
-          [
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            }
-          ],
-          [
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            }
-          ],
-          [
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            }
-          ],
-          [
-            {
-              "t": 12
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            }
-          ],
-          [
-            {
-              "t": 12
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 4
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 4
-            }
-          ],
-          [
-            {
-              "t": 12
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 9
-            },
-            {
-              "t": 15
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 3,
-              "exit": {
-                "dest_map": 10,
-                "dest_x": 2,
-                "dest_y": 1
-              }
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ]
-        ]
+        "width": 80,
+        "height": 120,
+        "src_x": 560,
+        "src_y": 0,
+        "dest_x": 80,
+        "dest_y": 0
       },
       {
-        "index": 7,
-        "name": "Canal Boneyard",
-        "music": "m31",
-        "enemies": [
-          2,
-          3,
-          4
-        ],
-        "width": 15,
-        "height": 11,
-        "background": 2,
-        "tiles": [
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 14
-            },
-            {
-              "t": 14
-            },
-            {
-              "t": 13
-            },
-            {
-              "t": 14
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 13
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 14
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 14
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 13
-            },
-            {
-              "t": 13
-            },
-            {
-              "t": 14
-            },
-            {
-              "t": 13
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 6
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 14
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 13
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 4
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 4
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 13
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 14
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 1
-            },
-            {
-              "t": 1,
-              "exit": {
-                "dest_map": 6,
-                "dest_x": 13,
-                "dest_y": 7
-              }
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 3,
-              "exit": {
-                "dest_map": 8,
-                "dest_x": 1,
-                "dest_y": 7
-              }
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 8,
-              "thing": {
-                "type": "chest",
-                "stat": "def1",
-                "name": "Magic Diamond (Def Up)",
-                "count": 1
-              }
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 4
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 4
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 14
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 13
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 6
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 13
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 14
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 13
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 14
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 13
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 14
-            },
-            {
-              "t": 13
-            },
-            {
-              "t": 13
-            },
-            {
-              "t": 14
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 12
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 14
-            },
-            {
-              "t": 13
-            },
-            {
-              "t": 14
-            },
-            {
-              "t": 13
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ]
-        ]
+        "width": 80,
+        "height": 120,
+        "src_x": 0,
+        "src_y": 120,
+        "dest_x": 0,
+        "dest_y": 0
       },
       {
-        "index": 8,
-        "name": "Mausoleum",
-        "music": "elegy_dm",
-        "enemies": [
-          3,
-          4,
-          5
-        ],
-        "width": 16,
-        "height": 15,
-        "background": 2,
-        "tiles": [
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 8,
-              "thing": {
-                "type": "chest",
-                "stat": "atk1",
-                "name": "Magic Ruby (Atk Up)",
-                "count": 1
-              }
-            },
-            {
-              "t": 16,
-              "thing": {
-                "type": "bones",
-                "status": "bone2"
-              }
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 16,
-              "thing": {
-                "type": "bones",
-                "status": "bone4"
-              }
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 3,
-              "exit": {
-                "dest_map": 7,
-                "dest_x": 9,
-                "dest_y": 5
-              }
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 16,
-              "thing": {
-                "type": "bones",
-                "status": "bone1"
-              }
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 16,
-              "thing": {
-                "type": "bones",
-                "status": "bone3"
-              }
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 3,
-              "exit": {
-                "dest_map": 9,
-                "dest_x": 1,
-                "dest_y": 5
-              }
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 8,
-              "thing": {
-                "type": "chest",
-                "stat": "g2",
-                "name": "Gold",
-                "count": 25
-              }
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 17,
-              "thing": {
-                "type": "sleep",
-                "name": "Haybale"
-              }
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 8,
-              "thing": {
-                "type": "chest",
-                "stat": "mp2",
-                "name": "Magic Sapphire (MP Up)",
-                "count": 1
-              }
-            },
-            {
-              "t": 18,
-              "thing": {
-                "type": "locked_door",
-                "status": "door1"
-              }
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ]
-        ]
+        "width": 80,
+        "height": 120,
+        "src_x": 80,
+        "src_y": 120,
+        "dest_x": 80,
+        "dest_y": 0
       },
       {
-        "index": 9,
-        "name": "Dead Walkways",
-        "music": "elegy_dm",
-        "enemies": [
-          3,
-          4,
-          5,
-          5
-        ],
-        "width": 13,
-        "height": 10,
-        "background": 2,
-        "tiles": [
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 4
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 4
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 16,
-              "thing": {
-                "type": "bones",
-                "status": "bone6"
-              }
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 4
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 13
-            },
-            {
-              "t": 14
-            },
-            {
-              "t": 13
-            }
-          ],
-          [
-            {
-              "t": 3,
-              "exit": {
-                "dest_map": 8,
-                "dest_x": 14,
-                "dest_y": 7
-              }
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 16,
-              "thing": {
-                "type": "bones",
-                "status": "bone5"
-              }
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 6
-            },
-            {
-              "t": 19,
-              "thing": {
-                "type": "enemy",
-                "enemy_id": 7,
-                "extra": "dspeak"
-              }
-            },
-            {
-              "t": 14
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 14
-            },
-            {
-              "t": 13
-            },
-            {
-              "t": 14
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 4
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 4
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 9,
-              "thing": {
-                "type": "enemy",
-                "enemy_id": 6,
-                "extra": ""
-              }
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            }
-          ]
-        ]
+        "width": 160,
+        "height": 120,
+        "src_x": 160,
+        "src_y": 120,
+        "dest_x": 0,
+        "dest_y": 0
       },
       {
-        "index": 10,
-        "name": "Trade Tunnel",
-        "music": "kawarayu",
-        "enemies": [
-          3,
-          4,
-          5
-        ],
-        "width": 16,
-        "height": 16,
-        "background": 2,
-        "tiles": [
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 3,
-              "exit": {
-                "dest_map": 6,
-                "dest_x": 8,
-                "dest_y": 14
-              }
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 16,
-              "thing": {
-                "type": "bones",
-                "status": "bone8"
-              }
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 8,
-              "thing": {
-                "type": "chest",
-                "stat": "hp2",
-                "name": "Magic Emerald (HP Up)",
-                "count": 1
-              }
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 8,
-              "thing": {
-                "type": "chest",
-                "stat": "g3",
-                "name": "Gold",
-                "count": 100
-              }
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 18,
-              "thing": {
-                "type": "locked_door",
-                "status": "door2"
-              }
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 18,
-              "thing": {
-                "type": "locked_door",
-                "status": "door3"
-              }
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 16,
-              "thing": {
-                "type": "bones",
-                "status": "bone7"
-              }
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 9,
-              "thing": {
-                "type": "enemy",
-                "enemy_id": 6,
-                "extra": ""
-              }
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 3,
-              "person_id": 7
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 3,
-              "person_id": 6
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 8,
-              "thing": {
-                "type": "enemy",
-                "enemy_id": 6,
-                "extra": ""
-              }
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 0
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 7
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 1
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 15
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 5
-            },
-            {
-              "t": 2
-            }
-          ],
-          [
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 3,
-              "person_id": 5
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            },
-            {
-              "t": 2
-            }
-          ]
-        ]
+        "width": 80,
+        "height": 120,
+        "src_x": 320,
+        "src_y": 120,
+        "dest_x": 0,
+        "dest_y": 0
+      },
+      {
+        "width": 80,
+        "height": 120,
+        "src_x": 400,
+        "src_y": 120,
+        "dest_x": 80,
+        "dest_y": 0
+      },
+      {
+        "width": 160,
+        "height": 120,
+        "src_x": 480,
+        "src_y": 120,
+        "dest_x": 0,
+        "dest_y": 0
       }
     ]
   }
+}
