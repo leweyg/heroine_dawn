@@ -21,7 +21,10 @@ var dawnRenderer_prototype = {
             this.images.backgrounds[i] = this.preloadImage(world.backgrounds[i].src);
         }
         for (var i in world.tile_types) {
-            this.images.tiles[i] = this.preloadImage(world.tile_types[i].src);
+            var src = world.tile_types[i].src;
+            if (src) {
+                this.images.tiles[i] = this.preloadImage(src);
+            }
         }
 
         var _this = this;
@@ -47,20 +50,21 @@ var dawnRenderer_prototype = {
         for (var ci in cells) {
             var cell = cells[ci];
             var tile = this.getTileInfoForCell(cell);
-            if (tile.tile_type === undefined) continue;
+            if (tile === undefined) continue;
 
             var part = parts[ci];
             var tileImg = this.images.tiles[tile.tile_type];
+            if (!tileImg || !tileImg.complete) continue;
             this.mainContext.drawImage(tileImg, 
                 part.src_x,  part.src_y,  part.width, part.height,
                 part.dest_x, part.dest_y, part.width, part.height);
         }
     },
     udpateStatus : function() {
-        var msg = this.game.state.avatar.facing;
+        var msg = this.game.latest_status;
         this.mainStatus.innerText = msg;
     },
-    _tempTile : { x:0, y:0, tile_type:null },
+    
     transformCellOffset : function(t, dx, dy) {
         switch (t) {
             case "+x": return  1*dx;
@@ -71,9 +75,7 @@ var dawnRenderer_prototype = {
         }
     },
     getTileInfoForCell : function(cell) {
-        var ans = this._tempTile;
         var avatar = this.game.state.avatar;
-        var map = this.world.maps[avatar.map_id];
         var transform = this.world.rendering.transform_by_direction[avatar.facing];
 
         var dx = this.transformCellOffset(transform.tx, cell.dx, cell.dy);
@@ -81,14 +83,7 @@ var dawnRenderer_prototype = {
 
         var x = avatar.x + dx;
         var y = avatar.y + dy;
-        if ((x >= 0) && (x < map.width) && (y >= 0) && (y < map.height)) {
-            ans.tile_type = map.tiles[y][x];
-        } else {
-            ans.tile_type = undefined;
-        }
-        ans.x = x;
-        ans.y = y;
-        return ans;
+        return this.game.getTileInfoByMapXY(avatar.map_id,x,y);
     },
     preloadImage : function(src) {
         var _this = this;
