@@ -4,9 +4,36 @@
         <h1>Heroine Dawn</h1>
         <img src="images/backgrounds/nightsky.png" />
         <br/>
-        <canvas id="test_render" width="160" height="120"></canvas>
+        <canvas id="main_canvas" width="160" height="120" style="width:640px;"></canvas>
+        <br/>
+        <p id="main_status">Loading...</p>
+        <script src="scripts/game.js"></script>
+        <script src="scripts/render.js"></script>
         <script>
-            
+            function main_init() {
+                readJsonFile("world.json", (world) => {
+                    main_status.innerHTML = "Loaded.";
+                    dawnGame.initFromWorld(world);
+                    dawnRenderer.initFromGameWorld(dawnGame, world, main_canvas);
+                });
+            }
+        </script>
+        <script>
+            function readJsonFile(file, callback) {
+                var rawFile = new XMLHttpRequest();
+                rawFile.overrideMimeType("application/json");
+                rawFile.open("GET", file, true);
+                rawFile.onreadystatechange = function() {
+                    if (rawFile.readyState === 4 && rawFile.status == "200") {
+                        var obj = JSON.parse(rawFile.responseText);
+                        callback(obj);
+                    }
+                }
+                rawFile.send(null);
+            }
+        </script>
+        <script>
+            main_init();
         </script>
     </body>
 </html>

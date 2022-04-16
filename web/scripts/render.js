@@ -1,60 +1,96 @@
 
 
-// Renderer:
-var renderer = new Object();
+var dawnRenderer_prototype = {
+    world : null,
+    game : null,
+    mainCanvas : null,
+    mainContext : null,
+    images : {
+        backgrounds : [],
+        tiles : [],
+    },
+    initFromGameWorld : function(game, world, mainTarget) {
+        this.game = game;
+        this.world = world;
+        this.mainCanvas = mainTarget;
+        this.mainContext = this.mainCanvas.getContext("2d");
 
-function vis_cell(dx, dy, ind) {
-    return {
-        dx:dx, dy:dy, index:ind,
-    };
-}
-/*
-Drawing is done in this order (a=10, b=11, c=12)
-.........
-..02431..
-..57986..
-...acb...
-.........
-*/ 
-renderer.visible_cells_north = [
-    vis_cell(0-2,0-2,0),
-    vis_cell(0+2,0-2,1),
-    vis_cell(0-1,0-2,2),
-    vis_cell(0+1,0-2,3),
-    vis_cell(0,  0-2,4),
-    vis_cell(0-2,0-1,5),
-    vis_cell(0+2,0-1,6),
-    vis_cell(0-1,0-1,7),
-    vis_cell(0+1,0-1,8),
-    vis_cell(0,  0-1,9),
-    vis_cell(0-1,0, 10),
-    vis_cell(0+1,0, 11),
-    vis_cell(0,  0, 12),
-];
+        for (var i in world.backgrounds) {
+            this.images.backgrounds[i] = this.preloadImage(world.backgrounds[i].src);
+        }
+        for (var i in world.tile_types) {
+            this.images.tiles[i] = this.preloadImage(world.tile_types[i].src);
+        }
+    },
+    redraw : function() {
+        if (!this.game) return;
 
-renderer.transform_by_direction = {
-    north : { x:"+x", y:"+y" },
-    east :  { x:"+y", y:"+y" },
-    south : { x:"-x", y:"-y" },
-    west :  { x:"-y", y:"-x" },
+        this.drawScene();
+    },
+    drawScene : function() {
+        var avatar = this.game.state.avatar;
+        var map = this.world.maps[avatar.map_id];
+
+        // background:
+        var bgImg = this.images.backgrounds[map.background];
+        this.mainContext.drawImage(bgImg, 0, 0);
+        // visible cells:
+        var cells = this.world.rendering.visible_cells_north;
+        var parts = this.world.rendering.tile_parts_by_visible_cell;
+        
+        for (var ci in cells) {
+            var cell = cells[ci];
+            var tile = this.getTileInfoForCell(cell);
+            if (tile.tile_type === undefined) continue;
+
+            var part = parts[ci];
+            var tileImg = this.images.tiles[tile.tile_type];
+            this.mainContext.drawImage(tileImg, 
+                part.src_x,  part.src_y,  part.width, part.height,
+                part.dest_x, part.dest_y, part.width, part.height);
+        }
+    },
+    _tempTile : { x:0, y:0, tile_type:null },
+    transformCellOffset : function(t, dx, dy) {
+        switch (t) {
+            case "+x": return  1*dx;
+            case "-x": return -1*dx;
+            case "+y": return  1*dy;
+            case "-y": return -1*dy;
+            default: throw "What?";
+        }
+    },
+    getTileInfoForCell : function(cell) {
+        var ans = this._tempTile;
+        var avatar = this.game.state.avatar;
+        var map = this.world.maps[avatar.map_id];
+        var transform = this.world.rendering.transform_by_direction[avatar.facing];
+
+        var dx = this.transformCellOffset(transform.x, cell.dx, cell.dy);
+        var dy = this.transformCellOffset(transform.y, cell.dx, cell.dy);
+
+        var x = avatar.x + dx;
+        var y = avatar.y + dy;
+        if ((x >= 0) && (x < map.width) && (y >= 0) && (y < map.height)) {
+            ans.tile_type = map.tiles[y][x];
+        } else {
+            ans.tile_type = undefined;
+        }
+        ans.x = x;
+        ans.y = y;
+        return ans;
+    },
+    preloadImage : function(src) {
+        var _this = this;
+        var img = new Image();
+        img.src = src;
+        img.onload = (() => {
+            _this.redraw();
+        });
+        return img;
+    }
 };
 
-// Each tile has the same layout on the sprite sheet
-// tiles 0-12 also represent position 0-12
-renderer.tile_parts_by_visible_cell = [
-    {"width": 80,  "height": 120, "src_x": 0,   "src_y": 0, "dest_x": 0,  "dest_y": 0},
-    {"width": 80,  "height": 120, "src_x": 80,  "src_y": 0, "dest_x": 80, "dest_y": 0},
-    {"width": 80,  "height": 120, "src_x": 160, "src_y": 0, "dest_x": 0,  "dest_y": 0},
-    {"width": 80,  "height": 120, "src_x": 240, "src_y": 0, "dest_x": 80, "dest_y": 0},  
-    {"width": 160, "height": 120, "src_x": 320, "src_y": 0, "dest_x": 0,  "dest_y": 0},
-    {"width": 80,  "height": 120, "src_x": 480, "src_y": 0, "dest_x": 0,  "dest_y": 0},
-    {"width": 80,  "height": 120, "src_x": 560, "src_y": 0, "dest_x": 80, "dest_y": 0},
-    {"width": 80,  "height": 120, "src_x": 0,   "src_y": 120, "dest_x": 0,  "dest_y": 0},
-    {"width": 80,  "height": 120, "src_x": 80,  "src_y": 120, "dest_x": 80, "dest_y": 0},
-    {"width": 160, "height": 120, "src_x": 160, "src_y": 120, "dest_x": 0,  "dest_y": 0},
-    {"width": 80,  "height": 120, "src_x": 320, "src_y": 120, "dest_x": 0,  "dest_y": 0},
-    {"width": 80,  "height": 120, "src_x": 400, "src_y": 120, "dest_x": 80, "dest_y": 0},
-    {"width": 160, "height": 120, "src_x": 480, "src_y": 120, "dest_x": 0,  "dest_y": 0}
-  ];
+var dawnRenderer = new Object(dawnRenderer_prototype);
 
 
