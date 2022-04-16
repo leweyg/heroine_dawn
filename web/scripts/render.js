@@ -5,15 +5,17 @@ var dawnRenderer_prototype = {
     game : null,
     mainCanvas : null,
     mainContext : null,
+    mainStatus : null,
     images : {
         backgrounds : [],
         tiles : [],
     },
-    initFromGameWorld : function(game, world, mainTarget) {
+    initFromGameWorld : function(game, world, mainTarget, mainStatus) {
         this.game = game;
         this.world = world;
         this.mainCanvas = mainTarget;
         this.mainContext = this.mainCanvas.getContext("2d");
+        this.mainStatus = mainStatus;
 
         for (var i in world.backgrounds) {
             this.images.backgrounds[i] = this.preloadImage(world.backgrounds[i].src);
@@ -29,6 +31,7 @@ var dawnRenderer_prototype = {
         if (!this.game) return;
 
         this.drawScene();
+        this.udpateStatus();
     },
     drawScene : function() {
         var avatar = this.game.state.avatar;
@@ -53,6 +56,10 @@ var dawnRenderer_prototype = {
                 part.dest_x, part.dest_y, part.width, part.height);
         }
     },
+    udpateStatus : function() {
+        var msg = this.game.state.avatar.facing;
+        this.mainStatus.innerText = msg;
+    },
     _tempTile : { x:0, y:0, tile_type:null },
     transformCellOffset : function(t, dx, dy) {
         switch (t) {
@@ -69,8 +76,8 @@ var dawnRenderer_prototype = {
         var map = this.world.maps[avatar.map_id];
         var transform = this.world.rendering.transform_by_direction[avatar.facing];
 
-        var dx = this.transformCellOffset(transform.x, cell.dx, cell.dy);
-        var dy = this.transformCellOffset(transform.y, cell.dx, cell.dy);
+        var dx = this.transformCellOffset(transform.tx, cell.dx, cell.dy);
+        var dy = this.transformCellOffset(transform.ty, cell.dx, cell.dy);
 
         var x = avatar.x + dx;
         var y = avatar.y + dy;

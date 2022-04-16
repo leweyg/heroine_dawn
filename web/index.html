@@ -18,7 +18,7 @@
                 readJsonFile("world.json", (world) => {
                     main_status.innerHTML = "Loaded.";
                     dawnGame.initFromWorld(world);
-                    dawnRenderer.initFromGameWorld(dawnGame, world, main_canvas);
+                    dawnRenderer.initFromGameWorld(dawnGame, world, main_canvas, main_status);
                 });
             }
         </script>
