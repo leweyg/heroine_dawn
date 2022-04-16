@@ -4,25 +4,34 @@ var dawnGame_prototype = {
     state : {
         avatar : null,
     },
-    latest_status : "Loaded.",
+    latest_status : "Loading...",
     initFromWorld : function(world) {
         this.world = world;
         this.state = {
             avatar : new Object(world.avatar),
         };
+        this.latest_status = "First step...";
     },
     doInput : function(act) {
-        var avatar = this.state.avatar;
-        var render = this.world.rendering;
         this.latest_status = "";
-
+        this.onInnerAction(act);
+        this.onChanged();
+    },
+    onInnerAction : function(act) {
+        var avatar = this.state.avatar;
         switch (act) {
             case "forward":
                 {
                     var fwd = this.getTileInfoAvatarForward();
-                    if (!fwd) return;
+                    if (!fwd) {
+                        this.latest_status = "Nothing there";
+                        return;
+                    }
                     var walkable = this.world.tile_types[fwd.tile_type].walkable;
-                    if (!walkable) return;
+                    if (!walkable) {
+                        this.latest_status = "Can't walk there.";
+                        return;
+                    }
                     var things = this.findTileThingsByMapXY(avatar.map_id,fwd.x,fwd.y);
                     for (var i in things) {
                         if (!this.walkIntoThing(things[i], fwd)) return;
@@ -30,7 +39,6 @@ var dawnGame_prototype = {
                     // do the walk:
                     avatar.x = fwd.x;
                     avatar.y = fwd.y;
-                    this.onChanged();
                 }
                 break;
             case "left":
@@ -42,8 +50,6 @@ var dawnGame_prototype = {
                     if (act == "left") ndx += (dirs.length - 1);
                     ndx = (ndx % dirs.length);
                     avatar.facing = dirs[ndx];
-                    this.latest_status = avatar.facing;
-                    this.onChanged();
                 }
                 break;
         }
@@ -99,7 +105,7 @@ var dawnGame_prototype = {
             this.state.avatar.map_id = thing.dest_map;
             targetTileInfo.x = thing.dest_x;
             targetTileInfo.y = thing.dest_y;
-            this.latest_status = "Entered " + this.world.maps[this.state.avatar.map_id].name;
+            this.latest_status = "" + this.world.maps[this.state.avatar.map_id].name;
             return true;
         }
         this.latest_status = "TODO: " + thing.type;

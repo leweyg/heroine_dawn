@@ -1,16 +1,23 @@
 <html>
     <head><title>Heroine Dawn</title></head>
-    <body>
-        <h1>Heroine Dawn</h1>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        .input_buttons {
+            padding:25px;
+            background-color: rgb(80, 80, 80);
+            color:white;
+        }
+    </style>
+    <body style="color:white; background-color:black;">
         <br/>
         <center>
-            <canvas id="main_canvas" width="160" height="120" style="width:640px;"></canvas>
+            <canvas id="main_canvas" width="160" height="120" style="width:95%;max-width: 840px;"></canvas>
             <br/>
-            <input type="button" value="  <  " onclick="dawnGame.doInput('left');" />
-            <input type="button" value="  ^  " onclick="dawnGame.doInput('forward');"  />
-            <input type="button" value="  >  " onclick="dawnGame.doInput('right');" />
+            <input type="button" class="input_buttons" value="  &hookleftarrow;  " onclick="dawnGame.doInput('left');" />
+            <input type="button" class="input_buttons" value="  &uarr;  " onclick="dawnGame.doInput('forward');"  />
+            <input type="button" class="input_buttons" value="  &hookrightarrow;  " onclick="dawnGame.doInput('right');" />
+            <p id="main_status">Loading...</p>
         </center>
-        <p id="main_status">Loading...</p>
         <script src="scripts/game.js"></script>
         <script src="scripts/render.js"></script>
         <script>
