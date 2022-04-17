@@ -18,6 +18,7 @@
         <script src="original/js/tileset.js"></script>
         <script src="original/js/info.js"></script>
         <script src="original/js/mapscript.js"></script>
+        <script src="original/js/bitfont.js"></script>
         <p>Exporting... (should go to 'web/world.json')</p>
         <textarea id="main_export" cols="80" rows="24"></textarea>
         <script>
@@ -127,6 +128,7 @@
                     people : [],
                     enemies : [],
                     maps : [],
+                    font : {},
                     rendering : {},
                 };
                 // export backgrounds and tile types:
@@ -260,6 +262,32 @@
                     }
                     map.tiles = rows;
                 }
+                // export font data:
+                world.font = {
+                  src: "images/interface/boxy_bold.png",
+                  height : bitfont.height,
+                  kerning : -1,
+                  space : 3,
+                  glyph : "",
+                  start : [],
+                  width : [],
+                };
+                var glyphOrder = [];
+                for (var letter in bitfont.glyph_x) {
+                  glyphOrder.push( { 
+                    letter:""+letter,
+                    start:bitfont.glyph_x[letter] 
+                  });
+                }
+                glyphOrder.sort((a,b) => (a.start - b.start));
+                for (var i in glyphOrder) {
+                  var kv = glyphOrder[i];
+                  var letter = kv.letter;
+                  world.font.glyph += letter;
+                  world.font.width.push( bitfont.glyph_w[letter]);
+                  world.font.start.push( bitfont.glyph_x[letter]);
+                }
+                console.assert(world.font.glyph.length == world.font.width.length);
                 // export rendering data:
                 world.rendering = renderer;
                 // build summary:
