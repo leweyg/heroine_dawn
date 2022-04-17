@@ -3,6 +3,7 @@ var dawnGame_prototype = {
     world : null,
     state : {
         avatar : null,
+        encounter : null,
     },
     latest_status : "Loading...",
     initFromWorld : function(world) {
@@ -34,7 +35,7 @@ var dawnGame_prototype = {
                     }
                     var things = this.findTileThingsByMapXY(avatar.map_id,fwd.x,fwd.y);
                     for (var i in things) {
-                        if (!this.walkIntoThing(things[i], fwd)) return;
+                        if (!dawnThings.walkIntoThing(this,things[i])) return;
                     }
                     // do the walk:
                     avatar.x = fwd.x;
@@ -97,19 +98,6 @@ var dawnGame_prototype = {
             }
         }
         return res;
-    },
-    walkIntoThing : function(thing, targetTileInfo) {
-        if (thing.type == "exit") {
-            this.state.avatar.x = thing.dest_x;
-            this.state.avatar.y = thing.dest_y;
-            this.state.avatar.map_id = thing.dest_map;
-            targetTileInfo.x = thing.dest_x;
-            targetTileInfo.y = thing.dest_y;
-            this.latest_status = "" + this.world.maps[this.state.avatar.map_id].name;
-            return true;
-        }
-        this.latest_status = "TODO: " + thing.type;
-        return true;
     },
 };
 

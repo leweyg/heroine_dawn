@@ -66,11 +66,12 @@
                 mapscript_place_generic(x,y,item);
                 var treasures = mapscript_world.equipment.treasures;
                 var found = false;
-                if (name == "Gold") found = true;
                 for (var ti in treasures) {
                   var tr = treasures[ti];
                   if (tr.name == name) {
-                    tr.stat = stat;
+                    //tr.stat = stat;
+                    delete item.name;
+                    delete item.stat;
                     item.treasure_id = tr.index;
                     found = true;
                   }
@@ -154,8 +155,8 @@
                 info_init();
                 mapscript_world = world;
                 var treasureNames = [
-                  "Gold (1)", "Gold (2)", "Gold (4)", "Gold (8)", "Gold (16)",
-                  "Grail", "Bars of Gold", "Gold Chest", "Crown", "Treasures",
+                  "Gold", "Gold (2)", "Gold (4)", "Gold (8)", "Gold (16)",
+                  "Grail", "Bars of Gold", "Gold Chest", "Crown", "Riches",
                   "Wood Stick", "Spellbook: Heal", "Magic Sapphire (MP Up)", 
                   "Magic Emerald (HP Up)", "Magic Ruby (Atk Up)",
                   "Magic Diamond (Def Up)"
@@ -166,9 +167,38 @@
                     index: 1*ti,
                     name: treasureNames[ti],
                   };
+                  if (treasure.name == "Gold") {
+                    treasure.gold = 1;
+                    treasure.stat = "gold";
+                  }
                   if (treasure.name.startsWith("Gold (")) {
                     var count = 1*(treasure.name.substring("Gold (".length).replace(")",""));
-                    treasure.gold = count;
+                    treasure.add = count;
+                    treasure.stat = "gold";
+                  }
+                  if (treasure.name == "Wood Stick") {
+                    treasure.stat = "weapon";
+                    treasure.min_value = 1;
+                  }
+                  if (treasure.name == "Spellbook: Heal") {
+                    treasure.stat = "spellbook";
+                    treasure.min_value = 1;
+                  }
+                  if (treasure.name == "Magic Sapphire (MP Up)") {
+                    treasure.stat = "mp";
+                    treasure.add = 2;
+                  }
+                  if (treasure.name == "Magic Emerald (HP Up)") {
+                    treasure.stat = "hp";
+                    treasure.add = 5;
+                  }
+                  if (treasure.name == "Magic Ruby (Atk Up)") {
+                    treasure.stat = "bonus_atk";
+                    treasure.add = 1;
+                  }
+                  if (treasure.name == "Magic Diamond (Def Up)") {
+                    treasure.stat = "bonus_def";
+                    treasure.add = 1;
                   }
                   world.equipment.treasures.push(treasure);
                 }

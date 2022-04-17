@@ -152,28 +152,33 @@
     "treasures": [
       {
         "index": 0,
-        "name": "Gold (1)",
-        "gold": 1
+        "name": "Gold",
+        "gold": 1,
+        "stat": "gold"
       },
       {
         "index": 1,
         "name": "Gold (2)",
-        "gold": 2
+        "add": 2,
+        "stat": "gold"
       },
       {
         "index": 2,
         "name": "Gold (4)",
-        "gold": 4
+        "add": 4,
+        "stat": "gold"
       },
       {
         "index": 3,
         "name": "Gold (8)",
-        "gold": 8
+        "add": 8,
+        "stat": "gold"
       },
       {
         "index": 4,
         "name": "Gold (16)",
-        "gold": 16
+        "add": 16,
+        "stat": "gold"
       },
       {
         "index": 5,
@@ -193,37 +198,43 @@
       },
       {
         "index": 9,
-        "name": "Treasures"
+        "name": "Riches"
       },
       {
         "index": 10,
         "name": "Wood Stick",
-        "stat": "stick"
+        "stat": "weapon",
+        "min_value": 1
       },
       {
         "index": 11,
         "name": "Spellbook: Heal",
-        "stat": "heal"
+        "stat": "spellbook",
+        "min_value": 1
       },
       {
         "index": 12,
         "name": "Magic Sapphire (MP Up)",
-        "stat": "mp2"
+        "stat": "mp",
+        "add": 2
       },
       {
         "index": 13,
         "name": "Magic Emerald (HP Up)",
-        "stat": "hp2"
+        "stat": "hp",
+        "add": 5
       },
       {
         "index": 14,
         "name": "Magic Ruby (Atk Up)",
-        "stat": "atk1"
+        "stat": "bonus_atk",
+        "add": 1
       },
       {
         "index": 15,
         "name": "Magic Diamond (Def Up)",
-        "stat": "def1"
+        "stat": "bonus_def",
+        "add": 1
       }
     ],
     "weapons": [
@@ -704,8 +715,6 @@
       "things": [
         {
           "type": "chest",
-          "stat": "stick",
-          "name": "Wood Stick",
           "count": 1,
           "treasure_id": 10,
           "x": 1,
@@ -740,8 +749,6 @@
       "things": [
         {
           "type": "chest",
-          "stat": "heal",
-          "name": "Spellbook: Heal",
           "count": 1,
           "treasure_id": 11,
           "x": 2,
@@ -794,8 +801,6 @@
         },
         {
           "type": "chest",
-          "stat": "hp1",
-          "name": "Magic Emerald (HP Up)",
           "count": 1,
           "treasure_id": 13,
           "x": 2,
@@ -874,9 +879,8 @@
         },
         {
           "type": "chest",
-          "stat": "g1",
-          "name": "Gold",
           "count": 10,
+          "treasure_id": 0,
           "x": 7,
           "y": 10
         },
@@ -927,8 +931,6 @@
         },
         {
           "type": "chest",
-          "stat": "mp1",
-          "name": "Magic Sapphire (MP Up)",
           "count": 1,
           "treasure_id": 12,
           "x": 9,
@@ -992,8 +994,6 @@
         },
         {
           "type": "chest",
-          "stat": "def1",
-          "name": "Magic Diamond (Def Up)",
           "count": 1,
           "treasure_id": 15,
           "x": 13,
@@ -1029,8 +1029,6 @@
       "things": [
         {
           "type": "chest",
-          "stat": "atk1",
-          "name": "Magic Ruby (Atk Up)",
           "count": 1,
           "treasure_id": 14,
           "x": 3,
@@ -1078,9 +1076,8 @@
         },
         {
           "type": "chest",
-          "stat": "g2",
-          "name": "Gold",
           "count": 25,
+          "treasure_id": 0,
           "x": 6,
           "y": 9
         },
@@ -1092,8 +1089,6 @@
         },
         {
           "type": "chest",
-          "stat": "mp2",
-          "name": "Magic Sapphire (MP Up)",
           "count": 1,
           "treasure_id": 12,
           "x": 3,
@@ -1207,8 +1202,6 @@
         },
         {
           "type": "chest",
-          "stat": "hp2",
-          "name": "Magic Emerald (HP Up)",
           "count": 1,
           "treasure_id": 13,
           "x": 11,
@@ -1216,9 +1209,8 @@
         },
         {
           "type": "chest",
-          "stat": "g3",
-          "name": "Gold",
           "count": 100,
+          "treasure_id": 0,
           "x": 13,
           "y": 2
         },
