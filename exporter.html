@@ -142,11 +142,31 @@
                     };
                     world.backgrounds.push(to);
                 }
+                var topdown_paths = [
+                  "",
+                  "tile_0022.png", // floor
+                  "tile_0095.png", // wall
+                  "tile_0109.png", // door
+                  "tile_0058.png", // pillar
+                  "tile_0078.png",
+                  "tile_0019.png", // grass
+                  "tile_0058.png", // pillar
+                  "tile_0134.png", // chest
+                  "tile_0116.png", // house
+                  "tile_0117.png", // house door
+                  "tile_0016.png", // tree
+                  "tile_0065.png", // cross
+                  "tile_0066.png", // grave
+                  "tile_0118.png", // skulls/log
+                  "tile_0110.png", // locked door
+                  "tile_0120.png", // death speaker
+                ];
                 for (var ti in tileset.tile_img) {
                     var from = tileset.tile_img[ti];
                     var to = {
                         index: ti*1,
                         src : from.src,
+                        topdown_src : "images/topdown/" + topdown_paths[ti],
                         walkable : tileset.walkable[ti],
                     };
                     world.tile_types.push(to);

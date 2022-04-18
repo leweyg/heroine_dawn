@@ -22,6 +22,27 @@
                 by <a href="https://clintbellanger.net/">Clink Bellanger</a>. </p>
         </div>
         <div>
+            <h3>Game Guide</h3>
+            <script src="web/scripts/utils.js"></script>
+            <script src="web/scripts/topdown_render.js"></script>
+            <div id="topdown_main_div"></div>
+            <script>
+                var topdownWorld = null;
+                var topdownMap = 1;
+                function redrawTopdown() {
+                    if (!topdownWorld) return;
+                    topdown_main_div.innerHTML = dawnTopDownRenderer.createMapHtmlString(topdownWorld, topdownMap);
+                }
+                function initMap() {
+                    dawnUtils.downloadJson("web/world.json", (world) => {
+                        topdownWorld = world;
+                        redrawTopdown();
+                    });
+                }
+                initMap();
+            </script>
+        </div>
+        <div>
             <h3>Credits</h3>
             <p><i>
 Heroine Dawn was adapted by <a href="http://lewcid.com/">Lewey Geselowitz</a> from <a href="https://github.com/clintbellanger/heroine-dusk">Heroine Dusk</a>.<br/>
