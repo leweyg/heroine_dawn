@@ -225,7 +225,7 @@
       },
       {
         "index": 5,
-        "name": "Grail"
+        "name": "Chalice"
       },
       {
         "index": 6,
@@ -560,7 +560,7 @@
       "atk_max": 5,
       "gold_min": 1,
       "gold_max": 2,
-      "category": 0,
+      "category": "shadow",
       "powers": [
         "attack"
       ],
@@ -574,7 +574,7 @@
       "atk_max": 6,
       "gold_min": 1,
       "gold_max": 3,
-      "category": 1,
+      "category": "demon",
       "powers": [
         "attack",
         "attack",
@@ -590,7 +590,7 @@
       "atk_max": 8,
       "gold_min": 2,
       "gold_max": 4,
-      "category": 0,
+      "category": "shadow",
       "powers": [
         "attack",
         "attack",
@@ -606,7 +606,7 @@
       "atk_max": 10,
       "gold_min": 3,
       "gold_max": 6,
-      "category": 2,
+      "category": "undead",
       "powers": [
         "attack",
         "attack",
@@ -622,7 +622,7 @@
       "atk_max": 12,
       "gold_min": 5,
       "gold_max": 8,
-      "category": 2,
+      "category": "undead",
       "powers": [
         "attack"
       ],
@@ -636,7 +636,7 @@
       "atk_max": 14,
       "gold_min": 7,
       "gold_max": 12,
-      "category": 1,
+      "category": "demon",
       "powers": [
         "attack",
         "fire",
@@ -653,7 +653,7 @@
       "atk_max": 16,
       "gold_min": 16,
       "gold_max": 25,
-      "category": 3,
+      "category": "automaton",
       "powers": [
         "attack"
       ],
@@ -667,7 +667,7 @@
       "atk_max": 15,
       "gold_min": 225,
       "gold_max": 275,
-      "category": 1,
+      "category": "demon",
       "powers": [
         "attack",
         "fire"

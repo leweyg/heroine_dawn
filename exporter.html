@@ -154,7 +154,7 @@
                 mapscript_world = world;
                 var treasureNames = [
                   "Gold", "Gold (2)", "Gold (4)", "Gold (8)", "Gold (16)",
-                  "Grail", "Bars of Gold", "Gold Chest", "Crown", "Riches",
+                  "Chalice", "Bars of Gold", "Gold Chest", "Crown", "Riches",
                   "Wood Stick", "Spellbook: Heal", "Magic Sapphire (MP Up)", 
                   "Magic Emerald (HP Up)", "Magic Ruby (Atk Up)",
                   "Magic Diamond (Def Up)"
@@ -207,10 +207,12 @@
                 // export npcs:
                 enemy_init();
                 var powers_by_id = [ "attack", "fire", "hpdrain", "mpdrain" ];
+                var categories_by_id = [ "shadow", "demon", "undead", "automaton" ];
                 for (var ei in enemy.stats) {
                     var from = enemy.stats[ei];
                     from.index = ei*1;
                     from.image_src = enemy.img[ei].src;
+                    from.category = categories_by_id[from.category];
                     for (var pi in from.powers) {
                         from.powers[pi] = powers_by_id[from.powers[pi]];
                     }

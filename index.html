@@ -60,19 +60,33 @@
                 function buildGuideText(title,obj) {
                     if (title == "world") {
                         var ans = "";
+                        var finalArray = [];
+                        var delayList = { avatar:true, backgrounds:true, tile_types:true };
+
                         for (var i in obj) {
                             var name = i; //obj[i];
                             if (i == "equipment") {
                                 for (var j in obj[name]) {
                                     var path = "equipment." + j;
-                                    ans += "   <u style='cursor:pointer;' onclick=\"clickedGuideText('" + path + "')\" >" + j + "</u>\n";
+                                    finalArray.push(path);
                                 }
                                 continue;
                             }
                             if ((i == "summary")) {
                                 continue;
                             }
-                            ans += "   <u style='cursor:pointer;' onclick=\"clickedGuideText('" + name + "')\" >" + name + "</u>\n";
+                            if (i in delayList) {
+                                continue;
+                            }
+                            finalArray.push(name);
+                        }
+                        for (var i in delayList) {
+                            finalArray.push(i);
+                        }
+                        for (var i in finalArray) {
+                            var path = finalArray[i];
+                            var name = path.replace("equipment.","");
+                            ans += "   <u style='cursor:pointer;' onclick=\"clickedGuideText('" + path + "')\" >" + name + "</u>\n";
                         }
                         return ans;
                     }
