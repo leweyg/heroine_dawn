@@ -57,12 +57,12 @@ var dawnUtils_prototype = {
             var index = null;
             if (prop.endsWith("]")) {
                 var mid = prop.indexOf("[");
+                index = prop.substring(mid+1).replace("]","");
                 prop = prop.substring(0,mid);
-                index = prop.substring(mid+1).substring(0,-1);
             }
             console.assert(prop in root);
             root = root[prop];
-            if (index) {
+            if (index != null) {
                 root = root[index];
             }
         }

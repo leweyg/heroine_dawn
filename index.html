@@ -72,6 +72,10 @@
                         }
                         return ans;
                     }
+                    if (!obj) {
+                        obj = dawnUtils.parsePath({world:topdownWorld}, title);
+                        console.assert(obj);
+                    }
                     if (Array.isArray(obj)) {
                         var ans = "";
                         for (var i in obj) {
@@ -112,28 +116,20 @@
                         for (var i in obj.things) {
                             var thing = obj.things[i];
                             if (thing.type == "person") {
-                                ans += buildGuideText(
-                                    "world.people[" + thing.person_id + "]", 
-                                    world.people[thing.person_id] );
+                                ans += buildGuideText( "world.people[" + thing.person_id + "]" );
                             }
                             if (thing.type == "chest") {
-                                ans += buildGuideText(
-                                    "world.equipment.treasures[" + thing.treasure_id + "]", 
-                                    world.equipment.treasures[thing.treasure_id] );
+                                ans += buildGuideText( "world.equipment.treasures[" + thing.treasure_id + "]" );
                             }
                             if (thing.type == "enemy") {
-                                ans += buildGuideText(
-                                    "world.enemies[" + thing.enemy_id + "]", 
-                                    world.enemies[thing.enemy_id] );
+                                ans += buildGuideText( "world.enemies[" + thing.enemy_id + "]" );
                             }
                         }
                     }
                     if (obj.enemies && obj.background) {
                         for (var i in obj.enemies) {
                             var ei = obj.enemies[i];
-                            ans += buildGuideText(
-                                "world.enemies[" + ei + "]", 
-                                world.enemies[ei] );
+                            ans += buildGuideText( "world.enemies[" + ei + "]"  );
                         }
                     }
 
@@ -145,7 +141,7 @@
                                 var tt = obj.tiles[y][x];
                                 if (!(tt in types)) {
                                     types[tt] = true;
-                                    ans += buildGuideText("world.tile_types[" + tt + "]",world.tile_types[tt]);
+                                    ans += buildGuideText("world.tile_types[" + tt + "]");
                                 }
                             }
                         }
@@ -157,7 +153,7 @@
                 function redrawTopdown() {
                     if (!topdownWorld) return;
                     topdown_main_div.innerHTML = dawnTopDownRenderer.createMapHtmlString(topdownWorld, topdownMap,"topdownMapTileClicked");
-                    topdown_info.innerHTML = buildGuideText("world.maps[" + topdownMap + "]", topdownWorld.maps[topdownMap]);
+                    topdown_info.innerHTML = buildGuideText("world.maps[" + topdownMap + "]");
 
                     var guideText = buildGuideText("world", topdownWorld);
                     if (topdownGuideFocus) {
