@@ -17,17 +17,24 @@ var dawnRenderer_prototype = {
         this.mainContext = this.mainCanvas.getContext("2d");
         this.mainStatus = mainStatus;
 
+        var _this = this;
+        var callback = (() => {_this.redraw();});
+
+        this.images.backgrounds = [  ];
         for (var i in world.backgrounds) {
-            this.images.backgrounds[i] = this.preloadImage(world.backgrounds[i].src);
+            this.images.backgrounds.push( this.createImageLoader(world.backgrounds[i].src, callback) );
         }
+        this.images.tiles = [ ];
         for (var i in world.tile_types) {
             var src = world.tile_types[i].src;
             if (src) {
-                this.images.tiles[i] = this.preloadImage(src);
+                this.images.tiles.push( this.createImageLoader(src, callback) );
+            } else {
+                this.images.tiles.push( {tryGetImg:(()=>{return null;}) } );
             }
         }
 
-        var _this = this;
+        
         this.game.onChanged = (() => { _this.redraw(); });
     },
     redraw : function() {
@@ -42,8 +49,10 @@ var dawnRenderer_prototype = {
         var map = this.world.maps[avatar.map_id];
 
         // background:
-        var bgImg = this.images.backgrounds[map.background];
-        this.mainContext.drawImage(bgImg, 0, 0);
+        var bgImg = this.images.backgrounds[map.background].tryGetImg();
+        if (bgImg) {
+            this.mainContext.drawImage(bgImg, 0, 0);
+        }
         // visible cells:
         var cells = this.world.rendering.visible_cells_north;
         var parts = this.world.rendering.tile_parts_by_visible_cell;
@@ -54,8 +63,8 @@ var dawnRenderer_prototype = {
             if (tile === undefined) continue;
 
             var part = parts[ci];
-            var tileImg = this.images.tiles[tile.tile_type];
-            if (!tileImg || !tileImg.complete) continue;
+            var tileImg = this.images.tiles[tile.tile_type].tryGetImg();
+            if (!tileImg) continue;
             this.mainContext.drawImage(tileImg, 
                 part.src_x,  part.src_y,  part.width, part.height,
                 part.dest_x, part.dest_y, part.width, part.height);
@@ -68,8 +77,10 @@ var dawnRenderer_prototype = {
         }
         if (encounter.type == "person") {
             var person = this.game.world.people[encounter.person_id];
-            var bgImg = this.images.backgrounds[person.background];
-            this.mainContext.drawImage(bgImg, 0, 0);
+            var bgImg = this.images.backgrounds[person.background].tryGetImg();
+            if (bgImg) {
+                this.mainContext.drawImage(bgImg, 0, 0);
+            }
         }
     },
     udpateStatus : function() {
@@ -97,15 +108,32 @@ var dawnRenderer_prototype = {
         var y = avatar.y + dy;
         return this.game.getTileInfoByMapXY(avatar.map_id,x,y);
     },
-    preloadImage : function(src) {
-        var _this = this;
-        var img = new Image();
-        img.src = src;
-        img.onload = (() => {
-            _this.redraw();
-        });
-        return img;
-    }
+    createImageLoader : function(rawSrc, callback) {
+        var src = rawSrc;
+        var loader = {
+            src : ""+src,
+            ready : false,
+            img : null,
+            renderer : this,
+            tryGetImg : function() {
+                if (!this.img) {
+                    this.img = new Image();
+                    this.img.src = this.src;
+                    var _this = this;
+                    this.img.onload = (() => {
+                        _this.ready = true;
+                        if (_this.renderer) _this.renderer.redraw();
+                        if (callback) callback();
+                    });
+                }
+                if (this.ready) {
+                    return this.img;
+                }
+                return null;
+            },
+        };
+        return loader;
+    },
 };
 
 var dawnRenderer = new Object(dawnRenderer_prototype);

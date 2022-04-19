@@ -62,9 +62,10 @@ var dawnGame_prototype = {
         var avatar = this.state.avatar;
         var dirs = this.world.rendering.directions_right;
         var ndx = dirs.indexOf(avatar.facing);
-        ndx += dAngle;
+        ndx += (dAngle + dirs.length);
         ndx = (ndx % dirs.length);
         avatar.facing = dirs[ndx];
+        console.assert(avatar.facing);
     },
     onChanged : function() {
         // replaced by renderer

@@ -29,6 +29,7 @@
                     main_status.innerHTML = "Loaded.";
                     dawnGame.initFromWorld(world);
                     dawnRenderer.initFromGameWorld(dawnGame, world, main_canvas, main_status);
+                    dawnRenderer.redraw();
                 });
             }
             main_init();
