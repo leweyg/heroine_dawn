@@ -61,7 +61,7 @@
     {
       "index": 5,
       "src": "images/tiles/dungeon_ceiling.png",
-      "topdown_src": "images/topdown/tile_0078.png",
+      "topdown_src": "images/topdown/tile_0022.png",
       "walkable": true
     },
     {
@@ -85,67 +85,67 @@
     {
       "index": 9,
       "src": "images/tiles/chest_exterior.png",
-      "topdown_src": "images/topdown/tile_0116.png",
+      "topdown_src": "images/topdown/tile_0134.png",
       "walkable": true
     },
     {
       "index": 10,
       "src": "images/tiles/medieval_house.png",
-      "topdown_src": "images/topdown/tile_0117.png",
+      "topdown_src": "images/topdown/tile_0114.png",
       "walkable": false
     },
     {
       "index": 11,
       "src": "images/tiles/medieval_door.png",
-      "topdown_src": "images/topdown/tile_0016.png",
+      "topdown_src": "images/topdown/tile_0117.png",
       "walkable": true
     },
     {
       "index": 12,
       "src": "images/tiles/tree_evergreen.png",
-      "topdown_src": "images/topdown/tile_0065.png",
+      "topdown_src": "images/topdown/tile_0016.png",
       "walkable": false
     },
     {
       "index": 13,
       "src": "images/tiles/grave_cross.png",
-      "topdown_src": "images/topdown/tile_0066.png",
+      "topdown_src": "images/topdown/tile_0065.png",
       "walkable": false
     },
     {
       "index": 14,
       "src": "images/tiles/grave_stone.png",
-      "topdown_src": "images/topdown/tile_0118.png",
+      "topdown_src": "images/topdown/tile_0066.png",
       "walkable": false
     },
     {
       "index": 15,
       "src": "images/tiles/water.png",
-      "topdown_src": "images/topdown/tile_0110.png",
+      "topdown_src": "images/topdown/tile_0090.png",
       "walkable": false
     },
     {
       "index": 16,
       "src": "images/tiles/skull_pile.png",
-      "topdown_src": "images/topdown/tile_0120.png",
+      "topdown_src": "images/topdown/tile_0118.png",
       "walkable": false
     },
     {
       "index": 17,
       "src": "images/tiles/hay_pile.png",
-      "topdown_src": "images/topdown/undefined",
+      "topdown_src": "images/topdown/tile_0122.png",
       "walkable": true
     },
     {
       "index": 18,
       "src": "images/tiles/locked_door.png",
-      "topdown_src": "images/topdown/undefined",
+      "topdown_src": "images/topdown/tile_0110.png",
       "walkable": false
     },
     {
       "index": 19,
       "src": "images/tiles/death_speaker.png",
-      "topdown_src": "images/topdown/undefined",
+      "topdown_src": "images/topdown/tile_0120.png",
       "walkable": true
     }
   ],

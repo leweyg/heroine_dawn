@@ -11,6 +11,7 @@
                 return new Image();
             }
         </script>
+        <script src="web/scripts/utils.js"></script>
         <script src="original/js/power.js"></script>
         <script src="original/js/enemy.js"></script>
         <script src="original/js/atlas.js"></script>
@@ -85,40 +86,6 @@
                     type: "enemy", enemy_id:enemy_id, extra:extra
                 });
             }
-            var remove_quote = "<rmq>";
-            function custom_replacer(key,value) {
-                if (Array.isArray(value)) {
-                    for (var i in value) {
-                        if (typeof(value[i])!="number") {
-                            return value;
-                        }
-                    }
-                    //return remove_quote + JSON.stringify(value) + remove_quote;
-                    var res = "";
-                    for (var i in value) {
-                        var str = "" + value[i];
-                        if (str.length < 2) {
-                            str = " " + str;
-                        }
-                        if (i != 0) res += ",";
-                        res += str;
-                    }
-                    return remove_quote + "[" + res + "]" + remove_quote;
-                }
-                return value;
-            }
-            function replace_all(str, from, to) {
-                while (str.includes(from)) {
-                    str = str.replace(from, to);
-                }
-                return str;
-            }
-            function custom_JSON_stringify(obj) {
-                var str = JSON.stringify(obj, custom_replacer, 2);
-                str = replace_all(str, "\"" + remove_quote, "");
-                str = replace_all(str, remove_quote + "\"", "");
-                return str;
-            }
             function export_world_atlas() {
                 var world = {
                     summary : [],
@@ -148,16 +115,19 @@
                   "tile_0095.png", // wall
                   "tile_0109.png", // door
                   "tile_0058.png", // pillar
-                  "tile_0078.png",
+                  "tile_0022.png", // cieling 5
                   "tile_0019.png", // grass
                   "tile_0058.png", // pillar
                   "tile_0134.png", // chest
-                  "tile_0116.png", // house
+                  "tile_0134.png", // chest 9 interior
+                  "tile_0114.png", // house 10
                   "tile_0117.png", // house door
-                  "tile_0016.png", // tree
+                  "tile_0016.png", // tree 12
                   "tile_0065.png", // cross
                   "tile_0066.png", // grave
-                  "tile_0118.png", // skulls/log
+                  "tile_0090.png", // water 15
+                  "tile_0118.png", // skull pile
+                  "tile_0122.png", // hay pile
                   "tile_0110.png", // locked door
                   "tile_0120.png", // death speaker
                 ];
@@ -345,7 +315,7 @@
                     world.summary.push(wi);
                 }
                 // export world to JSON:
-                main_export.value = custom_JSON_stringify(world);
+                main_export.value = dawnUtils.customJsonStringify(world);
             }
         </script>
         <script>

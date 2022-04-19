@@ -26,12 +26,60 @@
             <script src="web/scripts/utils.js"></script>
             <script src="web/scripts/topdown_render.js"></script>
             <div id="topdown_main_div"></div>
+            <pre id="topdown_info"></pre>
             <script>
                 var topdownWorld = null;
                 var topdownMap = 1;
+                function topdownThingClicked(thing) {
+                    if (thing.type == "exit") {
+                        topdownMap = thing.dest_map;
+                        redrawTopdown();
+                    }
+                }
+                function topdownMapTileClicked(map_id,x,y) {
+                    var world = topdownWorld;
+                    var map = world.maps[map_id];
+                    for (var i in map.things) {
+                        var thing = map.things[i];
+                        if ((thing.x == x) && (thing.y == y)) {
+                            topdownThingClicked(thing);
+                        }
+                    }
+                }
+                function buildGuideText(title,obj) {
+                    var world = topdownWorld;
+                    var ans = "";
+                    if (obj.name) ans += obj.name + ":\n";
+                    ans += title + ":\n";
+                    ans += dawnUtils.customJsonStringify(obj);
+                    ans += "\n";
+
+                    if (obj.topdown_src) {
+                        ans += "<img src='web/" + obj.topdown_src + "' style='width:32px' />\n"
+                    }
+                    if (obj.src) {
+                        ans += "<img src='web/" + obj.src + "' />\n"
+                    }
+                    if (obj.tiles) {
+                        var types = {};
+                        for (var y=0; y<obj.height; y++) {
+                            for (var x=0; x<obj.width; x++) {
+                                var tt = obj.tiles[y][x];
+                                if (!(tt in types)) {
+                                    types[tt] = true;
+                                    ans += buildGuideText("world.tile_types[" + tt + "]",world.tile_types[tt]);
+                                }
+                            }
+                        }
+
+                    }
+
+                    return ans;
+                }
                 function redrawTopdown() {
                     if (!topdownWorld) return;
-                    topdown_main_div.innerHTML = dawnTopDownRenderer.createMapHtmlString(topdownWorld, topdownMap);
+                    topdown_main_div.innerHTML = dawnTopDownRenderer.createMapHtmlString(topdownWorld, topdownMap,"topdownMapTileClicked");
+                    topdown_info.innerHTML = buildGuideText("world.maps[" + topdownMap + "]", topdownWorld.maps[topdownMap]);
                 }
                 function initMap() {
                     dawnUtils.downloadJson("web/world.json", (world) => {
