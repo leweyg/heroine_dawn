@@ -53,15 +53,22 @@
                 }
                 function clickedGuideText(name) {
                     topdownGuideTitle = "world." + name;
-                    topdownGuideFocus = topdownWorld[name];
+                    var obj = dawnUtils.parsePath(topdownWorld, name);
+                    topdownGuideFocus = obj;
                     redrawTopdown();
                 }
                 function buildGuideText(title,obj) {
                     if (title == "world") {
                         var ans = "";
                         for (var i in obj) {
-                            if (i == "summary") continue;
-                            ans += "   <u style='cursor:pointer;' onclick=\"clickedGuideText('" + i + "')\" >" + i + "</u>\n";
+                            var name = i; //obj[i];
+                            if (i == "equipment") {
+                                for (var j in obj[name]) {
+                                    var path = "equipment." + j;
+                                    ans += "   <u style='cursor:pointer;' onclick=\"clickedGuideText('" + path + "')\" >" + j + "</u>\n";
+                                }
+                            }
+                            ans += "   <u style='cursor:pointer;' onclick=\"clickedGuideText('" + name + "')\" >" + name + "</u>\n";
                         }
                         return ans;
                     }
@@ -96,7 +103,7 @@
                         ans += "<img src='web/" + obj.image_src + "' />\n"
                     }
 
-                    ans += "@" + title + ":\n";
+                    ans += "" + title + " : ";
                     ans += dawnUtils.customJsonStringify(obj);
                     ans += "\n";
                     ans += "<br/>";
@@ -171,7 +178,7 @@
         <div>
             <h3>Credits</h3>
             <p><i>
-Heroine Dawn was adapted by <a href="http://lewcid.com/">Lewey Geselowitz</a> from <a href="https://github.com/clintbellanger/heroine-dusk">Heroine Dusk</a>.<br/>
+Heroine Dawn was adapted by <a href="http://lewcid.com/">Lewey Geselowitz</a> <a href="http://lewcid.com/">http://lewcid.com</a><br/>
 Heroine Dusk is created by Clint Bellanger <a href="http://clintbellanger.net">http://clintbellanger.net</a><br/>
 Heroine Dusk features music by Yubatake <a href="http://opengameart.org/users/yubatake">http://opengameart.org/users/yubatake</a> </i></p>
         </div>

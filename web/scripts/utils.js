@@ -50,6 +50,24 @@ var dawnUtils_prototype = {
         }
         return str;
     },
+    parsePath : function(root,path) {
+        var parts = path.split(".");
+        for (var i in parts) {
+            var prop = parts[i];
+            var index = null;
+            if (prop.endsWith("]")) {
+                var mid = prop.indexOf("[");
+                prop = prop.substring(0,mid);
+                index = prop.substring(mid+1).substring(0,-1);
+            }
+            console.assert(prop in root);
+            root = root[prop];
+            if (index) {
+                root = root[index];
+            }
+        }
+        return root;
+    },
 };
 
 var dawnUtils = new Object(dawnUtils_prototype);
