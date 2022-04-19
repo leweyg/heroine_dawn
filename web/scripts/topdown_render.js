@@ -12,8 +12,11 @@ var dawnTopDownRenderer_prototype = {
                 var tile = world.tile_types[tile_type];
                 res += "<img src='web/" + tile.topdown_src + "' style='position: absolute;";
                 res += "left:" + (16 * x) + "px; top:" + (16 * y) + "px;";
-                if (!dawnTopDownRenderer.isThingAtXY(world,map_id,x,y)) {
+                var thing = dawnTopDownRenderer.isThingAtXY(world,map_id,x,y);
+                if (!thing) {
                     res += "opacity:50%;"
+                } else if (thing.type != "exit") {
+                    res += "opacity:75%;"
                 }
                 res += "' ";
                 if (callback_name) {
@@ -34,7 +37,14 @@ var dawnTopDownRenderer_prototype = {
             }
         }
         return null;
-    }
+    },
+    createCroppedImage : function(path,x,y,width,height) {
+        var ans = "<div style='width:" + width + "px;height:"+height+"px;overflow:hidden;position:relative;'>";
+        ans += "<img src='" + path + "' style='position: absolute;";
+        ans += "left:" + (x) + "px; top:" + (y) + "px;";
+        ans += "' /></div>";
+        return ans;
+    },
 };
 
 var dawnTopDownRenderer = new Object(dawnTopDownRenderer_prototype);

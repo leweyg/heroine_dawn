@@ -23,6 +23,7 @@
         </div>
         <div>
             <h3>Game Guide</h3>
+            <p>Click tiles to explore the map:</p>
             <script src="web/scripts/utils.js"></script>
             <script src="web/scripts/topdown_render.js"></script>
             <div id="topdown_main_div"></div>
@@ -49,18 +50,63 @@
                 function buildGuideText(title,obj) {
                     var world = topdownWorld;
                     var ans = "";
-                    if (obj.name) ans += obj.name + ":\n";
-                    ans += title + ":\n";
-                    ans += dawnUtils.customJsonStringify(obj);
-                    ans += "\n";
-
+                    if (obj.name) ans += "<u>" + obj.name + "</u>\n";
+                    if (obj.background) {
+                        ans += "<img src='web/" + world.backgrounds[obj.background].src + "' />\n"
+                    }
+                    if (title.startsWith("world.equipment.treasures")) {
+                        var tId = obj.index;
+                        if (tId == 0) tId = 4;
+                        var tData = world.rendering.treasures;
+                        var xoffset = -tId * tData.icon_width;
+                        ans += dawnTopDownRenderer.createCroppedImage('web/' + tData.src, xoffset, 0, tData.icon_width, tData.icon_height) + "\n";
+                    }
                     if (obj.topdown_src) {
                         ans += "<img src='web/" + obj.topdown_src + "' style='width:32px' />\n"
                     }
                     if (obj.src) {
                         ans += "<img src='web/" + obj.src + "' />\n"
                     }
-                    if (obj.tiles) {
+                    if (obj.image_src) {
+                        ans += "<img src='web/" + obj.image_src + "' />\n"
+                    }
+
+                    ans += "@" + title + ":\n";
+                    ans += dawnUtils.customJsonStringify(obj);
+                    ans += "\n";
+                    ans += "<br/>";
+
+                    if (obj.things) {
+                        for (var i in obj.things) {
+                            var thing = obj.things[i];
+                            if (thing.type == "person") {
+                                ans += buildGuideText(
+                                    "world.people[" + thing.person_id + "]", 
+                                    world.people[thing.person_id] );
+                            }
+                            if (thing.type == "chest") {
+                                ans += buildGuideText(
+                                    "world.equipment.treasures[" + thing.treasure_id + "]", 
+                                    world.equipment.treasures[thing.treasure_id] );
+                            }
+                            if (thing.type == "enemy") {
+                                ans += buildGuideText(
+                                    "world.enemies[" + thing.enemy_id + "]", 
+                                    world.enemies[thing.enemy_id] );
+                            }
+                        }
+                    }
+                    if (obj.enemies) {
+                        for (var i in obj.enemies) {
+                            var ei = obj.enemies[i];
+                            ans += buildGuideText(
+                                "world.enemies[" + ei + "]", 
+                                world.enemies[ei] );
+                        }
+                    }
+
+                    var showTileTypes = false;
+                    if (showTileTypes && obj.tiles) {
                         var types = {};
                         for (var y=0; y<obj.height; y++) {
                             for (var x=0; x<obj.width; x++) {
