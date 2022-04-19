@@ -81,6 +81,7 @@
                     delete item.name;
                     delete item.stat;
                     item.treasure_id = tr.index;
+                    item.type = "treasure";
                     item.ref = "world.equipment.treasures[" + tr.index + "]";
                     found = true;
                   }
@@ -334,6 +335,22 @@
                 console.assert(world.font.glyph.length == world.font.width.length);
                 // export rendering data:
                 world.rendering = renderer;
+                var sheetNames = {};
+                for (var i in world.rendering.sheets) {
+                  sheetNames[world.rendering.sheets[i].name] = i;
+                }
+                world.rendering.sheets_by_name = sheetNames;
+                // clean equipment:
+                for (var cat in world.equipment) {
+                  var typeName = cat.substring(0,cat.length-1);
+                  var group = world.equipment[cat];
+                  for (var j in group) {
+                    var item = group[j];
+                    item.type = typeName;
+                    var sheetId = world.rendering.sheets_by_name[item.type];
+                    item.ref_sheet = "world.rendering.sheets[" + sheetId + "]";
+                  }
+                }
                 // build summary:
                 for (var wi in world) {
                     world.summary.push(wi);
@@ -369,31 +386,65 @@
 }
         </script>
         <script>
-  var renderer = {
-    avatar:{
+  var spritesheets = [
+    {
+      "name":"avatar",
       src : "images/interface/heroine.png",
+      start_x : 0,
+      start_y : 0,
+      width : 80,
+      height : 100,
+      count : 1,
+      draw_x : 40,
+      draw_y : 20,
+    },
+    {
+      "name":"armor",
+      src : "images/interface/heroine.png",
+      start_x : 0,
+      start_y : 0,
       width : 80,
       height : 100,
       count : 8,
       draw_x : 40,
       draw_y : 20,
-      armor_src_y : 0,
-      weapon_src_y : 100,
     },
-    treasures:{
-      src:"images/treasure/treasure.png",
-      icon_width:32,
-      icon_height:32,
-      screen_x:64,
-      screen_y:84,
+    {
+      "name":"weapon",
+      src : "images/interface/heroine.png",
+      start_x : 0,
+      start_y : 100,
+      width : 80,
+      height : 100,
+      count : 8,
+      draw_x : 40,
+      draw_y : 20,
     },
-    spells:{
-      src:"web/images/interface/action_buttons.png",
-      icon_width:16,
-      icon_height:16,
-      count:8,
-      spell_offset:1,
+    {
+      "name":"treasure",
+      src : "images/treasure/treasure.png",
+      start_x : 0,
+      start_y : 0,
+      width : 32,
+      height : 32,
+      count : 16,
+      draw_x : 64,
+      draw_y : 84,
     },
+    {
+      "name":"spell",
+      src : "images/interface/action_buttons.png",
+      start_x : 16,
+      start_y : 0,
+      width : 16,
+      height : 16,
+      count : 8,
+      draw_x : 0,
+      draw_y : 0,
+    },
+  ];
+  var renderer = {
+    sheets : spritesheets,
     "directions_right" : [ "north", "east", "south", "west" ],
     "visible_cells_north": [
       {

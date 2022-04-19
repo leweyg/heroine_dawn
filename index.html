@@ -108,23 +108,11 @@
                     if (obj.background) {
                         ans += "<img src='web/" + world.backgrounds[obj.background].src + "' />\n"
                     }
-                    if (title.startsWith("world.equipment.treasures")) {
+                    if (obj.ref_sheet) {
                         var tId = obj.index;
-                        var tData = world.rendering.treasures;
-                        var xoffset = tId * tData.icon_width;
-                        ans += dawnTopDownRenderer.createCroppedImage('web/' + tData.src, xoffset, 0, tData.icon_width, tData.icon_height) + "\n";
-                    }
-                    if (title.startsWith("world.equipment.armors")) {
-                        var tId = obj.index;
-                        var tData = world.rendering.avatar;
-                        var xoffset = tId * tData.width;
-                        ans += dawnTopDownRenderer.createCroppedImage('web/' + tData.src, xoffset, tData.armor_src_y, tData.width, tData.height) + "\n";
-                    }
-                    if (title.startsWith("world.equipment.weapons")) {
-                        var tId = obj.index;
-                        var tData = world.rendering.avatar;
-                        var xoffset = tId * tData.width;
-                        ans += dawnTopDownRenderer.createCroppedImage('web/' + tData.src, xoffset, tData.weapon_src_y, tData.width, tData.height) + "\n";
+                        var tData = dawnUtils.parsePath({world:topdownWorld}, obj.ref_sheet);
+                        var xoffset = tData.start_x + (tId * tData.width);
+                        ans += dawnTopDownRenderer.createCroppedImage('web/' + tData.src, xoffset, tData.start_y, tData.width, tData.height) + "\n";
                     }
                     if (obj.topdown_src) {
                         ans += "<img src='web/" + obj.topdown_src + "' style='width:32px' />\n"

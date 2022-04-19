@@ -201,87 +201,119 @@
         "index": 0,
         "name": "Gold",
         "gold": 1,
-        "stat": "gold"
+        "stat": "gold",
+        "type": "treasure",
+        "ref_sheet": "world.rendering.sheets[3]"
       },
       {
         "index": 1,
         "name": "Gold (2)",
         "add": 2,
-        "stat": "gold"
+        "stat": "gold",
+        "type": "treasure",
+        "ref_sheet": "world.rendering.sheets[3]"
       },
       {
         "index": 2,
         "name": "Gold (4)",
         "add": 4,
-        "stat": "gold"
+        "stat": "gold",
+        "type": "treasure",
+        "ref_sheet": "world.rendering.sheets[3]"
       },
       {
         "index": 3,
         "name": "Gold (8)",
         "add": 8,
-        "stat": "gold"
+        "stat": "gold",
+        "type": "treasure",
+        "ref_sheet": "world.rendering.sheets[3]"
       },
       {
         "index": 4,
         "name": "Gold (16)",
         "add": 16,
-        "stat": "gold"
+        "stat": "gold",
+        "type": "treasure",
+        "ref_sheet": "world.rendering.sheets[3]"
       },
       {
         "index": 5,
-        "name": "Chalice"
+        "name": "Chalice",
+        "type": "treasure",
+        "ref_sheet": "world.rendering.sheets[3]"
       },
       {
         "index": 6,
-        "name": "Bars of Gold"
+        "name": "Bars of Gold",
+        "type": "treasure",
+        "ref_sheet": "world.rendering.sheets[3]"
       },
       {
         "index": 7,
-        "name": "Gold Chest"
+        "name": "Gold Chest",
+        "type": "treasure",
+        "ref_sheet": "world.rendering.sheets[3]"
       },
       {
         "index": 8,
-        "name": "Crown"
+        "name": "Crown",
+        "type": "treasure",
+        "ref_sheet": "world.rendering.sheets[3]"
       },
       {
         "index": 9,
-        "name": "Riches"
+        "name": "Riches",
+        "type": "treasure",
+        "ref_sheet": "world.rendering.sheets[3]"
       },
       {
         "index": 10,
         "name": "Wood Stick",
         "stat": "weapon",
-        "min_value": 1
+        "min_value": 1,
+        "type": "treasure",
+        "ref_sheet": "world.rendering.sheets[3]"
       },
       {
         "index": 11,
         "name": "Spellbook: Heal",
         "stat": "spellbook",
-        "min_value": 1
+        "min_value": 1,
+        "type": "treasure",
+        "ref_sheet": "world.rendering.sheets[3]"
       },
       {
         "index": 12,
         "name": "Magic Sapphire (MP Up)",
         "stat": "mp",
-        "add": 2
+        "add": 2,
+        "type": "treasure",
+        "ref_sheet": "world.rendering.sheets[3]"
       },
       {
         "index": 13,
         "name": "Magic Emerald (HP Up)",
         "stat": "hp",
-        "add": 5
+        "add": 5,
+        "type": "treasure",
+        "ref_sheet": "world.rendering.sheets[3]"
       },
       {
         "index": 14,
         "name": "Magic Ruby (Atk Up)",
         "stat": "bonus_atk",
-        "add": 1
+        "add": 1,
+        "type": "treasure",
+        "ref_sheet": "world.rendering.sheets[3]"
       },
       {
         "index": 15,
         "name": "Magic Diamond (Def Up)",
         "stat": "bonus_def",
-        "add": 1
+        "add": 1,
+        "type": "treasure",
+        "ref_sheet": "world.rendering.sheets[3]"
       }
     ],
     "weapons": [
@@ -290,56 +322,72 @@
         "atk_min": 1,
         "atk_max": 4,
         "gold": 0,
-        "index": 0
+        "index": 0,
+        "type": "weapon",
+        "ref_sheet": "world.rendering.sheets[2]"
       },
       {
         "name": "Wood Stick",
         "atk_min": 2,
         "atk_max": 6,
         "gold": 0,
-        "index": 1
+        "index": 1,
+        "type": "weapon",
+        "ref_sheet": "world.rendering.sheets[2]"
       },
       {
         "name": "Iron Knife",
         "atk_min": 3,
         "atk_max": 8,
         "gold": 50,
-        "index": 2
+        "index": 2,
+        "type": "weapon",
+        "ref_sheet": "world.rendering.sheets[2]"
       },
       {
         "name": "Bronze Mace",
         "atk_min": 4,
         "atk_max": 10,
         "gold": 200,
-        "index": 3
+        "index": 3,
+        "type": "weapon",
+        "ref_sheet": "world.rendering.sheets[2]"
       },
       {
         "name": "Steel Sword",
         "atk_min": 5,
         "atk_max": 12,
         "gold": 1000,
-        "index": 4
+        "index": 4,
+        "type": "weapon",
+        "ref_sheet": "world.rendering.sheets[2]"
       },
       {
         "name": "War Hammer",
         "atk_min": 6,
         "atk_max": 14,
         "gold": 5000,
-        "index": 5
+        "index": 5,
+        "type": "weapon",
+        "ref_sheet": "world.rendering.sheets[2]"
       },
       {
         "name": "Battle Axe",
         "atk_min": 7,
         "atk_max": 16,
         "gold": 20000,
-        "index": 6
+        "index": 6,
+        "type": "weapon",
+        "ref_sheet": "world.rendering.sheets[2]"
       },
       {
         "name": "Great Sword",
         "atk_min": 8,
         "atk_max": 18,
         "gold": 100000,
-        "index": 7
+        "index": 7,
+        "type": "weapon",
+        "ref_sheet": "world.rendering.sheets[2]"
       }
     ],
     "armors": [
@@ -347,86 +395,116 @@
         "name": "No Armor",
         "def": 0,
         "gold": 0,
-        "index": 0
+        "index": 0,
+        "type": "armor",
+        "ref_sheet": "world.rendering.sheets[1]"
       },
       {
         "name": "Serf Rags",
         "def": 2,
         "gold": 0,
-        "index": 1
+        "index": 1,
+        "type": "armor",
+        "ref_sheet": "world.rendering.sheets[1]"
       },
       {
         "name": "Travel Cloak",
         "def": 4,
         "gold": 50,
-        "index": 2
+        "index": 2,
+        "type": "armor",
+        "ref_sheet": "world.rendering.sheets[1]"
       },
       {
         "name": "Hide Cuirass",
         "def": 6,
         "gold": 200,
-        "index": 3
+        "index": 3,
+        "type": "armor",
+        "ref_sheet": "world.rendering.sheets[1]"
       },
       {
         "name": "Rivet Leather",
         "def": 8,
         "gold": 1000,
-        "index": 4
+        "index": 4,
+        "type": "armor",
+        "ref_sheet": "world.rendering.sheets[1]"
       },
       {
         "name": "Chain Maille",
         "def": 10,
         "gold": 5000,
-        "index": 5
+        "index": 5,
+        "type": "armor",
+        "ref_sheet": "world.rendering.sheets[1]"
       },
       {
         "name": "Plate Armor",
         "def": 12,
         "gold": 20000,
-        "index": 6
+        "index": 6,
+        "type": "armor",
+        "ref_sheet": "world.rendering.sheets[1]"
       },
       {
         "name": "Wyvern Scale",
         "def": 14,
         "gold": 100000,
-        "index": 7
+        "index": 7,
+        "type": "armor",
+        "ref_sheet": "world.rendering.sheets[1]"
       }
     ],
     "spells": [
       {
         "name": "No Spell",
         "gold": 0,
-        "index": 0
+        "index": 0,
+        "type": "spell",
+        "ref_sheet": "world.rendering.sheets[4]"
       },
       {
         "name": "Heal",
         "gold": 0,
-        "index": 1
+        "index": 1,
+        "type": "spell",
+        "ref_sheet": "world.rendering.sheets[4]"
       },
       {
         "name": "Burn",
         "gold": 100,
-        "index": 2
+        "index": 2,
+        "type": "spell",
+        "ref_sheet": "world.rendering.sheets[4]"
       },
       {
         "name": "Unlock",
         "gold": 500,
-        "index": 3
+        "index": 3,
+        "type": "spell",
+        "ref_sheet": "world.rendering.sheets[4]"
       },
       {
         "name": "Light",
         "gold": 2500,
-        "index": 4
+        "index": 4,
+        "type": "spell",
+        "ref_sheet": "world.rendering.sheets[4]"
       },
       {
         "name": "Freeze",
         "gold": 10000,
-        "index": 5
+        "index": 5,
+        "type": "spell",
+        "ref_sheet": "world.rendering.sheets[4]"
       },
       {
         "name": "Reflect",
         "gold": 50000,
-        "index": 6
+        "index": 6,
+        "type": "spell",
+        "ref_sheet": "world.rendering.sheets[4]"
       }
     ]
   },
@@ -795,7 +873,7 @@
       ],
       "things": [
         {
-          "type": "chest",
+          "type": "treasure",
           "count": 1,
           "treasure_id": 10,
           "ref": "world.equipment.treasures[10]",
@@ -831,7 +909,7 @@
       ],
       "things": [
         {
-          "type": "chest",
+          "type": "treasure",
           "count": 1,
           "treasure_id": 11,
           "ref": "world.equipment.treasures[11]",
@@ -886,7 +964,7 @@
           "y": 1
         },
         {
-          "type": "chest",
+          "type": "treasure",
           "count": 1,
           "treasure_id": 13,
           "ref": "world.equipment.treasures[13]",
@@ -972,7 +1050,7 @@
           "y": 8
         },
         {
-          "type": "chest",
+          "type": "treasure",
           "count": 10,
           "treasure_id": 0,
           "ref": "world.equipment.treasures[0]",
@@ -1027,7 +1105,7 @@
           "y": 2
         },
         {
-          "type": "chest",
+          "type": "treasure",
           "count": 1,
           "treasure_id": 12,
           "ref": "world.equipment.treasures[12]",
@@ -1095,7 +1173,7 @@
           "y": 5
         },
         {
-          "type": "chest",
+          "type": "treasure",
           "count": 1,
           "treasure_id": 15,
           "ref": "world.equipment.treasures[15]",
@@ -1131,7 +1209,7 @@
       ],
       "things": [
         {
-          "type": "chest",
+          "type": "treasure",
           "count": 1,
           "treasure_id": 14,
           "ref": "world.equipment.treasures[14]",
@@ -1181,7 +1259,7 @@
           "y": 7
         },
         {
-          "type": "chest",
+          "type": "treasure",
           "count": 25,
           "treasure_id": 0,
           "ref": "world.equipment.treasures[0]",
@@ -1195,7 +1273,7 @@
           "y": 9
         },
         {
-          "type": "chest",
+          "type": "treasure",
           "count": 1,
           "treasure_id": 12,
           "ref": "world.equipment.treasures[12]",
@@ -1313,7 +1391,7 @@
           "y": 2
         },
         {
-          "type": "chest",
+          "type": "treasure",
           "count": 1,
           "treasure_id": 13,
           "ref": "world.equipment.treasures[13]",
@@ -1321,7 +1399,7 @@
           "y": 2
         },
         {
-          "type": "chest",
+          "type": "treasure",
           "count": 100,
           "treasure_id": 0,
           "ref": "world.equipment.treasures[0]",
@@ -1396,30 +1474,63 @@
     "width": [ 4, 7, 9, 7,10, 9, 4, 5, 5, 6, 8, 5, 6, 4, 6, 7, 4, 7, 7, 7, 7, 7, 7, 7, 7, 4, 4, 6, 6, 6, 8, 8, 7, 7, 7, 7, 7, 7, 7, 7, 4, 7, 7, 7, 9, 8, 7, 7, 8, 7, 7, 8, 7, 7, 9, 7, 8, 7, 5, 6, 5, 8, 6, 5, 5, 4, 5, 9]
   },
   "rendering": {
-    "avatar": {
-      "src": "images/interface/heroine.png",
-      "width": 80,
-      "height": 100,
-      "count": 8,
-      "draw_x": 40,
-      "draw_y": 20,
-      "armor_src_y": 0,
-      "weapon_src_y": 100
-    },
-    "treasures": {
-      "src": "images/treasure/treasure.png",
-      "icon_width": 32,
-      "icon_height": 32,
-      "screen_x": 64,
-      "screen_y": 84
-    },
-    "spells": {
-      "src": "web/images/interface/action_buttons.png",
-      "icon_width": 16,
-      "icon_height": 16,
-      "count": 8,
-      "spell_offset": 1
-    },
+    "sheets": [
+      {
+        "name": "avatar",
+        "src": "images/interface/heroine.png",
+        "start_x": 0,
+        "start_y": 0,
+        "width": 80,
+        "height": 100,
+        "count": 1,
+        "draw_x": 40,
+        "draw_y": 20
+      },
+      {
+        "name": "armor",
+        "src": "images/interface/heroine.png",
+        "start_x": 0,
+        "start_y": 0,
+        "width": 80,
+        "height": 100,
+        "count": 8,
+        "draw_x": 40,
+        "draw_y": 20
+      },
+      {
+        "name": "weapon",
+        "src": "images/interface/heroine.png",
+        "start_x": 0,
+        "start_y": 100,
+        "width": 80,
+        "height": 100,
+        "count": 8,
+        "draw_x": 40,
+        "draw_y": 20
+      },
+      {
+        "name": "treasure",
+        "src": "images/treasure/treasure.png",
+        "start_x": 0,
+        "start_y": 0,
+        "width": 32,
+        "height": 32,
+        "count": 16,
+        "draw_x": 64,
+        "draw_y": 84
+      },
+      {
+        "name": "spell",
+        "src": "images/interface/action_buttons.png",
+        "start_x": 16,
+        "start_y": 0,
+        "width": 16,
+        "height": 16,
+        "count": 8,
+        "draw_x": 0,
+        "draw_y": 0
+      }
+    ],
     "directions_right": [
       "north",
       "east",
@@ -1624,6 +1735,13 @@
         "dest_x": 0,
         "dest_y": 0
       }
-    ]
+    ],
+    "sheets_by_name": {
+      "avatar": "0",
+      "armor": "1",
+      "weapon": "2",
+      "treasure": "3",
+      "spell": "4"
+    }
   }
 }
