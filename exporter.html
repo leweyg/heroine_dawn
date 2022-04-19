@@ -86,11 +86,17 @@
                     type: "enemy", enemy_id:enemy_id, extra:extra
                 });
             }
+            function add_array_indices(ar) {
+              for (var i in ar) {
+                ar[i].index = 1*i;
+              }
+              return ar;
+            }
             function export_world_atlas() {
                 var world = {
                     summary : [],
                     backgrounds : [],
-                    tile_types : [ { index:0, walkable: false, } ],
+                    tile_types : [ { index:0, walkable: false, name:"Empty", } ],
                     avatar : avatar_default(),
                     equipment : {},
                     people : [],
@@ -105,6 +111,7 @@
                     var from = tileset.background_img[bi];
                     var to = {
                         index : bi*1,
+                        name : dawnUtils.cleanPathToName(from.src),
                         src : from.src
                     };
                     world.backgrounds.push(to);
@@ -134,6 +141,7 @@
                 for (var ti in tileset.tile_img) {
                     var from = tileset.tile_img[ti];
                     var to = {
+                        name: dawnUtils.cleanPathToName(from.src),
                         index: ti*1,
                         src : from.src,
                         topdown_src : "images/topdown/" + topdown_paths[ti],
@@ -193,9 +201,9 @@
                   world.equipment.treasures.push(treasure);
                 }
                 
-                world.equipment.weapons = info.weapons;
-                world.equipment.armors = info.armors;
-                world.equipment.spells = info.spells;
+                world.equipment.weapons = add_array_indices(info.weapons);
+                world.equipment.armors = add_array_indices(info.armors);
+                world.equipment.spells = add_array_indices(info.spells);
                 // export npcs:
                 enemy_init();
                 var powers_by_id = [ "attack", "fire", "hpdrain", "mpdrain" ];
@@ -548,6 +556,16 @@
       icon_height:32,
       screen_x:64,
       screen_y:84,
+    },
+    avatar:{
+      src : "images/interface/heroine.png",
+      width : 80,
+      height : 100,
+      count : 8,
+      draw_x : 40,
+      draw_y : 20,
+      armor_src_y : 0,
+      weapon_src_y : 100,
     }
   }
         </script>

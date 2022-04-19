@@ -41,7 +41,7 @@ var dawnTopDownRenderer_prototype = {
     createCroppedImage : function(path,x,y,width,height) {
         var ans = "<div style='width:" + width + "px;height:"+height+"px;overflow:hidden;position:relative;'>";
         ans += "<img src='" + path + "' style='position: absolute;";
-        ans += "left:" + (x) + "px; top:" + (y) + "px;";
+        ans += "left:" + (-1*x) + "px; top:" + (-1*y) + "px;";
         ans += "' /></div>";
         return ans;
     },

@@ -68,6 +68,25 @@ var dawnUtils_prototype = {
         }
         return root;
     },
+    cleanPathToName : function(path) {
+        if (path.includes("/")) {
+            path = path.substring(path.lastIndexOf("/")+1);
+        }
+        if (path.includes(".")) {
+            path = path.substring(0,path.indexOf("."));
+        }
+        var ans = "";
+        var parts = path.split("_");
+        for (var i in parts) {
+            var p = parts[i];
+            p = p.substring(0,1).toUpperCase() + p.substring(1);
+            if (i != 0) {
+                ans += " ";
+            }
+            ans += p;
+        }
+        return ans;
+    },
 };
 
 var dawnUtils = new Object(dawnUtils_prototype);

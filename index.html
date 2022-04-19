@@ -22,12 +22,12 @@
                 by <a href="https://clintbellanger.net/">Clink Bellanger</a>. </p>
         </div>
         <div>
-            <h3>Game Guide</h3>
+            <h3>World Guide</h3>
             <script src="web/scripts/utils.js"></script>
             <script src="web/scripts/topdown_render.js"></script>
-            <p>Full game guide:</p>
             <pre id="topdown_whole"></pre>
-            <p>Map explorer:</p>
+            <h3>Map Explorer</h3>
+                <p>Click doors to explore and see details below:</p>
             <div id="topdown_main_div"></div>
             <pre id="topdown_info"></pre>
             <script>
@@ -67,6 +67,10 @@
                                     var path = "equipment." + j;
                                     ans += "   <u style='cursor:pointer;' onclick=\"clickedGuideText('" + path + "')\" >" + j + "</u>\n";
                                 }
+                                continue;
+                            }
+                            if ((i == "summary")) {
+                                continue;
                             }
                             ans += "   <u style='cursor:pointer;' onclick=\"clickedGuideText('" + name + "')\" >" + name + "</u>\n";
                         }
@@ -92,10 +96,21 @@
                     }
                     if (title.startsWith("world.equipment.treasures")) {
                         var tId = obj.index;
-                        if (tId == 0) tId = 4;
                         var tData = world.rendering.treasures;
-                        var xoffset = -tId * tData.icon_width;
+                        var xoffset = tId * tData.icon_width;
                         ans += dawnTopDownRenderer.createCroppedImage('web/' + tData.src, xoffset, 0, tData.icon_width, tData.icon_height) + "\n";
+                    }
+                    if (title.startsWith("world.equipment.armors")) {
+                        var tId = obj.index;
+                        var tData = world.rendering.avatar;
+                        var xoffset = tId * tData.width;
+                        ans += dawnTopDownRenderer.createCroppedImage('web/' + tData.src, xoffset, tData.armor_src_y, tData.width, tData.height) + "\n";
+                    }
+                    if (title.startsWith("world.equipment.weapons")) {
+                        var tId = obj.index;
+                        var tData = world.rendering.avatar;
+                        var xoffset = tId * tData.width;
+                        ans += dawnTopDownRenderer.createCroppedImage('web/' + tData.src, xoffset, tData.weapon_src_y, tData.width, tData.height) + "\n";
                     }
                     if (obj.topdown_src) {
                         ans += "<img src='web/" + obj.topdown_src + "' style='width:32px' />\n"
@@ -130,6 +145,20 @@
                         for (var i in obj.enemies) {
                             var ei = obj.enemies[i];
                             ans += buildGuideText( "world.enemies[" + ei + "]"  );
+                        }
+                    }
+                    if (title.startsWith("world.people")) {
+                        for (var i in obj.item) {
+                            var item = obj.item[i];
+                            if (item.type == "weapon") {
+                                ans += buildGuideText( "world.equipment.weapons[" + item.value + "]"  );
+                            }
+                            if (item.type == "armor") {
+                                ans += buildGuideText( "world.equipment.armors[" + item.value + "]"  );
+                            }
+                            if (item.type == "spell") {
+                                ans += buildGuideText( "world.equipment.spells[" + item.value + "]"  );
+                            }
                         }
                     }
 
@@ -174,7 +203,7 @@
         <div>
             <h3>Credits</h3>
             <p><i>
-Heroine Dawn was adapted by <a href="http://lewcid.com/">Lewey Geselowitz</a> <a href="http://lewcid.com/">http://lewcid.com</a><br/>
+Heroine Dawn was adapted by Lewey Geselowitz <a href="http://lewcid.com/">http://lewcid.com</a><br/>
 Heroine Dusk is created by Clint Bellanger <a href="http://clintbellanger.net">http://clintbellanger.net</a><br/>
 Heroine Dusk features music by Yubatake <a href="http://opengameart.org/users/yubatake">http://opengameart.org/users/yubatake</a> </i></p>
         </div>
