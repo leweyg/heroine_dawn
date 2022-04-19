@@ -44,6 +44,13 @@
                     var from = shop.item[i];
                     if (!from) continue;
                     from.type = item_type_to_name[from.type];
+                    if ((from.type=="weapon")||(from.type=="armor")||(from.type=="spell")) {
+                      if (from.value==undefined) {
+                        from.type = "message";
+                      } else {
+                        from.ref = "world.equipment." + from.type + "s[" + from.value + "]";
+                      }
+                    }
                     items.push(from);
                 }
                 shop.item = items;
@@ -74,6 +81,7 @@
                     delete item.name;
                     delete item.stat;
                     item.treasure_id = tr.index;
+                    item.ref = "world.equipment.treasures[" + tr.index + "]";
                     found = true;
                   }
                 }
@@ -83,7 +91,8 @@
             }
             function mapscript_place_enemy(x, y, enemy_id, extra) {
                 mapscript_place_generic(x,y, {
-                    type: "enemy", enemy_id:enemy_id, extra:extra
+                    type: "enemy", enemy_id:enemy_id, extra:extra,
+                    ref: "world.enemies[" + enemy_id + "]",
                 });
             }
             function add_array_indices(ar) {
@@ -248,6 +257,7 @@
                         var tile = to.tiles[ex.exit_y][ex.exit_x];
                         var exit = clean_obj(ex);
                         exit.type = 'exit';
+                        exit.ref = "world.maps[" + exit.dest_map + "]";
                         tile.thing = exit;
                     }
                     // export shops:
@@ -257,7 +267,11 @@
                         var person = clean_shop( shop[ex.shop_id] );
                         person.index = world.people.length;
                         world.people.push(person);
-                        tile.thing = {type:"person", person_id:person.index };
+                        tile.thing = {
+                          type:"person", 
+                          person_id:person.index,
+                          ref:"world.people[" + person.index + "]",
+                         };
                     }
                     // export items:
                     mapscript_export(1*mi, to);
@@ -347,11 +361,40 @@
   avatar.bonus_def = 0;
   avatar.spellbook = 0;
   avatar.sleeploc = [0,1,1]; // map_id, x, y
+  avatar.type_map_id = "world.maps";
+  avatar.type_weapon = "world.equipment.weapons";
+  avatar.type_armor = "world.equipment.armors";
+  avatar.type_spellbook = "world.equipment.spells";
   return avatar;
 }
         </script>
         <script>
   var renderer = {
+    avatar:{
+      src : "images/interface/heroine.png",
+      width : 80,
+      height : 100,
+      count : 8,
+      draw_x : 40,
+      draw_y : 20,
+      armor_src_y : 0,
+      weapon_src_y : 100,
+    },
+    treasures:{
+      src:"images/treasure/treasure.png",
+      icon_width:32,
+      icon_height:32,
+      screen_x:64,
+      screen_y:84,
+    },
+    spells:{
+      src:"web/images/interface/action_buttons.png",
+      icon_width:16,
+      icon_height:16,
+      count:8,
+      spell_offset:1,
+    },
+    "directions_right" : [ "north", "east", "south", "west" ],
     "visible_cells_north": [
       {
         "dx": -2,
@@ -551,24 +594,7 @@
         "dest_y": 0
       }
     ],
-    "directions_right" : [ "north", "east", "south", "west" ],
-    treasures:{
-      src:"images/treasure/treasure.png",
-      icon_width:32,
-      icon_height:32,
-      screen_x:64,
-      screen_y:84,
-    },
-    avatar:{
-      src : "images/interface/heroine.png",
-      width : 80,
-      height : 100,
-      count : 8,
-      draw_x : 40,
-      draw_y : 20,
-      armor_src_y : 0,
-      weapon_src_y : 100,
-    }
+
   }
         </script>
         <script>
