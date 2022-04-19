@@ -19,6 +19,11 @@ var dawnGame_prototype = {
         this.onChanged();
     },
     onInnerAction : function(act) {
+        if (this.state.encounter) {
+            if (dawnThings.encounterRecivesInput(this,this.state.encounter,act)) {
+                return;
+            }
+        }
         var avatar = this.state.avatar;
         switch (act) {
             case "forward":
@@ -45,15 +50,21 @@ var dawnGame_prototype = {
             case "left":
             case "right":
                 {
-                    var dirs = this.world.rendering.directions_right;
-                    var ndx = dirs.indexOf(avatar.facing);
-                    if (act == "right") ndx += 1;
-                    if (act == "left") ndx += (dirs.length - 1);
-                    ndx = (ndx % dirs.length);
-                    avatar.facing = dirs[ndx];
+                    var dr = 0;
+                    if (act == "right") dr = 1;
+                    if (act == "left") dr = -1;
+                    this.rotateAvatar(dr);
                 }
                 break;
         }
+    },
+    rotateAvatar : function(dAngle) {
+        var avatar = this.state.avatar;
+        var dirs = this.world.rendering.directions_right;
+        var ndx = dirs.indexOf(avatar.facing);
+        ndx += dAngle;
+        ndx = (ndx % dirs.length);
+        avatar.facing = dirs[ndx];
     },
     onChanged : function() {
         // replaced by renderer

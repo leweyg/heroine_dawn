@@ -1,11 +1,26 @@
 
 var dawnThings_prototype = {
+    encounterRecivesInput : function(game,encounter,act) {
+        if ((encounter.type == "chest") || (encounter.stat=="gold")) {
+            return false;
+        }
+        if ((encounter.type == "person")) {
+            game.state.encounter = null; // now let them go
+            return true;
+        }
+        console.assert("TODO: encounter input of type: " + encounter.type);
+    },
     walkIntoThing : function(game,thing) {
         if (thing.type == "exit") {
             game.state.avatar.x = thing.dest_x;
             game.state.avatar.y = thing.dest_y;
             game.state.avatar.map_id = thing.dest_map;
             game.latest_status = "" + game.world.maps[game.state.avatar.map_id].name;
+            return false;
+        }
+        if (thing.type == "person") {
+            game.state.encounter = thing;
+            game.rotateAvatar(2); // turn them around
             return false;
         }
         if (thing.type == "chest") {

@@ -34,6 +34,7 @@ var dawnRenderer_prototype = {
         if (!this.game) return;
 
         this.drawScene();
+        this.drawEncounter();
         this.udpateStatus();
     },
     drawScene : function() {
@@ -58,6 +59,17 @@ var dawnRenderer_prototype = {
             this.mainContext.drawImage(tileImg, 
                 part.src_x,  part.src_y,  part.width, part.height,
                 part.dest_x, part.dest_y, part.width, part.height);
+        }
+    },
+    drawEncounter : function() {
+        var encounter = this.game.state.encounter;
+        if (!encounter) {
+            return;
+        }
+        if (encounter.type == "person") {
+            var person = this.game.world.people[encounter.person_id];
+            var bgImg = this.images.backgrounds[person.background];
+            this.mainContext.drawImage(bgImg, 0, 0);
         }
     },
     udpateStatus : function() {
