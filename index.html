@@ -23,14 +23,18 @@
         </div>
         <div>
             <h3>Game Guide</h3>
-            <p>Click tiles to explore the map:</p>
             <script src="web/scripts/utils.js"></script>
             <script src="web/scripts/topdown_render.js"></script>
+            <p>Full game guide:</p>
+            <pre id="topdown_whole"></pre>
+            <p>Map explorer:</p>
             <div id="topdown_main_div"></div>
             <pre id="topdown_info"></pre>
             <script>
                 var topdownWorld = null;
                 var topdownMap = 1;
+                var topdownGuideTitle = "world";
+                var topdownGuideFocus = null;
                 function topdownThingClicked(thing) {
                     if (thing.type == "exit") {
                         topdownMap = thing.dest_map;
@@ -47,7 +51,28 @@
                         }
                     }
                 }
+                function clickedGuideText(name) {
+                    topdownGuideTitle = "world." + name;
+                    topdownGuideFocus = topdownWorld[name];
+                    redrawTopdown();
+                }
                 function buildGuideText(title,obj) {
+                    if (title == "world") {
+                        var ans = "";
+                        for (var i in obj) {
+                            if (i == "summary") continue;
+                            ans += "   <u style='cursor:pointer;' onclick=\"clickedGuideText('" + i + "')\" >" + i + "</u>\n";
+                        }
+                        return ans;
+                    }
+                    if (Array.isArray(obj)) {
+                        var ans = "";
+                        for (var i in obj) {
+                            ans += buildGuideText(title + "[" + i + "]", obj[i] );
+                        }
+                        return ans;
+                    }
+
                     var world = topdownWorld;
                     var ans = "";
                     if (obj.name) ans += "<u>" + obj.name + "</u>\n";
@@ -96,7 +121,7 @@
                             }
                         }
                     }
-                    if (obj.enemies) {
+                    if (obj.enemies && obj.background) {
                         for (var i in obj.enemies) {
                             var ei = obj.enemies[i];
                             ans += buildGuideText(
@@ -126,6 +151,13 @@
                     if (!topdownWorld) return;
                     topdown_main_div.innerHTML = dawnTopDownRenderer.createMapHtmlString(topdownWorld, topdownMap,"topdownMapTileClicked");
                     topdown_info.innerHTML = buildGuideText("world.maps[" + topdownMap + "]", topdownWorld.maps[topdownMap]);
+
+                    var guideText = buildGuideText("world", topdownWorld);
+                    if (topdownGuideFocus) {
+                        guideText += "<br/>\n";
+                        guideText += buildGuideText(topdownGuideTitle, topdownGuideFocus);
+                    }
+                    topdown_whole.innerHTML = guideText;
                 }
                 function initMap() {
                     dawnUtils.downloadJson("web/world.json", (world) => {
