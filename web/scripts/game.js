@@ -73,6 +73,12 @@ var dawnGame_prototype = {
             this.callOnChanged[i]();
         }
     },
+    // General API:
+    getRef : function(path) {
+        var obj = dawnUtils.parsePath(this, path);
+        console.assert(obj);
+        return obj;
+    },
     // Tile API:
     _tempTile : { x:0, y:0, tile_type:null },
     getTileInfoAvatar : function() {

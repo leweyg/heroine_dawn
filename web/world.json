@@ -873,7 +873,7 @@
       ],
       "things": [
         {
-          "type": "treasure",
+          "type": "chest",
           "count": 1,
           "treasure_id": 10,
           "ref": "world.equipment.treasures[10]",
@@ -909,7 +909,7 @@
       ],
       "things": [
         {
-          "type": "treasure",
+          "type": "chest",
           "count": 1,
           "treasure_id": 11,
           "ref": "world.equipment.treasures[11]",
@@ -964,7 +964,7 @@
           "y": 1
         },
         {
-          "type": "treasure",
+          "type": "chest",
           "count": 1,
           "treasure_id": 13,
           "ref": "world.equipment.treasures[13]",
@@ -1050,7 +1050,7 @@
           "y": 8
         },
         {
-          "type": "treasure",
+          "type": "chest",
           "count": 10,
           "treasure_id": 0,
           "ref": "world.equipment.treasures[0]",
@@ -1105,7 +1105,7 @@
           "y": 2
         },
         {
-          "type": "treasure",
+          "type": "chest",
           "count": 1,
           "treasure_id": 12,
           "ref": "world.equipment.treasures[12]",
@@ -1173,7 +1173,7 @@
           "y": 5
         },
         {
-          "type": "treasure",
+          "type": "chest",
           "count": 1,
           "treasure_id": 15,
           "ref": "world.equipment.treasures[15]",
@@ -1209,7 +1209,7 @@
       ],
       "things": [
         {
-          "type": "treasure",
+          "type": "chest",
           "count": 1,
           "treasure_id": 14,
           "ref": "world.equipment.treasures[14]",
@@ -1259,7 +1259,7 @@
           "y": 7
         },
         {
-          "type": "treasure",
+          "type": "chest",
           "count": 25,
           "treasure_id": 0,
           "ref": "world.equipment.treasures[0]",
@@ -1273,7 +1273,7 @@
           "y": 9
         },
         {
-          "type": "treasure",
+          "type": "chest",
           "count": 1,
           "treasure_id": 12,
           "ref": "world.equipment.treasures[12]",
@@ -1391,7 +1391,7 @@
           "y": 2
         },
         {
-          "type": "treasure",
+          "type": "chest",
           "count": 1,
           "treasure_id": 13,
           "ref": "world.equipment.treasures[13]",
@@ -1399,7 +1399,7 @@
           "y": 2
         },
         {
-          "type": "treasure",
+          "type": "chest",
           "count": 100,
           "treasure_id": 0,
           "ref": "world.equipment.treasures[0]",
@@ -1484,7 +1484,8 @@
         "height": 100,
         "count": 1,
         "draw_x": 40,
-        "draw_y": 20
+        "draw_y": 20,
+        "index": "0"
       },
       {
         "name": "armor",
@@ -1495,7 +1496,8 @@
         "height": 100,
         "count": 8,
         "draw_x": 40,
-        "draw_y": 20
+        "draw_y": 20,
+        "index": "1"
       },
       {
         "name": "weapon",
@@ -1506,7 +1508,8 @@
         "height": 100,
         "count": 8,
         "draw_x": 40,
-        "draw_y": 20
+        "draw_y": 20,
+        "index": "2"
       },
       {
         "name": "treasure",
@@ -1517,7 +1520,8 @@
         "height": 32,
         "count": 16,
         "draw_x": 64,
-        "draw_y": 84
+        "draw_y": 84,
+        "index": "3"
       },
       {
         "name": "spell",
@@ -1528,7 +1532,8 @@
         "height": 16,
         "count": 8,
         "draw_x": 0,
-        "draw_y": 0
+        "draw_y": 0,
+        "index": "4"
       }
     ],
     "directions_right": [

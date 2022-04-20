@@ -2,11 +2,12 @@
 var dawnThings_prototype = {
     encounterRecivesInput : function(game,encounter,act) {
         if ((encounter.type == "chest") || (encounter.stat=="gold")) {
+            game.state.encounter = null; // hide encounter after input
             return false;
         }
         if ((encounter.type == "person")) {
             game.state.encounter = null; // now let them go
-            return true;
+            return true; // input was recieved
         }
         console.assert("TODO: encounter input of type: " + encounter.type);
     },

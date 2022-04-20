@@ -33,6 +33,11 @@ var dawnRenderer_prototype = {
                 this.images.tiles.push( {tryGetImg:(()=>{return null;}) } );
             }
         }
+        this.images.sheets = [];
+        for (var i in world.rendering.sheets) {
+            this.images.sheets[i] = this.createImageLoader(world.rendering.sheets[i].src);
+        }
+        this.images.font = this.createImageLoader(world.font.src);
 
         
         this.game.callOnChanged.push( (() => { _this.redraw(); }) );
@@ -75,6 +80,11 @@ var dawnRenderer_prototype = {
         if (!encounter) {
             return;
         }
+        if (encounter.type == "chest") {
+            var treasure = this.game.getRef(encounter.ref);
+            var sheet = this.game.getRef(treasure.ref_sheet);
+            this.drawSheetIndex(sheet, treasure.index);
+        }
         if (encounter.type == "person") {
             var person = this.game.world.people[encounter.person_id];
             var bgImg = this.images.backgrounds[person.background].tryGetImg();
@@ -82,6 +92,15 @@ var dawnRenderer_prototype = {
                 this.mainContext.drawImage(bgImg, 0, 0);
             }
         }
+    },
+    drawSheetIndex : function(sprite, index) {
+        var img = this.images.sheets[sprite.index].tryGetImg();
+        if (!img) return;
+        var x = sprite.start_x + (index * sprite.width);
+        var y = sprite.start_y;
+        this.mainContext.drawImage(img, 
+            x, y, sprite.width, sprite.height,
+            sprite.draw_x, sprite.draw_y, sprite.width, sprite.height);
     },
     udpateStatus : function() {
         var msg = this.game.latest_status;

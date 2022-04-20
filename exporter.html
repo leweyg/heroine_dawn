@@ -81,7 +81,7 @@
                     delete item.name;
                     delete item.stat;
                     item.treasure_id = tr.index;
-                    item.type = "treasure";
+                    item.type = "chest";
                     item.ref = "world.equipment.treasures[" + tr.index + "]";
                     found = true;
                   }
@@ -337,6 +337,8 @@
                 world.rendering = renderer;
                 var sheetNames = {};
                 for (var i in world.rendering.sheets) {
+                  var sheet = world.rendering.sheets[i];
+                  sheet.index = i;
                   sheetNames[world.rendering.sheets[i].name] = i;
                 }
                 world.rendering.sheets_by_name = sheetNames;
