@@ -18,10 +18,24 @@ var dawnGame_prototype = {
     },
     doInput : function(act) {
         this.latest_status = "";
-        this.onInnerAction(act);
+        this.innerAction(act);
         this.onChanged();
     },
-    onInnerAction : function(act) {
+    doTimeTick : function() {
+        if (!this.isBattle()) return;
+        var enc = this.state.encounter;
+        console.assert(enc.phase_time != undefined);
+        enc.phase_time++;
+        var times_per_phase = [
+            40, 10, 5 // idle, wind-up, strike
+        ];
+        if (enc.phase_time >= times_per_phase[enc.phase]) {
+            enc.phase_time = 0;
+            enc.phase = (enc.phase + 1) % 3;
+            this.onChanged();
+        }
+    },
+    innerAction : function(act) {
         if (act == "menu") {
             this.state.menu_open = !this.state.menu_open;
             return;
@@ -87,18 +101,23 @@ var dawnGame_prototype = {
                 var r = this.nextRandomFloat();
                 if (r > this.state.encounter_rate) return;
                 var enemId = this.nextRandomIndexOf(map.enemies.length); // TODO: make random
-                var enem = this.world.enemies[enemId];
-                var enc = {
-                    type:"enemy",
-                    enemy_id:enemId,
-                    extra:"",
-                    hp:enem.hp,
-                    ref:"world.enemies[" + enemId + "]",
-                };
-                this.latest_status = enem.name;
-                this.state.encounter = enc;
+                this.startBattle(enemId);
             }
         }
+    },
+    startBattle : function(enemId) {
+        var enem = this.world.enemies[enemId];
+        var enc = {
+            type:"enemy",
+            enemy_id:enemId,
+            extra:"",
+            hp:enem.hp,
+            phase:0,
+            phase_time:20,
+            ref:"world.enemies[" + enemId + "]",
+        };
+        this.latest_status = enem.name;
+        this.state.encounter = enc;
     },
     callOnChanged : [], // register renderer here
     onChanged : function() {
@@ -118,6 +137,11 @@ var dawnGame_prototype = {
             return true;
         }
         return false;
+    },
+    isBattleInTell : function() {
+        if (!this.isBattle()) return;
+        var enc = this.state.encounter;
+        return enc.phase == 1;
     },
     // Tile API:
     _tempTile : { x:0, y:0, tile_type:null },
@@ -193,8 +217,7 @@ var dawnGame_prototype = {
         0.7713847041870872
       ],
     nextRandomFloat : function() {
-        var cur = this.state.random_index + 1;
-        cur % this._randomData.length;
+        var cur = ((this.state.random_index + 1) % this._randomData.length);
         this.state.random_index = cur;
         var r = this._randomData[cur];
         return r;

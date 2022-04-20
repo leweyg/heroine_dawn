@@ -6,10 +6,13 @@ var dawnRenderer_prototype = {
     mainCanvas : null,
     mainContext : null,
     mainStatus : null,
+    timeIndex : 0,
     images : {
         backgrounds : [],
         tiles : [],
     },
+    timeIndexInterval : 100,
+    timeIndexPerAnim : 3,
     initFromGameWorld : function(game, world, mainTarget, mainStatus) {
         this.game = game;
         this.world = world;
@@ -19,6 +22,7 @@ var dawnRenderer_prototype = {
 
         var _this = this;
         var callback = (() => {_this.redraw();});
+        setInterval(()=>{_this.onTimeTick();}, this.timeIndexInterval);
 
         this.images.font = this.createImageLoader(world.font.src);
         this.images.backgrounds = [  ];
@@ -53,6 +57,13 @@ var dawnRenderer_prototype = {
         this.drawAvatarInfo();
         this.drawHUD();
         this.udpateStatus();
+    },
+    onTimeTick : function() {
+        if (!this.game) return;
+        this.timeIndex++;
+        if (!this.game.isBattle()) return;
+        this.game.doTimeTick();
+        this.redraw();
     },
     drawScene : function() {
         var avatar = this.game.state.avatar;
@@ -97,7 +108,15 @@ var dawnRenderer_prototype = {
                 if (enem.category == "shadow") {
                     this.mainContext.globalAlpha = 0.61;
                 }
-                this.mainContext.drawImage(img, 0, 0);
+                var ndx = Math.floor(this.timeIndex / this.timeIndexPerAnim) % enem.anim.length;
+                var scl = 2;
+                if (encounter.phase != 0) {
+                    ndx = encounter.phase;
+                    scl = 20;
+                }
+                var offsetName = enem.anim[ndx];
+                var offset = this.world.rendering.screen_directions[offsetName];
+                this.mainContext.drawImage(img, scl * offset.x, scl * offset.y);
                 this.mainContext.globalAlpha = 1;
             }
         }
@@ -153,7 +172,12 @@ var dawnRenderer_prototype = {
             }
         }
         if (battle && !open) {
+            var can_attack = (this.game.isBattleInTell());
+            if (!can_attack) {
+                this.mainContext.globalAlpha = 0.6;
+            }
             this.drawSheetIndex("attack_icon", 0);
+            this.mainContext.globalAlpha = 1;
         }
         if (true) {
             if (!open) {

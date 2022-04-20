@@ -218,6 +218,16 @@
                 enemy_init();
                 var powers_by_id = [ "attack", "fire", "hpdrain", "mpdrain" ];
                 var categories_by_id = [ "shadow", "demon", "undead", "automaton" ];
+                var anims_by_id = [
+                  ["center","left","right"], // tendrils
+                  ["center","up","down"], // imp
+                  ["center","right","up_left"], // shadow soul
+                  ["center","left","down_right"], // zombie
+                  ["right","up_right","down_left"], // skeleton
+                  ["left","up_left","up_right"], // druid
+                  ["center","down","up"], // mimic,
+                  ["down_left","up","down_right"], // death speaker
+                ];
                 for (var ei in enemy.stats) {
                     var from = enemy.stats[ei];
                     from.index = ei*1;
@@ -226,6 +236,7 @@
                     for (var pi in from.powers) {
                         from.powers[pi] = powers_by_id[from.powers[pi]];
                     }
+                    from.anim = anims_by_id[ei];
                     world.enemies.push( from );
                 }
                 // export maps:
@@ -474,6 +485,17 @@
     },
     sheets : spritesheets,
     "directions_right" : [ "north", "east", "south", "west" ],
+    screen_directions : {
+      up:{x:0,y:-1},
+      up_right:{x:1,y:-1},
+      right:{x:1,y:0},
+      down_right:{x:1,y:1},
+      down:{x:0,y:1},
+      down_left:{x:-1,y:1},
+      left:{x:-1,y:0},
+      up_left:{x:-1,y:-1},
+      center:{x:0,y:0},
+    },
     "visible_cells_north": [
       {
         "dx": -2,

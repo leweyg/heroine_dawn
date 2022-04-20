@@ -654,7 +654,12 @@
         "attack"
       ],
       "index": 0,
-      "src": "images/enemies/shadow_tendrils.png"
+      "src": "images/enemies/shadow_tendrils.png",
+      "anim": [
+        "center",
+        "left",
+        "right"
+      ]
     },
     {
       "name": "Imp",
@@ -670,7 +675,12 @@
         "fire"
       ],
       "index": 1,
-      "src": "images/enemies/imp.png"
+      "src": "images/enemies/imp.png",
+      "anim": [
+        "center",
+        "up",
+        "down"
+      ]
     },
     {
       "name": "Shadow Soul",
@@ -686,7 +696,12 @@
         "mpdrain"
       ],
       "index": 2,
-      "src": "images/enemies/shadow_soul.png"
+      "src": "images/enemies/shadow_soul.png",
+      "anim": [
+        "center",
+        "right",
+        "up_left"
+      ]
     },
     {
       "name": "Zombie",
@@ -702,7 +717,12 @@
         "hpdrain"
       ],
       "index": 3,
-      "src": "images/enemies/zombie.png"
+      "src": "images/enemies/zombie.png",
+      "anim": [
+        "center",
+        "left",
+        "down_right"
+      ]
     },
     {
       "name": "Skeleton",
@@ -716,7 +736,12 @@
         "attack"
       ],
       "index": 4,
-      "src": "images/enemies/skeleton.png"
+      "src": "images/enemies/skeleton.png",
+      "anim": [
+        "right",
+        "up_right",
+        "down_left"
+      ]
     },
     {
       "name": "Druid",
@@ -733,7 +758,12 @@
         "mpdrain"
       ],
       "index": 5,
-      "src": "images/enemies/druid.png"
+      "src": "images/enemies/druid.png",
+      "anim": [
+        "left",
+        "up_left",
+        "up_right"
+      ]
     },
     {
       "name": "Mimic",
@@ -747,7 +777,12 @@
         "attack"
       ],
       "index": 6,
-      "src": "images/enemies/mimic.png"
+      "src": "images/enemies/mimic.png",
+      "anim": [
+        "center",
+        "down",
+        "up"
+      ]
     },
     {
       "name": "Death Speaker",
@@ -762,7 +797,12 @@
         "fire"
       ],
       "index": 7,
-      "src": "images/enemies/death_speaker.png"
+      "src": "images/enemies/death_speaker.png",
+      "anim": [
+        "down_left",
+        "up",
+        "down_right"
+      ]
     }
   ],
   "maps": [
@@ -1571,6 +1611,44 @@
       "south",
       "west"
     ],
+    "screen_directions": {
+      "up": {
+        "x": 0,
+        "y": -1
+      },
+      "up_right": {
+        "x": 1,
+        "y": -1
+      },
+      "right": {
+        "x": 1,
+        "y": 0
+      },
+      "down_right": {
+        "x": 1,
+        "y": 1
+      },
+      "down": {
+        "x": 0,
+        "y": 1
+      },
+      "down_left": {
+        "x": -1,
+        "y": 1
+      },
+      "left": {
+        "x": -1,
+        "y": 0
+      },
+      "up_left": {
+        "x": -1,
+        "y": -1
+      },
+      "center": {
+        "x": 0,
+        "y": 0
+      }
+    },
     "visible_cells_north": [
       {
         "dx": -2,
