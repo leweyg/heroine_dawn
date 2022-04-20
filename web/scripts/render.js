@@ -182,7 +182,7 @@ var dawnRenderer_prototype = {
         this.drawStringAtXY(status, 1, 1);
 
         var msg = status;
-        this.mainStatus.innerText = msg;
+        //this.mainStatus.innerText = msg;
     },
     
     transformCellOffset : function(t, dx, dy) {
