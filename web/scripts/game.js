@@ -11,6 +11,7 @@ var dawnGame_prototype = {
         this.state = {
             avatar : new Object(world.avatar),
         };
+        this.state.menu_open = false;
         this.latest_status = "First step...";
     },
     doInput : function(act) {
@@ -19,6 +20,14 @@ var dawnGame_prototype = {
         this.onChanged();
     },
     onInnerAction : function(act) {
+        if (act == "menu") {
+            this.state.menu_open = !this.state.menu_open;
+            return;
+        }
+        if (this.state.menu_open) {
+            this.state.menu_open = false;
+            return;
+        }
         if (this.state.encounter) {
             if (dawnThings.encounterRecivesInput(this,this.state.encounter,act)) {
                 return;

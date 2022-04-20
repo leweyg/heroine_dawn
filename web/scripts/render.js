@@ -47,6 +47,7 @@ var dawnRenderer_prototype = {
 
         this.drawScene();
         this.drawEncounter();
+        this.drawAvatarInfo();
         this.drawHUD();
         this.udpateStatus();
     },
@@ -94,20 +95,47 @@ var dawnRenderer_prototype = {
             }
         }
     },
-    drawHUD : function() {
-        var infoSheetIndex = this.world.rendering.sheets_by_name["info_icon"];
-        var infoSheet = this.world.rendering.sheets[infoSheetIndex];
-        this.mainContext.globalAlpha = 0.2;
-        this.drawSheetIndex(infoSheet, 0);
-        this.mainContext.globalAlpha = 1;
+    drawAvatarInfo : function() {
+        if (!this.game.state.menu_open) {
+            return;
+        }
+        var ctx = this.mainContext;
+        ctx.fillStyle = "rgba(0, 0, 0, 0.75)";
+        ctx.fillRect(0,0,this.world.rendering.screen.width, this.world.rendering.screen.height);
 
-        if (this.game.state.encounter) {
+        var avatar = this.game.state.avatar;
+        this.drawSheetIndex("avatar", 0);
+        this.drawSheetIndex("armor", avatar.armor);
+        this.drawSheetIndex("weapon", avatar.weapon);
+    },
+    infoIconShowing : false,
+    drawHUD : function() {
+        var open = this.game.state.menu_open;
+        var longer = open;
+        if (this.game.state.encounter || open) {
             var avatar = this.game.state.avatar;
-            this.drawStringAligned("hp " + avatar.hp, 1, 1);
-            this.drawStringAligned("mp " + avatar.mp, -1, 1);
+            this.drawStringAligned("hp " + avatar.hp + (longer ? "/" + avatar.max_hp : ""), 1, 1);
+            this.drawStringAligned("mp " + avatar.mp + (longer ? "/" + avatar.max_mp : ""), -1, 1);
+        }
+        if (true) {
+            if (!open) {
+                this.mainContext.globalAlpha = 0.2;
+            }
+            var stateIndex = this.game.state.menu_open ? 1 : 0;
+            this.drawSheetIndex("info_icon", stateIndex);
+            this.mainContext.globalAlpha = 1;
         }
     },
+    getSheetByName : function(name) {
+        var infoSheetIndex = this.world.rendering.sheets_by_name[name];
+        var sprite = this.world.rendering.sheets[infoSheetIndex];
+        console.assert(sprite);
+        return sprite;
+    },
     drawSheetIndex : function(sprite, index) {
+        if (typeof sprite == "string") {
+            sprite = this.getSheetByName(sprite);
+        }
         var img = this.images.sheets[sprite.index].tryGetImg();
         if (!img) return;
         var x = sprite.start_x + (index * sprite.width);
@@ -117,9 +145,13 @@ var dawnRenderer_prototype = {
             sprite.draw_x, sprite.draw_y, sprite.width, sprite.height);
     },
     udpateStatus : function() {
-        this.drawStringAtXY(this.game.latest_status, 1, 1);
+        var status = this.game.latest_status;
+        if (status == "" && this.game.state.menu_open) {
+            status = this.world.maps[this.game.state.avatar.map_id].name;
+        }
+        this.drawStringAtXY(status, 1, 1);
 
-        var msg = this.game.latest_status;
+        var msg = status;
         this.mainStatus.innerText = msg;
     },
     

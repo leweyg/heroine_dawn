@@ -1,7 +1,7 @@
 
 var dawnThings_prototype = {
     encounterRecivesInput : function(game,encounter,act) {
-        if ((encounter.type == "chest") || (encounter.stat=="gold")) {
+        if ((encounter.type == "chest") || (encounter.stat=="gold") || (encounter.type=="sleep")) {
             game.state.encounter = null; // hide encounter after input
             return false;
         }
@@ -26,6 +26,13 @@ var dawnThings_prototype = {
             game.latest_status = person.name;
             game.rotateAvatar(2); // turn them around
             return false;
+        }
+        if (thing.type == "sleep") {
+            game.state.encounter = thing;
+            game.latest_status = "Slept. HP/MP restored.";
+            game.state.avatar.hp = game.state.avatar.max_hp;
+            game.state.avatar.mp = game.state.avatar.max_mp;
+            return true;
         }
         if (thing.type == "chest") {
             game.state.encounter = thing;
