@@ -48,7 +48,20 @@
                         var thing = map.things[i];
                         if ((thing.x == x) && (thing.y == y)) {
                             topdownThingClicked(thing);
+                            return;
                         }
+                    }
+                    var clickTileToWalk = true;
+                    if (!clickTileToWalk) return;
+                    
+                    var tile = map.tiles[y][x];
+                    var tile_type = world.tile_types[tile];
+                    if (tile_type.walkable) {
+                        var url = "web/index.html?";
+                        url += "map_id=" + map_id + "&";
+                        url += "x=" + x + "&";
+                        url += "y=" + y;
+                        window.location.href = url;
                     }
                 }
                 function clickedGuideText(name) {

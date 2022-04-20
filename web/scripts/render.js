@@ -93,6 +93,22 @@ var dawnRenderer_prototype = {
             if (bgImg) {
                 this.mainContext.drawImage(bgImg, 0, 0);
             }
+            var prefix = "";
+            for (var i in person.item) {
+                var item = person.item[i];
+                var refData = (item.ref ? this.game.getRef(item.ref) : null);
+                var msg = prefix;
+                if (item.type == "message") {
+                    msg += item.msg1 + '\n' + item.msg2;
+                    prefix = "\n\n\n\n";
+                } else if (item.type == "room") {
+                    msg += "Room\n$" + item.value;
+                } else if (refData) {
+                    msg += refData.name + "\n$" + refData.gold;
+                }
+                var xAlign = ((i==0)?-1:1);
+                this.drawStringAligned(msg, xAlign, 0);
+            }
         }
     },
     drawAvatarInfo : function() {
@@ -112,10 +128,14 @@ var dawnRenderer_prototype = {
     drawHUD : function() {
         var open = this.game.state.menu_open;
         var longer = open;
-        if (this.game.state.encounter || open) {
+        var enc = this.game.state.encounter;
+        if (enc || open) {
             var avatar = this.game.state.avatar;
             this.drawStringAligned("hp " + avatar.hp + (longer ? "/" + avatar.max_hp : ""), 1, 1);
             this.drawStringAligned("mp " + avatar.mp + (longer ? "/" + avatar.max_mp : ""), -1, 1);
+            if (longer || (enc && enc.type=="person")) {
+                this.drawStringAligned("$" + avatar.gold, 0, 1);
+            }
         }
         if (true) {
             if (!open) {
@@ -185,22 +205,38 @@ var dawnRenderer_prototype = {
         var y = avatar.y + dy;
         return this.game.getTileInfoByMapXY(avatar.map_id,x,y);
     },
+    measureStringLines : function(str) {
+        if (!str.includes("\n")) return 1;
+        return str.split("\n").length;
+    },
     drawStringAligned : function(str,alignX=0,alignY=0) {
         var font = this.world.font;
-        var h = font.height;
+        var lines = this.measureStringLines(str);
+        var h = font.height * lines;
         var sh = this.world.rendering.screen.height - 2;
         var sw = this.world.rendering.screen.width - 3;
 
         var y = 0;
         if (alignY == 0) y = (sh/2) - (h/2);
         if (alignY > 0) y = sh - h;
+        y = Math.floor(y);
 
         var w = this.measureStringWidth(str);
         var x = 0;
         if (alignX == 0) x = (sw / 2) - (w/2);
         if (alignX > 0) x = sw - w;
+        x = Math.floor(x);
 
-        this.drawStringAtXY(str, 1+x, 1+y);
+        if (lines == 1) {
+            this.drawStringAtXY(str, 1+x, 1+y);
+        } else {
+            var parts = str.split("\n");
+            for (var pi in parts) {
+                var ln = parts[pi];
+                this.drawStringAtXY(ln, 1+x, 1+y);
+                y += font.height;
+            }
+        }
     },
     drawStringAtXY : function(str,x=0,y=0) {
         var fontImg = this.images.font.tryGetImg();
@@ -246,10 +282,16 @@ var dawnRenderer_prototype = {
     },
     measureStringWidth : function(str) {
         var w = 0;
+        var max_w = 0;
         for (var i=0; i<str.length; i++) {
+            if (str.charAt(i)=='\n') {
+                w = 0;
+                continue;
+            }
             w += this.glyphWidth(str.charAt(i)) + this.world.font.kerning;
+            max_w = Math.max(max_w, w);
         }
-        return w;
+        return max_w;
     },
     createImageLoader : function(rawSrc, callback) {
         var src = rawSrc;
