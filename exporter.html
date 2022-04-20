@@ -338,7 +338,7 @@
                 var sheetNames = {};
                 for (var i in world.rendering.sheets) {
                   var sheet = world.rendering.sheets[i];
-                  sheet.index = i;
+                  sheet.index = 1*i;
                   sheetNames[world.rendering.sheets[i].name] = i;
                 }
                 world.rendering.sheets_by_name = sheetNames;
@@ -380,6 +380,7 @@
   avatar.bonus_def = 0;
   avatar.spellbook = 0;
   avatar.sleeploc = [0,1,1]; // map_id, x, y
+  avatar.type = "avatar";
   avatar.type_map_id = "world.maps";
   avatar.type_weapon = "world.equipment.weapons";
   avatar.type_armor = "world.equipment.armors";
@@ -444,8 +445,22 @@
       draw_x : 0,
       draw_y : 0,
     },
+    {
+      "name":"info_icon",
+      src : "images/interface/info_button.png",
+      start_x : 0,
+      start_y : 0,
+      width : 16,
+      height : 16,
+      count : 2,
+      draw_x : 143,
+      draw_y : 1,
+    },
   ];
   var renderer = {
+    screen : {
+      width: 160, height:120,
+    },
     sheets : spritesheets,
     "directions_right" : [ "north", "east", "south", "west" ],
     "visible_cells_north": [

@@ -190,6 +190,7 @@
     "bonus_def": 0,
     "spellbook": 0,
     "sleeploc": [ 0, 1, 1],
+    "type": "avatar",
     "type_map_id": "world.maps",
     "type_weapon": "world.equipment.weapons",
     "type_armor": "world.equipment.armors",
@@ -1474,6 +1475,10 @@
     "width": [ 4, 7, 9, 7,10, 9, 4, 5, 5, 6, 8, 5, 6, 4, 6, 7, 4, 7, 7, 7, 7, 7, 7, 7, 7, 4, 4, 6, 6, 6, 8, 8, 7, 7, 7, 7, 7, 7, 7, 7, 4, 7, 7, 7, 9, 8, 7, 7, 8, 7, 7, 8, 7, 7, 9, 7, 8, 7, 5, 6, 5, 8, 6, 5, 5, 4, 5, 9]
   },
   "rendering": {
+    "screen": {
+      "width": 160,
+      "height": 120
+    },
     "sheets": [
       {
         "name": "avatar",
@@ -1485,7 +1490,7 @@
         "count": 1,
         "draw_x": 40,
         "draw_y": 20,
-        "index": "0"
+        "index": 0
       },
       {
         "name": "armor",
@@ -1497,7 +1502,7 @@
         "count": 8,
         "draw_x": 40,
         "draw_y": 20,
-        "index": "1"
+        "index": 1
       },
       {
         "name": "weapon",
@@ -1509,7 +1514,7 @@
         "count": 8,
         "draw_x": 40,
         "draw_y": 20,
-        "index": "2"
+        "index": 2
       },
       {
         "name": "treasure",
@@ -1521,7 +1526,7 @@
         "count": 16,
         "draw_x": 64,
         "draw_y": 84,
-        "index": "3"
+        "index": 3
       },
       {
         "name": "spell",
@@ -1533,7 +1538,19 @@
         "count": 8,
         "draw_x": 0,
         "draw_y": 0,
-        "index": "4"
+        "index": 4
+      },
+      {
+        "name": "info_icon",
+        "src": "images/interface/info_button.png",
+        "start_x": 0,
+        "start_y": 0,
+        "width": 16,
+        "height": 16,
+        "count": 2,
+        "draw_x": 143,
+        "draw_y": 1,
+        "index": 5
       }
     ],
     "directions_right": [
@@ -1746,7 +1763,8 @@
       "armor": "1",
       "weapon": "2",
       "treasure": "3",
-      "spell": "4"
+      "spell": "4",
+      "info_icon": "5"
     }
   }
 }

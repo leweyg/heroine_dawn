@@ -47,6 +47,7 @@ var dawnRenderer_prototype = {
 
         this.drawScene();
         this.drawEncounter();
+        this.drawHUD();
         this.udpateStatus();
     },
     drawScene : function() {
@@ -93,6 +94,19 @@ var dawnRenderer_prototype = {
             }
         }
     },
+    drawHUD : function() {
+        var infoSheetIndex = this.world.rendering.sheets_by_name["info_icon"];
+        var infoSheet = this.world.rendering.sheets[infoSheetIndex];
+        this.mainContext.globalAlpha = 0.2;
+        this.drawSheetIndex(infoSheet, 0);
+        this.mainContext.globalAlpha = 1;
+
+        if (this.game.state.encounter) {
+            var avatar = this.game.state.avatar;
+            this.drawStringAligned("hp " + avatar.hp, 1, 1);
+            this.drawStringAligned("mp " + avatar.mp, -1, 1);
+        }
+    },
     drawSheetIndex : function(sprite, index) {
         var img = this.images.sheets[sprite.index].tryGetImg();
         if (!img) return;
@@ -129,6 +143,23 @@ var dawnRenderer_prototype = {
         var y = avatar.y + dy;
         return this.game.getTileInfoByMapXY(avatar.map_id,x,y);
     },
+    drawStringAligned : function(str,alignX=0,alignY=0) {
+        var font = this.world.font;
+        var h = font.height;
+        var sh = this.world.rendering.screen.height - 2;
+        var sw = this.world.rendering.screen.width - 3;
+
+        var y = 0;
+        if (alignY == 0) y = (sh/2) - (h/2);
+        if (alignY > 0) y = sh - h;
+
+        var w = this.measureStringWidth(str);
+        var x = 0;
+        if (alignX == 0) x = (sw / 2) - (w/2);
+        if (alignX > 0) x = sw - w;
+
+        this.drawStringAtXY(str, 1+x, 1+y);
+    },
     drawStringAtXY : function(str,x=0,y=0) {
         var fontImg = this.images.font.tryGetImg();
         if (!fontImg) return;
@@ -141,14 +172,18 @@ var dawnRenderer_prototype = {
             x += w + font.kerning;
         }
     },
+    glyphIndex : function(letter) {
+        var ndx = this.world.font.glyph.indexOf(letter.toUpperCase());
+        if ((ndx < 0) || (ndx >= this.world.font.glyph.length)) {
+            ndx = 2; // missing character
+        }
+        return ndx;
+    },
     drawCharAtXY : function(letter, x, y) {
         var font = this.world.font;
         if (letter == ' ') return font.space;
 
-        var ndx = font.glyph.indexOf(letter.toUpperCase());
-        if ((ndx < 0) || (ndx >= font.glyph.length)) {
-            ndx = 2; // missing character
-        }
+        var ndx = this.glyphIndex(letter);
         var src_x = font.start[ndx];
         var w = font.width[ndx];
         var h = font.height;
@@ -159,6 +194,19 @@ var dawnRenderer_prototype = {
             src_x, 0, w, h,
             x, y, w, h);
 
+        return w;
+    },
+    glyphWidth : function(letter) {
+        if (letter == ' ') return this.world.font.space;
+        var ndx = this.glyphIndex(letter);
+        var w = this.world.font.width[ndx];
+        return w;
+    },
+    measureStringWidth : function(str) {
+        var w = 0;
+        for (var i=0; i<str.length; i++) {
+            w += this.glyphWidth(str.charAt(i)) + this.world.font.kerning;
+        }
         return w;
     },
     createImageLoader : function(rawSrc, callback) {
