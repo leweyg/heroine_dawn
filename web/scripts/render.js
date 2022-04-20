@@ -123,6 +123,14 @@ var dawnRenderer_prototype = {
             }
             var stateIndex = this.game.state.menu_open ? 1 : 0;
             this.drawSheetIndex("info_icon", stateIndex);
+            
+            if (!open) {
+                this.mainContext.globalAlpha = 0.5;
+            }
+            for (var i=1; i<=this.game.state.avatar.spellbook; i++) {
+                this.drawSheetIndex("spell", i, i-1);
+            }
+
             this.mainContext.globalAlpha = 1;
         }
     },
@@ -132,17 +140,19 @@ var dawnRenderer_prototype = {
         console.assert(sprite);
         return sprite;
     },
-    drawSheetIndex : function(sprite, index) {
+    drawSheetIndex : function(sprite, index, xoffset_index=0) {
         if (typeof sprite == "string") {
             sprite = this.getSheetByName(sprite);
         }
         var img = this.images.sheets[sprite.index].tryGetImg();
         if (!img) return;
+
         var x = sprite.start_x + (index * sprite.width);
         var y = sprite.start_y;
+        var dst_x = sprite.draw_x + (xoffset_index * sprite.width);
         this.mainContext.drawImage(img, 
             x, y, sprite.width, sprite.height,
-            sprite.draw_x, sprite.draw_y, sprite.width, sprite.height);
+            dst_x, sprite.draw_y, sprite.width, sprite.height);
     },
     udpateStatus : function() {
         var status = this.game.latest_status;

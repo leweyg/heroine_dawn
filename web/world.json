@@ -1536,8 +1536,8 @@
         "width": 16,
         "height": 16,
         "count": 8,
-        "draw_x": 0,
-        "draw_y": 0,
+        "draw_x": 1,
+        "draw_y": 94,
         "index": 4
       },
       {
