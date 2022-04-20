@@ -35,7 +35,7 @@ var dawnRenderer_prototype = {
         }
 
         
-        this.game.onChanged = (() => { _this.redraw(); });
+        this.game.callOnChanged.push( (() => { _this.redraw(); }) );
     },
     redraw : function() {
         if (!this.game) return;

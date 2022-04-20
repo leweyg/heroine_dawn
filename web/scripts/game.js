@@ -67,8 +67,11 @@ var dawnGame_prototype = {
         avatar.facing = dirs[ndx];
         console.assert(avatar.facing);
     },
+    callOnChanged : [], // register renderer here
     onChanged : function() {
-        // replaced by renderer
+        for (var i in this.callOnChanged) {
+            this.callOnChanged[i]();
+        }
     },
     // Tile API:
     _tempTile : { x:0, y:0, tile_type:null },

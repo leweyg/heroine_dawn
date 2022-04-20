@@ -8,6 +8,9 @@
             color:white;
             -webkit-border-fit:border !important;
         }
+        a {
+            color:darkgrey;
+        }
     </style>
     <body style="color:white; background-color:black;">
         <br/>
@@ -17,7 +20,7 @@
             <input type="button" class="input_buttons" value="  &hookleftarrow;  " onclick="dawnGame.doInput('left');" />
             <input type="button" class="input_buttons" value="  &uarr;  " onclick="dawnGame.doInput('forward');"  />
             <input type="button" class="input_buttons" value="  &hookrightarrow;  " onclick="dawnGame.doInput('right');" />
-            <p id="main_status">Loading...</p>
+            <p id="main_status" style="height:40px;">Loading...</p>
         </center>
         <script src="scripts/things.js"></script>
         <script src="scripts/game.js"></script>
@@ -28,11 +31,48 @@
                 dawnUtils.downloadJson("world.json", (world) => {
                     main_status.innerHTML = "Loaded.";
                     dawnGame.initFromWorld(world);
+                    dawnGame.callOnChanged.push(() => {updatePageLink();});
+                    loadPageParameters();
                     dawnRenderer.initFromGameWorld(dawnGame, world, main_canvas, main_status);
                     dawnRenderer.redraw();
                 });
             }
+            var pageParams = [ "map_id", "x", "y", "facing" ];
+            function setupPageParam(params, name) {
+                var val = params.get(name);
+                if (val == undefined) return;
+                if (!isNaN(val)) {
+                    val = 1*val;
+                }
+                dawnGame.state.avatar[name] = val;
+            }
+            function loadPageParameters() {
+                var queryString = window.location.search;
+                var urlParams = new URLSearchParams(queryString);
+                for (var i in pageParams) {
+                    setupPageParam(urlParams, pageParams[i]);
+                }
+            }
+            function updatePageLink() {
+                var path = "?";
+                for (var i in pageParams) {
+                    var name = pageParams[i];
+                    if (i != 0) {
+                        path += "&";
+                    }
+                    path += name + "=" + dawnGame.state.avatar[name];
+                }
+                main_save_link.href = path;
+            }
             main_init();
         </script>
+        <br/>
+        <hr/>
+        <div>
+            <font style="color:darkgray">
+                <a href="../">Heroine Dawn [about/guide]</a>
+                <a id="main_save_link" href="">[...]</a>
+            </font>
+        </div>
     </body>
 </html>
