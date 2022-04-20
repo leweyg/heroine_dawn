@@ -6,6 +6,11 @@ var dawnThings_prototype = {
             game.state.encounter = null; // hide encounter after input
             return false;
         }
+        if (encounter.type == "enemy") {
+
+            game.state.encounter = null; // end battle for now
+            return true;
+        }
         if ((encounter.type == "person")) {
             if ((act=="left")||(act=="right")) {
                 var person = game.world.people[encounter.person_id];

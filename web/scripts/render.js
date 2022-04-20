@@ -20,6 +20,7 @@ var dawnRenderer_prototype = {
         var _this = this;
         var callback = (() => {_this.redraw();});
 
+        this.images.font = this.createImageLoader(world.font.src);
         this.images.backgrounds = [  ];
         for (var i in world.backgrounds) {
             this.images.backgrounds.push( this.createImageLoader(world.backgrounds[i].src, callback) );
@@ -37,8 +38,10 @@ var dawnRenderer_prototype = {
         for (var i in world.rendering.sheets) {
             this.images.sheets[i] = this.createImageLoader(world.rendering.sheets[i].src);
         }
-        this.images.font = this.createImageLoader(world.font.src);
-
+        this.images.enemies = [];
+        for (var i in world.enemies) {
+            this.images.enemies[i] = this.createImageLoader(world.enemies[i].src);
+        }
         
         this.game.callOnChanged.push( (() => { _this.redraw(); }) );
     },
@@ -87,6 +90,17 @@ var dawnRenderer_prototype = {
             var sheet = this.game.getRef(treasure.ref_sheet);
             this.drawSheetIndex(sheet, treasure.index);
         }
+        if (encounter.type == "enemy") {
+            var enem = this.game.getRef(encounter.ref);
+            var img = this.images.enemies[encounter.enemy_id].tryGetImg();
+            if (img) {
+                if (enem.category == "shadow") {
+                    this.mainContext.globalAlpha = 0.61;
+                }
+                this.mainContext.drawImage(img, 0, 0);
+                this.mainContext.globalAlpha = 1;
+            }
+        }
         if (encounter.type == "person") {
             var person = this.game.world.people[encounter.person_id];
             var bgImg = this.images.backgrounds[person.background].tryGetImg();
@@ -129,13 +143,17 @@ var dawnRenderer_prototype = {
         var open = this.game.state.menu_open;
         var longer = open;
         var enc = this.game.state.encounter;
+        var battle = this.game.isBattle();
         if (enc || open) {
             var avatar = this.game.state.avatar;
-            this.drawStringAligned("hp " + avatar.hp + (longer ? "/" + avatar.max_hp : ""), 1, 1);
+            this.drawStringAligned(avatar.hp + (longer ? "/" + avatar.max_hp : "") + " hp", 1, 1);
             this.drawStringAligned("mp " + avatar.mp + (longer ? "/" + avatar.max_mp : ""), -1, 1);
             if (longer || (enc && enc.type=="person")) {
                 this.drawStringAligned("$" + avatar.gold, 0, 1);
             }
+        }
+        if (battle && !open) {
+            this.drawSheetIndex("attack_icon", 0);
         }
         if (true) {
             if (!open) {

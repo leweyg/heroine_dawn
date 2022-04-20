@@ -654,7 +654,7 @@
         "attack"
       ],
       "index": 0,
-      "image_src": "images/enemies/shadow_tendrils.png"
+      "src": "images/enemies/shadow_tendrils.png"
     },
     {
       "name": "Imp",
@@ -670,7 +670,7 @@
         "fire"
       ],
       "index": 1,
-      "image_src": "images/enemies/imp.png"
+      "src": "images/enemies/imp.png"
     },
     {
       "name": "Shadow Soul",
@@ -686,7 +686,7 @@
         "mpdrain"
       ],
       "index": 2,
-      "image_src": "images/enemies/shadow_soul.png"
+      "src": "images/enemies/shadow_soul.png"
     },
     {
       "name": "Zombie",
@@ -702,7 +702,7 @@
         "hpdrain"
       ],
       "index": 3,
-      "image_src": "images/enemies/zombie.png"
+      "src": "images/enemies/zombie.png"
     },
     {
       "name": "Skeleton",
@@ -716,7 +716,7 @@
         "attack"
       ],
       "index": 4,
-      "image_src": "images/enemies/skeleton.png"
+      "src": "images/enemies/skeleton.png"
     },
     {
       "name": "Druid",
@@ -733,7 +733,7 @@
         "mpdrain"
       ],
       "index": 5,
-      "image_src": "images/enemies/druid.png"
+      "src": "images/enemies/druid.png"
     },
     {
       "name": "Mimic",
@@ -747,7 +747,7 @@
         "attack"
       ],
       "index": 6,
-      "image_src": "images/enemies/mimic.png"
+      "src": "images/enemies/mimic.png"
     },
     {
       "name": "Death Speaker",
@@ -762,7 +762,7 @@
         "fire"
       ],
       "index": 7,
-      "image_src": "images/enemies/death_speaker.png"
+      "src": "images/enemies/death_speaker.png"
     }
   ],
   "maps": [
@@ -1541,6 +1541,18 @@
         "index": 4
       },
       {
+        "name": "attack_icon",
+        "src": "images/interface/action_buttons.png",
+        "start_x": 0,
+        "start_y": 0,
+        "width": 16,
+        "height": 16,
+        "count": 1,
+        "draw_x": 143,
+        "draw_y": 94,
+        "index": 5
+      },
+      {
         "name": "info_icon",
         "src": "images/interface/info_button.png",
         "start_x": 0,
@@ -1550,7 +1562,7 @@
         "count": 2,
         "draw_x": 143,
         "draw_y": 1,
-        "index": 5
+        "index": 6
       }
     ],
     "directions_right": [
@@ -1764,7 +1776,8 @@
       "weapon": "2",
       "treasure": "3",
       "spell": "4",
-      "info_icon": "5"
+      "attack_icon": "5",
+      "info_icon": "6"
     }
   }
 }

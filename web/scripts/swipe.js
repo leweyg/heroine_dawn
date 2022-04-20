@@ -11,16 +11,16 @@ var dawnSwipe_prototype = {
         var _this = this;
 
         this.mainElement.addEventListener('mousedown',(e) => {
-            _this.doSwipe(e.offsetX, e.offsetY, true, false);
+            _this.innerInput(e.offsetX, e.offsetY, true, false);
         });
         this.mainElement.addEventListener('mousemove',(e) => {
-            _this.doSwipe(e.offsetX, e.offsetY, _this.isDown, true);
+            _this.innerInput(e.offsetX, e.offsetY, _this.isDown, true);
         });
         this.mainElement.addEventListener('mouseup',(e) => {
-            _this.doSwipe(e.offsetX, e.offsetY, false, false);
+            _this.innerInput(e.offsetX, e.offsetY, false, false);
         });
     },
-    doSwipe : function(x,y,isDown,isMove) {
+    innerInput : function(x,y,isDown,isMove) {
         this.isDown = isDown;
         var scl = this.mainElement.width / this.mainElement.clientWidth;
         x *= scl;

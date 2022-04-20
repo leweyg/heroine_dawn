@@ -221,7 +221,7 @@
                 for (var ei in enemy.stats) {
                     var from = enemy.stats[ei];
                     from.index = ei*1;
-                    from.image_src = enemy.img[ei].src;
+                    from.src = enemy.img[ei].src;
                     from.category = categories_by_id[from.category];
                     for (var pi in from.powers) {
                         from.powers[pi] = powers_by_id[from.powers[pi]];
@@ -446,6 +446,17 @@
       draw_y : 94,
     },
     {
+      "name":"attack_icon",
+      src : "images/interface/action_buttons.png",
+      start_x : 0,
+      start_y : 0,
+      width : 16,
+      height : 16,
+      count : 1,
+      draw_x : 143,
+      draw_y : 94,
+    },
+    {
       "name":"info_icon",
       src : "images/interface/info_button.png",
       start_x : 0,
@@ -667,6 +678,21 @@
         </script>
         <script>
             export_world_atlas();
+        </script>
+        <br/>
+        <textarea id="main_random">
+
+        </textarea>
+        <script>
+          function fill_random() {
+            var count = 30;
+            var ans = [];
+            for (var i=0; i<count; i++) {
+              ans.push( Math.random() );
+            }
+            main_random.value = JSON.stringify(ans,null,2);
+          }
+          fill_random();
         </script>
     </body>
 </html>

@@ -3,15 +3,17 @@ var dawnGame_prototype = {
     world : null,
     state : {
         avatar : null,
-        encounter : null,
     },
     latest_status : "Loading...",
     initFromWorld : function(world) {
         this.world = world;
         this.state = {
             avatar : new Object(world.avatar),
+            encounter : null,
+            random_index : 0,
+            menu_open : false,
+            encounter_rate : 0.15,
         };
-        this.state.menu_open = false;
         this.latest_status = "First step...";
     },
     doInput : function(act) {
@@ -54,6 +56,7 @@ var dawnGame_prototype = {
                     // do the walk:
                     avatar.x = fwd.x;
                     avatar.y = fwd.y;
+                    this.checkForRandomEncounter(things);
                 }
                 break;
             case "left":
@@ -76,6 +79,27 @@ var dawnGame_prototype = {
         avatar.facing = dirs[ndx];
         console.assert(avatar.facing);
     },
+    checkForRandomEncounter : function(things) {
+        var avatar = this.state.avatar;
+        if ((things.length == 0) && (!this.state.encounter)) {
+            var map = this.world.maps[avatar.map_id];
+            if (map.enemies.length > 0) {
+                var r = this.nextRandomFloat();
+                if (r > this.state.encounter_rate) return;
+                var enemId = this.nextRandomIndexOf(map.enemies.length); // TODO: make random
+                var enem = this.world.enemies[enemId];
+                var enc = {
+                    type:"enemy",
+                    enemy_id:enemId,
+                    extra:"",
+                    hp:enem.hp,
+                    ref:"world.enemies[" + enemId + "]",
+                };
+                this.latest_status = enem.name;
+                this.state.encounter = enc;
+            }
+        }
+    },
     callOnChanged : [], // register renderer here
     onChanged : function() {
         for (var i in this.callOnChanged) {
@@ -87,6 +111,13 @@ var dawnGame_prototype = {
         var obj = dawnUtils.parsePath(this, path);
         console.assert(obj);
         return obj;
+    },
+    isBattle : function() {
+        var enc = this.state.encounter;
+        if (enc && (enc.type == "enemy")) {
+            return true;
+        }
+        return false;
     },
     // Tile API:
     _tempTile : { x:0, y:0, tile_type:null },
@@ -128,6 +159,49 @@ var dawnGame_prototype = {
             }
         }
         return res;
+    },
+    // Utilities:
+    _randomData : [
+        0.43640365955131566,
+        0.5964836953736707,
+        0.3886297842699591,
+        0.10369645118360982,
+        0.37020995057682615,
+        0.1712446732478794,
+        0.9360675340040041,
+        0.607374831583281,
+        0.36830546455084034,
+        0.10623656121536729,
+        0.6237983530336981,
+        0.1672824240816424,
+        0.45978483596642983,
+        0.7165480740530841,
+        0.8513705856908667,
+        0.9139904414326847,
+        0.2777518588455756,
+        0.014266571625454416,
+        0.45275654986425806,
+        0.45656645513475524,
+        0.14643015082789446,
+        0.18205338671188853,
+        0.8659052654630621,
+        0.05457806530524323,
+        0.3730290602790758,
+        0.0402689393545117,
+        0.25319899147195524,
+        0.3873272136433141,
+        0.7713847041870872
+      ],
+    nextRandomFloat : function() {
+        var cur = this.state.random_index + 1;
+        cur % this._randomData.length;
+        this.state.random_index = cur;
+        var r = this._randomData[cur];
+        return r;
+    },
+    nextRandomIndexOf : function(length) {
+        var r = this.nextRandomFloat() * length;
+        return Math.floor(r);
     },
 };
 
