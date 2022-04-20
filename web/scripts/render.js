@@ -103,6 +103,8 @@ var dawnRenderer_prototype = {
             sprite.draw_x, sprite.draw_y, sprite.width, sprite.height);
     },
     udpateStatus : function() {
+        this.drawStringAtXY(this.game.latest_status, 1, 1);
+
         var msg = this.game.latest_status;
         this.mainStatus.innerText = msg;
     },
@@ -126,6 +128,38 @@ var dawnRenderer_prototype = {
         var x = avatar.x + dx;
         var y = avatar.y + dy;
         return this.game.getTileInfoByMapXY(avatar.map_id,x,y);
+    },
+    drawStringAtXY : function(str,x=0,y=0) {
+        var fontImg = this.images.font.tryGetImg();
+        if (!fontImg) return;
+        var font = this.world.font;
+        for (var i=0; i<str.length; i++) {
+            var raw = str.charAt(i);
+            var ndx = font.glyph.indexOf(raw);
+            if (ndx < 0) ndx = 2;
+            var w = this.drawCharAtXY(str.charAt(i), x, y);
+            x += w + font.kerning;
+        }
+    },
+    drawCharAtXY : function(letter, x, y) {
+        var font = this.world.font;
+        if (letter == ' ') return font.space;
+
+        var ndx = font.glyph.indexOf(letter.toUpperCase());
+        if ((ndx < 0) || (ndx >= font.glyph.length)) {
+            ndx = 2; // missing character
+        }
+        var src_x = font.start[ndx];
+        var w = font.width[ndx];
+        var h = font.height;
+
+        var fontImg = this.images.font.tryGetImg();
+        if (!fontImg) return;
+        this.mainContext.drawImage(fontImg, 
+            src_x, 0, w, h,
+            x, y, w, h);
+
+        return w;
     },
     createImageLoader : function(rawSrc, callback) {
         var src = rawSrc;

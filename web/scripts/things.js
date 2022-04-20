@@ -13,14 +13,17 @@ var dawnThings_prototype = {
     },
     walkIntoThing : function(game,thing) {
         if (thing.type == "exit") {
+            var nextMap = game.getRef(thing.ref);
             game.state.avatar.x = thing.dest_x;
             game.state.avatar.y = thing.dest_y;
             game.state.avatar.map_id = thing.dest_map;
-            game.latest_status = "" + game.world.maps[game.state.avatar.map_id].name;
+            game.latest_status = nextMap.name;
             return false;
         }
         if (thing.type == "person") {
+            var person = game.getRef(thing.ref);
             game.state.encounter = thing;
+            game.latest_status = person.name;
             game.rotateAvatar(2); // turn them around
             return false;
         }
