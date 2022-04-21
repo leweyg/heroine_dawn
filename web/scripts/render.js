@@ -108,7 +108,7 @@ var dawnRenderer_prototype = {
                 if (enem.category == "shadow") {
                     this.mainContext.globalAlpha = 0.61;
                 }
-                var ndx = Math.floor(this.timeIndex / this.timeIndexPerAnim) % enem.anim.length;
+                var ndx = Math.floor(encounter.phase_time / this.timeIndexPerAnim) % enem.anim.length;
                 var scl = 2;
                 if (encounter.phase != 0) {
                     ndx = encounter.phase;
@@ -221,7 +221,9 @@ var dawnRenderer_prototype = {
     udpateStatus : function() {
         var status = this.game.latest_status;
         if (status == "" && this.game.state.menu_open) {
-            status = this.world.maps[this.game.state.avatar.map_id].name;
+            var msg = this.world.maps[this.game.state.avatar.map_id].name;
+            msg += "\nfacing " + this.game.state.avatar.facing;
+            status = msg;
         }
         this.drawStringAligned(status, -1, -1);
 

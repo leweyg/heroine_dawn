@@ -28,6 +28,7 @@ var dawnGame_prototype = {
     },
     doTimeTick : function() {
         if (!this.isBattle()) return;
+        if (this.state.menu_open) return; // stop time
         this.battleTick();
     },
     innerAction : function(act,isPreview) {
