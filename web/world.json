@@ -197,7 +197,7 @@
     "mp": 4,
     "max_mp": 4,
     "gold": 0,
-    "bonus_atk": 0,
+    "bonus_atk": 1,
     "bonus_def": 0,
     "spellbook": 0,
     "sleeploc": [ 0, 1, 1],

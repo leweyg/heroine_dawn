@@ -140,7 +140,7 @@ var dawnGame_prototype = {
                 this.latest_status = "windup...";
             }
         }
-        if (enc.phase == 2) { // attack
+        if (enc.phase == 2) { // enemy attack
             var avatar = this.state.avatar;
             var enem = this.getRef(enc.ref);
             var atk = this.nextRandomMinMax(enem.atk_min,enem.atk_max);

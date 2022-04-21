@@ -7,8 +7,42 @@ var dawnThings_prototype = {
             return false;
         }
         if (encounter.type == "enemy") {
-
-            game.state.encounter = null; // end battle for now
+            var enem = game.getRef(encounter.ref);
+            if (act == "down") {
+                var gold = game.nextRandomMinMax(enem.gold_min, enem.gold_max);
+                game.latest_status = "Avoided conflict. Got $" + gold;
+                this.recieveGold(game,gold);
+                return true;
+            }
+            if (encounter.phase == 0) {
+                game.latest_status = "Missed, too early.";
+                return true;
+            }
+            if (encounter.phase == 2) {
+                game.latest_status = "Missed, too late.";
+                return true;
+            }
+            console.assert(encounter.phase == 1);
+            if (true) {
+                var avatar = game.state.avatar;
+                var weapon = game.world.equipment.weapons[avatar.weapon];
+                
+                var atk = game.nextRandomMinMax(weapon.atk_min,weapon.atk_max) + avatar.bonus_atk;
+                atk = Math.max(1,atk);
+                var hp = encounter.hp - atk;
+                if (hp <= 0) {
+                    var gold = game.nextRandomMinMax(enem.gold_min, enem.gold_max);
+                    game.latest_status = "Tamed. Got $" + gold;
+                    this.recieveGold(game,gold);
+                    return true;
+                } else {
+                    encounter.hp = hp;
+                    encounter.phase = 0;
+                    encounter.phase_time = 0;
+                    game.latest_status = "Dealt -" + atk + ", " + hp + " left.";
+                    return true;
+                }
+            }
             return true;
         }
         if ((encounter.type == "person")) {
@@ -53,6 +87,15 @@ var dawnThings_prototype = {
             return true; // input was recieved
         }
         console.assert("TODO: encounter input of type: " + encounter.type);
+    },
+    recieveGold : function(game,gold) {
+        var avatar = game.state.avatar;
+        avatar.gold += gold;
+        game.state.encounter = {
+            "type":"chest",
+            "stat":"gold",
+            "ref":"world.equipment.treasures[2]",
+        };
     },
     walkIntoThing : function(game,thing) {
         if (thing.type == "exit") {
