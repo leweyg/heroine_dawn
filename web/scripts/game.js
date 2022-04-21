@@ -101,6 +101,7 @@ var dawnGame_prototype = {
                 var r = this.nextRandomFloat();
                 if (r > this.state.encounter_rate) return;
                 var enemId = this.nextRandomIndexOf(map.enemies.length); // TODO: make random
+                enemId = map.enemies[enemId];
                 this.startBattle(enemId);
             }
         }
@@ -124,17 +125,30 @@ var dawnGame_prototype = {
         var enc = this.state.encounter;
         console.assert(enc.phase_time != undefined);
         enc.phase_time++;
-        var times_per_phase = [
-            40, 10, 5 // idle, wind-up, strike
-        ];
-        if (enc.phase_time >= times_per_phase[enc.phase]) {
+        if (!enc.phase_duration) {
+            var first_dur_extra = 10;
+            enc.phase_duration = this.battleCalcPhaseDuration(enc) + first_dur_extra;
+        }
+        if (enc.phase_time >= enc.phase_duration) {
             this.battlePhaseChanged(enc);
             this.onChanged();
         }
     },
+    battleCalcPhaseDuration : function(enc) {
+        var times_per_phase_min = [
+            5, 3, 2 // idle, wind-up, strike
+        ];
+        var times_per_phase_max = [
+            40, 10, 5 // idle, wind-up, strike
+        ];
+        var dur = this.nextRandomMinMax(times_per_phase_min[enc.phase], times_per_phase_max[enc.phase]);
+        return dur;
+    },
     battlePhaseChanged : function(enc) {
         enc.phase_time = 0;
         enc.phase = (enc.phase + 1) % 3;
+        enc.phase_duration = this.battleCalcPhaseDuration(enc);
+        // start of phase:
         if (enc.phase == 1) { // tell
             if (this.battleIsTamed()) {
                 this.latest_status = "windup...";
@@ -148,7 +162,7 @@ var dawnGame_prototype = {
             atk = Math.max(1,atk);
             if (!this.battleIsTamed()) {
                 avatar.hp = Math.max(0,avatar.hp-atk);
-                this.latest_status = "-" + atk + " hp";
+                this.latest_status = "You-" + atk + " hp";
             } else {
                 this.latest_status = "Would be -" + atk + " hp";
             }
@@ -256,10 +270,15 @@ var dawnGame_prototype = {
         0.7713847041870872
       ],
     nextRandomFloat : function() {
-        var cur = ((this.state.random_index + 1) % this._randomData.length);
-        this.state.random_index = cur;
-        var r = this._randomData[cur];
-        return r;
+        var useFixedData = false;
+        if (!useFixedData) {
+            return Math.random();
+        } else {
+            var cur = ((this.state.random_index + 1) % this._randomData.length);
+            this.state.random_index = cur;
+            var r = this._randomData[cur];
+            return r;
+        }
     },
     nextRandomIndexOf : function(length) {
         var r = this.nextRandomFloat() * length;

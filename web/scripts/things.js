@@ -36,10 +36,11 @@ var dawnThings_prototype = {
                     this.recieveGold(game,gold);
                     return true;
                 } else {
+                    var firstHp = encounter.hp;
                     encounter.hp = hp;
                     encounter.phase = 0;
                     encounter.phase_time = 0;
-                    game.latest_status = "Dealt -" + atk + ", " + hp + " left.";
+                    game.latest_status = "Target" + "-" + atk + "=" + hp + " hp";
                     return true;
                 }
             }
