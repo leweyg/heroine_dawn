@@ -21,16 +21,19 @@ var dawnGame_prototype = {
         }
         this.latest_status = msg;
     },
-    doInput : function(act) {
+    doInput : function(act,isPreview) {
         this.latest_status = "";
-        this.innerAction(act);
+        this.innerAction(act,isPreview);
         this.onChanged();
     },
     doTimeTick : function() {
         if (!this.isBattle()) return;
         this.battleTick();
     },
-    innerAction : function(act) {
+    innerAction : function(act,isPreview) {
+        if (isPreview) {
+            return;
+        }
         if (act == "menu") {
             this.state.menu_open = !this.state.menu_open;
             return;
@@ -46,7 +49,8 @@ var dawnGame_prototype = {
         }
         var avatar = this.state.avatar;
         switch (act) {
-            case "forward":
+            case "up":
+            case "center":
                 {
                     var fwd = this.getTileInfoAvatarForward();
                     if (!fwd) {
