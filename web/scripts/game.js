@@ -15,6 +15,11 @@ var dawnGame_prototype = {
             encounter_rate : 0.15,
         };
         this.latest_status = "First step...";
+        var msg = "";
+        for (var i in this.world.intro_note) {
+            msg += this.world.intro_note[i] + "\n";
+        }
+        this.latest_status = msg;
     },
     doInput : function(act) {
         this.latest_status = "";
@@ -23,17 +28,7 @@ var dawnGame_prototype = {
     },
     doTimeTick : function() {
         if (!this.isBattle()) return;
-        var enc = this.state.encounter;
-        console.assert(enc.phase_time != undefined);
-        enc.phase_time++;
-        var times_per_phase = [
-            40, 10, 5 // idle, wind-up, strike
-        ];
-        if (enc.phase_time >= times_per_phase[enc.phase]) {
-            enc.phase_time = 0;
-            enc.phase = (enc.phase + 1) % 3;
-            this.onChanged();
-        }
+        this.battleTick();
     },
     innerAction : function(act) {
         if (act == "menu") {
@@ -116,8 +111,47 @@ var dawnGame_prototype = {
             phase_time:20,
             ref:"world.enemies[" + enemId + "]",
         };
-        this.latest_status = enem.name;
+        var prefix = this.battleIsTamed() ? "Tamed " : "";
+        this.latest_status = prefix + enem.name;
         this.state.encounter = enc;
+    },
+    battleTick : function() {
+        var enc = this.state.encounter;
+        console.assert(enc.phase_time != undefined);
+        enc.phase_time++;
+        var times_per_phase = [
+            40, 10, 5 // idle, wind-up, strike
+        ];
+        if (enc.phase_time >= times_per_phase[enc.phase]) {
+            this.battlePhaseChanged(enc);
+            this.onChanged();
+        }
+    },
+    battlePhaseChanged : function(enc) {
+        enc.phase_time = 0;
+        enc.phase = (enc.phase + 1) % 3;
+        if (enc.phase == 1) { // tell
+            if (this.battleIsTamed()) {
+                this.latest_status = "windup...";
+            }
+        }
+        if (enc.phase == 2) { // attack
+            var avatar = this.state.avatar;
+            var enem = this.getRef(enc.ref);
+            var atk = this.nextRandomMinMax(enem.atk_min,enem.atk_max);
+            atk -= this.world.equipment.armors[avatar.armor].def;
+            atk = Math.max(1,atk);
+            if (!this.battleIsTamed()) {
+                avatar.hp = Math.max(0,avatar.hp-atk);
+                this.latest_status = "-" + atk + " hp";
+            } else {
+                this.latest_status = "Would be -" + atk + " hp";
+            }
+        }
+    },
+    battleIsTamed : function() {
+        var mapTamed = this.world.maps[this.state.avatar.map_id].tamed;
+        return (mapTamed || this.state.avatar.tamer);
     },
     callOnChanged : [], // register renderer here
     onChanged : function() {
@@ -225,6 +259,11 @@ var dawnGame_prototype = {
     nextRandomIndexOf : function(length) {
         var r = this.nextRandomFloat() * length;
         return Math.floor(r);
+    },
+    nextRandomMinMax : function(min,max) {
+        var len = (max-min)+1; // inclusive
+        var r = this.nextRandomFloat() * len;
+        return Math.floor(r) + min;
     },
 };
 

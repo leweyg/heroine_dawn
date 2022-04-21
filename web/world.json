@@ -1,5 +1,14 @@
 {
+  "intro_note": [
+    "We have tamed the monastery",
+    "beasts, but not outside.",
+    "Seek the sage in west village,",
+    "for the magic to south tunnels,",
+    "and there the key to the",
+    "speaker from the east."
+  ],
   "summary": [
+    "intro_note",
     "summary",
     "backgrounds",
     "tile_types",
@@ -896,7 +905,8 @@
           "x": 4,
           "y": 10
         }
-      ]
+      ],
+      "tamed": true
     },
     {
       "index": 2,

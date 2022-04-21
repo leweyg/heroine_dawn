@@ -166,7 +166,9 @@ var dawnRenderer_prototype = {
         if (enc || open) {
             var avatar = this.game.state.avatar;
             this.drawStringAligned(avatar.hp + (longer ? "/" + avatar.max_hp : "") + " hp", 1, 1);
-            this.drawStringAligned("mp " + avatar.mp + (longer ? "/" + avatar.max_mp : ""), -1, 1);
+            if (avatar.spellbook > 0) {
+                this.drawStringAligned("mp " + avatar.mp + (longer ? "/" + avatar.max_mp : ""), -1, 1);
+            }
             if (longer || (enc && enc.type=="person")) {
                 this.drawStringAligned("$" + avatar.gold, 0, 1);
             }
@@ -221,7 +223,7 @@ var dawnRenderer_prototype = {
         if (status == "" && this.game.state.menu_open) {
             status = this.world.maps[this.game.state.avatar.map_id].name;
         }
-        this.drawStringAtXY(status, 1, 1);
+        this.drawStringAligned(status, -1, -1);
 
         var msg = status;
         //this.mainStatus.innerText = msg;

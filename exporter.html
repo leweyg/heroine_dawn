@@ -104,6 +104,14 @@
             }
             function export_world_atlas() {
                 var world = {
+                    intro_note: [
+                      "We have tamed the monastery",
+                      "beasts, but not outside.",
+                      "Seek the sage in west village,",
+                      "for south tunnels magic,",
+                      "and there the key to the",
+                      "speaker from the east."
+                    ],
                     summary : [],
                     backgrounds : [],
                     tile_types : [ { index:0, walkable: false, name:"Empty", } ],
@@ -318,6 +326,7 @@
                     }
                     map.tiles = rows;
                 }
+                world.maps[1].tamed = true;
                 // export font data:
                 world.font = {
                   src: "images/interface/boxy_bold.png",

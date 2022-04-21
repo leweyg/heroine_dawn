@@ -27,6 +27,17 @@
             <input type="button" class="input_buttons input_buttons_lesser" value="  ≡  " onclick="dawnGame.doInput('menu');" />
             <p id="main_status" style="height:40px;display: none;" >Loading...</p>
         </center>
+        <br/>
+        <hr/>
+        <div>
+            <font style="color:darkgray">
+                <a href="../"><b>Heroine Dawn</b> [about/guide]</a>
+                <a id="main_save_link" href="">[...]</a>
+            
+            <br/>
+                <i><p id="main_intro_note"></p></i>
+            </font>
+        </div>
         <script src="scripts/things.js"></script>
         <script src="scripts/swipe.js"></script>
         <script src="scripts/game.js"></script>
@@ -42,6 +53,12 @@
                     dawnRenderer.initFromGameWorld(dawnGame, world, main_canvas, main_status);
                     dawnSwipe.setupSwipes(dawnGame, main_canvas, main_status);
                     dawnRenderer.redraw();
+
+                    var msg = "";
+                    for (var i in world.intro_note) {
+                        msg += world.intro_note[i] + "<br/>";
+                    }
+                    main_intro_note.innerHTML = msg;
                 });
             }
             var pageParams = [ "map_id", "x", "y", "facing" ];
@@ -73,13 +90,6 @@
             }
             main_init();
         </script>
-        <br/>
-        <hr/>
-        <div>
-            <font style="color:darkgray">
-                <a href="../">Heroine Dawn [about/guide]</a>
-                <a id="main_save_link" href="">[...]</a>
-            </font>
-        </div>
+
     </body>
 </html>

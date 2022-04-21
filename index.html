@@ -25,6 +25,7 @@
             <h3>World Guide</h3>
             <script src="web/scripts/utils.js"></script>
             <script src="web/scripts/topdown_render.js"></script>
+            <i><p id="intro_note_el"></p></i>
             <pre id="topdown_whole"></pre>
             <h3>Map Explorer</h3>
                 <p>Click doors to explore and see details below:</p>
@@ -85,7 +86,7 @@
                                 }
                                 continue;
                             }
-                            if ((i == "summary")) {
+                            if ((i == "summary") || (i == "intro_note")) {
                                 continue;
                             }
                             if (i in delayList) {
@@ -196,6 +197,12 @@
                     dawnUtils.downloadJson("web/world.json", (world) => {
                         topdownWorld = world;
                         redrawTopdown();
+
+                        var msg = "";
+                        for (var i in world.intro_note) {
+                            msg += world.intro_note[i] + "<br/>";
+                        }
+                        intro_note_el.innerHTML = msg;
                     });
                 }
                 initMap();
