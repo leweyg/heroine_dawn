@@ -15,12 +15,15 @@ var dawnGame_prototype = {
             menu_open : false,
             encounter_rate : 0.15,
         };
-        this.latest_status = "First step...";
+        this.latest_status = ""; //"First step...";
         var msg = "";
         for (var i in this.world.intro_note) {
             msg += this.world.intro_note[i] + "\n";
         }
-        this.latest_status = msg;
+        this.state.encounter = {
+            "type":"note",
+            "msg":msg,
+        };
     },
     doInput : function(act,isPreview) {
         this.latest_status = "";

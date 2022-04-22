@@ -44,7 +44,8 @@ var dawnSwipe_prototype = {
         e.stopPropagation();
         if (e.touches.length >= 1) {
             var t = e.touches[0];
-            this.innerInput(e,t.clientX,t.clientY,isDown,isMove);
+            var el = this.mainElement.getBoundingClientRect();
+            this.innerInput(e,t.clientX-el.left,t.clientY-el.top,isDown,isMove);
         } else {
             var scl = this.inputScale();
             this.innerInput(e,this.last_x/scl,this.last_y/scl,isDown,isMove);

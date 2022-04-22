@@ -6,6 +6,10 @@ var dawnThings_prototype = {
             game.state.encounter = null; // hide encounter after input
             return false;
         }
+        if (encounter.type == "note") {
+            game.state.encounter = null; // hide encounter after input
+            return true;
+        }
         if (encounter.type == "enemy") {
             var enem = game.getRef(encounter.ref);
             if (act.startsWith("cast[")) {

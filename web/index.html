@@ -18,7 +18,9 @@
     <body style="color:white; background-color:black;">
         <br/>
         <center>
-            <canvas id="main_canvas" width="160" height="120" style="width:95%;max-width: 840px;"></canvas>
+            <canvas id="main_canvas" width="160" height="120" style="height:95%;max-width: 840px;"></canvas>
+
+            <div id="input_buttons" style="display: none;">
             <br/>
             <input type="button" class="input_buttons" value="  &hookleftarrow;  " onclick="dawnGame.doInput('left');" />
             <input type="button" class="input_buttons" value="  &uarr;  " onclick="dawnGame.doInput('up');"  />
@@ -26,15 +28,18 @@
             <br/>
             <input type="button" class="input_buttons input_buttons_lesser" value="  ≡  " onclick="dawnGame.doInput('menu');" />
             <p id="main_status" style="height:40px;display: none;" >Loading...</p>
+            </div>
         </center>
         <br/>
         <hr/>
         <div>
+            <p>
             <font style="color:darkgray">
                 <a href="../"><b>Heroine Dawn</b> [about/guide]</a>
                 <a id="main_save_link" href="">[...]</a>
-            
-            <br/>
+                <br/>
+                Swipe to turn/move/interact, tap icons for menu/spells, and read this note:
+            </p>
                 <i><p id="main_intro_note"></p></i>
             </font>
         </div>
@@ -53,13 +58,33 @@
                     dawnRenderer.initFromGameWorld(dawnGame, world, main_canvas, main_status);
                     dawnSwipe.setupSwipes(dawnGame, main_canvas, main_status);
                     dawnRenderer.redraw();
+                    dawnGame.callOnChanged.push(() => {checkRotation();});
+                    window.onresize = (() => checkRotation());
+                    checkRotation();
 
-                    var msg = "";
+                    var msg = "\"";
                     for (var i in world.intro_note) {
-                        msg += world.intro_note[i] + "<br/>";
+                        if (i != 0) msg += "<br/>";
+                        msg += world.intro_note[i];
                     }
+                    msg += "\"";
                     main_intro_note.innerHTML = msg;
                 });
+            }
+            function checkRotation() {
+                var can = main_canvas.getBoundingClientRect();
+                var wndAspect = window.innerWidth / window.innerHeight;
+                var canAspect = (can.width / can.height);
+                main_canvas.removeAttribute("style");
+                if (canAspect > wndAspect) {
+                    main_canvas.style["width"] = "95%";
+                    main_canvas.style["max-width"] = "840px";
+                    main_canvas.style["height"] = undefined;
+                } else {
+                    main_canvas.style["height"] = "95%";
+                    main_canvas.style["max-width"] = undefined;
+                    main_canvas.style["width"] = undefined;
+                }
             }
             var pageParams = [ "map_id", "x", "y", "facing" ];
             function setupPageParam(params, name) {

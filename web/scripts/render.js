@@ -96,6 +96,13 @@ var dawnRenderer_prototype = {
         if (!encounter) {
             return;
         }
+        if (encounter.type == "note") {
+            var ctx = this.mainContext;
+            ctx.fillStyle = "rgba(0, 0, 0, 0.75)";
+            ctx.fillRect(0,0,this.world.rendering.screen.width, this.world.rendering.screen.height);
+    
+            this.drawStringAligned(encounter.msg, -1, -1);
+        }
         if (encounter.type == "chest") {
             var treasure = this.game.getRef(encounter.ref);
             var sheet = this.game.getRef(treasure.ref_sheet);
@@ -164,6 +171,7 @@ var dawnRenderer_prototype = {
         var enc = this.game.state.encounter;
         var battle = this.game.isBattle();
         var avatar = this.game.state.avatar;
+        if (enc && (enc.type == "note")) return;
         if (enc || open) {
             this.drawStringAligned(avatar.hp + (longer ? "/" + avatar.max_hp : "") + " hp", 1, 1);
             if (avatar.spellbook > 0) {
