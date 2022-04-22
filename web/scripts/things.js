@@ -143,6 +143,9 @@ var dawnThings_prototype = {
             game.startBattle(thing.enemy_id);
             return true;
         }
+        if ((thing.type == "locked_door") || (thing.type == "bones")) {
+            return true; // all good, already walked in
+        }
         game.latest_status = "TODO: thing of type: " + thing.type;
         return true;
     },

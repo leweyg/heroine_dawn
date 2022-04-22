@@ -76,6 +76,15 @@
                 for (var i in pageParams) {
                     setupPageParam(urlParams, pageParams[i]);
                 }
+                if (urlParams.get("knight")) {
+                    dawnGame.state.avatar.hp = 99;
+                    dawnGame.state.avatar.mp = 99;
+                    dawnGame.state.avatar.max_hp = 99;
+                    dawnGame.state.avatar.max_mp = 99;
+                    dawnGame.state.avatar.spellbook = 6;
+                    dawnGame.state.avatar.weapon = 7;
+                    dawnGame.state.avatar.armor = 7;
+                }
             }
             function updatePageLink() {
                 var path = "?";

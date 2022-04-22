@@ -87,6 +87,9 @@ var dawnUtils_prototype = {
         }
         return ans;
     },
+    cloneDeep : function(obj) {
+        return JSON.parse(JSON.stringify(obj));
+    },
 };
 
 var dawnUtils = new Object(dawnUtils_prototype);

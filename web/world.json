@@ -487,6 +487,9 @@
         "name": "Burn",
         "gold": 100,
         "index": 2,
+        "tile_from": 16,
+        "tile_to": 5,
+        "atk": 15,
         "type": "spell",
         "ref_sheet": "world.rendering.sheets[4]"
       },
@@ -494,6 +497,9 @@
         "name": "Unlock",
         "gold": 500,
         "index": 3,
+        "tile_from": 18,
+        "tile_to": 5,
+        "atk": 20,
         "type": "spell",
         "ref_sheet": "world.rendering.sheets[4]"
       },
@@ -501,6 +507,7 @@
         "name": "Light",
         "gold": 2500,
         "index": 4,
+        "atk": 25,
         "type": "spell",
         "ref_sheet": "world.rendering.sheets[4]"
       },
@@ -508,6 +515,7 @@
         "name": "Freeze",
         "gold": 10000,
         "index": 5,
+        "atk": 30,
         "type": "spell",
         "ref_sheet": "world.rendering.sheets[4]"
       },
@@ -515,6 +523,7 @@
         "name": "Reflect",
         "gold": 50000,
         "index": 6,
+        "atk": 35,
         "type": "spell",
         "ref_sheet": "world.rendering.sheets[4]"
       }

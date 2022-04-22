@@ -188,10 +188,16 @@ var dawnRenderer_prototype = {
             var stateIndex = this.game.state.menu_open ? 1 : 0;
             this.drawSheetIndex("info_icon", stateIndex);
             
-            if (!open) {
-                this.mainContext.globalAlpha = 0.5;
-            }
             for (var i=1; i<=this.game.state.avatar.spellbook; i++) {
+                var spell = this.game.world.equipment.spells[i];
+                var highlight = open;
+                if (spell.tile_from) {
+                    var fwdTile = this.game.getTileInfoAvatarForward();
+                    if (fwdTile && (spell.tile_from == fwdTile.tile_type)) {
+                        highlight = true;
+                    }
+                }
+                this.mainContext.globalAlpha = highlight ? 1.0 : 0.5;
                 this.drawSheetIndex("spell", i, i-1);
             }
 

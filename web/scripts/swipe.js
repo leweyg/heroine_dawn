@@ -81,7 +81,7 @@ var dawnSwipe_prototype = {
                     return false;
                 }
                 if (icon_count) {
-                    if (x > (icon_count * sheet.width)) {
+                    if (x < (icon_count * sheet.width)) {
                         return Math.floor(x / sheet.width)+1;
                     }
                     return false;

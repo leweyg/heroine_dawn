@@ -10,6 +10,7 @@ var dawnGame_prototype = {
         this.state = {
             avatar : new Object(world.avatar),
             encounter : null,
+            tile_changes : [],
             random_index : 0,
             menu_open : false,
             encounter_rate : 0.15,
@@ -47,6 +48,10 @@ var dawnGame_prototype = {
             if (dawnThings.encounterRecivesInput(this,this.state.encounter,act)) {
                 return;
             }
+        }
+        if (act.startsWith("cast[")) {
+            this.castMagicInWorld(act);
+            return;
         }
         var avatar = this.state.avatar;
         switch (act) {
@@ -105,6 +110,27 @@ var dawnGame_prototype = {
                 this.startBattle(enemId);
             }
         }
+    },
+    castMagicInWorld : function(act) {
+        var ndx = 1*(act.replace("cast[","").replace("]",""));
+        var spell = this.world.equipment.spells[ndx];
+        if (spell.tile_from) {
+            var tile = this.getTileInfoAvatarForward();
+            if (tile && (tile.tile_type == spell.tile_from)) {
+                tile.tile_type = spell.tile_to;
+                tile.map_id = this.state.avatar.map_id;
+                this.state.tile_changes.push(dawnUtils.cloneDeep(tile));
+                this.world.maps[tile.map_id].tiles[tile.y][tile.x] = spell.tile_to;
+                this.latest_status = "Cast " + spell.name;
+                return;
+            } else {
+                this.latest_status = "Can't use here.";
+                return;
+            }
+        }
+        
+        this.latest_status = "Casting " + ndx;
+        return;
     },
     startBattle : function(enemId) {
         var enem = this.world.enemies[enemId];

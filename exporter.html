@@ -224,6 +224,15 @@
                 world.equipment.weapons = add_array_indices(info.weapons);
                 world.equipment.armors = add_array_indices(info.armors);
                 world.equipment.spells = add_array_indices(info.spells);
+                var burn = world.equipment.spells[2];
+                var unlock = world.equipment.spells[3];
+                burn.tile_from = 16; // bones
+                burn.tile_to = 5; // interior
+                unlock.tile_from = 18; // locked door
+                unlock.tile_to = 5; // interior
+                for (var m=2; m<info.spells.length; m++) {
+                  info.spells[m].atk = 5+(5*m);
+                }
                 // export npcs:
                 enemy_init();
                 var powers_by_id = [ "attack", "fire", "hpdrain", "mpdrain" ];
