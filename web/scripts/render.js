@@ -11,8 +11,6 @@ var dawnRenderer_prototype = {
         backgrounds : [],
         tiles : [],
     },
-    timeIndexInterval : 100,
-    timeIndexPerAnim : 3,
     initFromGameWorld : function(game, world, mainTarget, mainStatus) {
         this.game = game;
         this.world = world;
@@ -22,7 +20,7 @@ var dawnRenderer_prototype = {
 
         var _this = this;
         var callback = (() => {_this.redraw();});
-        setInterval(()=>{_this.onTimeTick();}, this.timeIndexInterval);
+        setInterval(()=>{_this.onTimeTick();}, this.world.combat.time_unit_ms);
 
         this.images.font = this.createImageLoader(world.font.src);
         this.images.backgrounds = [  ];
@@ -133,7 +131,7 @@ var dawnRenderer_prototype = {
                 var fadeInTime = 10;
                 var fadeIn = Math.min(1, (encounter.total_time / fadeInTime));
                 this.mainContext.globalAlpha *= fadeIn;
-                var ndx = Math.floor(encounter.phase_time / this.timeIndexPerAnim) % enem.anim.length;
+                var ndx = Math.floor(encounter.phase_time / this.world.combat.idle_anim_rate) % enem.anim.length;
                 var scl = 2;
                 if (encounter.phase != 0) {
                     ndx = encounter.phase;

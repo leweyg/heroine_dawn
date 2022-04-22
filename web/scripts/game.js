@@ -13,7 +13,6 @@ var dawnGame_prototype = {
             tile_changes : [],
             random_index : 0,
             menu_open : false,
-            encounter_rate : 0.15,
         };
         this.latest_status = ""; //"First step...";
         var msg = "";
@@ -110,7 +109,7 @@ var dawnGame_prototype = {
             var map = this.world.maps[avatar.map_id];
             if (map.enemies.length > 0) {
                 var r = this.nextRandomFloat();
-                if (r > this.state.encounter_rate) return;
+                if (r > this.world.combat.encounter_rate) return;
                 var enemId = this.nextRandomIndexOf(map.enemies.length); // TODO: make random
                 enemId = map.enemies[enemId];
                 this.startBattle(enemId);
@@ -192,18 +191,13 @@ var dawnGame_prototype = {
         }
     },
     battleCalcPhaseDuration : function(enc) {
-        var times_per_phase_min = [
-            5, 3, 2 // idle, wind-up, strike
-        ];
-        var times_per_phase_max = [
-            40, 10, 5 // idle, wind-up, strike
-        ];
-        var dur = this.nextRandomMinMax(times_per_phase_min[enc.phase], times_per_phase_max[enc.phase]);
+        var phaseData = this.world.combat.phases[enc.phase];
+        var dur = this.nextRandomMinMax(phaseData.time_min, phaseData.time_max);
         return dur;
     },
     battlePhaseChanged : function(enc) {
         enc.phase_time = 0;
-        enc.phase = (enc.phase + 1) % 3;
+        enc.phase = (enc.phase + 1) % this.world.combat.phases.length;
         enc.phase_duration = this.battleCalcPhaseDuration(enc);
         // start of phase:
         if (enc.phase == 1) { // tell

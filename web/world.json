@@ -12,16 +12,40 @@
   "summary": [
     "intro_note",
     "summary",
+    "avatar",
     "backgrounds",
     "tile_types",
-    "avatar",
     "equipment",
     "people",
     "enemies",
+    "combat",
     "maps",
     "font",
     "rendering"
   ],
+  "avatar": {
+    "x": 1,
+    "y": 1,
+    "facing": "south",
+    "moved": false,
+    "map_id": 0,
+    "weapon": 0,
+    "armor": 1,
+    "hp": 25,
+    "max_hp": 25,
+    "mp": 4,
+    "max_mp": 4,
+    "gold": 0,
+    "bonus_atk": 1,
+    "bonus_def": 0,
+    "spellbook": 0,
+    "sleeploc": [ 0, 1, 1],
+    "type": "avatar",
+    "type_map_id": "world.maps",
+    "type_weapon": "world.equipment.weapons",
+    "type_armor": "world.equipment.armors",
+    "type_spellbook": "world.equipment.spells"
+  },
   "backgrounds": [
     {
       "index": 0,
@@ -184,29 +208,6 @@
       "walkable": true
     }
   ],
-  "avatar": {
-    "x": 1,
-    "y": 1,
-    "facing": "south",
-    "moved": false,
-    "map_id": 0,
-    "weapon": 0,
-    "armor": 1,
-    "hp": 25,
-    "max_hp": 25,
-    "mp": 4,
-    "max_mp": 4,
-    "gold": 0,
-    "bonus_atk": 1,
-    "bonus_def": 0,
-    "spellbook": 0,
-    "sleeploc": [ 0, 1, 1],
-    "type": "avatar",
-    "type_map_id": "world.maps",
-    "type_weapon": "world.equipment.weapons",
-    "type_armor": "world.equipment.armors",
-    "type_spellbook": "world.equipment.spells"
-  },
   "equipment": {
     "treasures": [
       {
@@ -830,6 +831,30 @@
       "extra": "dspeak"
     }
   ],
+  "combat": {
+    "encounter_rate": 0.15,
+    "time_unit_ms": 100,
+    "idle_anim_rate": 3,
+    "phases": [
+      {
+        "name": "idle",
+        "time_min": 5,
+        "time_max": 40
+      },
+      {
+        "name": "tell",
+        "open": true,
+        "time_min": 3,
+        "time_max": 10
+      },
+      {
+        "name": "attack",
+        "attack": true,
+        "time_min": 2,
+        "time_max": 5
+      }
+    ]
+  },
   "maps": [
     {
       "index": 0,

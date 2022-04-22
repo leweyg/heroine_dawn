@@ -115,12 +115,13 @@
                     "Speaker who tames all."
                     ],
                     summary : [],
+                    avatar : avatar_default(),
                     backgrounds : [],
                     tile_types : [ { index:0, walkable: false, name:"Empty", } ],
-                    avatar : avatar_default(),
                     equipment : {},
                     people : [],
                     enemies : [],
+                    combat : {},
                     maps : [],
                     font : {},
                     rendering : {},
@@ -392,6 +393,37 @@
                     item.ref_sheet = "world.rendering.sheets[" + sheetId + "]";
                   }
                 }
+                // build combat:
+                var times_per_phase_min = [
+                    5, 3, 2 // idle, wind-up, strike
+                ];
+                var times_per_phase_max = [
+                    40, 10, 5 // idle, wind-up, strike
+                ];
+                world.combat = {
+                  encounter_rate : 0.15,
+                  time_unit_ms : 100,
+                  idle_anim_rate : 3,
+                  phases : [
+                    {
+                      name:"idle",
+                      time_min:5,
+                      time_max:40,
+                    },
+                    {
+                      name:"tell",
+                      open:true,
+                      time_min:3,
+                      time_max:10,
+                    },
+                    {
+                      name:"attack",
+                      attack:true,
+                      time_min:2,
+                      time_max:5,
+                    }
+                  ]
+                };
                 // build summary:
                 for (var wi in world) {
                     world.summary.push(wi);
