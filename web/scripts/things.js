@@ -156,6 +156,11 @@ var dawnThings_prototype = {
             }
             game.latest_status = "Got " + treasure.name;
             if (treasure.add) {
+                console.assert(treasure.stat in game.state.avatar);
+                var max_stat = "max_" + treasure.stat;
+                if (max_stat in game.state.avatar) {
+                    game.state.avatar[max_stat] += treasure.add;
+                }
                 game.state.avatar[treasure.stat] += treasure.add;
             } else if (treasure.min_value) {
                 if (game.state.avatar[treasure.stat] < treasure.min_value) {
@@ -193,6 +198,7 @@ var dawnThings_prototype = {
             encounter.hp = hp;
             encounter.phase = 0;
             encounter.phase_time = 0;
+            encounter.phase_duration = game.battleCalcPhaseDuration(encounter);
             game.latest_status = prefix + "Target" + "-" + atk + "=" + hp + " hp";
             return true;
         }
