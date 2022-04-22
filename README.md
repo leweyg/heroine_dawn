@@ -18,16 +18,17 @@ Original git: https://github.com/clintbellanger/heroine-dusk
 
 # Why?
 While doing research for an up-coming game, I came across the open source game
-Heroine Dusk that had so many of the right components and was really well organized content.
+Heroine Dusk that had so many of the right components and really well organized content.
 After initially trying to simply export the game data, I got more involved in the world
 and eventually made this fairly complete remake of the original, with some additional
 tunings such as a real-time battle system, content tunings etc. I have called it 'Heroine Dawn'
-only to distinguish it from the original, but it's super close at this point (and both are GPL v3).
+only to distinguish it from the original, but it's super close at this point (and both are GPL v3). I somewhat carefully export all of the original data into a JSON file, and then
+rebuilt the code from there.
 
 # Data Structure
 Open source was an important part of this project, and much of the effort went into creating
 a JSON export of most parts of the original game. This description can be seen in raw form,
-or as the "World Guide" that is really a light visualization of this same data:
+or as the "World Guide" which is really a light visualization of this same data:
 
 Raw JSON: https://github.com/leweyg/heroine_dawn/blob/main/web/world.json
 
