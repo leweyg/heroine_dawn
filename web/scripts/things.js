@@ -139,6 +139,10 @@ var dawnThings_prototype = {
             } else console.assert(false);
             return true;
         }
+        if (thing.type == "enemy") {
+            game.startBattle(thing.enemy_id);
+            return true;
+        }
         game.latest_status = "TODO: thing of type: " + thing.type;
         return true;
     },
