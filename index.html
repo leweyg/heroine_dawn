@@ -28,7 +28,13 @@
             <i><p id="intro_note_el"></p></i>
             <pre id="topdown_whole"></pre>
             <h3>Map Explorer</h3>
-                <p>Click doors to explore and see details below:</p>
+                <p>Click doors to explore, or walkable tiles to appear as a
+                <select id="main_player_type">
+                    <option value="wanderer">wanderer</option>
+                    <option value="squire">squire</option>
+                    <option value="knight">knight</option>
+                </select>
+            </p>
             <div id="topdown_main_div"></div>
             <pre id="topdown_info"></pre>
             <script>
@@ -62,6 +68,12 @@
                         url += "map_id=" + map_id + "&";
                         url += "x=" + x + "&";
                         url += "y=" + y;
+                        if (main_player_type.value == "squire") {
+                            url += "&squire=true";
+                        }
+                        if (main_player_type.value == "knight") {
+                            url += "&knight=true";
+                        }
                         window.location.href = url;
                     }
                 }

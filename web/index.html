@@ -86,6 +86,16 @@
                     dawnGame.state.avatar.armor = 7;
                     dawnGame.state.avatar.gold = 999;
                 }
+                if (urlParams.get("squire")) {
+                    dawnGame.state.avatar.hp = 50;
+                    dawnGame.state.avatar.mp = 8;
+                    dawnGame.state.avatar.max_hp = 50;
+                    dawnGame.state.avatar.max_mp = 8;
+                    dawnGame.state.avatar.spellbook = 3;
+                    dawnGame.state.avatar.weapon = 4;
+                    dawnGame.state.avatar.armor = 3;
+                    dawnGame.state.avatar.gold = 200;
+                }
             }
             function updatePageLink() {
                 var path = "?";

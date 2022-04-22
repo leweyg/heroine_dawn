@@ -178,6 +178,10 @@ var dawnThings_prototype = {
         if (hp <= 0) {
             var gold = game.nextRandomMinMax(enem.gold_min, enem.gold_max);
             game.latest_status = prefix + "Tamed. Got $" + gold;
+            if (enem.extra == "dspeak") {
+                game.state.avatar.tamer = true;
+                game.latest_status += "\nYou are a tamer now.";
+            }
             this.recieveGold(game,gold);
             return true;
         } else {

@@ -264,6 +264,8 @@
                     from.anim = anims_by_id[ei];
                     world.enemies.push( from );
                 }
+                var dspeaker = world.enemies[7];
+                dspeaker.extra = "dspeak";
                 // export maps:
                 for (var mi in atlas.maps) {
                     var from = atlas.maps[mi];

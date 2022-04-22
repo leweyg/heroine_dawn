@@ -826,7 +826,8 @@
         "down_left",
         "up",
         "down_right"
-      ]
+      ],
+      "extra": "dspeak"
     }
   ],
   "maps": [
