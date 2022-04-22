@@ -8,6 +8,31 @@ var dawnThings_prototype = {
         }
         if (encounter.type == "enemy") {
             var enem = game.getRef(encounter.ref);
+            if (act.startsWith("cast[")) {
+                var ndx = 1 * act.replace("cast[","").replace("]","");
+                var spell = game.world.equipment.spells[ndx];
+                if (ndx == 1) {
+                    game.castHealMagic();
+                } else if (spell.atk) {
+                    // combat magic:
+                    if (avatar.mp < 1) {
+                        game.latest_status = "Not enough mp.";
+                        return true;
+                    }
+                    avatar.mp--;
+                    var atk = spell.atk;
+                    var msg = "Cast " + spell.name;
+                    if (spell.category_bonus == enem.category) {
+                        atk *= 2;
+                        msg += " x2 damage";
+                    }
+                    msg += "...\n";
+                    this.deliverCombatDamage(game,atk,msg);
+                } else {
+                    game.latest_status = "Can't use " + spell.name + " now.";
+                }
+                return true;
+            }
             if (act == "down") {
                 var gold = game.nextRandomMinMax(enem.gold_min, enem.gold_max);
                 game.latest_status = "Avoided conflict. Got $" + gold;
@@ -29,20 +54,7 @@ var dawnThings_prototype = {
                 
                 var atk = game.nextRandomMinMax(weapon.atk_min,weapon.atk_max) + avatar.bonus_atk;
                 atk = Math.max(1,atk);
-                var hp = encounter.hp - atk;
-                if (hp <= 0) {
-                    var gold = game.nextRandomMinMax(enem.gold_min, enem.gold_max);
-                    game.latest_status = "Tamed. Got $" + gold;
-                    this.recieveGold(game,gold);
-                    return true;
-                } else {
-                    var firstHp = encounter.hp;
-                    encounter.hp = hp;
-                    encounter.phase = 0;
-                    encounter.phase_time = 0;
-                    game.latest_status = "Target" + "-" + atk + "=" + hp + " hp";
-                    return true;
-                }
+                this.deliverCombatDamage(game,atk);
             }
             return true;
         }
@@ -57,6 +69,15 @@ var dawnThings_prototype = {
                 }
                 if (item) {
                     // try buy it:
+                    if (item.type == "room") {
+                        avatar.hp = avatar.max_hp;
+                        avatar.mp = avatar.max_mp;
+                        if (avatar.gold >= item.value) {
+                            avatar.gold -= item.value;
+                        }
+                        game.latest_status = "Slept in room. HP/MP restored.";
+                        return true;
+                    }
                     item = game.getRef(item.ref);
                     var index = item.index;
                     var stat = item.type;
@@ -148,6 +169,25 @@ var dawnThings_prototype = {
         }
         game.latest_status = "TODO: thing of type: " + thing.type;
         return true;
+    },
+    deliverCombatDamage : function(game,atk,prefix="") {
+        var encounter = game.state.encounter;
+        var enem = game.getRef(encounter.ref);
+        atk = Math.max(1,atk);
+        var hp = encounter.hp - atk;
+        if (hp <= 0) {
+            var gold = game.nextRandomMinMax(enem.gold_min, enem.gold_max);
+            game.latest_status = prefix + "Tamed. Got $" + gold;
+            this.recieveGold(game,gold);
+            return true;
+        } else {
+            var firstHp = encounter.hp;
+            encounter.hp = hp;
+            encounter.phase = 0;
+            encounter.phase_time = 0;
+            game.latest_status = prefix + "Target" + "-" + atk + "=" + hp + " hp";
+            return true;
+        }
     },
 };
 var dawnThings = new Object(dawnThings_prototype);

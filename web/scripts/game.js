@@ -111,12 +111,35 @@ var dawnGame_prototype = {
             }
         }
     },
+    castHealMagic : function() {
+        if (this.state.avatar.mp == 0) {
+            this.latest_status = "Not enough MP";
+            return;
+        }
+        if (this.state.avatar.hp >= this.state.avatar.max_hp) {
+            this.latest_status = "Already full HP";
+            return;
+        }
+        this.state.avatar.mp--;
+        this.state.avatar.hp = this.state.avatar.max_hp;
+        this.latest_status = "Healed yourself";
+        return;
+    },
     castMagicInWorld : function(act) {
         var ndx = 1*(act.replace("cast[","").replace("]",""));
         var spell = this.world.equipment.spells[ndx];
+        if (this.state.avatar.mp == 0) {
+            this.latest_status = "Not enough MP";
+            return;
+        }
+        if (ndx == 1) {
+            this.castHealMagic();
+            return;
+        }
         if (spell.tile_from) {
             var tile = this.getTileInfoAvatarForward();
             if (tile && (tile.tile_type == spell.tile_from)) {
+                this.state.avatar.mp--;
                 tile.tile_type = spell.tile_to;
                 tile.map_id = this.state.avatar.map_id;
                 this.state.tile_changes.push(dawnUtils.cloneDeep(tile));
@@ -124,12 +147,12 @@ var dawnGame_prototype = {
                 this.latest_status = "Cast " + spell.name;
                 return;
             } else {
-                this.latest_status = "Can't use here.";
+                this.latest_status = "Can't use " + spell.name + " here.";
                 return;
             }
         }
         
-        this.latest_status = "Casting " + ndx;
+        this.latest_status = "Can't use " + spell.name + " here.";
         return;
     },
     startBattle : function(enemId) {

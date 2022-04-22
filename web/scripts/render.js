@@ -163,8 +163,8 @@ var dawnRenderer_prototype = {
         var longer = open;
         var enc = this.game.state.encounter;
         var battle = this.game.isBattle();
+        var avatar = this.game.state.avatar;
         if (enc || open) {
-            var avatar = this.game.state.avatar;
             this.drawStringAligned(avatar.hp + (longer ? "/" + avatar.max_hp : "") + " hp", 1, 1);
             if (avatar.spellbook > 0) {
                 this.drawStringAligned("mp " + avatar.mp + (longer ? "/" + avatar.max_mp : ""), -1, 1);
@@ -191,14 +191,20 @@ var dawnRenderer_prototype = {
             for (var i=1; i<=this.game.state.avatar.spellbook; i++) {
                 var spell = this.game.world.equipment.spells[i];
                 var highlight = open;
+                var suggest = false;
                 if (spell.tile_from) {
                     var fwdTile = this.game.getTileInfoAvatarForward();
                     if (fwdTile && (spell.tile_from == fwdTile.tile_type)) {
                         highlight = true;
                     }
                 }
+                if ((i==1) && (avatar.hp < avatar.max_hp)) {
+                    suggest = true;
+                }
                 this.mainContext.globalAlpha = highlight ? 1.0 : 0.5;
-                this.drawSheetIndex("spell", i, i-1);
+                if (highlight || battle || suggest) {
+                    this.drawSheetIndex("spell", i, i-1);
+                }
             }
 
             this.mainContext.globalAlpha = 1;
