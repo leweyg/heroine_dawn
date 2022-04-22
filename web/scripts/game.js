@@ -167,6 +167,7 @@ var dawnGame_prototype = {
             hp:enem.hp,
             phase:0,
             phase_time:20,
+            total_time:0,
             ref:"world.enemies[" + enemId + "]",
         };
         var prefix = this.battleIsTamed() ? "Tamed " : "";
@@ -177,6 +178,7 @@ var dawnGame_prototype = {
         var enc = this.state.encounter;
         console.assert(enc.phase_time != undefined);
         enc.phase_time++;
+        enc.total_time++;
         if (!enc.phase_duration) {
             var first_dur_extra = 10;
             enc.phase_duration = this.battleCalcPhaseDuration(enc) + first_dur_extra;

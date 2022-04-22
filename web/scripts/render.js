@@ -77,6 +77,21 @@ var dawnRenderer_prototype = {
         // visible cells:
         var cells = this.world.rendering.visible_cells_north;
         var parts = this.world.rendering.tile_parts_by_visible_cell;
+
+        // camera shake:
+        var shake_y = 0;
+        var shake_x = 0;
+        var encounter = this.game.state.encounter;
+        if (encounter && (encounter.type == "enemy")) {
+            if (encounter.phase == 2) { // got hit:
+                var enem = this.game.getRef(encounter.ref);
+                var anim = enem.anim[encounter.phase];
+                var dir = this.world.rendering.screen_directions[anim];
+                var scl = 1;
+                shake_y = dir.y * scl;
+                shake_x = dir.x * scl;
+            }
+        }
         
         for (var ci in cells) {
             var cell = cells[ci];
@@ -88,7 +103,7 @@ var dawnRenderer_prototype = {
             if (!tileImg) continue;
             this.mainContext.drawImage(tileImg, 
                 part.src_x,  part.src_y,  part.width, part.height,
-                part.dest_x, part.dest_y, part.width, part.height);
+                part.dest_x + shake_x, part.dest_y + shake_y, part.width, part.height);
         }
     },
     drawEncounter : function() {
@@ -115,6 +130,9 @@ var dawnRenderer_prototype = {
                 if (enem.category == "shadow") {
                     this.mainContext.globalAlpha = 0.61;
                 }
+                var fadeInTime = 10;
+                var fadeIn = Math.min(1, (encounter.total_time / fadeInTime));
+                this.mainContext.globalAlpha *= fadeIn;
                 var ndx = Math.floor(encounter.phase_time / this.timeIndexPerAnim) % enem.anim.length;
                 var scl = 2;
                 if (encounter.phase != 0) {
@@ -123,7 +141,8 @@ var dawnRenderer_prototype = {
                 }
                 var offsetName = enem.anim[ndx];
                 var offset = this.world.rendering.screen_directions[offsetName];
-                this.mainContext.drawImage(img, scl * offset.x, scl * offset.y);
+                var offset_x = offset.x;
+                this.mainContext.drawImage(img, scl * offset_x, scl * offset.y);
                 this.mainContext.globalAlpha = 1;
             }
         }
