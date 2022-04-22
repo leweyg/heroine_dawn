@@ -103,6 +103,7 @@ var dawnThings_prototype = {
                         avatar.gold -= item.gold;
                         avatar[stat] = index;
                         game.latest_status = prefix + item.name;
+                        game.state.menu_open = true;
                     } else {
                         game.latest_status = "No downgrades.";
                     }

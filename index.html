@@ -4,11 +4,12 @@
     <style>
         a { color:rgb(170, 170, 170); }
     </style>
-    <body style="color:white; background-color:black;">
+    <body style="color:white; background-color:rgb(44, 36, 0);">
         <div>
             <center>
                 
-                <h1>Heroine Dawn</h1>
+                <h1 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                    Heroine Dawn</h1>
                 <a href="web/index.html">
                     <img src="web/images/backgrounds/nightsky.png"/><br/>
                     <h1 style="color:white;">Play...</h1>
@@ -17,15 +18,19 @@
         </div>
         <div>
             <h3>About</h3>
-            <p>Play a heroine from chapel floor to early fame!</p>
-            <p>Based on the original <a href="http://heroinedusk.com/">Heroine Dusk</a> 
-                by <a href="https://clintbellanger.net/">Clink Bellanger</a>. </p>
+            <p>A single-quest fantasy-role-playing-game in a hand-drawn first-person perspective!</p>
+            <p><a href="https://github.com/leweyg/heroine_dawn">Open source</a> 
+                based on the original <a href="http://heroinedusk.com/">Heroine Dusk</a> 
+                <a href="https://github.com/clintbellanger/heroine-dusk">code</a> 
+                by <a href="https://clintbellanger.net/">Clink Bellanger</a> . </p>
         </div>
         <div>
             <h3>World Guide</h3>
             <script src="web/scripts/utils.js"></script>
             <script src="web/scripts/topdown_render.js"></script>
-            <i><p id="intro_note_el"></p></i>
+            <p>Introductory note:</p>
+            <p style="text-indent:20px;font-style: italic;" id="intro_note_el"></p>
+            <p>Game details:</p>
             <pre id="topdown_whole"></pre>
             <h3>Map Explorer</h3>
                 <p>Click doors to explore, or walkable tiles to appear as a
@@ -35,7 +40,9 @@
                     <option value="knight">knight</option>
                 </select>
             </p>
-            <div id="topdown_main_div"></div>
+            <div style="overflow-x: scroll;">
+                <div id="topdown_main_div"></div>
+            </div>
             <pre id="topdown_info"></pre>
             <script>
                 var topdownWorld = null;
@@ -225,18 +232,13 @@
             <p><i>
 Heroine Dawn was adapted by Lewey Geselowitz <a href="http://lewcid.com/">http://lewcid.com</a><br/>
 Heroine Dusk is created by Clint Bellanger <a href="http://clintbellanger.net">http://clintbellanger.net</a><br/>
-Heroine Dusk features music by Yubatake <a href="http://opengameart.org/users/yubatake">http://opengameart.org/users/yubatake</a> </i></p>
+Heroine Dusk features music by Yubatake <a href="http://opengameart.org/users/yubatake">http://opengameart.org/users/yubatake</a>
+Monochrome RPG assets by Kenney <a href="https://www.kenney.nl/assets/monochrome-rpg">https://www.kenney.nl/assets/monochrome-rpg</a><br/>
+</i></p>
         </div>
         <div>
             <h3>Development</h3>
-            <p>While looking for a fun game to write, I stumbled across Heroine Dusk, and 
-                like many others appreciated both the clarity of content and the clean code and
-                data design. While trying to <a href="https://github.com/leweyg/heroine_dawn">adapt it</a> 
-                into a different game (Heroine Dawn), I felt that re-organizing the code to be
-                more data centric would be appropraite, and so have exported most of the game
-                content into a <a href="https://github.com/leweyg/heroine_dawn/blob/main/web/world.json">single JSON file</a>.
-                This file is shown below:
-                <code>TODO: visualize world.json here...</code>
+            <p>See the <a href="https://github.com/leweyg/heroine_dawn/blob/main/README.md">README</a>.</p>
             </p>
         </div>
     </body>

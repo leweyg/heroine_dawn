@@ -39,6 +39,9 @@ var dawnGame_prototype = {
         if (isPreview) {
             return;
         }
+        if (act.startsWith("cast[")) {
+            if (this.state.menu_open) this.state.menu_open = false;
+        }
         if (act == "menu") {
             this.state.menu_open = !this.state.menu_open;
             return;
