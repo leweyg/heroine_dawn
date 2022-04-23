@@ -63,8 +63,12 @@ var dawnGame_prototype = {
     },
     innerAction : function(act,isPreview) {
         if (isPreview) {
+            if (!this.state.menu_open) {
+                this.state.input_preview = act;
+            }
             return;
         }
+        this.state.input_preview = null;
         if (act.startsWith("cast[")) {
             if (this.state.menu_open) this.state.menu_open = false;
         }

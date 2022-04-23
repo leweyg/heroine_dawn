@@ -55,7 +55,7 @@ var dawnSwipe_prototype = {
         var scl = this.mainElement.width / this.mainElement.clientWidth;
         return scl;
     },
-    innerForButtons : function(dir) {
+    innerForButtons : function(dir,isPreview=false) {
         if (dir == "center") {
             // check for clicks:
             if (this.checkMenuClick("info_icon")) {
@@ -71,7 +71,7 @@ var dawnSwipe_prototype = {
                 }
             }
         }
-        this.game.doInput(dir);
+        this.game.doInput(dir,isPreview);
     },
     checkMenuClick : function(name, icon_count) {
         var sheets = this.game.world.rendering.sheets;
@@ -109,13 +109,12 @@ var dawnSwipe_prototype = {
             this.start_x = x;
             this.start_y = y;
         }
-        if ((this.isDown) && (!isDown)) {
+        else if ((this.isDown) && (!isDown)) {
             // end touch:
-            dir = "center";
-            if (this.dragDistance() > 5) {
-                dir = this.dragAngle();
-            }
-            this.innerForButtons(dir);
+            this.innerForButtons(this.dragAngle());
+        }
+        else if ((this.isDown) && (isDown) && isMove) {
+            this.innerForButtons(this.dragAngle(), true);
         }
         this.isDown = isDown;
 
@@ -128,6 +127,9 @@ var dawnSwipe_prototype = {
         return Math.sqrt((dx*dx)+(dy*dy));
     },
     dragAngle : function() {
+        if (this.dragDistance() <= 5) {
+            return "center";
+        }
         var types = this.game.world.rendering.screen_directions;
         var bestDir = "center";
         var bestScore = 0;

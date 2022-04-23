@@ -100,6 +100,17 @@ var dawnRenderer_prototype = {
                 shake_x = dir.x * scl;
             }
         }
+
+        // perspective camera offset:
+        var px = 0, py = 0;
+        if (this.game.state.input_preview) {
+            var dirName = this.game.state.input_preview;
+            if (dirName in this.world.rendering.screen_directions) {
+                var dir = this.world.rendering.screen_directions[dirName];
+                px = dir.x;
+                py = dir.y;
+            }
+        }
         
         for (var ci in cells) {
             var cell = cells[ci];
@@ -109,9 +120,15 @@ var dawnRenderer_prototype = {
             var part = parts[ci];
             var tileImg = this.images.tiles[tile.tile_type].tryGetImg();
             if (!tileImg) continue;
+
+            var pz = (3 - Math.abs(cell.dy))*1;
+            var ppx = pz * -px;
+            var ppy = pz * -py;
+
             this.mainContext.drawImage(tileImg, 
                 part.src_x,  part.src_y,  part.width, part.height,
-                part.dest_x + shake_x, part.dest_y + shake_y, part.width, part.height);
+                part.dest_x + shake_x + ppx, part.dest_y + shake_y + ppy, 
+                part.width, part.height);
         }
     },
     drawEncounter : function() {
