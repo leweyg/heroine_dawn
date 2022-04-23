@@ -352,7 +352,7 @@
         "name": "Iron Knife",
         "atk_min": 3,
         "atk_max": 8,
-        "gold": 50,
+        "gold": 20,
         "index": 2,
         "type": "weapon",
         "ref_sheet": "world.rendering.sheets[2]"
@@ -361,7 +361,7 @@
         "name": "Bronze Mace",
         "atk_min": 4,
         "atk_max": 10,
-        "gold": 200,
+        "gold": 40,
         "index": 3,
         "type": "weapon",
         "ref_sheet": "world.rendering.sheets[2]"
@@ -370,7 +370,7 @@
         "name": "Steel Sword",
         "atk_min": 5,
         "atk_max": 12,
-        "gold": 1000,
+        "gold": 60,
         "index": 4,
         "type": "weapon",
         "ref_sheet": "world.rendering.sheets[2]"
@@ -379,7 +379,7 @@
         "name": "War Hammer",
         "atk_min": 6,
         "atk_max": 14,
-        "gold": 5000,
+        "gold": 80,
         "index": 5,
         "type": "weapon",
         "ref_sheet": "world.rendering.sheets[2]"
@@ -388,7 +388,7 @@
         "name": "Battle Axe",
         "atk_min": 7,
         "atk_max": 16,
-        "gold": 20000,
+        "gold": 100,
         "index": 6,
         "type": "weapon",
         "ref_sheet": "world.rendering.sheets[2]"
@@ -423,7 +423,7 @@
       {
         "name": "Travel Cloak",
         "def": 4,
-        "gold": 50,
+        "gold": 20,
         "index": 2,
         "type": "armor",
         "ref_sheet": "world.rendering.sheets[1]"
@@ -431,7 +431,7 @@
       {
         "name": "Hide Cuirass",
         "def": 6,
-        "gold": 200,
+        "gold": 40,
         "index": 3,
         "type": "armor",
         "ref_sheet": "world.rendering.sheets[1]"
@@ -439,7 +439,7 @@
       {
         "name": "Rivet Leather",
         "def": 8,
-        "gold": 1000,
+        "gold": 100,
         "index": 4,
         "type": "armor",
         "ref_sheet": "world.rendering.sheets[1]"
@@ -447,7 +447,7 @@
       {
         "name": "Chain Maille",
         "def": 10,
-        "gold": 5000,
+        "gold": 200,
         "index": 5,
         "type": "armor",
         "ref_sheet": "world.rendering.sheets[1]"
@@ -455,7 +455,7 @@
       {
         "name": "Plate Armor",
         "def": 12,
-        "gold": 20000,
+        "gold": 500,
         "index": 6,
         "type": "armor",
         "ref_sheet": "world.rendering.sheets[1]"
@@ -463,7 +463,7 @@
       {
         "name": "Wyvern Scale",
         "def": 14,
-        "gold": 100000,
+        "gold": 1000,
         "index": 7,
         "type": "armor",
         "ref_sheet": "world.rendering.sheets[1]"
@@ -486,7 +486,7 @@
       },
       {
         "name": "Burn",
-        "gold": 100,
+        "gold": 15,
         "index": 2,
         "tile_from": 16,
         "tile_to": 5,
@@ -497,7 +497,7 @@
       },
       {
         "name": "Unlock",
-        "gold": 500,
+        "gold": 25,
         "index": 3,
         "tile_from": 18,
         "tile_to": 5,
@@ -508,7 +508,7 @@
       },
       {
         "name": "Light",
-        "gold": 2500,
+        "gold": 50,
         "index": 4,
         "category_bonus": "shadow",
         "atk": 20,
@@ -517,7 +517,7 @@
       },
       {
         "name": "Freeze",
-        "gold": 10000,
+        "gold": 100,
         "index": 5,
         "category_bonus": "demon",
         "atk": 25,
@@ -526,7 +526,7 @@
       },
       {
         "name": "Reflect",
-        "gold": 50000,
+        "gold": 200,
         "index": 6,
         "atk": 30,
         "type": "spell",
