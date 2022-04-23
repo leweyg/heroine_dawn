@@ -7,8 +7,11 @@ var dawnGame_prototype = {
     latest_status : "Loading...",
     initFromWorld : function(world) {
         this.world = world;
+        this.newGame();
+    },
+    newGame : function() {
         this.state = {
-            avatar : new Object(world.avatar),
+            avatar : dawnUtils.cloneDeep(this.world.avatar),
             encounter : null,
             tile_changes : [],
             random_index : 0,
@@ -23,6 +26,17 @@ var dawnGame_prototype = {
             "type":"note",
             "msg":msg,
         };
+        this.onChanged();
+    },
+    loadStateExternal : function(state) {
+        this.state = state;
+        if (this.state.tile_changes) {
+            for (var i in this.state.tile_changes) {
+                var chng = this.state.tile_changes[i];
+                this.world.maps[chng.map_id].tiles[chng.y][chng.x] = chng.tile_type;
+            }
+        }
+        this.onChanged();
     },
     doInput : function(act,isPreview) {
         this.latest_status = "";

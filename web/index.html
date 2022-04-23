@@ -36,7 +36,8 @@
             <p>
             <font style="color:darkgray">
                 <a href="../"><b>Heroine Dawn</b> [about/guide]</a>
-                <a id="main_save_link" href="">[...]</a>
+                <u style="cursor:pointer" onclick="dawnGame.newGame();">[new game]</u>
+                <a id="main_save_link" style="display: none;" href="">[here]</a>
                 <br/>
                 Swipe to turn/move/interact, tap icons for menu/spells, and read this note:
             </p>
@@ -53,12 +54,18 @@
                 dawnUtils.downloadJson("world.json", (world) => {
                     main_status.innerHTML = "Loaded.";
                     dawnGame.initFromWorld(world);
-                    dawnGame.callOnChanged.push(() => {updatePageLink();});
+                    
                     loadPageParameters();
                     dawnRenderer.initFromGameWorld(dawnGame, world, main_canvas, main_status);
                     dawnSwipe.setupSwipes(dawnGame, main_canvas, main_status);
+
+                    dawnUtils.cookieTryLoad(dawnGame);
                     dawnRenderer.redraw();
+
+                    // update callbacks:
+                    dawnGame.callOnChanged.push(() => {dawnUtils.cookieSave(dawnGame);});
                     dawnGame.callOnChanged.push(() => {checkRotation();});
+                    dawnGame.callOnChanged.push(() => {updatePageLink();});
                     window.onresize = (() => checkRotation());
                     checkRotation();
 

@@ -90,6 +90,24 @@ var dawnUtils_prototype = {
     cloneDeep : function(obj) {
         return JSON.parse(JSON.stringify(obj));
     },
+    cookieSave : function(game,prefix="dawn_state") {
+        var txt = JSON.stringify(game.state);
+        document.cookie = prefix + "=" + txt;
+    },
+    cookieTryLoad : function(game,prefix="dawn_state") {
+        var parts = document.cookie.split(";");
+        prefix = prefix + "=";
+        for (var i in parts) {
+            var p = parts[i].trim();
+            if (p.startsWith(prefix)) {
+                p = p.replace(prefix,"");
+                var obj = JSON.parse(p);
+                game.loadStateExternal(obj);
+                return;
+            }
+        }
+        return false;
+    },
 };
 
 var dawnUtils = new Object(dawnUtils_prototype);
