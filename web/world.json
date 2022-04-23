@@ -623,8 +623,8 @@
         },
         {
           "type": "message",
-          "msg1": "(The demo ends here.",
-          "msg2": "Thanks for playing!)"
+          "msg1": "(Edge of demo app,",
+          "msg2": "thanks for playing!)"
         }
       ],
       "name": "Stonegate Entrance",
