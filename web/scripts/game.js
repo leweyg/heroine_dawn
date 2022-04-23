@@ -94,24 +94,14 @@ var dawnGame_prototype = {
             case "up":
             case "center":
                 {
-                    var fwd = this.getTileInfoAvatarForward();
-                    if (!fwd) {
-                        this.latest_status = "Nothing there";
-                        return;
-                    }
-                    var walkable = this.world.tile_types[fwd.tile_type].walkable;
-                    if (!walkable) {
-                        this.latest_status = "Can't walk there.";
-                        return;
-                    }
-                    var things = this.findTileThingsByMapXY(avatar.map_id,fwd.x,fwd.y);
-                    for (var i in things) {
-                        if (!dawnThings.walkIntoThing(this,things[i])) return;
-                    }
-                    // do the walk:
-                    avatar.x = fwd.x;
-                    avatar.y = fwd.y;
-                    this.checkForRandomEncounter(things);
+                    this.doWalkForward();
+                }
+                break;
+            case "down":
+                {
+                    this.rotateAvatar(2); // turn around
+                    this.doWalkForward();
+                    this.rotateAvatar(2); // turn back
                 }
                 break;
             case "left":
@@ -124,6 +114,27 @@ var dawnGame_prototype = {
                 }
                 break;
         }
+    },
+    doWalkForward : function() {
+        var avatar = this.state.avatar;
+        var fwd = this.getTileInfoAvatarForward();
+        if (!fwd) {
+            this.latest_status = "Nothing there";
+            return;
+        }
+        var walkable = this.world.tile_types[fwd.tile_type].walkable;
+        if (!walkable) {
+            this.latest_status = "Can't walk there.";
+            return;
+        }
+        var things = this.findTileThingsByMapXY(avatar.map_id,fwd.x,fwd.y);
+        for (var i in things) {
+            if (!dawnThings.walkIntoThing(this,things[i])) return;
+        }
+        // do the walk:
+        avatar.x = fwd.x;
+        avatar.y = fwd.y;
+        this.checkForRandomEncounter(things);
     },
     rotateAvatar : function(dAngle) {
         var avatar = this.state.avatar;
