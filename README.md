@@ -24,6 +24,7 @@ While doing research for an up-coming game, I came across the open source game
 After initially trying to simply export the game data, I got more involved in the world
 and eventually made this fairly complete remake of the original, with some additional
 tunings such as:
+- Controls with perspective adjust
 - More dynamic UI/HUD system
 - Time-based combat system (idle, open tell, strike)
 - Nicer sales people in shops
