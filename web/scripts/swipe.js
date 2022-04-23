@@ -85,6 +85,9 @@ var dawnSwipe_prototype = {
         const key = e.key;
         if (key in this._dirFromKeyboard) {
             var dir = this._dirFromKeyboard[key];
+            if ((key == "Escape") && (!this.game.isBattle())) {
+                dir = "menu";
+            }
             var isPreview = isDown;
             this.game.doInput(dir,isPreview);
         }

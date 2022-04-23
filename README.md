@@ -1,5 +1,5 @@
 # Heroine Dawn
-A single-quest fantasy-action-playing-game in a hand-drawn first-person perspective.
+A single-quest fantasy-rpg in a hand-drawn first-person perspective.
 
 World Guide: https://leweyg.github.io/heroine_dawn/
 
