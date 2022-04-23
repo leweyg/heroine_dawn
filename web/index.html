@@ -36,7 +36,7 @@
             <p>
             <font style="color:darkgray">
                 <a href="../"><b>Heroine Dawn</b> [about/guide]</a>
-                <u style="cursor:pointer" onclick="dawnGame.newGame();">[new game]</u>
+                <u style="cursor:pointer" onclick="mainNewGame();">[new game]</u>
                 <br/>
                 <input type="checkbox" checked="true" id="main_allow_encounters" onclick="toggledEncounters()">
                 Encounters 
@@ -82,6 +82,11 @@
                     msg += "\"";
                     main_intro_note.innerHTML = msg;
                 });
+            }
+            function mainNewGame() {
+                dawnGame.newGame();
+                dawnUtils.cookieSave(dawnGame);
+                window.location.reload();
             }
             function checkRotation() {
                 var can = main_canvas.getBoundingClientRect();

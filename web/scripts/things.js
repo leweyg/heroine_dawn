@@ -37,7 +37,7 @@ var dawnThings_prototype = {
                 }
                 return true;
             }
-            if (act == "down") {
+            if (act == "avoid") {
                 var gold = game.nextRandomMinMax(enem.gold_min, enem.gold_max);
                 game.latest_status = "Avoided conflict. Got $" + gold;
                 this.recieveGold(game,gold);

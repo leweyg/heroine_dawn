@@ -8,6 +8,13 @@ var dawnGame_prototype = {
     encounters_on : true,
     initFromWorld : function(world) {
         this.world = world;
+        // fixups in world:
+        world.rendering.sheets_by_name = {};
+        for (var i in world.rendering.sheets) {
+            var sheet = world.rendering.sheets[i];
+            world.rendering.sheets_by_name[sheet.name] = 1*i;
+        }
+
         this.newGame();
     },
     newGame : function() {

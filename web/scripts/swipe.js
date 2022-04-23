@@ -62,6 +62,8 @@ var dawnSwipe_prototype = {
                 dir = "menu";
             } else if (this.checkMenuClick("attack_icon")) {
                 dir = "center"; // for now
+            } else if (this.checkMenuClick("retreat_icon")) {
+                dir = "avoid";
             } else {
                 var ndx = this.checkMenuClick("spell", this.game.state.avatar.spellbook);
                 if (ndx) {

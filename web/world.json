@@ -1645,9 +1645,21 @@
         "width": 16,
         "height": 16,
         "count": 1,
-        "draw_x": 143,
+        "draw_x": 126,
         "draw_y": 94,
         "index": 5
+      },
+      {
+        "name": "retreat_icon",
+        "src": "images/interface/action_buttons.png",
+        "start_x": 16,
+        "start_y": 0,
+        "width": 16,
+        "height": 16,
+        "count": 1,
+        "draw_x": 143,
+        "draw_y": 94,
+        "index": 6
       },
       {
         "name": "info_icon",
@@ -1659,7 +1671,7 @@
         "count": 2,
         "draw_x": 143,
         "draw_y": 1,
-        "index": 6
+        "index": 7
       }
     ],
     "directions_right": [
@@ -1904,15 +1916,6 @@
         "dest_x": 0,
         "dest_y": 0
       }
-    ],
-    "sheets_by_name": {
-      "avatar": "0",
-      "armor": "1",
-      "weapon": "2",
-      "treasure": "3",
-      "spell": "4",
-      "attack_icon": "5",
-      "info_icon": "6"
-    }
+    ]
   }
 }

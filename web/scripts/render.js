@@ -214,6 +214,8 @@ var dawnRenderer_prototype = {
                 this.mainContext.globalAlpha = 0.6;
             }
             this.drawSheetIndex("attack_icon", 0);
+            this.mainContext.globalAlpha = 0.6;
+            this.drawSheetIndex("retreat_icon", 0);
             this.mainContext.globalAlpha = 1;
         }
         if (true) {
