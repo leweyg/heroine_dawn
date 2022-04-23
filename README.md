@@ -9,6 +9,8 @@ Play Original: https://heroinedusk.com/
 
 Original Git: https://github.com/clintbellanger/heroine-dusk 
 
+![Heroine Dawn, screenshot](/heroine_dawn.png)
+
 # Credits
 Heroine Dawn was adapted by Lewey Geselowitz http://lewcid.com
 

@@ -11,7 +11,7 @@
                 <h1 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
                     Heroine Dawn</h1>
                 <a href="web/index.html">
-                    <img src="web/images/backgrounds/nightsky.png"/><br/>
+                    <img src="heroine_dawn.png" style="height: 200px;" /><br/>
                     <h1 style="color:white;">Play...</h1>
                 </a>
             </center>
@@ -35,7 +35,7 @@
                 <pre id="topdown_whole"></pre>
             </div>
             <h3>Map Explorer</h3>
-                <p>Click doors to explore, or walkable tiles to appear as a
+                <p>Click doors to explore, or walkable tiles to appear as
                 <select id="main_player_type">
                     <option value="wanderer">last-played</option>
                     <option value="squire">squire</option>
@@ -234,7 +234,7 @@
 
                         var msg = "";
                         for (var i in world.intro_note) {
-                            msg += world.intro_note[i] + "<br/>";
+                            msg += "&nbsp;&nbsp;" + world.intro_note[i] + "<br/>";
                         }
                         intro_note_el.innerHTML = msg;
                     });
