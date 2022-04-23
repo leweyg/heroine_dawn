@@ -22,7 +22,9 @@ var dawnRenderer_prototype = {
         var callback = (() => {_this.redraw();});
         setInterval(()=>{_this.onTimeTick();}, this.world.combat.time_unit_ms);
 
-        this.images.font = this.createImageLoader(world.font.src);
+        this.images.font = {
+            white:this.createImageLoader(world.font.src),
+        };
         this.images.backgrounds = [  ];
         for (var i in world.backgrounds) {
             this.images.backgrounds.push( this.createImageLoader(world.backgrounds[i].src, callback) );
@@ -46,6 +48,14 @@ var dawnRenderer_prototype = {
         }
         
         this.game.callOnChanged.push( (() => { _this.redraw(); }) );
+    },
+    preloadContent : function() {
+        for (var i in this.images) {
+            var group = this.images[i];
+            for (var j in group) {
+                group[j].tryGetImg();
+            }
+        }
     },
     redraw : function() {
         if (!this.game) return;
@@ -322,7 +332,7 @@ var dawnRenderer_prototype = {
         }
     },
     drawStringAtXY : function(str,x=0,y=0) {
-        var fontImg = this.images.font.tryGetImg();
+        var fontImg = this.images.font.white.tryGetImg();
         if (!fontImg) return;
         var font = this.world.font;
         for (var i=0; i<str.length; i++) {
@@ -349,7 +359,7 @@ var dawnRenderer_prototype = {
         var w = font.width[ndx];
         var h = font.height;
 
-        var fontImg = this.images.font.tryGetImg();
+        var fontImg = this.images.font.white.tryGetImg();
         if (!fontImg) return;
         this.mainContext.drawImage(fontImg, 
             src_x, 0, w, h,

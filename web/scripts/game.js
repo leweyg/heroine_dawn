@@ -5,6 +5,7 @@ var dawnGame_prototype = {
         avatar : null,
     },
     latest_status : "Loading...",
+    encounters_on : true,
     initFromWorld : function(world) {
         this.world = world;
         this.newGame();
@@ -118,6 +119,7 @@ var dawnGame_prototype = {
         console.assert(avatar.facing);
     },
     checkForRandomEncounter : function(things) {
+        if (!this.encounters_on) return;
         var avatar = this.state.avatar;
         if ((things.length == 0) && (!this.state.encounter)) {
             var map = this.world.maps[avatar.map_id];

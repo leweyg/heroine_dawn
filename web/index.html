@@ -37,6 +37,11 @@
             <font style="color:darkgray">
                 <a href="../"><b>Heroine Dawn</b> [about/guide]</a>
                 <u style="cursor:pointer" onclick="dawnGame.newGame();">[new game]</u>
+                <br/>
+                <input type="checkbox" checked="true" id="main_allow_encounters" onclick="toggledEncounters()">
+                Encounters 
+                <input type="checkbox" id="main_allow_preload" onclick="toggledPreload()">
+                Preload
                 <a id="main_save_link" style="display: none;" href="">[here]</a>
                 <br/>
                 Swipe to turn/move/interact, tap icons for menu/spells, and read this note:
@@ -55,11 +60,11 @@
                     main_status.innerHTML = "Loaded.";
                     dawnGame.initFromWorld(world);
                     
-                    loadPageParameters();
                     dawnRenderer.initFromGameWorld(dawnGame, world, main_canvas, main_status);
                     dawnSwipe.setupSwipes(dawnGame, main_canvas, main_status);
 
                     dawnUtils.cookieTryLoad(dawnGame);
+                    loadPageParameters();
                     dawnRenderer.redraw();
 
                     // update callbacks:
@@ -92,6 +97,13 @@
                     main_canvas.style["max-width"] = undefined;
                     main_canvas.style["width"] = undefined;
                 }
+            }
+            function toggledEncounters() {
+                var isOn = !(!(main_allow_encounters.checked));
+                dawnGame.encounters_on = isOn;
+            }
+            function toggledPreload() {
+                dawnRenderer.preloadContent();
             }
             var pageParams = [ "map_id", "x", "y", "facing" ];
             function setupPageParam(params, name) {
