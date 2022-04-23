@@ -14,6 +14,7 @@ var dawnSwipe_prototype = {
         this.statusElement = statusEl;
         var _this = this;
 
+        // mouse:
         this.mainElement.addEventListener('mousedown',(e) => {
             _this.innerInput(e, e.offsetX, e.offsetY, true, false);
         });
@@ -26,18 +27,26 @@ var dawnSwipe_prototype = {
         this.mainElement.addEventListener('dblclick',(e) => {
             _this.innerInput(e, e.offsetX, e.offsetY, false, false);
         });
+        // touch:
         this.mainElement.addEventListener('touchstart', (e) => {
-            this.innerTouch(e, true, false);
+            _this.innerTouch(e, true, false);
         }, false);
         this.mainElement.addEventListener('touchmove', (e) => {
-            this.innerTouch(e, true, true);
+            _this.innerTouch(e, true, true);
         }, false);
         this.mainElement.addEventListener('touchcancel', (e) => {
-            this.innerTouch(e, false, false);
+            _this.innerTouch(e, false, false);
         }, false);
         this.mainElement.addEventListener('touchend', (e) => {
-            this.innerTouch(e, false, false);
+            _this.innerTouch(e, false, false);
         }, false);
+        // keyboard:
+        document.addEventListener('keydown', (e) => {
+            _this.innerKeyChange(e,true);
+        });
+        document.addEventListener('keyup', (e) => {
+            _this.innerKeyChange(e,false);
+        });
     },
     innerTouch : function(e,isDown,isMove) {
         e.preventDefault();
@@ -54,6 +63,31 @@ var dawnSwipe_prototype = {
     inputScale : function() {
         var scl = this.mainElement.width / this.mainElement.clientWidth;
         return scl;
+    },
+    _dirFromKeyboard : {
+        "ArrowRight" : "right",
+        "ArrowLeft" : "left",
+        "ArrowUp" : "up",
+        "ArrowDown" : "down",
+        " " : "center",
+        "Enter" : "center",
+        "Shift" : "menu",
+        "Escape" : "avoid",
+        "1" : "cast[1]",
+        "2" : "cast[2]",
+        "3" : "cast[3]",
+        "4" : "cast[4]",
+        "5" : "cast[5]",
+    },
+    innerKeyChange : function(e,isDown) {
+        e.preventDefault();
+        e.stopPropagation();
+        const key = e.key;
+        if (key in this._dirFromKeyboard) {
+            var dir = this._dirFromKeyboard[key];
+            var isPreview = isDown;
+            this.game.doInput(dir,isPreview);
+        }
     },
     innerForButtons : function(dir,isPreview=false) {
         if (dir == "center") {
