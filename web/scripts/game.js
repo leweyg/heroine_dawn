@@ -34,7 +34,12 @@ var dawnGame_prototype = {
         if (this.state.tile_changes) {
             for (var i in this.state.tile_changes) {
                 var chng = this.state.tile_changes[i];
-                this.world.maps[chng.map_id].tiles[chng.y][chng.x] = chng.tile_type;
+                if (chng.tile_type) {
+                    this.world.maps[chng.map_id].tiles[chng.y][chng.x] = chng.tile_type;
+                }
+                if (chng.already_got) {
+                    this.world.maps[chng.map_id].things[chng.thing_index].already_got = true;
+                }
             }
         }
         this.onChanged();
@@ -298,6 +303,7 @@ var dawnGame_prototype = {
         res.length = 0;
         for (var i in map.things) {
             var thing = map.things[i];
+            thing.index = 1*i;
             if ((thing.x == x) && (thing.y == y)) {
                 res.push(thing);
             }

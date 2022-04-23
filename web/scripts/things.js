@@ -150,6 +150,17 @@ var dawnThings_prototype = {
         if (thing.type == "chest") {
             game.state.encounter = thing;
             var treasure = game.world.equipment.treasures[ thing.treasure_id ];
+            if (thing.already_got) {
+                game.latest_status = "Empty";
+                game.state.encounter = null;
+                return true;
+            }
+            thing.already_got = true;
+            game.state.tile_changes.push({
+                map_id : game.state.avatar.map_id,
+                thing_index : thing.index,
+                already_got : true,
+            });
             if (treasure.stat == "gold") {
                 game.state.avatar.gold += thing.count;
                 game.latest_status = "Recieved " + thing.count + " gold!";
