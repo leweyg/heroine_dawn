@@ -19,8 +19,16 @@ var dawnTopDownRenderer_prototype = {
                     res += "opacity:75%;"
                 }
                 res += "' ";
+                var path = "";
+                if (thing) {
+                    path = dawnUtils.cleanPathForId("world.map[" + map_id + "]");
+                    if (thing.ref) {
+                        path = dawnUtils.cleanPathForId(thing.ref);
+                    }
+                    
+                }
                 if (callback_name) {
-                    res += "onclick='" + callback_name + "(" + map_id + "," + x + "," + y + ")' ";
+                    res += " onclick=\"" + callback_name + "(" + map_id + "," + x + "," + y + ",'" + path + "')\" ";
                 }
                 res += " />";
             }

@@ -108,6 +108,9 @@ var dawnUtils_prototype = {
         }
         return false;
     },
+    cleanPathForId : function(path) {
+        return path.replace(".","_").replace("[","_").replace("]","_");
+    },
 };
 
 var dawnUtils = new Object(dawnUtils_prototype);

@@ -51,20 +51,30 @@
                 var topdownMap = 1;
                 var topdownGuideTitle = "world";
                 var topdownGuideFocus = null;
-                function topdownThingClicked(thing) {
+                function topdownThingClicked(thing,res_path) {
                     if (thing.type == "exit") {
                         topdownMap = thing.dest_map;
                         redrawTopdown();
+                        return true;
                     }
+                    if (res_path) {
+                        const element = document.getElementById(res_path);
+                        if (element) {
+                            element.scrollIntoView();
+                            return true;
+                        }
+                    }
+                    return false;
                 }
-                function topdownMapTileClicked(map_id,x,y) {
+                function topdownMapTileClicked(map_id,x,y,res_path) {
                     var world = topdownWorld;
                     var map = world.maps[map_id];
                     for (var i in map.things) {
                         var thing = map.things[i];
                         if ((thing.x == x) && (thing.y == y)) {
-                            topdownThingClicked(thing);
-                            return;
+                            if (topdownThingClicked(thing,res_path)) {
+                                return;
+                            }
                         }
                     }
                     var clickTileToWalk = true;
@@ -139,6 +149,9 @@
 
                     var world = topdownWorld;
                     var ans = "";
+                    if (title) {
+                        ans += "<span id='" + dawnUtils.cleanPathForId(title) + "' />"
+                    }
                     if (obj.name) ans += "<u>" + obj.name + "</u>\n";
                     if (obj.background) {
                         ans += "<img src='web/" + world.backgrounds[obj.background].src + "' />\n"
