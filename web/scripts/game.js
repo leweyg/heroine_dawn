@@ -5,7 +5,7 @@ var dawnGame_prototype = {
         avatar : null,
     },
     latest_status : "Loading...",
-    encounters_on : true,
+    encounters_on : false,
     initFromWorld : function(world) {
         this.world = world;
         // fixups in world:
