@@ -130,6 +130,26 @@ var dawnRenderer_prototype = {
                 part.dest_x + shake_x + ppx, part.dest_y + shake_y + ppy, 
                 part.width, part.height);
         }
+
+        this.drawScenePerspective();
+    },
+    drawScenePerspective : function() {
+        return; // TODO: draw scene with perspective
+        if ((!this.game.state.input_preview)
+            || (this.game.state.input_percent == 0)) {
+            return;
+        }
+        var pct = this.game.state.input_percent;
+        this.mainContext.fillStyle = "rgba(1, 0, 0, 0.5)";
+        var screen = this.game.world.rendering.screen;
+        for (var i in screen.diameters) {
+            var d = screen.diameters[i] * pct;
+            this.drawRectCentered(-(d/2),-(d/2),d,d);
+        }
+    },
+    drawRectCentered : function(x,y,width,height) {
+        var center = this.game.world.rendering.screen.center;
+        this.mainContext.fillRect(x+center.x, y+center.y, width, height);
     },
     drawEncounter : function() {
         var encounter = this.game.state.encounter;

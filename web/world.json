@@ -1574,7 +1574,9 @@
   "rendering": {
     "screen": {
       "width": 160,
-      "height": 120
+      "height": 120,
+      "center" : { "x":80, "y":60 },
+      "diameters" : [ 125, 76, 45, 27 ]
     },
     "sheets": [
       {

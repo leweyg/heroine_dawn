@@ -92,7 +92,7 @@ var dawnSwipe_prototype = {
             this.game.doInput(dir,isPreview);
         }
     },
-    innerForButtons : function(dir,isPreview=false) {
+    innerForButtons : function(dir,isPreview=false,previewPercent=0.0) {
         if (dir == "center") {
             // check for clicks:
             if (this.checkMenuClick("info_icon")) {
@@ -108,7 +108,7 @@ var dawnSwipe_prototype = {
                 }
             }
         }
-        this.game.doInput(dir,isPreview);
+        this.game.doInput(dir,isPreview,previewPercent);
     },
     checkMenuClick : function(name, icon_count) {
         var sheets = this.game.world.rendering.sheets;
@@ -151,7 +151,7 @@ var dawnSwipe_prototype = {
             this.innerForButtons(this.dragAngle());
         }
         else if ((this.isDown) && (isDown) && isMove) {
-            this.innerForButtons(this.dragAngle(), true);
+            this.innerForButtons(this.dragAngle(), true, this.dragPercent());
         }
         this.isDown = isDown;
 
@@ -162,6 +162,19 @@ var dawnSwipe_prototype = {
         var dx = (this.last_x - this.start_x);
         var dy = (this.last_y - this.start_y);
         return Math.sqrt((dx*dx)+(dy*dy));
+    },
+    _minDragDist : 5,
+    _maxDragDist : 40,
+    dragPercent : function() {
+        var d = this.dragDistance();
+        if (d < this._minDragDist) {
+            return 0.0;
+        }
+        if (d > this._maxDragDist) {
+            return 1.0;
+        }
+        var s = (d - this._minDragDist) / (this._maxDragDist - this._minDragDist);
+        return s;
     },
     dragAngle : function() {
         if (this.dragDistance() <= 5) {

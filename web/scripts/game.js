@@ -51,9 +51,9 @@ var dawnGame_prototype = {
         }
         this.onChanged();
     },
-    doInput : function(act,isPreview) {
+    doInput : function(act,isPreview=false,previewPct=0) {
         this.latest_status = "";
-        this.innerAction(act,isPreview);
+        this.innerAction(act,isPreview,previewPct);
         this.onChanged();
     },
     doTimeTick : function() {
@@ -61,14 +61,16 @@ var dawnGame_prototype = {
         if (this.state.menu_open) return; // stop time
         this.battleTick();
     },
-    innerAction : function(act,isPreview) {
+    innerAction : function(act,isPreview=false,previewPct=0) {
         if (isPreview) {
             if (!this.state.menu_open) {
+                this.state.input_percent = previewPct;
                 this.state.input_preview = act;
             }
             return;
         }
         this.state.input_preview = null;
+        this.state.input_percent = 0;
         if (act.startsWith("cast[")) {
             if (this.state.menu_open) this.state.menu_open = false;
         }
