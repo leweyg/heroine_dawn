@@ -111,6 +111,9 @@ var dawnUtils_prototype = {
     cleanPathForId : function(path) {
         return path.replace(".","_").replace("[","_").replace("]","_");
     },
+    lerp : function(a,b,t) {
+        return ((b-a)*t) + a;
+    }
 };
 
 var dawnUtils = new Object(dawnUtils_prototype);

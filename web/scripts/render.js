@@ -103,7 +103,8 @@ var dawnRenderer_prototype = {
 
         // perspective camera offset:
         var px = 0, py = 0;
-        if (this.game.state.input_preview) {
+        const usePixelPerspective = true;
+        if (usePixelPerspective && this.game.state.input_preview) {
             var dirName = this.game.state.input_preview;
             if (dirName in this.world.rendering.screen_directions) {
                 var dir = this.world.rendering.screen_directions[dirName];
@@ -125,26 +126,58 @@ var dawnRenderer_prototype = {
             var ppx = pz * -px;
             var ppy = pz * -py;
 
+            if (!usePixelPerspective) {
+                this.drawPartWithPerspective(tileImg, part, cell);
+                continue;
+            }
+
             this.mainContext.drawImage(tileImg, 
                 part.src_x,  part.src_y,  part.width, part.height,
                 part.dest_x + shake_x + ppx, part.dest_y + shake_y + ppy, 
                 part.width, part.height);
         }
 
-        this.drawScenePerspective();
+        if (!usePixelPerspective) {
+            this.drawScenePerspective();
+        }
+    },
+    _destRect : { x:0, y:0, width:0, height:0 },
+    drawPartWithPerspective : function(tileImg, part, cell) {
+        var dst = this._destRect;
+        var center = this.game.world.rendering.screen.center;
+        dst.x = part.dest_x - center.x;
+        dst.y = part.dest_y - center.y;
+        dst.width = part.width;
+        dst.height = part.height;
+
+        var perspectivePreview = true;
+        if (perspectivePreview 
+            && (this.game.state.input_preview == "up")
+            && (this.game.state.input_percent > 0))
+        {
+            var pct = this.game.state.input_percent;
+            var z = 1 + (-cell.dy);
+            var screen = this.game.world.rendering.screen;
+            var from = screen.diameters[z];
+            var to = screen.diameters[z-1];
+            var scl = dawnUtils.lerp(from,to,pct);
+            var r = (scl / from);
+            dst.x *= r;
+            dst.y *= r;
+            dst.width *= r;
+            dst.height *= r;
+        }
+
+        this.mainContext.drawImage(tileImg, 
+            part.src_x,  part.src_y,  part.width, part.height,
+            dst.x + center.x, dst.y + center.y, dst.width, dst.height);
     },
     drawScenePerspective : function() {
-        return; // TODO: draw scene with perspective
-        if ((!this.game.state.input_preview)
-            || (this.game.state.input_percent == 0)) {
-            return;
-        }
-        var pct = this.game.state.input_percent;
-        this.mainContext.fillStyle = "rgba(1, 0, 0, 0.5)";
         var screen = this.game.world.rendering.screen;
+        this.mainContext.fillStyle = "rgba(0, 0, 0, 0.5)";
         for (var i in screen.diameters) {
-            var d = screen.diameters[i] * pct;
-            this.drawRectCentered(-(d/2),-(d/2),d,d);
+            var d = screen.diameters[i];
+            this.drawRectCentered(d/2,(-d/2),d,d);
         }
     },
     drawRectCentered : function(x,y,width,height) {
