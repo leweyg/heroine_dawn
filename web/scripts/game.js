@@ -146,15 +146,22 @@ var dawnGame_prototype = {
         console.assert(avatar.facing);
     },
     checkForRandomEncounter : function(things) {
-        if (!this.encounters_on) return;
+        
         var avatar = this.state.avatar;
         if ((things.length == 0) && (!this.state.encounter)) {
             var map = this.world.maps[avatar.map_id];
             if (map.enemies.length > 0) {
                 var r = this.nextRandomFloat();
                 if (r > this.world.combat.encounter_rate) return;
-                var enemId = this.nextRandomIndexOf(map.enemies.length); // TODO: make random
+                var enemId = this.nextRandomIndexOf(map.enemies.length);
                 enemId = map.enemies[enemId];
+                if ((!this.encounters_on) || this.battleIsTamed()) {
+                    var enem = this.world.enemies[enemId];
+                    var gold = this.nextRandomMinMax(enem.gold_min, enem.gold_max);
+                    dawnThings.recieveGold(this,gold);
+                    this.latest_status = "$" + gold + " from tamed " + enem.name;
+                    return;
+                }
                 this.startBattle(enemId);
             }
         }
