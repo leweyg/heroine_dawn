@@ -72,10 +72,14 @@ var dawnRenderer_prototype = {
                     src_index : null,
                     rect_src : null,
                     rect_dst : null,
+                    rect_ref : null,
                 };
                 renderRingsYX[y].push(cell);
                 renderRingsOrdered.push(cell);
                 cell.r = Math.max(Math.abs(cell.dx),Math.abs(cell.dy));
+                var d = this.game.world.rendering.screen.diameters[Math.max(0,-cell.dy)];
+                var nhd = -(d/2);
+                cell.rect_ref = {x:(nhd + d*cell.dx),y:(nhd),width:d,height:d};
                 for (var i in cellsNorth) {
                     var nc = cellsNorth[i];
                     if ((nc.dx == cell.dx) && (nc.dy == cell.dy)) {
@@ -181,7 +185,7 @@ var dawnRenderer_prototype = {
             var ppy = pz * -py;
 
             if (!usePixelPerspective) {
-                this.drawPartWithPerspective(tileImg, part, cell);
+                this.drawPartWithPerspective(tileImg, cell);
                 continue;
             }
 
@@ -197,13 +201,30 @@ var dawnRenderer_prototype = {
         }
     },
     _destRect : { x:0, y:0, width:0, height:0 },
-    drawPartWithPerspective : function(tileImg, part, cell) {
+    copyRectToFrom : function(to,from) {
+        for (var i in from) {
+            to[i] = from[i];
+        }
+    },
+    ringCellInDir : function(cell_from,dir) {
+        var rings_yx = this.world.rendering.rings_yx;
+        var c = Math.floor(rings_yx.length/2);
+        var x = cell_from.dx + c;
+        var y = cell_from.dy + c;
+        return rings_yx[y+1][x];
+    },
+    rectTransformWith : function(rect,from,to,t) {
+        rect.x += (to.x - from.x) * t;
+        rect.y += (to.y - from.y) * t;
+        rect.width *= dawnUtils.lerp(1,to.width/from.width,t);
+        rect.height *= dawnUtils.lerp(1,to.height/from.height,t);
+    },
+    drawPartWithPerspective : function(tileImg, cell) {
         var dst = this._destRect;
         var center = this.game.world.rendering.screen.center;
-        dst.x = part.dest_x - center.x;
-        dst.y = part.dest_y - center.y;
-        dst.width = part.width;
-        dst.height = part.height;
+        this.copyRectToFrom(dst, cell.rect_dst);
+        var fadeOut = 0;
+        var nextCell = null;
 
         var perspectivePreview = true;
         if (perspectivePreview 
@@ -211,28 +232,43 @@ var dawnRenderer_prototype = {
             && (this.game.state.input_percent > 0))
         {
             var pct = this.game.state.input_percent;
-            var z = 1 + (-cell.dy);
-            var screen = this.game.world.rendering.screen;
-            var from = screen.diameters[z];
-            var to = screen.diameters[z-1];
-            var scl = dawnUtils.lerp(from,to,pct);
-            var r = (scl / from);
-            dst.x *= r;
-            dst.y *= r;
-            dst.width *= r;
-            dst.height *= r;
+            fadeOut = pct;
+
+            var nextCell = this.ringCellInDir(cell, this.game.state.input_preview);
+            this.rectTransformWith(dst, cell.rect_ref, nextCell.rect_ref, pct);
         }
 
-        this.mainContext.drawImage(tileImg, 
-            part.src_x,  part.src_y,  part.width, part.height,
-            dst.x + center.x, dst.y + center.y, dst.width, dst.height);
+        this.mainContext.globalAlpha = 1.0 - fadeOut;
+        this.drawImageFromRects(tileImg, 
+            cell.rect_src, dst);
+        this.mainContext.globalAlpha = 1;
+
+        if (nextCell && nextCell.rect_src) {
+            this.copyRectToFrom(dst, nextCell.rect_dst);
+            this.rectTransformWith(dst, nextCell.rect_ref, cell.rect_ref, 1.0 - pct);
+            this.mainContext.globalAlpha = fadeOut;
+            this.drawImageFromRects(tileImg, 
+                nextCell.rect_src, dst);
+            this.mainContext.globalAlpha = 1;
+        }
+    },
+    drawImageFromRects : function(img, rect_src, rect_dst) {
+        var center = {x:0,y:0};
+        this.mainContext.drawImage(img, 
+            rect_src.x,  rect_src.y,  rect_src.width, rect_src.height,
+            rect_dst.x + center.x, rect_dst.y + center.y, 
+            rect_dst.width, rect_dst.height);
     },
     drawScenePerspective : function() {
         var screen = this.game.world.rendering.screen;
-        this.mainContext.fillStyle = "rgba(0, 0, 0, 0.5)";
+        this.mainContext.fillStyle = "rgba(0, 0, 0, 0.25)";
+        for (var y=0; y<=2; y++) {
+            var cell = this.game.world.rendering.rings_yx[3-y][4];
+            this.drawRectCentered(cell.rect_ref.x, cell.rect_ref.y, cell.rect_ref.width, cell.rect_ref.height);
+        }
         for (var i in screen.diameters) {
             var d = screen.diameters[i];
-            this.drawRectCentered(d/2,(-d/2),d,d);
+            //this.drawRectCentered(d/2,(-d/2),d,d);
         }
     },
     drawRectCentered : function(x,y,width,height) {
