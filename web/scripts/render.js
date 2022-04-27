@@ -46,8 +46,63 @@ var dawnRenderer_prototype = {
         for (var i in world.enemies) {
             this.images.enemies[i] = this.createImageLoader(world.enemies[i].src);
         }
+
+        this.initRenderCells();
         
         this.game.callOnChanged.push( (() => { _this.redraw(); }) );
+    },
+    initRenderCells : function() {
+        var renderRingsYX = [];
+        var renderRingsOrdered = [];
+        this.world.rendering.rings_yx = renderRingsYX;
+        this.world.rendering.rings_ordered = renderRingsOrdered;
+        var renderRingCount = 3;
+        var renderRingWidth = 7;
+        var renderRingCenter = 3;
+        var cellsNorth = this.world.rendering.visible_cells_north;
+        var rectData = this.world.rendering.tile_parts_by_visible_cell;
+        for (var y=0; y<renderRingWidth; y++) {
+            renderRingsYX.push([]);
+            for (var x=0; x<renderRingWidth; x++) {
+                var cell = {
+                    dx : x-renderRingCenter,
+                    dy : y-renderRingCenter,
+                    dirs : {},
+                    r : 0,
+                    src_index : null,
+                    rect_src : null,
+                    rect_dst : null,
+                };
+                renderRingsYX[y].push(cell);
+                renderRingsOrdered.push(cell);
+                cell.r = Math.max(Math.abs(cell.dx),Math.abs(cell.dy));
+                for (var i in cellsNorth) {
+                    var nc = cellsNorth[i];
+                    if ((nc.dx == cell.dx) && (nc.dy == cell.dy)) {
+                        cell.src_index = 1*i;
+                        var cellRect = rectData[i];
+                        cell.rect_src = {
+                            x:cellRect.src_x, y:cellRect.src_y,
+                            width:cellRect.width, height:cellRect.height
+                        };
+                        cell.rect_dst = {
+                            x:cellRect.dest_x, y:cellRect.dest_y,
+                            width:cellRect.width, height:cellRect.height
+                        };
+                        break;
+                    }
+                }
+            }
+        }
+        renderRingsOrdered.sort((a,b) => {
+            if (a.r != b.r) return (b.r - a.r);
+            if (a.dy != b.dy) return (a.dy - b.dy);
+            return (Math.abs(b.dx) - Math.abs(a.dx));
+        });
+        for (var k in renderRingsOrdered) {
+            renderRingsOrdered[k].render_index = 1*k;
+        }
+        console.log(JSON.stringify(renderRingsOrdered,null,2));
     },
     preloadContent : function() {
         for (var i in this.images) {
@@ -83,8 +138,7 @@ var dawnRenderer_prototype = {
             this.mainContext.drawImage(bgImg, 0, 0);
         }
         // visible cells:
-        var cells = this.world.rendering.visible_cells_north;
-        var parts = this.world.rendering.tile_parts_by_visible_cell;
+        var cells = this.world.rendering.rings_ordered;
 
         // camera shake:
         var shake_y = 0;
@@ -115,10 +169,10 @@ var dawnRenderer_prototype = {
         
         for (var ci in cells) {
             var cell = cells[ci];
+            if (!cell.rect_src) continue;
             var tile = this.getTileInfoForCell(cell);
             if (tile === undefined) continue;
 
-            var part = parts[ci];
             var tileImg = this.images.tiles[tile.tile_type].tryGetImg();
             if (!tileImg) continue;
 
@@ -131,10 +185,11 @@ var dawnRenderer_prototype = {
                 continue;
             }
 
+            var part = cell;
             this.mainContext.drawImage(tileImg, 
-                part.src_x,  part.src_y,  part.width, part.height,
-                part.dest_x + shake_x + ppx, part.dest_y + shake_y + ppy, 
-                part.width, part.height);
+                cell.rect_src.x,  cell.rect_src.y,  cell.rect_src.width, cell.rect_src.height,
+                cell.rect_dst.x + shake_x + ppx, cell.rect_dst.y + shake_y + ppy, 
+                cell.rect_dst.width, cell.rect_dst.height);
         }
 
         if (!usePixelPerspective) {
