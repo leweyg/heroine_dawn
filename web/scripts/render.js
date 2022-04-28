@@ -61,6 +61,7 @@ var dawnRenderer_prototype = {
         var renderRingCenter = 3;
         var cellsNorth = this.world.rendering.visible_cells_north;
         var rectData = this.world.rendering.tile_parts_by_visible_cell;
+        var center = this.game.world.rendering.screen.center;
         for (var y=0; y<renderRingWidth; y++) {
             renderRingsYX.push([]);
             for (var x=0; x<renderRingWidth; x++) {
@@ -77,9 +78,9 @@ var dawnRenderer_prototype = {
                 renderRingsYX[y].push(cell);
                 renderRingsOrdered.push(cell);
                 cell.r = Math.max(Math.abs(cell.dx),Math.abs(cell.dy));
-                var d = this.game.world.rendering.screen.diameters[Math.max(0,-cell.dy)];
+                var d = this.game.world.rendering.screen.diameters[Math.max(0,2-cell.dy)];
                 var nhd = -(d/2);
-                cell.rect_ref = {x:(nhd + d*cell.dx),y:(nhd),width:d,height:d};
+                cell.rect_ref = {x:(nhd + d*cell.dx + center.x),y:(nhd + center.y),width:d,height:d};
                 for (var i in cellsNorth) {
                     var nc = cellsNorth[i];
                     if ((nc.dx == cell.dx) && (nc.dy == cell.dy)) {
@@ -161,7 +162,19 @@ var dawnRenderer_prototype = {
 
         // perspective camera offset:
         var px = 0, py = 0;
-        const usePixelPerspective = true;
+        var previewFwd = (this.game.state.input_preview == "up") && !this.game.isBattle();
+        if (previewFwd) {
+            var fwd = this.game.getTileInfoAvatarForward();
+            if (fwd) {
+                var walkable = this.world.tile_types[fwd.tile_type].walkable;
+                if (!walkable) {
+                    previewFwd = false;
+                }
+            } else {
+                previewFwd = false;
+            }
+        }
+        const usePixelPerspective = !previewFwd;
         if (usePixelPerspective && this.game.state.input_preview) {
             var dirName = this.game.state.input_preview;
             if (dirName in this.world.rendering.screen_directions) {
@@ -213,15 +226,23 @@ var dawnRenderer_prototype = {
         var y = cell_from.dy + c;
         return rings_yx[y+1][x];
     },
+    _tempTransformRect : {x:0,y:0,width:0,height:0},
     rectTransformWith : function(rect,from,to,t) {
+        var tmp = this._tempTransformRect;
+        dawnUtils.encodeRect(rect,from);
+        dawnUtils.lerpRect(tmp,from,to,t);
+        dawnUtils.decodeRect(rect, tmp);
+
+        /*
         rect.x += (to.x - from.x) * t;
         rect.y += (to.y - from.y) * t;
         rect.width *= dawnUtils.lerp(1,to.width/from.width,t);
         rect.height *= dawnUtils.lerp(1,to.height/from.height,t);
+        */
     },
     drawPartWithPerspective : function(tileImg, cell) {
         var dst = this._destRect;
-        var center = this.game.world.rendering.screen.center;
+        
         this.copyRectToFrom(dst, cell.rect_dst);
         var fadeOut = 0;
         var nextCell = null;

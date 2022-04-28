@@ -113,7 +113,35 @@ var dawnUtils_prototype = {
     },
     lerp : function(a,b,t) {
         return ((b-a)*t) + a;
-    }
+    },
+    encode : function(v,a,b) {
+        return (v - a) / (b - a);
+    },
+    decode : function(v,a,b) {
+        return (a + (v*(b - a)));
+    },
+    encodeRect : function(v,r) {
+        var x = this.encode(v.x, r.x, r.x+r.width);
+        var y = this.encode(v.y, r.y, r.y+r.height);
+        v.width = this.encode(v.x+v.width, r.x, r.x+r.width)-x;
+        v.height = this.encode(v.y+v.height, r.y, r.y+r.height)-y;
+        v.x = x;
+        v.y = y;
+    },
+    decodeRect : function(v,r) {
+        var x = this.decode(v.x, r.x, r.x+r.width);
+        var y = this.decode(v.y, r.y, r.y+r.height);
+        v.width = this.decode(v.x+v.width, r.x, r.x+r.width)-x;
+        v.height = this.decode(v.y+v.height, r.y, r.y+r.height)-y;
+        v.x = x;
+        v.y = y;
+    },
+    lerpRect : function(d,from,to,t) {
+        d.x = this.lerp(from.x, to.x, t);
+        d.y = this.lerp(from.y, to.y, t);
+        d.width = this.lerp(from.width, to.width, t);
+        d.height = this.lerp(from.height, to.height, t);
+    },
 };
 
 var dawnUtils = new Object(dawnUtils_prototype);
