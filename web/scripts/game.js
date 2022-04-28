@@ -157,7 +157,7 @@ var dawnGame_prototype = {
                 if (r > this.world.combat.encounter_rate) return;
                 var enemId = this.nextRandomIndexOf(map.enemies.length);
                 enemId = map.enemies[enemId];
-                if ((!this.encounters_on) || this.battleIsTamed()) {
+                if (!this.encounters_on) {
                     var enem = this.world.enemies[enemId];
                     var gold = this.nextRandomMinMax(enem.gold_min, enem.gold_max);
                     dawnThings.recieveGold(this,gold);
