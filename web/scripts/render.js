@@ -186,7 +186,6 @@ var dawnRenderer_prototype = {
         
         for (var ci in cells) {
             var cell = cells[ci];
-            if (!cell.rect_src) continue;
             var tile = this.getTileInfoForCell(cell);
             if (tile === undefined) continue;
 
@@ -201,6 +200,7 @@ var dawnRenderer_prototype = {
                 this.drawPartWithPerspective(tileImg, cell);
                 continue;
             }
+            if (!cell.rect_src) continue;
 
             var part = cell;
             this.mainContext.drawImage(tileImg, 
@@ -224,7 +224,10 @@ var dawnRenderer_prototype = {
         var c = Math.floor(rings_yx.length/2);
         var x = cell_from.dx + c;
         var y = cell_from.dy + c;
-        return rings_yx[y+1][x];
+        if ((y+1>=0) && (x>=0) && (y+1 < rings_yx.length) && (x < rings_yx[0].length)) {
+            return rings_yx[y+1][x];
+        }
+        return undefined;
     },
     _tempTransformRect : {x:0,y:0,width:0,height:0},
     rectTransformWith : function(rect,from,to,t) {
@@ -256,13 +259,17 @@ var dawnRenderer_prototype = {
             fadeOut = pct;
 
             var nextCell = this.ringCellInDir(cell, this.game.state.input_preview);
-            this.rectTransformWith(dst, cell.rect_ref, nextCell.rect_ref, pct);
+            if (nextCell) {
+                this.rectTransformWith(dst, cell.rect_ref, nextCell.rect_ref, pct);
+            }
         }
 
-        this.mainContext.globalAlpha = 1.0 - fadeOut;
-        this.drawImageFromRects(tileImg, 
-            cell.rect_src, dst);
-        this.mainContext.globalAlpha = 1;
+        if (cell && cell.rect_src) {
+            this.mainContext.globalAlpha = 1.0 - fadeOut;
+            this.drawImageFromRects(tileImg, 
+                cell.rect_src, dst);
+            this.mainContext.globalAlpha = 1;
+        }
 
         if (nextCell && nextCell.rect_src) {
             this.copyRectToFrom(dst, nextCell.rect_dst);
