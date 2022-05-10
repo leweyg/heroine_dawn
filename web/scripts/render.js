@@ -167,8 +167,9 @@ var dawnRenderer_prototype = {
 
         // perspective camera offset:
         var px = 0, py = 0;
-        var isPreviewDown = (this.game.state.input_preview == "down");
-        var previewFwd = ((this.game.state.input_preview == "up") || isPreviewDown);
+        var preInput = this.game.state.input_preview;
+        var isPreviewDown = (preInput == "down");
+        var previewFwd = ((preInput == "up") || isPreviewDown);
         if (previewFwd) {
             if (isPreviewDown) {
                 this.game.rotateAvatar(2);
@@ -185,6 +186,9 @@ var dawnRenderer_prototype = {
             if (isPreviewDown) {
                 this.game.rotateAvatar(2);
             }
+        }
+        if ((preInput == "left")||(preInput == "right")) {
+            previewFwd = true;
         }
         if (this.game.isBattle()) {
             previewFwd = false;
@@ -247,10 +251,21 @@ var dawnRenderer_prototype = {
         var c = Math.floor(rings_yx.length/2);
         var x = cell_from.dx + c;
         var y = cell_from.dy + c;
+        var sx = x;
+        var sy = y;
+        var isTurn = false;
         if (dir == "up") {
             y += 1;
         } else if (dir == "down") {
             y -= 1;
+        } else if (dir == "left") {
+            isTurn = true;
+            x = c - (sy - c);
+            y = c + (sx - c);
+        } else if (dir == "right") {
+            isTurn = true;
+            x = c + (sy - c);
+            y = c - (sx - c);
         } else {
             throw "Unknown dir: " + dir;
         }
@@ -297,7 +312,7 @@ var dawnRenderer_prototype = {
         }
 
         if (cell && cell.rect_src) {
-            this.mainContext.globalAlpha = 1.0 - fadeOut;
+            this.mainContext.globalAlpha = Math.sqrt( 1.0 - fadeOut );
             this.drawImageFromRects(tileImg, 
                 cell.rect_src, dst);
             this.mainContext.globalAlpha = 1;
@@ -306,7 +321,7 @@ var dawnRenderer_prototype = {
         if (nextCell && nextCell.rect_src) {
             this.copyRectToFrom(dst, nextCell.rect_dst);
             this.rectTransformWith(dst, nextCell.rect_ref, cell.rect_ref, 1.0 - pct);
-            this.mainContext.globalAlpha = fadeOut;
+            this.mainContext.globalAlpha = Math.pow( fadeOut, 2 );
             this.drawImageFromRects(tileImg, 
                 nextCell.rect_src, dst);
             this.mainContext.globalAlpha = 1;
