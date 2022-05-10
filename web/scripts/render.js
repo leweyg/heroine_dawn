@@ -54,8 +54,10 @@ var dawnRenderer_prototype = {
     initRenderCells : function() {
         var renderRingsYX = [];
         var renderRingsOrdered = [];
+        var renderRingsPacked = [];
         this.world.rendering.rings_yx = renderRingsYX;
         this.world.rendering.rings_ordered = renderRingsOrdered;
+        this.world.rendering.rings_packed = renderRingsPacked;
         var renderRingCount = 3;
         var renderRingWidth = 7;
         var renderRingCenter = 3;
@@ -68,13 +70,16 @@ var dawnRenderer_prototype = {
                 var cell = {
                     dx : x-renderRingCenter,
                     dy : y-renderRingCenter,
+                    packed_index : (x+(y*renderRingWidth)),
                     dirs : {},
+                    next_by_turn : {},
                     r : 0,
                     src_index : null,
                     rect_src : null,
                     rect_dst : null,
                     rect_ref : null,
                 };
+                renderRingsPacked.push(cell);
                 renderRingsYX[y].push(cell);
                 renderRingsOrdered.push(cell);
                 cell.r = Math.max(Math.abs(cell.dx),Math.abs(cell.dy));
@@ -107,7 +112,7 @@ var dawnRenderer_prototype = {
         for (var k in renderRingsOrdered) {
             renderRingsOrdered[k].render_index = 1*k;
         }
-        console.log(JSON.stringify(renderRingsOrdered,null,2));
+        //console.log(JSON.stringify(renderRingsOrdered,null,2));
     },
     preloadContent : function() {
         for (var i in this.images) {
@@ -162,8 +167,12 @@ var dawnRenderer_prototype = {
 
         // perspective camera offset:
         var px = 0, py = 0;
-        var previewFwd = (this.game.state.input_preview == "up") && !this.game.isBattle();
+        var isPreviewDown = (this.game.state.input_preview == "down");
+        var previewFwd = ((this.game.state.input_preview == "up") || isPreviewDown);
         if (previewFwd) {
+            if (isPreviewDown) {
+                this.game.rotateAvatar(2);
+            }
             var fwd = this.game.getTileInfoAvatarForward();
             if (fwd) {
                 var walkable = this.world.tile_types[fwd.tile_type].walkable;
@@ -173,6 +182,12 @@ var dawnRenderer_prototype = {
             } else {
                 previewFwd = false;
             }
+            if (isPreviewDown) {
+                this.game.rotateAvatar(2);
+            }
+        }
+        if (this.game.isBattle()) {
+            previewFwd = false;
         }
         const usePixelPerspective = !previewFwd;
         if (usePixelPerspective && this.game.state.input_preview) {
@@ -219,14 +234,32 @@ var dawnRenderer_prototype = {
             to[i] = from[i];
         }
     },
+    cachedNextsById : {},
     ringCellInDir : function(cell_from,dir) {
+        if (dir in cell_from.next_by_turn) {
+            var ndx = cell_from.next_by_turn[dir];
+            if (ndx >= 0) {
+                return this.world.rendering.rings_packed[ndx];
+            }
+            return undefined;
+        }
         var rings_yx = this.world.rendering.rings_yx;
         var c = Math.floor(rings_yx.length/2);
         var x = cell_from.dx + c;
         var y = cell_from.dy + c;
-        if ((y+1>=0) && (x>=0) && (y+1 < rings_yx.length) && (x < rings_yx[0].length)) {
-            return rings_yx[y+1][x];
+        if (dir == "up") {
+            y += 1;
+        } else if (dir == "down") {
+            y -= 1;
+        } else {
+            throw "Unknown dir: " + dir;
         }
+        if ((y>=0) && (x>=0) && (y < rings_yx.length) && (x < rings_yx[0].length)) {
+            var res = rings_yx[y][x];
+            cell_from.next_by_turn[dir] = res.packed_index;
+            return res;
+        }
+        cell_from.next_by_turn[dir] = -1;
         return undefined;
     },
     _tempTransformRect : {x:0,y:0,width:0,height:0},
@@ -251,8 +284,7 @@ var dawnRenderer_prototype = {
         var nextCell = null;
 
         var perspectivePreview = true;
-        if (perspectivePreview 
-            && (this.game.state.input_preview == "up")
+        if (perspectivePreview
             && (this.game.state.input_percent > 0))
         {
             var pct = this.game.state.input_percent;
