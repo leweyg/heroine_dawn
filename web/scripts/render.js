@@ -78,10 +78,12 @@ var dawnRenderer_prototype = {
                     rect_src : null,
                     rect_dst : null,
                     rect_ref : null,
+                    is_center_back : false,
                 };
                 renderRingsPacked.push(cell);
                 renderRingsYX[y].push(cell);
                 renderRingsOrdered.push(cell);
+                cell.is_center_back = ((cell.dx==0) && (cell.dy==1));
                 cell.r = Math.max(Math.abs(cell.dx),Math.abs(cell.dy));
                 var d = this.game.world.rendering.screen.diameters[Math.max(0,2-cell.dy)];
                 var nhd = -(d/2);
@@ -271,6 +273,9 @@ var dawnRenderer_prototype = {
         }
         if ((y>=0) && (x>=0) && (y < rings_yx.length) && (x < rings_yx[0].length)) {
             var res = rings_yx[y][x];
+            if (isTurn && (res.is_center_back)) {
+                res = rings_yx[y][x + res.dx + cell_from.dx];
+            }
             cell_from.next_by_turn[dir] = res.packed_index;
             return res;
         }
@@ -320,7 +325,9 @@ var dawnRenderer_prototype = {
 
         if (nextCell && nextCell.rect_src) {
             this.copyRectToFrom(dst, nextCell.rect_dst);
-            this.rectTransformWith(dst, nextCell.rect_ref, cell.rect_ref, 1.0 - pct);
+            if (!cell.is_center_back) {
+                this.rectTransformWith(dst, nextCell.rect_ref, cell.rect_ref, 1.0 - pct);
+            }
             this.mainContext.globalAlpha = Math.pow( fadeOut, 2 );
             this.drawImageFromRects(tileImg, 
                 nextCell.rect_src, dst);
