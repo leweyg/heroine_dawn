@@ -164,7 +164,7 @@ var dawnSwipe_prototype = {
         return Math.sqrt((dx*dx)+(dy*dy));
     },
     _minDragDist : 5,
-    _maxDragDist : 40,
+    _maxDragDist : 60,
     dragPercent : function() {
         var d = this.dragDistance();
         if (d < this._minDragDist) {
