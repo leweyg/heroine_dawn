@@ -181,6 +181,11 @@ var dawnRenderer_prototype = {
                 var walkable = this.world.tile_types[fwd.tile_type].walkable;
                 if (!walkable) {
                     previewFwd = false;
+                } else {
+                    var thing = this.game.findThingForwardOfAvatar();
+                    if (thing && ((thing.type == "exit") || (thing.type == "person"))) {
+                        previewFwd = false;
+                    }
                 }
             } else {
                 previewFwd = false;

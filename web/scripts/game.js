@@ -138,6 +138,16 @@ var dawnGame_prototype = {
         avatar.y = fwd.y;
         this.checkForRandomEncounter(things);
     },
+    findThingForwardOfAvatar : function() {
+        var avatar = this.state.avatar;
+        var fwd = this.getTileInfoAvatarForward();
+        if (!fwd) return null;
+        var things = this.findTileThingsByMapXY(avatar.map_id,fwd.x,fwd.y);
+        if (things.length > 0) {
+            return things[0];
+        }
+        return null;
+    },
     rotateAvatar : function(dAngle) {
         var avatar = this.state.avatar;
         var dirs = this.world.rendering.directions_right;
