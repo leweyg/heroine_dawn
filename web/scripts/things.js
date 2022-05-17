@@ -215,9 +215,11 @@ var dawnThings_prototype = {
                     "msg":msg,
                 };
                 game.latest_status = "";
+            } else {
+                // normal battle ending:
+                game.state.encounter = null;
+                this.recieveGold(game,gold);
             }
-            game.state.encounter = null;
-            this.recieveGold(game,gold);
             return true;
         } else {
             var firstHp = encounter.hp;
