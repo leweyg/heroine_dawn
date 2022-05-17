@@ -51,6 +51,13 @@ var dawnRenderer_prototype = {
         
         this.game.callOnChanged.push( (() => { _this.redraw(); }) );
     },
+    rect_ref_x_from_dyz : function(dy,dx) {
+        var center = this.game.world.rendering.screen.center;
+        var d = this.game.world.rendering.screen.diameters[Math.max(0,2-dy)];
+        var nhd = -(d/2);
+        var x = (nhd + d*dx + center.x);
+        return x;
+    },
     initRenderCells : function() {
         var renderRingsYX = [];
         var renderRingsOrdered = [];
@@ -87,7 +94,19 @@ var dawnRenderer_prototype = {
                 cell.r = Math.max(Math.abs(cell.dx),Math.abs(cell.dy));
                 var d = this.game.world.rendering.screen.diameters[Math.max(0,2-cell.dy)];
                 var nhd = -(d/2);
-                cell.rect_ref = {x:(nhd + d*cell.dx + center.x),y:(nhd + center.y),width:d,height:d};
+                cell.rect_ref = {x:this.rect_ref_x_from_dyz(cell.dy,cell.dx),y:(nhd + center.y),width:d,height:d};
+                if (cell.dx < 0) { // tile is on left, use right most edge
+                    var bx = cell.rect_ref.x;
+                    var ex = this.rect_ref_x_from_dyz(cell.dy-1,cell.dx+1);
+                    cell.rect_ref.x = bx;
+                    cell.rect_ref.width = ex-bx;
+                } else if (cell.dx > 0) { // tile is on right, use left most edge
+                    var bx = this.rect_ref_x_from_dyz(cell.dy-1,cell.dx);
+                    var ex = cell.rect_ref.x + cell.rect_ref.width;
+                    cell.rect_ref.x = bx;
+                    cell.rect_ref.width = ex-bx;
+                }
+
                 for (var i in cellsNorth) {
                     var nc = cellsNorth[i];
                     if ((nc.dx == cell.dx) && (nc.dy == cell.dy)) {
@@ -322,7 +341,7 @@ var dawnRenderer_prototype = {
         }
 
         if (cell && cell.rect_src) {
-            this.mainContext.globalAlpha = Math.sqrt( 1.0 - fadeOut );
+            this.mainContext.globalAlpha = Math.pow( 1.0 - fadeOut, 1 );
             this.drawImageFromRects(tileImg, 
                 cell.rect_src, dst);
             this.mainContext.globalAlpha = 1;
@@ -333,7 +352,7 @@ var dawnRenderer_prototype = {
             if (!cell.is_center_back) {
                 this.rectTransformWith(dst, nextCell.rect_ref, cell.rect_ref, 1.0 - pct);
             }
-            this.mainContext.globalAlpha = Math.pow( fadeOut, 2 );
+            this.mainContext.globalAlpha = Math.pow( fadeOut, 1 );
             this.drawImageFromRects(tileImg, 
                 nextCell.rect_src, dst);
             this.mainContext.globalAlpha = 1;
