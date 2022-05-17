@@ -524,6 +524,9 @@ var dawnRenderer_prototype = {
         if (status == "" && this.game.state.menu_open) {
             var msg = this.world.maps[this.game.state.avatar.map_id].name;
             msg += "\nfacing " + this.game.state.avatar.facing;
+            if (this.game.state.avatar.tamer) {
+                msg += "\ntamer of all"
+            }
             status = msg;
         }
         this.drawStringAligned(status, -1, -1);

@@ -200,10 +200,22 @@ var dawnThings_prototype = {
             var gold = game.nextRandomMinMax(enem.gold_min, enem.gold_max);
             game.latest_status = prefix + "Tamed. Got $" + gold;
             if (enem.extra == "dspeak") {
-                game.state.avatar.tamer = true;
-                game.latest_status += "\nYou are a tamer now.";
+
+                var wonGame = (game.state.avatar.hp > 0);
+                var msg = "Speaker tamed...\n";
+                game.state.avatar.gold += gold;
+                if (wonGame) {
+                    game.state.avatar.tamer = true;
+                    msg += "You are a Tamer now...\nWalk with peace always.";
+                } else {
+                    msg += "but not enough HP\nto recieve any power.";
+                }
+                game.state.encounter = {
+                    "type":"note",
+                    "msg":msg,
+                };
+                game.latest_status = "";
             }
-            this.recieveGold(game,gold);
             return true;
         } else {
             var firstHp = encounter.hp;
