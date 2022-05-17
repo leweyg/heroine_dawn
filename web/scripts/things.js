@@ -216,6 +216,8 @@ var dawnThings_prototype = {
                 };
                 game.latest_status = "";
             }
+            game.state.encounter = null;
+            this.recieveGold(game,gold);
             return true;
         } else {
             var firstHp = encounter.hp;
