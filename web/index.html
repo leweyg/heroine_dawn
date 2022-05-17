@@ -39,7 +39,7 @@
                 <u style="cursor:pointer" onclick="mainNewGame();">[new game]</u>
                 <br/>
                 <input type="checkbox" id="main_allow_encounters" onclick="toggledEncounters()">
-                Untamed Battles
+                Battles
                 <input type="checkbox" id="main_allow_preload" onclick="toggledPreload()">
                 Preload Content
                 <a id="main_save_link" style="display: none;" href="">[here]</a>
@@ -106,6 +106,7 @@
             function toggledEncounters() {
                 var isOn = !(!(main_allow_encounters.checked));
                 dawnGame.encounters_on = isOn;
+                dawnGame.onChanged();
             }
             function toggledPreload() {
                 dawnRenderer.preloadContent();

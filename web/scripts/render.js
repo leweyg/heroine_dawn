@@ -372,7 +372,11 @@ var dawnRenderer_prototype = {
             ctx.fillStyle = "rgba(0, 0, 0, 0.75)";
             ctx.fillRect(0,0,this.world.rendering.screen.width, this.world.rendering.screen.height);
     
-            this.drawStringAligned(encounter.msg, -1, -1);
+            var msg = encounter.msg;
+            if (msg.startsWith("Heroine")) {
+                msg += "\n\n" + "battles are [ " + (this.game.encounters_on ? "on" : "off") + " ]";
+            }
+            this.drawStringAligned(msg, -1, -1);
         }
         if (encounter.type == "chest") {
             var treasure = this.game.getRef(encounter.ref);
