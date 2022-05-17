@@ -393,7 +393,7 @@ var dawnRenderer_prototype = {
     
             var msg = encounter.msg;
             if (msg.startsWith("Heroine")) {
-                msg += "\n\n" + "battles are [ " + (this.game.encounters_on ? "on" : "off") + " ]";
+                msg += "\n\n" + "battles are [ " + (this.game.state.battles_off ? "off" : "on") + " ]";
             }
             this.drawStringAligned(msg, -1, -1);
         }

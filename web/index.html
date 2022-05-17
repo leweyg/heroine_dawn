@@ -65,6 +65,7 @@
 
                     dawnUtils.cookieTryLoad(dawnGame);
                     loadPageParameters();
+                    main_allow_encounters.checked = (!dawnGame.state.battles_off);
                     dawnRenderer.redraw();
 
                     // update callbacks:
@@ -105,7 +106,7 @@
             }
             function toggledEncounters() {
                 var isOn = !(!(main_allow_encounters.checked));
-                dawnGame.encounters_on = isOn;
+                dawnGame.state.battles_off = !isOn;
                 dawnGame.onChanged();
             }
             function toggledPreload() {

@@ -5,7 +5,6 @@ var dawnGame_prototype = {
         avatar : null,
     },
     latest_status : "Loading...",
-    encounters_on : false,
     initFromWorld : function(world) {
         this.world = world;
         // fixups in world:
@@ -24,6 +23,7 @@ var dawnGame_prototype = {
             tile_changes : [],
             random_index : 0,
             menu_open : false,
+            battles_off : true,
         };
         this.latest_status = ""; //"First step...";
         var msg = "";
@@ -167,7 +167,7 @@ var dawnGame_prototype = {
                 if (r > this.world.combat.encounter_rate) return;
                 var enemId = this.nextRandomIndexOf(map.enemies.length);
                 enemId = map.enemies[enemId];
-                if (!this.encounters_on) {
+                if (this.state.battles_off) {
                     var enem = this.world.enemies[enemId];
                     var gold = this.nextRandomMinMax(enem.gold_min, enem.gold_max);
                     dawnThings.recieveGold(this,gold);
