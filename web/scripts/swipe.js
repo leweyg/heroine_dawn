@@ -89,7 +89,7 @@ var dawnSwipe_prototype = {
                 dir = "menu";
             }
             var isPreview = isDown;
-            this.game.doInput(dir,isPreview);
+            this.game.doInput(dir,isPreview,0.5);
         }
     },
     innerForButtons : function(dir,isPreview=false,previewPercent=0.0) {
