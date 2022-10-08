@@ -1,2 +1,3 @@
 *.DS_Store
 web/models/all_dungeon/*
+web/models/play_kit/*
