@@ -1,0 +1,132 @@
+{
+  "name": "pillar",
+  "userData": {},
+  "children": [
+    {
+      "name": "terrain",
+      "scale": [
+        2,
+        2,
+        2
+      ],
+      "userData": {},
+      "source": "obj/terrain.obj"
+    },
+    {
+      "name": "wall",
+      "rotation": [
+        0,
+        1.5707963267948966,
+        0
+      ],
+      "scale": [
+        0.42803509622828534,
+        0.5,
+        1.620389645490852
+      ],
+      "userData": {},
+      "source": "obj/wall.obj"
+    },
+    {
+      "name": "wall",
+      "rotation": [
+        -3.141592653589793,
+        0.0000013267948967278093,
+        -3.141592653589793
+      ],
+      "scale": [
+        0.4662354849987594,
+        0.5,
+        1.620389645490852
+      ],
+      "userData": {},
+      "source": "obj/wall.obj"
+    },
+    {
+      "name": "door",
+      "position": [
+        -0.5,
+        0.5,
+        1
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        1
+      ],
+      "userData": {},
+      "source": "obj/door.obj"
+    },
+    {
+      "name": "door",
+      "position": [
+        1,
+        0.5,
+        0.5
+      ],
+      "rotation": [
+        0,
+        1.570795000005679,
+        0
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        1
+      ],
+      "userData": {},
+      "source": "obj/door.obj"
+    },
+    {
+      "name": "door",
+      "position": [
+        -1,
+        0.5,
+        0.5
+      ],
+      "rotation": [
+        0,
+        1.570795000005679,
+        0
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        1
+      ],
+      "userData": {},
+      "source": "obj/door.obj"
+    },
+    {
+      "name": "door",
+      "position": [
+        -0.5,
+        0.5,
+        -1
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        1
+      ],
+      "userData": {},
+      "source": "obj/door.obj"
+    }
+  ],
+  "metadata": {
+    "version": 0.2,
+    "type": "lewcid_object",
+    "camera": {
+      "position": [
+        -2.4498405228009994,
+        2.7927477679632062,
+        -2.3577596411847264
+      ],
+      "rotation": [
+        -1.8683912244350787,
+        -1.0166359653932755,
+        -1.9169552136105235
+      ]
+    }
+  }
+}
