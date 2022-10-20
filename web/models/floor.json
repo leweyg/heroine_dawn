@@ -13,14 +13,9 @@
       "source": "obj/terrain.obj"
     },
     {
-      "name": "pillar",
-      "scale": [
-        0.8,
-        0.5,
-        0.8
-      ],
+      "name": "floorDecoration_tilesSmall",
       "userData": {},
-      "source": "obj/pillar.obj"
+      "source": "obj/floorDecoration_tilesSmall.obj"
     }
   ],
   "metadata": {
@@ -28,14 +23,14 @@
     "type": "lewcid_object",
     "camera": {
       "position": [
-        -0.08765893601839372,
-        2.5719742342398337,
-        3.518851469884171
+        -0.08633532852680127,
+        3.0853736458904204,
+        4.54564944007883
       ],
       "rotation": [
-        -0.46364882024580534,
-        0.0022011289709999095,
-        0.001100566485079799
+        -0.4636479413374071,
+        0.0011529724870358662,
+        0.0005764865308991513
       ]
     }
   }
