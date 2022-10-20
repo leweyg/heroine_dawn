@@ -79,6 +79,7 @@
       "index": 1,
       "src": "images/tiles/dungeon_floor.png",
       "topdown_src": "images/topdown/tile_0022.png",
+      "model" : "models/floor.json",
       "walkable": true
     },
     {
@@ -86,6 +87,7 @@
       "index": 2,
       "src": "images/tiles/dungeon_wall.png",
       "topdown_src": "images/topdown/tile_0095.png",
+      "model" : "models/wall.json",
       "walkable": false
     },
     {
@@ -93,6 +95,7 @@
       "index": 3,
       "src": "images/tiles/dungeon_door.png",
       "topdown_src": "images/topdown/tile_0109.png",
+      "model" : "models/door.json",
       "walkable": true
     },
     {
@@ -100,6 +103,7 @@
       "index": 4,
       "src": "images/tiles/pillar_exterior.png",
       "topdown_src": "images/topdown/tile_0058.png",
+      "model" : "models/pillar.json",
       "walkable": false
     },
     {
@@ -107,6 +111,7 @@
       "index": 5,
       "src": "images/tiles/dungeon_ceiling.png",
       "topdown_src": "images/topdown/tile_0022.png",
+      "model" : "models/ceiling.json",
       "walkable": true
     },
     {
@@ -114,6 +119,7 @@
       "index": 6,
       "src": "images/tiles/grass.png",
       "topdown_src": "images/topdown/tile_0019.png",
+      "model" : "models/grass.json",
       "walkable": true
     },
     {
@@ -121,6 +127,7 @@
       "index": 7,
       "src": "images/tiles/pillar_interior.png",
       "topdown_src": "images/topdown/tile_0058.png",
+      "model" : "models/pillar_interior.json",
       "walkable": false
     },
     {
@@ -128,6 +135,7 @@
       "index": 8,
       "src": "images/tiles/chest_interior.png",
       "topdown_src": "images/topdown/tile_0134.png",
+      "model" : "models/chest_interior.json",
       "walkable": true
     },
     {
@@ -135,6 +143,7 @@
       "index": 9,
       "src": "images/tiles/chest_exterior.png",
       "topdown_src": "images/topdown/tile_0134.png",
+      "model" : "models/chest_exterior.json",
       "walkable": true
     },
     {
@@ -142,6 +151,7 @@
       "index": 10,
       "src": "images/tiles/medieval_house.png",
       "topdown_src": "images/topdown/tile_0114.png",
+      "model" : "models/wall.json",
       "walkable": false
     },
     {
@@ -149,6 +159,7 @@
       "index": 11,
       "src": "images/tiles/medieval_door.png",
       "topdown_src": "images/topdown/tile_0117.png",
+      "model" : "models/door.json",
       "walkable": true
     },
     {
@@ -156,6 +167,7 @@
       "index": 12,
       "src": "images/tiles/tree_evergreen.png",
       "topdown_src": "images/topdown/tile_0016.png",
+      "model" : "models/tree.json",
       "walkable": false
     },
     {
@@ -184,6 +196,7 @@
       "index": 16,
       "src": "images/tiles/skull_pile.png",
       "topdown_src": "images/topdown/tile_0118.png",
+      "model" : "models/chest_interior.json",
       "walkable": false
     },
     {
@@ -191,6 +204,7 @@
       "index": 17,
       "src": "images/tiles/hay_pile.png",
       "topdown_src": "images/topdown/tile_0122.png",
+      "model" : "models/floor.json",
       "walkable": true
     },
     {
@@ -198,6 +212,7 @@
       "index": 18,
       "src": "images/tiles/locked_door.png",
       "topdown_src": "images/topdown/tile_0110.png",
+      "model" : "models/door.json",
       "walkable": false
     },
     {
