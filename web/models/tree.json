@@ -1,0 +1,37 @@
+{
+  "name": "pillar",
+  "userData": {},
+  "children": [
+    {
+      "name": "tileLow_forest",
+      "scale": [
+        1,
+        0.1,
+        1
+      ],
+      "userData": {},
+      "source": "obj/tileLow_forest.obj"
+    },
+    {
+      "name": "tree_forest",
+      "userData": {},
+      "source": "obj/tree_forest.obj"
+    }
+  ],
+  "metadata": {
+    "version": 0.2,
+    "type": "lewcid_object",
+    "camera": {
+      "position": [
+        0.45353622360156076,
+        2.606417404774476,
+        3.2479550783913864
+      ],
+      "rotation": [
+        -0.4523803547803713,
+        0.30334473910116266,
+        0.14416608540108164
+      ]
+    }
+  }
+}

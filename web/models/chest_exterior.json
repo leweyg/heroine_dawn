@@ -1,0 +1,47 @@
+{
+  "name": "pillar",
+  "userData": {},
+  "children": [
+    {
+      "name": "terrain",
+      "scale": [
+        2,
+        2,
+        2
+      ],
+      "userData": {},
+      "source": "obj/terrain.obj"
+    },
+    {
+      "name": "chest_common",
+      "userData": {},
+      "source": "obj/chest_common.obj"
+    },
+    {
+      "name": "chestTop_common",
+      "position": [
+        0,
+        0.5,
+        -0.5
+      ],
+      "userData": {},
+      "source": "obj/chestTop_common.obj"
+    }
+  ],
+  "metadata": {
+    "version": 0.2,
+    "type": "lewcid_object",
+    "camera": {
+      "position": [
+        1.6856344372873862,
+        2.956598997667228,
+        3.784321728525074
+      ],
+      "rotation": [
+        -0.6367475184135458,
+        0.3706957787477208,
+        0.2617483123350014
+      ]
+    }
+  }
+}
