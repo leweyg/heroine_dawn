@@ -1,0 +1,26 @@
+{
+  "name": "pillar",
+  "userData": {},
+  "children": [
+    {
+      "name": "pillar",
+      "source":"obj/pillar.obj"
+    }
+  ],
+  "metadata": {
+    "version": 0.2,
+    "type": "lewcid_object",
+    "camera": {
+      "position": [
+        0,
+        6.116717091697615,
+        8.233433617151103
+      ],
+      "rotation": [
+        -0.4636476090008061,
+        0,
+        0
+      ]
+    }
+  }
+}
