@@ -31,6 +31,26 @@
       ],
       "userData": {},
       "source": "obj/terrain.obj"
+    },
+    {
+      "name": "floorDecoration_tilesSmall",
+      "userData": {},
+      "source": "obj/floorDecoration_tilesSmall.obj"
+    },
+    {
+      "name": "floorDecoration_tilesSmall",
+      "position": [
+        0,
+        2,
+        0
+      ],
+      "rotation": [
+        3.14159,
+        0,
+        0
+      ],
+      "userData": {},
+      "source": "obj/floorDecoration_tilesSmall.obj"
     }
   ],
   "metadata": {
@@ -38,14 +58,14 @@
     "type": "lewcid_object",
     "camera": {
       "position": [
-        2.421070887839795,
-        0.752524160155399,
-        3.027509426917977
+        2.4592895041249085,
+        0.9921202064425385,
+        3.022786198152625
       ],
       "rotation": [
-        0.4659138276287126,
-        0.6576926566366001,
-        -0.29821346245338515
+        0.11380275538863877,
+        0.695536121726046,
+        -0.07311039310836102
       ]
     }
   }
