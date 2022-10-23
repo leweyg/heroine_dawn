@@ -1,19 +1,106 @@
 {
-  "name": "pillar",
+  "name": "chest_interior",
   "userData": {},
+  "children": [
+    {
+      "name": "terrain",
+      "position": [
+        0,
+        2,
+        0
+      ],
+      "rotation": [
+        3.14159,
+        0,
+        0
+      ],
+      "scale": [
+        2,
+        2,
+        2
+      ],
+      "userData": {},
+      "source": "obj/terrain.obj"
+    },
+    {
+      "name": "floorDecoration_tilesSmall",
+      "userData": {},
+      "source": "obj/floorDecoration_tilesSmall.obj"
+    },
+    {
+      "name": "floorDecoration_tilesSmall",
+      "position": [
+        0,
+        2,
+        0
+      ],
+      "rotation": [
+        3.14159,
+        0,
+        0
+      ],
+      "userData": {},
+      "source": "obj/floorDecoration_tilesSmall.obj"
+    },
+    {
+      "name": "terrain",
+      "scale": [
+        2,
+        2,
+        2
+      ],
+      "userData": {},
+      "source": "obj/terrain.obj"
+    },
+    {
+      "name": "chest_common",
+      "rotation": [
+        0,
+        1.570795000005679,
+        0
+      ],
+      "scale": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "userData": {},
+      "source": "obj/chest_common.obj"
+    },
+    {
+      "name": "chestTop_common",
+      "position": [
+        -0.4,
+        0.5,
+        0
+      ],
+      "rotation": [
+        0,
+        1.570795000005679,
+        0
+      ],
+      "scale": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "userData": {},
+      "source": "obj/chestTop_common.obj"
+    }
+  ],
   "metadata": {
     "version": 0.2,
     "type": "lewcid_object",
     "camera": {
       "position": [
-        2.446663538042901,
-        1.6417457836296807,
-        -0.7777846122710468
+        3.382986200905205,
+        1.7078646534941873,
+        -1.122644244669918
       ],
       "rotation": [
-        -2.3910273125798733,
-        0.9831014649903537,
-        2.4815499284089944
+        -2.5779626232394928,
+        1.119061291419759,
+        2.62456563976093
       ]
     }
   }
