@@ -1,0 +1,67 @@
+{
+  "name": "pillar",
+  "userData": {},
+  "children": [
+    {
+      "name": "terrain",
+      "scale": [
+        2,
+        2,
+        2
+      ],
+      "userData": {},
+      "source": "obj/terrain.obj"
+    },
+    {
+      "name": "floorDecoration_tilesSmall",
+      "userData": {},
+      "source": "obj/floorDecoration_tilesSmall.obj"
+    },
+    {
+      "name": "floorDecoration_tilesSmall",
+      "position": [
+        0,
+        2,
+        0
+      ],
+      "rotation": [
+        3.14159,
+        0,
+        0
+      ],
+      "userData": {},
+      "source": "obj/floorDecoration_tilesSmall.obj"
+    },
+    {
+      "name": "tileBrickA_medium",
+      "position": [
+        0,
+        2,
+        0
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "userData": {},
+      "source": "obj/tileBrickA_medium.obj"
+    }
+  ],
+  "metadata": {
+    "version": 0.2,
+    "type": "lewcid_object",
+    "camera": {
+      "position": [
+        2.328080689513431,
+        0.8173967469810106,
+        3.1130471149057763
+      ],
+      "rotation": [
+        0.21914509770884366,
+        0.6895761599609243,
+        -0.140760890461191
+      ]
+    }
+  }
+}

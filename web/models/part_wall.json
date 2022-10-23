@@ -1,0 +1,77 @@
+{
+  "name": "pillar",
+  "userData": {},
+  "children": [
+    {
+      "name": "terrain",
+      "scale": [
+        2,
+        2,
+        2
+      ],
+      "userData": {},
+      "source": "obj/terrain.obj"
+    },
+    {
+      "name": "wall",
+      "rotation": [
+        0,
+        1.5707963267948966,
+        0
+      ],
+      "scale": [
+        0.42803509622828534,
+        0.5,
+        1.620389645490852
+      ],
+      "userData": {},
+      "source": "obj/wall.obj"
+    },
+    {
+      "name": "wall",
+      "rotation": [
+        -3.141592653589793,
+        0.0000013267948967278093,
+        -3.141592653589793
+      ],
+      "scale": [
+        0.4662354849987594,
+        0.5,
+        1.620389645490852
+      ],
+      "userData": {},
+      "source": "obj/wall.obj"
+    },
+    {
+      "name": "tileBrickA_medium",
+      "position": [
+        0,
+        2,
+        0
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "userData": {},
+      "source": "obj/tileBrickA_medium.obj"
+    }
+  ],
+  "metadata": {
+    "version": 0.2,
+    "type": "lewcid_object",
+    "camera": {
+      "position": [
+        1.9851420921679221,
+        3.8094023536733728,
+        3.9142350156859864
+      ],
+      "rotation": [
+        -0.6115682304586544,
+        0.33157751418234904,
+        0.22443732260437327
+      ]
+    }
+  }
+}
