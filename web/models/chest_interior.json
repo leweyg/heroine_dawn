@@ -1,66 +1,19 @@
 {
   "name": "pillar",
   "userData": {},
-  "children": [
-    {
-      "name": "terrain",
-      "scale": [
-        2,
-        2,
-        2
-      ],
-      "userData": {},
-      "source": "obj/terrain.obj"
-    },
-    {
-      "name": "terrain",
-      "position": [
-        0,
-        2,
-        0
-      ],
-      "rotation": [
-        3.14159,
-        0,
-        0
-      ],
-      "scale": [
-        2,
-        2,
-        2
-      ],
-      "userData": {},
-      "source": "obj/terrain.obj"
-    },
-    {
-      "name": "chest_common",
-      "userData": {},
-      "source": "obj/chest_common.obj"
-    },
-    {
-      "name": "chestTop_common",
-      "position": [
-        0,
-        0.5,
-        -0.5
-      ],
-      "userData": {},
-      "source": "obj/chestTop_common.obj"
-    }
-  ],
   "metadata": {
     "version": 0.2,
     "type": "lewcid_object",
     "camera": {
       "position": [
-        2.1956208612755725,
-        0.9992157638652572,
-        2.766613899890692
+        2.446663538042901,
+        1.6417457836296807,
+        -0.7777846122710468
       ],
       "rotation": [
-        0.16959515679285853,
-        0.7326533273740196,
-        -0.11403607898409018
+        -2.3910273125798733,
+        0.9831014649903537,
+        2.4815499284089944
       ]
     }
   }
