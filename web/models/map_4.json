@@ -1,0 +1,1538 @@
+{
+  "name": "Monastery Trail",
+  "children": [
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        0,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        0,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        0,
+        0,
+        -6
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        0,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        0,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        2,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        2,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        2,
+        0,
+        -6
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        2,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        2,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Dungeon Door",
+      "source": "door.json",
+      "position": [
+        2,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        2,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        2,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        2,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        2,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        4,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        4,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Chest Exterior",
+      "source": "chest_exterior.json",
+      "position": [
+        4,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        4,
+        0,
+        -6
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        4,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        4,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        4,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        4,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        4,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        4,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        4,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        4,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        6,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        6,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        6,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        6,
+        0,
+        -6
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        6,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        6,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        6,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        6,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        6,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        6,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        6,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        6,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        8,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        8,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        8,
+        0,
+        -6
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        8,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        8,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        8,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        8,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        8,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        8,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        8,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        8,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        10,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        10,
+        0,
+        -6
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        10,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        10,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        10,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        10,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        10,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        10,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        10,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        10,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        12,
+        0,
+        -6
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        12,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        12,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        12,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        12,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        12,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        12,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        12,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        12,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        12,
+        0,
+        -24
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        14,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        14,
+        0,
+        -6
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        14,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        14,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        14,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        14,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        14,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        14,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        14,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        14,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        14,
+        0,
+        -24
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        16,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        16,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        16,
+        0,
+        -6
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        16,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        16,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        16,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        16,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        16,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        16,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        16,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        16,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        16,
+        0,
+        -24
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        18,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        18,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        18,
+        0,
+        -6
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        18,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        18,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        18,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        18,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        18,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        18,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        18,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        18,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        18,
+        0,
+        -24
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        20,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        20,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        20,
+        0,
+        -6
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        20,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        20,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        20,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        20,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        20,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        20,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        20,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        20,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        20,
+        0,
+        -24
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        22,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        22,
+        0,
+        -6
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        22,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        22,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        22,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        22,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        22,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        22,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        22,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        22,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        22,
+        0,
+        -24
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        22,
+        0,
+        -26
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        24,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        24,
+        0,
+        -6
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        24,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        24,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        24,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        24,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        24,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        24,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        24,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        24,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        24,
+        0,
+        -24
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        24,
+        0,
+        -26
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        26,
+        0,
+        -6
+      ]
+    },
+    {
+      "name": "Medieval House",
+      "source": "wall.json",
+      "position": [
+        26,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Medieval Door",
+      "source": "door.json",
+      "position": [
+        26,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        26,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        26,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        26,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        26,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        26,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        26,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        26,
+        0,
+        -24
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        26,
+        0,
+        -26
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        28,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        28,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        28,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        28,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        28,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        28,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        28,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        28,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        28,
+        0,
+        -24
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        28,
+        0,
+        -26
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        30,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        30,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        30,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Dungeon Door",
+      "source": "door.json",
+      "position": [
+        30,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        30,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        30,
+        0,
+        -24
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        30,
+        0,
+        -26
+      ]
+    }
+  ],
+  "metadata": {
+    "type": "lewcid_object"
+  }
+}

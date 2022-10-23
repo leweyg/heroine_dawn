@@ -1,0 +1,899 @@
+{
+  "name": "Canal Boneyard",
+  "children": [
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        0,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        0,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        0,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        0,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        0,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        0,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        0,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        0,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        0,
+        0,
+        -24
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        0,
+        0,
+        -26
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        0,
+        0,
+        -28
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        2,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        2,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        2,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        2,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        2,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        2,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        2,
+        0,
+        -28
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        4,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        4,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        4,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        4,
+        0,
+        -28
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        6,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        6,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        6,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        6,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        6,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        6,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        6,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        6,
+        0,
+        -24
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        6,
+        0,
+        -26
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        6,
+        0,
+        -28
+      ]
+    },
+    {
+      "name": "Pillar Exterior",
+      "source": "pillar.json",
+      "position": [
+        8,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Pillar Exterior",
+      "source": "pillar.json",
+      "position": [
+        8,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        8,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        8,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        8,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        8,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        8,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        8,
+        0,
+        -24
+      ]
+    },
+    {
+      "name": "Dungeon Ceiling",
+      "source": "ceiling.json",
+      "position": [
+        8,
+        0,
+        -26
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        8,
+        0,
+        -28
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        10,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        10,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        10,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        10,
+        0,
+        -6
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        10,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        10,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        10,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        10,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        10,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        10,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Dungeon Door",
+      "source": "door.json",
+      "position": [
+        10,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        10,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        10,
+        0,
+        -24
+      ]
+    },
+    {
+      "name": "Chest Interior",
+      "source": "chest_interior.json",
+      "position": [
+        10,
+        0,
+        -26
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        10,
+        0,
+        -28
+      ]
+    },
+    {
+      "name": "Pillar Exterior",
+      "source": "pillar.json",
+      "position": [
+        12,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Pillar Exterior",
+      "source": "pillar.json",
+      "position": [
+        12,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        12,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        12,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        12,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        12,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        12,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        12,
+        0,
+        -24
+      ]
+    },
+    {
+      "name": "Dungeon Ceiling",
+      "source": "ceiling.json",
+      "position": [
+        12,
+        0,
+        -26
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        12,
+        0,
+        -28
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        14,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        14,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        14,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        14,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        14,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        14,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        14,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        14,
+        0,
+        -24
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        14,
+        0,
+        -26
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        14,
+        0,
+        -28
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        16,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "source": "floor.json",
+      "position": [
+        16,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        16,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        16,
+        0,
+        -28
+      ]
+    },
+    {
+      "name": "Tree Evergreen",
+      "source": "tree.json",
+      "position": [
+        18,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        18,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        18,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        18,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        18,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Grass",
+      "source": "grass.json",
+      "position": [
+        18,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        18,
+        0,
+        -28
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        20,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        20,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        20,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        20,
+        0,
+        -14
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        20,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        20,
+        0,
+        -18
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        20,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        20,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        20,
+        0,
+        -24
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        20,
+        0,
+        -26
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        20,
+        0,
+        -28
+      ]
+    }
+  ],
+  "metadata": {
+    "type": "lewcid_object"
+  }
+}

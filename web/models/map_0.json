@@ -1,0 +1,116 @@
+{
+  "name": "Serf Quarters",
+  "children": [
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        0,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        0,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Hay Pile",
+      "source": "floor.json",
+      "position": [
+        2,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        2,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Dungeon Door",
+      "source": "door.json",
+      "position": [
+        4,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Dungeon Ceiling",
+      "source": "ceiling.json",
+      "position": [
+        4,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        4,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        6,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        6,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        6,
+        0,
+        -4
+      ]
+    }
+  ],
+  "metadata": {
+    "type": "lewcid_object"
+  }
+}

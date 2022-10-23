@@ -1,101 +1,11 @@
 {
-  "name": "Meditation Point",
+  "name": "Monk Quarters",
   "children": [
-    {
-      "name": "Chest Exterior",
-      "source": "chest_exterior.json",
-      "position": [
-        2,
-        0,
-        -4
-      ]
-    },
-    {
-      "name": "Pillar Interior",
-      "source": "pillar_interior.json",
-      "position": [
-        4,
-        0,
-        -2
-      ]
-    },
-    {
-      "name": "Dungeon Ceiling",
-      "source": "ceiling.json",
-      "position": [
-        4,
-        0,
-        -4
-      ]
-    },
-    {
-      "name": "Pillar Interior",
-      "source": "pillar_interior.json",
-      "position": [
-        4,
-        0,
-        -6
-      ]
-    },
-    {
-      "name": "Dungeon Ceiling",
-      "source": "ceiling.json",
-      "position": [
-        6,
-        0,
-        -2
-      ]
-    },
-    {
-      "name": "Dungeon Ceiling",
-      "source": "ceiling.json",
-      "position": [
-        6,
-        0,
-        -4
-      ]
-    },
-    {
-      "name": "Dungeon Ceiling",
-      "source": "ceiling.json",
-      "position": [
-        6,
-        0,
-        -6
-      ]
-    },
-    {
-      "name": "Pillar Interior",
-      "source": "pillar_interior.json",
-      "position": [
-        8,
-        0,
-        -2
-      ]
-    },
-    {
-      "name": "Dungeon Ceiling",
-      "source": "ceiling.json",
-      "position": [
-        8,
-        0,
-        -4
-      ]
-    },
-    {
-      "name": "Pillar Interior",
-      "source": "pillar_interior.json",
-      "position": [
-        8,
-        0,
-        -6
-      ]
-    },
     {
       "name": "Dungeon Wall",
       "source": "wall.json",
       "position": [
-        10,
+        0,
         0,
         0
       ]
@@ -104,16 +14,16 @@
       "name": "Dungeon Wall",
       "source": "wall.json",
       "position": [
-        10,
+        0,
         0,
         -2
       ]
     },
     {
-      "name": "Dungeon Door",
-      "source": "door.json",
+      "name": "Dungeon Wall",
+      "source": "wall.json",
       "position": [
-        10,
+        0,
         0,
         -4
       ]
@@ -122,7 +32,7 @@
       "name": "Dungeon Wall",
       "source": "wall.json",
       "position": [
-        10,
+        0,
         0,
         -6
       ]
@@ -131,9 +41,108 @@
       "name": "Dungeon Wall",
       "source": "wall.json",
       "position": [
-        10,
+        2,
         0,
-        -8
+        0
+      ]
+    },
+    {
+      "name": "Hay Pile",
+      "source": "floor.json",
+      "position": [
+        2,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Chest Interior",
+      "source": "chest_interior.json",
+      "position": [
+        2,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        2,
+        0,
+        -6
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        4,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Dungeon Ceiling",
+      "source": "ceiling.json",
+      "position": [
+        4,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Dungeon Ceiling",
+      "source": "ceiling.json",
+      "position": [
+        4,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Dungeon Door",
+      "source": "door.json",
+      "position": [
+        4,
+        0,
+        -6
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        6,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        6,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        6,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "source": "wall.json",
+      "position": [
+        6,
+        0,
+        -6
       ]
     }
   ],

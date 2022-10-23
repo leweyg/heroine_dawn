@@ -33,9 +33,12 @@ function exportMapToScene(map) {
     return scene;
 }
 
-var mapJson = exportMapToScene(world.maps[1]);
-mapJson.metadata = {type:"lewcid_object"};
-var mapText = JSON.stringify(mapJson,null,2);
-fs.writeFileSync("web/models/map_out.json",mapText);
+for (var mapId in world.maps) {
+    var mapJson = exportMapToScene(world.maps[mapId]);
+    mapJson.metadata = {type:"lewcid_object"};
+    var mapText = JSON.stringify(mapJson,null,2);
+    fs.writeFileSync("web/models/map_" + mapId + ".json",mapText);
+}
+
 
 console.log("Done.");
