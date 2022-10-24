@@ -3,7 +3,17 @@
   "children": [
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         0,
         0,
@@ -12,7 +22,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         0,
         0,
@@ -21,7 +41,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         0,
         0,
@@ -30,7 +60,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         2,
         0,
@@ -39,16 +79,37 @@
     },
     {
       "name": "Hay Pile",
-      "source": "floor.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_missing.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         2,
         0,
         -2
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         2,
         0,
@@ -57,25 +118,57 @@
     },
     {
       "name": "Dungeon Door",
-      "source": "door.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_door.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         4,
         0,
         0
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Dungeon Ceiling",
-      "source": "ceiling.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         4,
         0,
         -2
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         4,
         0,
@@ -84,7 +177,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         6,
         0,
@@ -93,7 +196,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         6,
         0,
@@ -102,7 +215,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         6,
         0,

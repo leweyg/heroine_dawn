@@ -18,14 +18,24 @@ function exportMapToScene(map) {
             var tileTypeId = row[colIndex];
             if (tileTypeId == 0) continue;
             var type = world.tile_types[tileTypeId];
-            if (!(type.model)) {
-                console.log("Missing model for tile type: " + type.name);
+            if (!(type.parts)) {
+                console.log("Missing parts for tile type: " + type.name);
                 continue;
             }
             var cell = {
                 name : type.name,
-                source : type.model.replace("models/",""),
+                children : [],
                 position : [ rowIndex*2, 0, -colIndex*2 ],
+            }
+            if (type.walkable) {
+                cell.walkable = true;
+            }
+            for (var partIndex in type.parts) {
+                var path = type.parts[partIndex];
+                var p = {
+                    source : path
+                };
+                cell.children.push(p);
             }
             scene.children.push(cell);
         }

@@ -2,8 +2,57 @@
   "name": "Canal Boneyard",
   "children": [
     {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        0,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        0,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        0,
+        0,
+        -6
+      ]
+    },
+    {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         0,
         0,
@@ -12,7 +61,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         0,
         0,
@@ -21,7 +80,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         0,
         0,
@@ -30,7 +99,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         0,
         0,
@@ -39,7 +118,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         0,
         0,
@@ -48,7 +137,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         0,
         0,
@@ -57,7 +156,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         0,
         0,
@@ -66,7 +175,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         0,
         0,
@@ -75,7 +194,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         0,
         0,
@@ -84,7 +213,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         0,
         0,
@@ -93,16 +232,72 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         0,
         0,
         -28
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        2,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        2,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        2,
+        0,
+        -6
       ]
     },
     {
       "name": "Tree Evergreen",
-      "source": "tree.json",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_tree.json"
+        }
+      ],
       "position": [
         2,
         0,
@@ -111,178 +306,579 @@
     },
     {
       "name": "Grass",
-      "source": "grass.json",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
       "position": [
         2,
         0,
         -10
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Grass",
-      "source": "grass.json",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
       "position": [
         2,
         0,
         -12
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Grass",
-      "source": "grass.json",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
       "position": [
         2,
         0,
         -14
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Grass",
-      "source": "grass.json",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
       "position": [
         2,
         0,
         -16
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Grass",
-      "source": "grass.json",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
       "position": [
         2,
         0,
         -18
-      ]
+      ],
+      "walkable": true
     },
     {
-      "name": "Dungeon Wall",
-      "source": "wall.json",
+      "name": "Grave Stone",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
       "position": [
         2,
-        0,
-        -28
-      ]
-    },
-    {
-      "name": "Grass",
-      "source": "grass.json",
-      "position": [
-        4,
-        0,
-        -10
-      ]
-    },
-    {
-      "name": "Dungeon Floor",
-      "source": "floor.json",
-      "position": [
-        4,
-        0,
-        -14
-      ]
-    },
-    {
-      "name": "Grass",
-      "source": "grass.json",
-      "position": [
-        4,
-        0,
-        -18
-      ]
-    },
-    {
-      "name": "Dungeon Wall",
-      "source": "wall.json",
-      "position": [
-        4,
-        0,
-        -28
-      ]
-    },
-    {
-      "name": "Grass",
-      "source": "grass.json",
-      "position": [
-        6,
-        0,
-        0
-      ]
-    },
-    {
-      "name": "Grass",
-      "source": "grass.json",
-      "position": [
-        6,
-        0,
-        -8
-      ]
-    },
-    {
-      "name": "Grass",
-      "source": "grass.json",
-      "position": [
-        6,
-        0,
-        -10
-      ]
-    },
-    {
-      "name": "Dungeon Floor",
-      "source": "floor.json",
-      "position": [
-        6,
-        0,
-        -14
-      ]
-    },
-    {
-      "name": "Grass",
-      "source": "grass.json",
-      "position": [
-        6,
-        0,
-        -18
-      ]
-    },
-    {
-      "name": "Grass",
-      "source": "grass.json",
-      "position": [
-        6,
         0,
         -20
       ]
     },
     {
-      "name": "Grass",
-      "source": "grass.json",
+      "name": "Grave Stone",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
       "position": [
-        6,
+        2,
         0,
         -22
       ]
     },
     {
-      "name": "Grass",
-      "source": "grass.json",
+      "name": "Grave Cross",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
       "position": [
-        6,
+        2,
         0,
         -24
       ]
     },
     {
-      "name": "Grass",
-      "source": "grass.json",
+      "name": "Grave Stone",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
       "position": [
-        6,
+        2,
         0,
         -26
       ]
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
+      "position": [
+        2,
+        0,
+        -28
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        4,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        4,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        4,
+        0,
+        -6
+      ]
+    },
+    {
+      "name": "Grave Cross",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        4,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "Grass",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
+      "position": [
+        4,
+        0,
+        -10
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grave Stone",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        4,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "children": [
+        {
+          "source": "part_floor.json"
+        }
+      ],
+      "position": [
+        4,
+        0,
+        -14
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grave Stone",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        4,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Grass",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
+      "position": [
+        4,
+        0,
+        -18
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grave Cross",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        4,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Grave Cross",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        4,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Grave Stone",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        4,
+        0,
+        -24
+      ]
+    },
+    {
+      "name": "Grave Cross",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        4,
+        0,
+        -26
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
+      "position": [
+        4,
+        0,
+        -28
+      ]
+    },
+    {
+      "name": "Grass",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
+      "position": [
+        6,
+        0,
+        0
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        6,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        6,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        6,
+        0,
+        -6
+      ]
+    },
+    {
+      "name": "Grass",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
+      "position": [
+        6,
+        0,
+        -8
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grass",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
+      "position": [
+        6,
+        0,
+        -10
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grave Stone",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        6,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "children": [
+        {
+          "source": "part_floor.json"
+        }
+      ],
+      "position": [
+        6,
+        0,
+        -14
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grave Cross",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        6,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Grass",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
+      "position": [
+        6,
+        0,
+        -18
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grass",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
+      "position": [
+        6,
+        0,
+        -20
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grass",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
+      "position": [
+        6,
+        0,
+        -22
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grass",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
+      "position": [
+        6,
+        0,
+        -24
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grass",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
+      "position": [
+        6,
+        0,
+        -26
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Dungeon Wall",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         6,
         0,
@@ -291,7 +887,14 @@
     },
     {
       "name": "Pillar Exterior",
-      "source": "pillar.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_pillar_half.json"
+        }
+      ],
       "position": [
         8,
         0,
@@ -299,8 +902,54 @@
       ]
     },
     {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        8,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        8,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        8,
+        0,
+        -6
+      ]
+    },
+    {
       "name": "Pillar Exterior",
-      "source": "pillar.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_pillar_half.json"
+        }
+      ],
       "position": [
         8,
         0,
@@ -309,34 +958,91 @@
     },
     {
       "name": "Grass",
-      "source": "grass.json",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
       "position": [
         8,
         0,
         -10
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grave Cross",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        8,
+        0,
+        -12
       ]
     },
     {
       "name": "Dungeon Floor",
-      "source": "floor.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        }
+      ],
       "position": [
         8,
         0,
         -14
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grave Stone",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        8,
+        0,
+        -16
       ]
     },
     {
       "name": "Grass",
-      "source": "grass.json",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
       "position": [
         8,
         0,
         -18
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         8,
         0,
@@ -345,7 +1051,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         8,
         0,
@@ -354,7 +1070,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         8,
         0,
@@ -363,16 +1089,34 @@
     },
     {
       "name": "Dungeon Ceiling",
-      "source": "ceiling.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         8,
         0,
         -26
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         8,
         0,
@@ -381,106 +1125,180 @@
     },
     {
       "name": "Dungeon Floor",
-      "source": "floor.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        }
+      ],
       "position": [
         10,
         0,
         0
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Dungeon Floor",
-      "source": "floor.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        }
+      ],
       "position": [
         10,
         0,
         -2
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Dungeon Floor",
-      "source": "floor.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        }
+      ],
       "position": [
         10,
         0,
         -4
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Dungeon Floor",
-      "source": "floor.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        }
+      ],
       "position": [
         10,
         0,
         -6
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Dungeon Floor",
-      "source": "floor.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        }
+      ],
       "position": [
         10,
         0,
         -8
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Dungeon Floor",
-      "source": "floor.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        }
+      ],
       "position": [
         10,
         0,
         -10
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Dungeon Floor",
-      "source": "floor.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        }
+      ],
       "position": [
         10,
         0,
         -12
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Dungeon Floor",
-      "source": "floor.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        }
+      ],
       "position": [
         10,
         0,
         -14
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Dungeon Floor",
-      "source": "floor.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        }
+      ],
       "position": [
         10,
         0,
         -16
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Dungeon Floor",
-      "source": "floor.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        }
+      ],
       "position": [
         10,
         0,
         -18
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Dungeon Door",
-      "source": "door.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_door.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         10,
         0,
         -20
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         10,
         0,
@@ -489,7 +1307,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         10,
         0,
@@ -498,16 +1326,37 @@
     },
     {
       "name": "Chest Interior",
-      "source": "chest_interior.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_chest.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         10,
         0,
         -26
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         10,
         0,
@@ -516,7 +1365,14 @@
     },
     {
       "name": "Pillar Exterior",
-      "source": "pillar.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_pillar_half.json"
+        }
+      ],
       "position": [
         12,
         0,
@@ -524,8 +1380,54 @@
       ]
     },
     {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        12,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        12,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        12,
+        0,
+        -6
+      ]
+    },
+    {
       "name": "Pillar Exterior",
-      "source": "pillar.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_pillar_half.json"
+        }
+      ],
       "position": [
         12,
         0,
@@ -534,34 +1436,91 @@
     },
     {
       "name": "Grass",
-      "source": "grass.json",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
       "position": [
         12,
         0,
         -10
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grave Stone",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        12,
+        0,
+        -12
       ]
     },
     {
       "name": "Dungeon Floor",
-      "source": "floor.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        }
+      ],
       "position": [
         12,
         0,
         -14
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grave Cross",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        12,
+        0,
+        -16
       ]
     },
     {
       "name": "Grass",
-      "source": "grass.json",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
       "position": [
         12,
         0,
         -18
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         12,
         0,
@@ -570,7 +1529,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         12,
         0,
@@ -579,7 +1548,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         12,
         0,
@@ -588,16 +1567,34 @@
     },
     {
       "name": "Dungeon Ceiling",
-      "source": "ceiling.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         12,
         0,
         -26
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         12,
         0,
@@ -606,133 +1603,481 @@
     },
     {
       "name": "Grass",
-      "source": "grass.json",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
       "position": [
         14,
         0,
         0
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        14,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        14,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        14,
+        0,
+        -6
       ]
     },
     {
       "name": "Grass",
-      "source": "grass.json",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
       "position": [
         14,
+        0,
+        -8
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grass",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
+      "position": [
+        14,
+        0,
+        -10
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grave Cross",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        14,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "Dungeon Floor",
+      "children": [
+        {
+          "source": "part_floor.json"
+        }
+      ],
+      "position": [
+        14,
+        0,
+        -14
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grave Stone",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        14,
+        0,
+        -16
+      ]
+    },
+    {
+      "name": "Grass",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
+      "position": [
+        14,
+        0,
+        -18
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grass",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
+      "position": [
+        14,
+        0,
+        -20
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grass",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
+      "position": [
+        14,
+        0,
+        -22
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grass",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
+      "position": [
+        14,
+        0,
+        -24
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grass",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
+      "position": [
+        14,
+        0,
+        -26
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Dungeon Wall",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
+      "position": [
+        14,
+        0,
+        -28
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        16,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        16,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        16,
+        0,
+        -6
+      ]
+    },
+    {
+      "name": "Grave Cross",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        16,
         0,
         -8
       ]
     },
     {
       "name": "Grass",
-      "source": "grass.json",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
       "position": [
-        14,
+        16,
         0,
         -10
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grave Stone",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        16,
+        0,
+        -12
       ]
     },
     {
       "name": "Dungeon Floor",
-      "source": "floor.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        }
+      ],
       "position": [
-        14,
+        16,
         0,
         -14
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grave Cross",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        16,
+        0,
+        -16
       ]
     },
     {
       "name": "Grass",
-      "source": "grass.json",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
       "position": [
-        14,
+        16,
         0,
         -18
-      ]
+      ],
+      "walkable": true
     },
     {
-      "name": "Grass",
-      "source": "grass.json",
+      "name": "Grave Stone",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
       "position": [
-        14,
+        16,
         0,
         -20
       ]
     },
     {
-      "name": "Grass",
-      "source": "grass.json",
+      "name": "Grave Cross",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
       "position": [
-        14,
+        16,
         0,
         -22
       ]
     },
     {
-      "name": "Grass",
-      "source": "grass.json",
+      "name": "Grave Cross",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
       "position": [
-        14,
+        16,
         0,
         -24
       ]
     },
     {
-      "name": "Grass",
-      "source": "grass.json",
+      "name": "Grave Stone",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
       "position": [
-        14,
+        16,
         0,
         -26
       ]
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
-      "position": [
-        14,
-        0,
-        -28
-      ]
-    },
-    {
-      "name": "Grass",
-      "source": "grass.json",
-      "position": [
-        16,
-        0,
-        -10
-      ]
-    },
-    {
-      "name": "Dungeon Floor",
-      "source": "floor.json",
-      "position": [
-        16,
-        0,
-        -14
-      ]
-    },
-    {
-      "name": "Grass",
-      "source": "grass.json",
-      "position": [
-        16,
-        0,
-        -18
-      ]
-    },
-    {
-      "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         16,
         0,
         -28
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        18,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        18,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        18,
+        0,
+        -6
       ]
     },
     {
       "name": "Tree Evergreen",
-      "source": "tree.json",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_tree.json"
+        }
+      ],
       "position": [
         18,
         0,
@@ -741,52 +2086,151 @@
     },
     {
       "name": "Grass",
-      "source": "grass.json",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
       "position": [
         18,
         0,
         -10
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Grass",
-      "source": "grass.json",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
       "position": [
         18,
         0,
         -12
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Grass",
-      "source": "grass.json",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
       "position": [
         18,
         0,
         -14
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Grass",
-      "source": "grass.json",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
       "position": [
         18,
         0,
         -16
-      ]
+      ],
+      "walkable": true
     },
     {
       "name": "Grass",
-      "source": "grass.json",
+      "children": [
+        {
+          "source": "part_grass.json"
+        }
+      ],
       "position": [
         18,
         0,
         -18
+      ],
+      "walkable": true
+    },
+    {
+      "name": "Grave Stone",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        18,
+        0,
+        -20
+      ]
+    },
+    {
+      "name": "Grave Cross",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        18,
+        0,
+        -22
+      ]
+    },
+    {
+      "name": "Grave Stone",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        18,
+        0,
+        -24
+      ]
+    },
+    {
+      "name": "Grave Cross",
+      "children": [
+        {
+          "source": "part_grass.json"
+        },
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        18,
+        0,
+        -26
       ]
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         18,
         0,
@@ -794,8 +2238,57 @@
       ]
     },
     {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        20,
+        0,
+        -2
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        20,
+        0,
+        -4
+      ]
+    },
+    {
+      "name": "Water",
+      "children": [
+        {
+          "source": "part_missing.json"
+        }
+      ],
+      "position": [
+        20,
+        0,
+        -6
+      ]
+    },
+    {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         20,
         0,
@@ -804,7 +2297,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         20,
         0,
@@ -813,7 +2316,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         20,
         0,
@@ -822,7 +2335,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         20,
         0,
@@ -831,7 +2354,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         20,
         0,
@@ -840,7 +2373,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         20,
         0,
@@ -849,7 +2392,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         20,
         0,
@@ -858,7 +2411,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         20,
         0,
@@ -867,7 +2430,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         20,
         0,
@@ -876,7 +2449,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         20,
         0,
@@ -885,7 +2468,17 @@
     },
     {
       "name": "Dungeon Wall",
-      "source": "wall.json",
+      "children": [
+        {
+          "source": "part_floor.json"
+        },
+        {
+          "source": "part_wall.json"
+        },
+        {
+          "source": "part_top.json"
+        }
+      ],
       "position": [
         20,
         0,
