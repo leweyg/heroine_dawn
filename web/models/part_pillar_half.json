@@ -1,0 +1,32 @@
+{
+  "name": "pillar",
+  "userData": {},
+  "children": [
+    {
+      "name": "pillar_broken",
+      "scale": [
+        1,
+        0.5,
+        1
+      ],
+      "userData": {},
+      "source": "obj/pillar_broken.obj"
+    }
+  ],
+  "metadata": {
+    "version": 0.2,
+    "type": "lewcid_object",
+    "camera": {
+      "position": [
+        0.8964371372146293,
+        3.2270485964735696,
+        4.525517700849959
+      ],
+      "rotation": [
+        -0.45241677622352133,
+        0.30439802300182517,
+        0.14465762278370556
+      ]
+    }
+  }
+}

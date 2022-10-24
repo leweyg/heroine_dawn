@@ -1,0 +1,37 @@
+{
+  "name": "pillar",
+  "userData": {},
+  "children": [
+    {
+      "name": "tileBrickA_medium",
+      "position": [
+        0,
+        -0.5,
+        0
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "userData": {},
+      "source": "obj/tileBrickA_medium.obj"
+    }
+  ],
+  "metadata": {
+    "version": 0.2,
+    "type": "lewcid_object",
+    "camera": {
+      "position": [
+        2.4518385988676346,
+        0.43952445572887494,
+        5.249880183915847
+      ],
+      "rotation": [
+        -0.1091875914215329,
+        0.5229780834241241,
+        0.05469823685812753
+      ]
+    }
+  }
+}
