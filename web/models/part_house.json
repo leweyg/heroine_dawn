@@ -1,0 +1,82 @@
+{
+  "name": "pillar",
+  "userData": {},
+  "children": [
+    {
+      "name": "floorDecoration_wood",
+      "position": [
+        1,
+        1,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        -1.570795
+      ],
+      "userData": {},
+      "source": "obj/floorDecoration_wood.obj"
+    },
+    {
+      "name": "floorDecoration_wood",
+      "position": [
+        -1,
+        1,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        -1.570795
+      ],
+      "userData": {},
+      "source": "obj/floorDecoration_wood.obj"
+    },
+    {
+      "name": "floorDecoration_wood",
+      "position": [
+        0,
+        1,
+        1
+      ],
+      "rotation": [
+        1.570795,
+        -1.570795000005679,
+        0
+      ],
+      "userData": {},
+      "source": "obj/floorDecoration_wood.obj"
+    },
+    {
+      "name": "floorDecoration_wood",
+      "position": [
+        0,
+        1,
+        -1
+      ],
+      "rotation": [
+        1.570795,
+        -1.570795000005679,
+        0
+      ],
+      "userData": {},
+      "source": "obj/floorDecoration_wood.obj"
+    }
+  ],
+  "metadata": {
+    "version": 0.2,
+    "type": "lewcid_object",
+    "camera": {
+      "position": [
+        2.396103138348648,
+        3.3139314690026493,
+        3.3586689958274993
+      ],
+      "rotation": [
+        -0.531871063200462,
+        0.4371760341170593,
+        0.24416200063337648
+      ]
+    }
+  }
+}

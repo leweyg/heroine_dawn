@@ -1,0 +1,32 @@
+{
+  "name": "pillar",
+  "userData": {},
+  "children": [
+    {
+      "name": "spellBook",
+      "position": [
+        0,
+        0.4,
+        0
+      ],
+      "userData": {},
+      "source": "obj/spellBook.obj"
+    }
+  ],
+  "metadata": {
+    "version": 0.2,
+    "type": "lewcid_object",
+    "camera": {
+      "position": [
+        1.5745035855685536,
+        1.9344563052091024,
+        3.5512538107625686
+      ],
+      "rotation": [
+        -0.5018628772019519,
+        0.4102512135481596,
+        0.21545584287185532
+      ]
+    }
+  }
+}

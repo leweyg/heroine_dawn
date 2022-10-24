@@ -3,16 +3,6 @@
   "userData": {},
   "children": [
     {
-      "name": "terrain",
-      "scale": [
-        2,
-        2,
-        2
-      ],
-      "userData": {},
-      "source": "obj/terrain.obj"
-    },
-    {
       "name": "wall",
       "rotation": [
         0,
@@ -41,21 +31,6 @@
       ],
       "userData": {},
       "source": "obj/wall.obj"
-    },
-    {
-      "name": "tileBrickA_medium",
-      "position": [
-        0,
-        2,
-        0
-      ],
-      "scale": [
-        0.5,
-        0.5,
-        0.5
-      ],
-      "userData": {},
-      "source": "obj/tileBrickA_medium.obj"
     }
   ],
   "metadata": {
@@ -63,9 +38,9 @@
     "type": "lewcid_object",
     "camera": {
       "position": [
-        1.9851420921679221,
-        3.8094023536733728,
-        3.9142350156859864
+        2.140969512179663,
+        3.3234808536767964,
+        4.189463936275943
       ],
       "rotation": [
         -0.6115682304586544,
