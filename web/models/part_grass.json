@@ -11,6 +11,16 @@
       ],
       "userData": {},
       "source": "obj/tileLow_forest.obj"
+    },
+    {
+      "name": "detail_graveyard",
+      "scale": [
+        0.8668305504271271,
+        0.8668305504271271,
+        0.8668305504271271
+      ],
+      "userData": {},
+      "source": "obj/detail_graveyard.obj"
     }
   ],
   "metadata": {
@@ -18,9 +28,9 @@
     "type": "lewcid_object",
     "camera": {
       "position": [
-        0.8109768138153401,
-        3.107294175735059,
-        4.2790045157958
+        1.8955585689572314,
+        1.8705802927190702,
+        3.859737457005618
       ],
       "rotation": [
         -0.45221768388592476,

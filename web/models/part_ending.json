@@ -1,0 +1,32 @@
+{
+  "name": "pillar",
+  "userData": {},
+  "children": [
+    {
+      "name": "diamond_teamRed",
+      "position": [
+        0,
+        0.5,
+        0
+      ],
+      "userData": {},
+      "source": "obj/diamond_teamRed.obj"
+    }
+  ],
+  "metadata": {
+    "version": 0.2,
+    "type": "lewcid_object",
+    "camera": {
+      "position": [
+        0.855870066356322,
+        1.1240688909371848,
+        2.174555869598355
+      ],
+      "rotation": [
+        -0.5008006814319607,
+        0.19986831849113093,
+        0.10824478977080457
+      ]
+    }
+  }
+}

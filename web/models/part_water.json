@@ -1,0 +1,32 @@
+{
+  "name": "pillar",
+  "userData": {},
+  "children": [
+    {
+      "name": "water",
+      "scale": [
+        2,
+        2,
+        2
+      ],
+      "userData": {},
+      "source": "obj/water.obj"
+    }
+  ],
+  "metadata": {
+    "version": 0.2,
+    "type": "lewcid_object",
+    "camera": {
+      "position": [
+        2.8869350201491417,
+        2.0156821858783305,
+        4.824750317127132
+      ],
+      "rotation": [
+        -0.1091875914215329,
+        0.5229780834241241,
+        0.05469823685812753
+      ]
+    }
+  }
+}

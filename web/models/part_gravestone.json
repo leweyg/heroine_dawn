@@ -1,0 +1,32 @@
+{
+  "name": "pillar",
+  "userData": {},
+  "children": [
+    {
+      "name": "gravestone",
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "userData": {},
+      "source": "obj/gravestone.obj"
+    }
+  ],
+  "metadata": {
+    "version": 0.2,
+    "type": "lewcid_object",
+    "camera": {
+      "position": [
+        2.1990558004716876,
+        2.3469828686259735,
+        3.523088989079455
+      ],
+      "rotation": [
+        -0.45238569954635544,
+        0.3033798722266295,
+        0.14418397698917979
+      ]
+    }
+  }
+}

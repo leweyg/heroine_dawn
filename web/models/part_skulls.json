@@ -1,0 +1,77 @@
+{
+  "name": "pillar",
+  "userData": {},
+  "children": [
+    {
+      "name": "jackolantern_small",
+      "position": [
+        0,
+        0.5,
+        0
+      ],
+      "scale": [
+        0.9233067409236386,
+        0.9233067409236386,
+        0.9233067409236386
+      ],
+      "userData": {},
+      "source": "obj/jackolantern_small.obj"
+    },
+    {
+      "name": "jackolantern_small",
+      "position": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "rotation": [
+        -1.5707944504303462,
+        -0.7853988267940167,
+        -1.5707950000039188
+      ],
+      "scale": [
+        0.9233067409236386,
+        0.9233067409236386,
+        0.9233067409236386
+      ],
+      "userData": {},
+      "source": "obj/jackolantern_small.obj"
+    },
+    {
+      "name": "jackolantern_small",
+      "position": [
+        -0.5,
+        0,
+        0.5
+      ],
+      "rotation": [
+        2.611691240275611,
+        -0.1469772432281029,
+        -2.611690463056853
+      ],
+      "scale": [
+        0.9233067409236386,
+        0.9233067409236386,
+        0.9233067409236386
+      ],
+      "userData": {},
+      "source": "obj/jackolantern_small.obj"
+    }
+  ],
+  "metadata": {
+    "version": 0.2,
+    "type": "lewcid_object",
+    "camera": {
+      "position": [
+        0.5954990086267333,
+        1.4773596458902893,
+        2.6211632263703795
+      ],
+      "rotation": [
+        -0.45336343416042557,
+        0.3009675070795872,
+        0.14343878696795234
+      ]
+    }
+  }
+}

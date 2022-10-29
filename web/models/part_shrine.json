@@ -1,0 +1,32 @@
+{
+  "name": "pillar",
+  "userData": {},
+  "children": [
+    {
+      "name": "shrine",
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "userData": {},
+      "source": "obj/shrine.obj"
+    }
+  ],
+  "metadata": {
+    "version": 0.2,
+    "type": "lewcid_object",
+    "camera": {
+      "position": [
+        1.3621975473462755,
+        1.8810637139404667,
+        2.4413919576666783
+      ],
+      "rotation": [
+        -0.45238569954635516,
+        0.3033798722266295,
+        0.14418397698917976
+      ]
+    }
+  }
+}

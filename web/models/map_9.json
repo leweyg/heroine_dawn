@@ -165,7 +165,7 @@
           "source": "part_floor.json"
         },
         {
-          "source": "part_missing.json"
+          "source": "part_skulls.json"
         },
         {
           "source": "part_top.json"
@@ -393,7 +393,7 @@
           "source": "part_grass.json"
         },
         {
-          "source": "part_missing.json"
+          "source": "part_shrine.json"
         }
       ],
       "position": [
@@ -409,7 +409,7 @@
           "source": "part_grass.json"
         },
         {
-          "source": "part_missing.json"
+          "source": "part_gravestone.json"
         }
       ],
       "position": [
@@ -425,7 +425,7 @@
           "source": "part_grass.json"
         },
         {
-          "source": "part_missing.json"
+          "source": "part_shrine.json"
         }
       ],
       "position": [
@@ -523,7 +523,7 @@
           "source": "part_floor.json"
         },
         {
-          "source": "part_missing.json"
+          "source": "part_skulls.json"
         },
         {
           "source": "part_top.json"
@@ -584,7 +584,7 @@
           "source": "part_grass.json"
         },
         {
-          "source": "part_missing.json"
+          "source": "part_ending.json"
         }
       ],
       "position": [
@@ -601,7 +601,7 @@
           "source": "part_grass.json"
         },
         {
-          "source": "part_missing.json"
+          "source": "part_gravestone.json"
         }
       ],
       "position": [
@@ -716,7 +716,7 @@
           "source": "part_grass.json"
         },
         {
-          "source": "part_missing.json"
+          "source": "part_gravestone.json"
         }
       ],
       "position": [
@@ -732,7 +732,7 @@
           "source": "part_grass.json"
         },
         {
-          "source": "part_missing.json"
+          "source": "part_shrine.json"
         }
       ],
       "position": [
@@ -748,7 +748,7 @@
           "source": "part_grass.json"
         },
         {
-          "source": "part_missing.json"
+          "source": "part_gravestone.json"
         }
       ],
       "position": [

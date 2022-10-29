@@ -175,7 +175,7 @@
       "index": 13,
       "src": "images/tiles/grave_cross.png",
       "topdown_src": "images/topdown/tile_0065.png",
-      "parts": [ "part_grass.json", "part_missing.json" ],
+      "parts": [ "part_grass.json", "part_shrine.json" ],
       "walkable": false
     },
     {
@@ -183,7 +183,7 @@
       "index": 14,
       "src": "images/tiles/grave_stone.png",
       "topdown_src": "images/topdown/tile_0066.png",
-      "parts": [ "part_grass.json", "part_missing.json" ],
+      "parts": [ "part_grass.json", "part_gravestone.json" ],
       "walkable": false
     },
     {
@@ -191,7 +191,7 @@
       "index": 15,
       "src": "images/tiles/water.png",
       "topdown_src": "images/topdown/tile_0090.png",
-      "parts": [ "part_missing.json" ],
+      "parts": [ "part_water.json" ],
       "walkable": false
     },
     {
@@ -199,7 +199,7 @@
       "index": 16,
       "src": "images/tiles/skull_pile.png",
       "topdown_src": "images/topdown/tile_0118.png",
-      "parts" : [ "part_floor.json", "part_missing.json", "part_top.json" ],
+      "parts" : [ "part_floor.json", "part_skulls.json", "part_top.json" ],
       "walkable": false
     },
     {
@@ -207,7 +207,7 @@
       "index": 17,
       "src": "images/tiles/hay_pile.png",
       "topdown_src": "images/topdown/tile_0122.png",
-      "parts" : [ "part_floor.json", "part_missing.json", "part_top.json" ],
+      "parts" : [ "part_floor.json", "part_bed.json", "part_top.json" ],
       "walkable": true
     },
     {
@@ -223,7 +223,7 @@
       "index": 19,
       "src": "images/tiles/death_speaker.png",
       "topdown_src": "images/topdown/tile_0120.png",
-      "parts" : [ "part_grass.json", "part_missing.json" ],
+      "parts" : [ "part_grass.json", "part_ending.json" ],
       "walkable": true
     }
   ],
