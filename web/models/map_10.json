@@ -885,6 +885,9 @@
           "source": "part_door.json"
         },
         {
+          "source": "part_wall.json"
+        },
+        {
           "source": "part_top.json"
         }
       ],
@@ -921,6 +924,9 @@
         },
         {
           "source": "part_door.json"
+        },
+        {
+          "source": "part_wall.json"
         },
         {
           "source": "part_top.json"

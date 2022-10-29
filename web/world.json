@@ -215,7 +215,7 @@
       "index": 18,
       "src": "images/tiles/locked_door.png",
       "topdown_src": "images/topdown/tile_0110.png",
-      "parts" : [ "part_floor.json", "part_door.json", "part_top.json" ],
+      "parts" : [ "part_floor.json", "part_door.json", "part_wall.json", "part_top.json" ],
       "walkable": false
     },
     {
