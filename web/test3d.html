@@ -1,0 +1,179 @@
+<html>
+    <head><title>Heroine Dawn</title></head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <style>
+        .input_buttons {
+            padding:25px !important;
+            background-color: rgb(80, 80, 80);
+            color:white;
+            -webkit-border-fit:border !important;
+        }
+        .input_buttons_lesser {
+            padding:15px !important;
+        }
+        a {
+            color:darkgrey;
+        }
+    </style>
+    <body style="color:white; background-color:black;">
+        <br/>
+        <center>
+            <canvas id="main_canvas" width="160" height="120" style="height:95%;max-width: 840px;"></canvas>
+
+            <div id="input_buttons" style="display: none;">
+            <br/>
+            <input type="button" class="input_buttons" value="  &hookleftarrow;  " onclick="dawnGame.doInput('left');" />
+            <input type="button" class="input_buttons" value="  &uarr;  " onclick="dawnGame.doInput('up');"  />
+            <input type="button" class="input_buttons" value="  &hookrightarrow;  " onclick="dawnGame.doInput('right');" />
+            <br/>
+            <input type="button" class="input_buttons input_buttons_lesser" value="  ≡  " onclick="dawnGame.doInput('menu');" />
+            <p id="main_status" style="height:40px;display: none;" >Loading...</p>
+            </div>
+        </center>
+        <br/>
+        <hr/>
+        <div>
+            <p>
+            <font style="color:darkgray">
+                <a href="../"><b>Heroine Dawn</b> [about/guide]</a>
+                <u style="cursor:pointer" onclick="mainNewGame();">[new game]</u>
+                <br/>
+                <input type="checkbox" id="main_allow_encounters" onclick="toggledEncounters()">
+                Battles
+                <input type="checkbox" id="main_allow_preload" onclick="toggledPreload()">
+                Preload Content
+                <a id="main_save_link" style="display: none;" href="">[here]</a>
+                <br/>
+                Swipe to turn/move/buy, Tap icons for menu/spells, or use Arrows/space/shift keys, and read this note:
+            </p>
+                <i><p id="main_intro_note"></p></i>
+
+                <br/><br/>
+                <p><a href="https://github.com/leweyg/heroine_dawn">Code for remake</a> 
+                    by <a href="http://www.lewcid.com/lg/aboutme.html">Lewey Geselowitz</a>
+                    (based on the original <a href="http://heroinedusk.com/">Heroine Dusk</a> 
+                    <a href="https://github.com/clintbellanger/heroine-dusk">code</a> 
+                    by <a href="https://clintbellanger.net/">Clint Bellanger</a>). </p>
+                    <br/>
+            </font>
+        </div>
+        <script src="scripts/things.js"></script>
+        <script src="scripts/game.js"></script>
+        <script src="scripts/render.js"></script>
+        <script src="scripts/tools/three.min.js"></script>
+        <script src="scripts/renderThree.js"></script>
+        <script src="scripts/swipe.js"></script>
+        <script src="scripts/utils.js"></script>
+        <script>
+            function main_init() {
+                dawnUtils.downloadJson("world.json", (world) => {
+                    main_status.innerHTML = "Loaded.";
+                    dawnGame.initFromWorld(world);
+                    
+                    dawnRenderer.initFromGameWorld(dawnGame, world, main_canvas, main_status);
+                    dawnSwipe.setupSwipes(dawnGame, main_canvas, main_status);
+
+                    dawnUtils.cookieTryLoad(dawnGame);
+                    loadPageParameters();
+                    main_allow_encounters.checked = (!dawnGame.state.battles_off);
+                    dawnRenderer.redraw();
+
+                    // update callbacks:
+                    dawnGame.callOnChanged.push(() => {dawnUtils.cookieSave(dawnGame);});
+                    dawnGame.callOnChanged.push(() => {checkRotation();});
+                    dawnGame.callOnChanged.push(() => {updatePageLink();});
+                    window.onresize = (() => checkRotation());
+                    checkRotation();
+
+                    var msg = "\"";
+                    for (var i in world.intro_note) {
+                        if (i != 0) msg += "<br/>";
+                        msg += world.intro_note[i];
+                    }
+                    msg += "\"";
+                    main_intro_note.innerHTML = msg;
+                });
+            }
+            function mainNewGame() {
+                dawnGame.newGame();
+                dawnUtils.cookieSave(dawnGame);
+                window.location.reload();
+            }
+            function checkRotation() {
+                var can = main_canvas.getBoundingClientRect();
+                var wndAspect = window.innerWidth / window.innerHeight;
+                var canAspect = (can.width / can.height);
+                main_canvas.removeAttribute("style");
+                if (canAspect > wndAspect) {
+                    main_canvas.style["width"] = "95%";
+                    main_canvas.style["max-width"] = "840px";
+                    main_canvas.style["height"] = undefined;
+                } else {
+                    main_canvas.style["height"] = "95%";
+                    main_canvas.style["max-width"] = undefined;
+                    main_canvas.style["width"] = undefined;
+                }
+            }
+            function toggledEncounters() {
+                var isOn = !(!(main_allow_encounters.checked));
+                dawnGame.state.battles_off = !isOn;
+                dawnGame.onChanged();
+            }
+            function toggledPreload() {
+                dawnRenderer.preloadContent();
+            }
+            var pageParams = [ "map_id", "x", "y", "facing" ];
+            function setupPageParam(params, name) {
+                var val = params.get(name);
+                if (val == undefined) return;
+                if (!isNaN(val)) {
+                    val = 1*val;
+                }
+                dawnGame.state.avatar[name] = val;
+            }
+            function loadPageParameters() {
+                var queryString = window.location.search;
+                var urlParams = new URLSearchParams(queryString);
+                for (var i in pageParams) {
+                    setupPageParam(urlParams, pageParams[i]);
+                }
+                if (dawnGame.state.avatar.map_id != 0) {
+                    dawnGame.state.encounter = null;
+                }
+                if (urlParams.get("knight")) {
+                    dawnGame.state.avatar.hp = 99;
+                    dawnGame.state.avatar.mp = 99;
+                    dawnGame.state.avatar.max_hp = 99;
+                    dawnGame.state.avatar.max_mp = 99;
+                    dawnGame.state.avatar.spellbook = 5;
+                    dawnGame.state.avatar.weapon = 7;
+                    dawnGame.state.avatar.armor = 7;
+                    dawnGame.state.avatar.gold = 999;
+                }
+                if (urlParams.get("squire")) {
+                    dawnGame.state.avatar.hp = 30;
+                    dawnGame.state.avatar.mp = 6;
+                    dawnGame.state.avatar.max_hp = 50;
+                    dawnGame.state.avatar.max_mp = 6;
+                    dawnGame.state.avatar.spellbook = 3;
+                    dawnGame.state.avatar.weapon = 4;
+                    dawnGame.state.avatar.armor = 3;
+                    dawnGame.state.avatar.gold = 200;
+                }
+            }
+            function updatePageLink() {
+                var path = "?";
+                for (var i in pageParams) {
+                    var name = pageParams[i];
+                    if (i != 0) {
+                        path += "&";
+                    }
+                    path += name + "=" + dawnGame.state.avatar[name];
+                }
+                main_save_link.href = path;
+            }
+            main_init();
+        </script>
+
+    </body>
+</html>
