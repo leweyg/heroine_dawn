@@ -59,9 +59,12 @@
         </div>
         <script src="scripts/things.js"></script>
         <script src="scripts/game.js"></script>
-        <script src="scripts/render.js"></script>
-        <script src="scripts/tools/three.min.js"></script>
+        <script src="scripts/three/three.js"></script>
+        <script src="scripts/three/loaders/OBJLoader.js"></script>
+        <script src="scripts/three/loaders/MTLLoader.js"></script>
+        <script src="scripts/three/loaders/GLTFLoader.js"></script>
         <script src="scripts/renderThree.js"></script>
+        <script src="scripts/render.js"></script>
         <script src="scripts/swipe.js"></script>
         <script src="scripts/utils.js"></script>
         <script>
@@ -70,6 +73,7 @@
                     main_status.innerHTML = "Loaded.";
                     dawnGame.initFromWorld(world);
                     
+                    //gameRenderThree.initFromGameWorld(dawnGame, world, main_canvas, main_status);
                     dawnRenderer.initFromGameWorld(dawnGame, world, main_canvas, main_status);
                     dawnSwipe.setupSwipes(dawnGame, main_canvas, main_status);
 

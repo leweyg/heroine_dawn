@@ -63,9 +63,9 @@ var gameRenderThree_prototype = {
             _this._xhrProgress(xhr);
         };
         this.obj_loader = new THREE.OBJLoader();
-        this.obj_loader.setPath('models/spacekit/objs/');
+        this.obj_loader.setPath('models/src/obj/');
                     //.setMaterials( materials )
-        this.obj_loader.load( 'corridor_corner.obj', function ( object ) {
+        this.obj_loader.load( 'banner.obj', function ( object ) {
 
                         //object.position.y = -0.5;
                         scene.add( object );
@@ -73,7 +73,7 @@ var gameRenderThree_prototype = {
 
                     }, onProgress );
 
-        this.setupSubscriptions(gameCore);
+        //this.setupSubscriptions(gameCore);
     },
     setupSubscriptions : function(game) {
         var systemRoot = null;
@@ -85,6 +85,8 @@ var gameRenderThree_prototype = {
         }
     },
     redraw : function() {
+        if (!this.game) return;
+
         if (this.unit_mesh) {
             this.unit_mesh.rotation.x += 0.5;
             this.unit_mesh.rotation.y += 0.1;
