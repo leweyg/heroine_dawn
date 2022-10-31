@@ -146,8 +146,8 @@ var dawnRenderer_prototype = {
     redraw : function() {
         if (!this.game) return;
 
-        this.drawScene();
-        gameRenderThree.render();
+        //this.drawScene();
+        //gameRenderThree.render();
         this.drawEncounter();
         this.drawAvatarInfo();
         this.drawHUD();

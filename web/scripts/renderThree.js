@@ -52,8 +52,8 @@ var gameRenderThree_prototype = {
             scene.add( mesh );
         }
 
-        this.canvas = main_canvas;
-        var renderer = new THREE.WebGLRenderer( { antialias:false, canvas:main_canvas } );
+        this.canvas = canvas;
+        var renderer = new THREE.WebGLRenderer( { antialias:false, canvas:canvas } );
         this.renderer = renderer;
         renderer.setPixelRatio( window.devicePixelRatio );
         renderer.setSize( 640, 480 ); 

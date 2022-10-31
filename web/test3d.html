@@ -11,6 +11,12 @@
         .input_buttons_lesser {
             padding:15px !important;
         }
+        .game_canvas {
+            height:95%;max-width: 840px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
         a {
             color:darkgrey;
         }
@@ -18,7 +24,10 @@
     <body style="color:white; background-color:black;">
         <br/>
         <center>
-            <canvas id="main_canvas" width="160" height="120" style="height:95%;max-width: 840px;"></canvas>
+            <div>
+                <canvas id="main_3dcanvas" width="160" height="120" class="game_canvas"></canvas>
+                <canvas id="main_canvas" width="160" height="120" class="game_canvas"></canvas>
+            </div>
 
             <div id="input_buttons" style="display: none;">
             <br/>
@@ -73,7 +82,7 @@
                     main_status.innerHTML = "Loaded.";
                     dawnGame.initFromWorld(world);
                     
-                    //gameRenderThree.initFromGameWorld(dawnGame, world, main_canvas, main_status);
+                    gameRenderThree.initFromGameWorld(dawnGame, world, main_3dcanvas, main_status);
                     dawnRenderer.initFromGameWorld(dawnGame, world, main_canvas, main_status);
                     dawnSwipe.setupSwipes(dawnGame, main_canvas, main_status);
 
@@ -107,16 +116,21 @@
                 var can = main_canvas.getBoundingClientRect();
                 var wndAspect = window.innerWidth / window.innerHeight;
                 var canAspect = (can.width / can.height);
-                main_canvas.removeAttribute("style");
-                if (canAspect > wndAspect) {
-                    main_canvas.style["width"] = "95%";
-                    main_canvas.style["max-width"] = "840px";
-                    main_canvas.style["height"] = undefined;
-                } else {
-                    main_canvas.style["height"] = "95%";
-                    main_canvas.style["max-width"] = undefined;
-                    main_canvas.style["width"] = undefined;
+                var canvases = [ main_canvas, main_3dcanvas ];
+                for (var ci in canvases) {
+                    var cnv = canvases[ci];
+                    cnv.removeAttribute("style");
+                    if (canAspect > wndAspect) {
+                        cnv.style["width"] = "95%";
+                        cnv.style["max-width"] = "840px";
+                        cnv.style["height"] = undefined;
+                    } else {
+                        cnv.style["height"] = "95%";
+                        cnv.style["max-width"] = undefined;
+                        cnv.style["width"] = undefined;
+                    }
                 }
+
             }
             function toggledEncounters() {
                 var isOn = !(!(main_allow_encounters.checked));
