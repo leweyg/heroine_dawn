@@ -84,6 +84,7 @@
                     
                     gameRenderThree.initFromGameWorld(dawnGame, world, main_3dcanvas, main_status);
                     dawnRenderer.initFromGameWorld(dawnGame, world, main_canvas, main_status);
+                    dawnRenderer.isScene3D = true;
                     dawnSwipe.setupSwipes(dawnGame, main_canvas, main_status);
 
                     dawnUtils.cookieTryLoad(dawnGame);

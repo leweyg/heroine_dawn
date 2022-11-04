@@ -7,6 +7,7 @@ var dawnRenderer_prototype = {
     mainContext : null,
     mainStatus : null,
     timeIndex : 0,
+    isScene3D : false,
     images : {
         backgrounds : [],
         tiles : [],
@@ -146,7 +147,9 @@ var dawnRenderer_prototype = {
     redraw : function() {
         if (!this.game) return;
 
-        this.drawScene();
+        if (!this.isScene3D) {
+            this.drawScene();
+        }
         //gameRenderThree.render();
         this.drawEncounter();
         this.drawAvatarInfo();
