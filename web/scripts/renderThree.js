@@ -41,7 +41,13 @@ var FolderUtils = {
         FolderUtils.ImportJsonTransform(el, jsonObj);
         if (jsonObj.source) {
             var url = folderPath + jsonObj.source;
-            AssetCache.CloneByPath(url, (obj)=>{}, el);
+            if (jsonObj.source.startsWith(".json")) {
+                FolderUtils.ImportByPath_JSON(jsonObj.source, (obj)=>{
+                    el.add(obj);
+                });
+            } else {
+                AssetCache.CloneByPath(url, (obj)=>{}, el);
+            }
         }
         if (jsonObj.children) {
             for (var childIndex in jsonObj.children) {
@@ -238,6 +244,8 @@ var gameRenderThree_prototype = {
             scene.add( mesh );
         }
 
+        this.game.callOnChanged.push( (() => { _this.redraw(); }) );
+
         this.canvas = canvas;
         var renderer = new THREE.WebGLRenderer( { antialias:false, canvas:canvas } );
         this.renderer = renderer;
@@ -248,8 +256,10 @@ var gameRenderThree_prototype = {
         const onProgress = function ( xhr ) {
             _this._xhrProgress(xhr);
         };
-        var testPath = "models/part_floor.json";
-        AssetCache.CloneByPath(testPath, (obj)=>{}, scene);
+        var testPath = "models/map_0.json";
+        AssetCache.CloneByPath(testPath, (obj)=>{
+            console.log("Loaded " + testPath);
+        }, scene);
 
         this.obj_loader = new THREE.OBJLoader();
         this.obj_loader.setPath('models/src/obj/');
