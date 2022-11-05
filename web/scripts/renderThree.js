@@ -1,4 +1,190 @@
 
+
+var FolderUtils = {
+    ImportByPath: function(path, callback) {
+        var lpath = path.toLowerCase();
+        if (lpath.endsWith(".obj")) {
+            return this.ImportByPath_OBJ(path, callback);
+        }
+        if (lpath.endsWith(".json")) {
+            return this.ImportByPath_JSON(path, callback);
+        }
+        alert("TODO");
+    },
+
+    ImportJsonTransform : function(el,jsonObj) {
+        if (jsonObj.position) {
+            var p = jsonObj.position;
+            el.position.set(p[0],p[1],p[2]);
+        }
+        if (jsonObj.rotation) {
+            var p = jsonObj.rotation;
+            el.rotation.set(p[0],p[1],p[2]);
+        }
+        if (jsonObj.scale) {
+            var p = jsonObj.scale;
+            el.scale.set(p[0],p[1],p[2]);
+        }
+        if (jsonObj.rotation_degrees) {
+            var p = jsonObj.rotation_degrees;
+            var s = 3.14159 / 180.0;
+            el.rotation.set(p[0]*s,p[1]*s,p[2]*s);
+        }
+    },
+
+    ImportJsonRecursive : function(jsonObj,folderPath) {
+        var el = new THREE.Group();
+        //el.userData = FolderUtils.lewcidObject_CleanUserData( jsonObj );
+        if (jsonObj.name) {
+            el.name = jsonObj.name;
+        }
+        FolderUtils.ImportJsonTransform(el, jsonObj);
+        if (jsonObj.source) {
+            var url = folderPath + jsonObj.source;
+            AssetCache.CloneByPath(url, (obj)=>{}, el);
+        }
+        if (jsonObj.children) {
+            for (var childIndex in jsonObj.children) {
+                var child = jsonObj.children[childIndex];
+                var res = FolderUtils.ImportJsonRecursive(child,folderPath);
+                if (!res.name) {
+                    res.name = "child" + childIndex;
+                }
+                el.add(res);
+            }
+        }
+        return el;
+    },
+
+    ImportByPath_JSON: function(path, callback) {
+        dawnUtils.downloadJson(path, (rawObj) => {
+            var folder = FolderUtils.PathParentFolder(path);
+            var el = FolderUtils.ImportJsonRecursive(rawObj, folder);
+            callback(el);
+        });
+    },
+
+    ImportByPath_OBJ: function(path, callback) {
+        var onProgress = (() => {});
+        this.mObjLoader.load( path, function ( object ) {
+
+            callback(object);
+
+        }, onProgress );
+    },
+
+
+    PathParentFolder : function(path) {
+        if (path.endsWith("/")) {
+            path = path.substring(0,path.length-1);
+            var ending = path.lastIndexOf("/");
+            if (ending > 0) {
+                path = path.substring(0,ending+1);
+                return path;
+            }
+        }
+        if (path.includes("/")) {
+            var ending = path.lastIndexOf("/");
+            return path.substring(0,ending+1);
+        }
+        console.error("TODO");
+        return path;
+    },
+
+    PathWithoutFolder : function(path) {
+        if (path.includes("/")) {
+            var ending = path.lastIndexOf("/");
+            return path.substring(ending+1);
+        }
+        return path;
+    },
+
+    PathDisplayName : function(path) {
+        path = FolderUtils.PathWithoutFolder(path);
+        if (path.includes(".")) {
+            path = path.substring(0,path.lastIndexOf("."));
+        }
+        return path;
+    },
+
+
+    mObjLoader: new THREE.OBJLoader(),
+
+    setup: function() {
+        //this.mObjLoader.setPath('models/src/obj/');
+    }
+
+};
+FolderUtils.setup();
+
+var AssetCache = {
+
+    mKnownAssetsByPath: { },
+    mCleanRoot: new THREE.Group(),
+
+    CloneByPath: function(path, callback, parent) {
+        var cache = this.EnsureCacher(path);
+        var onReady = ((originalObj) => {
+            var obj = this.CustomClone(originalObj);
+            if (parent) {
+                parent.add(obj);
+            }
+            if (callback) {
+                callback(obj);
+            }
+            return obj;
+        });
+        if (cache.ready) {
+            onReady(cache.cleanCopy);
+            return;
+        }
+        cache.readyCallbacks.push(onReady);
+        if (!(cache.downloading)) {
+            cache.downloading = true;
+            FolderUtils.ImportByPath(path, (obj)=>{
+                cache.cleanCopy = obj;
+                cache.downloading = false;
+                cache.ready = true;
+                for (var i in cache.readyCallbacks) {
+                    var cb = cache.readyCallbacks[i];
+                    if (cb) {
+                        cb(obj);
+                    }
+                }
+            }, AssetCache.mCleanRoot, /*skipCache=*/true);
+        }
+    },
+
+    CustomClone : function(obj) {
+        if (!obj) return obj;
+        if ("clone" in obj) {
+            return obj.clone();
+        }
+        var derived = new Object(obj);
+        return derived;
+    },
+
+    EnsureCacher: function(path) {
+        if (path in this.mKnownAssetsByPath) {
+            return this.mKnownAssetsByPath[path];
+        }
+        var cacher = {
+            path : path,
+            ready : false,
+            downloading : false,
+            cleanCopy : null,
+            readyCallbacks : [],
+            clone : function() {
+                console.assert(this.cleanCopy);
+                return this.cleanCopy.clone();
+            },
+        };
+        this.mKnownAssetsByPath[path] = cacher;
+        return cacher;
+    },
+
+};
+
 var gameRenderThree_prototype = {
     canvas : null,
     renderer : null,
@@ -62,6 +248,9 @@ var gameRenderThree_prototype = {
         const onProgress = function ( xhr ) {
             _this._xhrProgress(xhr);
         };
+        var testPath = "models/part_floor.json";
+        AssetCache.CloneByPath(testPath, (obj)=>{}, scene);
+
         this.obj_loader = new THREE.OBJLoader();
         this.obj_loader.setPath('models/src/obj/');
                     //.setMaterials( materials )
