@@ -369,6 +369,16 @@ var gameRenderThree_prototype = {
         "south":[ 0, 270*degToRad, 0 ],
         "east":[ 0, 0*degToRad, 0 ],
     },
+    canWalkForwards: function() {
+        var fwd = this.game.getTileInfoAvatarForward();
+        if (fwd) {
+            var walkable = this.world.tile_types[fwd.tile_type].walkable;
+            if (!walkable) {
+                return false;
+            }
+        }
+        return true;
+    },
     _tempOffset : new THREE.Vector3(),
     _tempForward : new THREE.Vector3(),
     _tempRotation : new THREE.Quaternion(),
@@ -398,7 +408,11 @@ var gameRenderThree_prototype = {
                 break;
             case "up":
             case "down":
-                var dir = ((preInput == "up") ? 1 : -1);
+                var isForward = (preInput == "up");
+                var dir = (isForward ? 1 : -1);
+                if (isForward && !this.canWalkForwards(isForward)) {
+                    dir *= 0.1;
+                }
                 pos.addScaledVector(fwd, dir * prePct * 2.0);
                 break;
             default:
