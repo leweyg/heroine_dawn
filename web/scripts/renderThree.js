@@ -318,8 +318,9 @@ var gameRenderThree_prototype = {
         this.game.callOnChanged.push( (() => { _this.redraw(); }) );
 
         this.canvas = canvas;
-        var renderer = new THREE.WebGLRenderer( { antialias:false, canvas:canvas } );
+        var renderer = new THREE.WebGLRenderer( { antialias:false, canvas:canvas, alpha:true } );
         this.renderer = renderer;
+        renderer.setClearColor( 0x000000, 0 ); // the default
         renderer.setPixelRatio( window.devicePixelRatio );
         renderer.setSize( 640, 480 ); 
 

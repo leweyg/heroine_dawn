@@ -4,6 +4,7 @@ var dawnRenderer_prototype = {
     world : null,
     game : null,
     mainCanvas : null,
+    mainBgCanvas : null,
     mainContext : null,
     mainStatus : null,
     timeIndex : 0,
@@ -12,10 +13,11 @@ var dawnRenderer_prototype = {
         backgrounds : [],
         tiles : [],
     },
-    initFromGameWorld : function(game, world, mainTarget, mainStatus) {
+    initFromGameWorld : function(game, world, mainTarget, mainStatus, mainBgCanvas) {
         this.game = game;
         this.world = world;
         this.mainCanvas = mainTarget;
+        this.mainBgCanvas = mainBgCanvas;
         this.mainContext = this.mainCanvas.getContext("2d");
         this.mainStatus = mainStatus;
 
@@ -144,11 +146,27 @@ var dawnRenderer_prototype = {
             }
         }
     },
+    drawBackground : function() {
+        // background:
+        var avatar = this.game.state.avatar;
+        var map = this.world.maps[avatar.map_id];
+        var bgImg = this.images.backgrounds[map.background].tryGetImg();
+        if (bgImg) {
+            if (this.mainBgCanvas) {
+                var context = this.mainBgCanvas.getContext("2d");
+                context.drawImage(bgImg, 0, 0);
+            } else {
+                var context = this.mainContext;
+                context.drawImage(bgImg, 0, 0);
+            }
+        }
+    },
     redraw : function() {
         if (!this.game) return;
 
         this.mainContext.clearRect(0, 0, this.mainCanvas.width, this.mainCanvas.height);
 
+        this.drawBackground();
         if (!this.isScene3D) {
             this.drawScene();
         }
@@ -169,11 +187,7 @@ var dawnRenderer_prototype = {
         var avatar = this.game.state.avatar;
         var map = this.world.maps[avatar.map_id];
 
-        // background:
-        var bgImg = this.images.backgrounds[map.background].tryGetImg();
-        if (bgImg) {
-            this.mainContext.drawImage(bgImg, 0, 0);
-        }
+
         // visible cells:
         var cells = this.world.rendering.rings_ordered;
 

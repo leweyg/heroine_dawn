@@ -25,6 +25,7 @@
         <br/>
         <center>
             <div id="main_canvas_holder">
+                <canvas id="main_bgcanvas" width="160" height="120" class="game_canvas"></canvas>
                 <canvas id="main_3dcanvas" width="160" height="120" class="game_canvas"></canvas>
                 <canvas id="main_canvas" width="160" height="120" class="game_canvas"></canvas>
             </div>
@@ -83,7 +84,7 @@
                     dawnGame.initFromWorld(world);
                     
                     gameRenderThree.initFromGameWorld(dawnGame, world, main_3dcanvas, main_status);
-                    dawnRenderer.initFromGameWorld(dawnGame, world, main_canvas, main_status);
+                    dawnRenderer.initFromGameWorld(dawnGame, world, main_canvas, main_status, main_bgcanvas);
                     dawnRenderer.isScene3D = true;
                     dawnSwipe.setupSwipes(dawnGame, main_canvas, main_status);
 
@@ -117,7 +118,7 @@
                 var can = main_canvas;//.getBoundingClientRect();
                 var wndAspect = window.innerWidth / window.innerHeight;
                 var canAspect = (can.width / can.height);
-                var canvases = [ main_canvas_holder, main_canvas, main_3dcanvas ];
+                var canvases = [ main_canvas_holder, main_canvas, main_3dcanvas, main_bgcanvas ];
                 for (var ci in canvases) {
                     var cnv = canvases[ci];
                     cnv.removeAttribute("style");
