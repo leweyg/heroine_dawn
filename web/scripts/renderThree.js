@@ -301,7 +301,7 @@ var gameRenderThree_prototype = {
 
         //const texture = new THREE.TextureLoader().load( 'textures/crate.gif' );
 
-        if (true) { // unit geo
+        if (false) { // unit geo
             const geometry = new THREE.BoxGeometry( 1, 1, 1 );
             const material = new THREE.MeshLambertMaterial( { color: 0xccff44 } ); //new THREE.MeshBasicMaterial( );//{ map: texture } );
 
@@ -335,6 +335,7 @@ var gameRenderThree_prototype = {
         });
         */
 
+        /*
         this.obj_loader = new THREE.OBJLoader();
         this.obj_loader.setPath('models/src/obj/');
                     //.setMaterials( materials )
@@ -345,6 +346,7 @@ var gameRenderThree_prototype = {
                         _this.redraw();
 
                     }, onProgress );
+                    */
 
         //this.setupSubscriptions(gameCore);
     },
