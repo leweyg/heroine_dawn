@@ -24,7 +24,7 @@
     <body style="color:white; background-color:black;">
         <br/>
         <center>
-            <div>
+            <div id="main_canvas_holder">
                 <canvas id="main_3dcanvas" width="160" height="120" class="game_canvas"></canvas>
                 <canvas id="main_canvas" width="160" height="120" class="game_canvas"></canvas>
             </div>
@@ -114,22 +114,27 @@
                 window.location.reload();
             }
             function checkRotation() {
-                var can = main_canvas.getBoundingClientRect();
+                var can = main_canvas;//.getBoundingClientRect();
                 var wndAspect = window.innerWidth / window.innerHeight;
                 var canAspect = (can.width / can.height);
-                var canvases = [ main_canvas, main_3dcanvas ];
+                var canvases = [ main_canvas_holder, main_canvas, main_3dcanvas ];
                 for (var ci in canvases) {
                     var cnv = canvases[ci];
                     cnv.removeAttribute("style");
+                    var widthGoal = window.innerWidth;
+                    var heightGoal = window.innerHeight;
                     if (canAspect > wndAspect) {
-                        cnv.style["width"] = "95%";
-                        cnv.style["max-width"] = "840px";
-                        cnv.style["height"] = undefined;
+                        widthGoal = Math.floor(window.innerWidth*0.9);
+                        heightGoal = Math.floor(widthGoal / canAspect);
                     } else {
-                        cnv.style["height"] = "95%";
-                        cnv.style["max-width"] = undefined;
-                        cnv.style["width"] = undefined;
+                        heightGoal = Math.floor(window.innerHeight*0.9);
+                        widthGoal = Math.floor(heightGoal * canAspect);
+                        
                     }
+                    cnv.style["height"] = heightGoal + "px";
+                    cnv.style["width"] = widthGoal + "px";
+                    cnv.style["max-height"] = undefined;
+                    cnv.style["max-width"] = undefined;
                 }
 
             }
