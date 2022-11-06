@@ -1,84 +1,6 @@
 
 
 var FolderUtils = {
-    ImportByPath: function(path, callback) {
-        var lpath = path.toLowerCase();
-        if (lpath.endsWith(".obj")) {
-            return this.ImportByPath_OBJ(path, callback);
-        }
-        if (lpath.endsWith(".json")) {
-            return this.ImportByPath_JSON(path, callback);
-        }
-        alert("TODO");
-    },
-
-    ImportJsonTransform : function(el,jsonObj) {
-        if (jsonObj.position) {
-            var p = jsonObj.position;
-            el.position.set(p[0],p[1],p[2]);
-        }
-        if (jsonObj.rotation) {
-            var p = jsonObj.rotation;
-            el.rotation.set(p[0],p[1],p[2]);
-        }
-        if (jsonObj.scale) {
-            var p = jsonObj.scale;
-            el.scale.set(p[0],p[1],p[2]);
-        }
-        if (jsonObj.rotation_degrees) {
-            var p = jsonObj.rotation_degrees;
-            var s = 3.14159 / 180.0;
-            el.rotation.set(p[0]*s,p[1]*s,p[2]*s);
-        }
-    },
-
-    ImportJsonRecursive : function(jsonObj,folderPath) {
-        var el = new THREE.Group();
-        //el.userData = FolderUtils.lewcidObject_CleanUserData( jsonObj );
-        if (jsonObj.name) {
-            el.name = jsonObj.name;
-        }
-        FolderUtils.ImportJsonTransform(el, jsonObj);
-        if (jsonObj.source) {
-            var url = folderPath + jsonObj.source;
-            if (jsonObj.source.startsWith(".json")) {
-                FolderUtils.ImportByPath_JSON(jsonObj.source, (obj)=>{
-                    el.add(obj);
-                });
-            } else {
-                AssetCache.CloneByPath(url, (obj)=>{}, el);
-            }
-        }
-        if (jsonObj.children) {
-            for (var childIndex in jsonObj.children) {
-                var child = jsonObj.children[childIndex];
-                var res = FolderUtils.ImportJsonRecursive(child,folderPath);
-                if (!res.name) {
-                    res.name = "child" + childIndex;
-                }
-                el.add(res);
-            }
-        }
-        return el;
-    },
-
-    ImportByPath_JSON: function(path, callback) {
-        dawnUtils.downloadJson(path, (rawObj) => {
-            var folder = FolderUtils.PathParentFolder(path);
-            var el = FolderUtils.ImportJsonRecursive(rawObj, folder);
-            callback(el);
-        });
-    },
-
-    ImportByPath_OBJ: function(path, callback) {
-        var onProgress = (() => {});
-        this.mObjLoader.load( path, function ( object ) {
-
-            callback(object);
-
-        }, onProgress );
-    },
-
 
     PathParentFolder : function(path) {
         if (path.endsWith("/")) {
@@ -114,14 +36,123 @@ var FolderUtils = {
     },
 
 
+
+};
+
+var ImportUtils = {
+
+    ImportByPath: function(path, callback) {
+        var lpath = path.toLowerCase();
+        if (lpath.endsWith(".obj")) {
+            return this.ImportByPath_OBJ(path, callback);
+        }
+        if (lpath.endsWith(".json")) {
+            return this.ImportByPath_JSON(path, callback);
+        }
+        alert("TODO");
+    },
+
+    ImportJsonTransform : function(el,jsonObj) {
+        if (jsonObj.position) {
+            var p = jsonObj.position;
+            el.position.set(p[0],p[1],p[2]);
+        }
+        if (jsonObj.rotation) {
+            var p = jsonObj.rotation;
+            el.rotation.set(p[0],p[1],p[2]);
+        }
+        if (jsonObj.scale) {
+            var p = jsonObj.scale;
+            el.scale.set(p[0],p[1],p[2]);
+        }
+        if (jsonObj.rotation_degrees) {
+            var p = jsonObj.rotation_degrees;
+            var s = 3.14159 / 180.0;
+            el.rotation.set(p[0]*s,p[1]*s,p[2]*s);
+        }
+    },
+
+    ImportJsonRecursive : function(jsonObj,folderPath) {
+        var el = new THREE.Group();
+        //el.userData = ImportUtils.lewcidObject_CleanUserData( jsonObj );
+        if (jsonObj.name) {
+            el.name = jsonObj.name;
+        }
+        ImportUtils.ImportJsonTransform(el, jsonObj);
+        if (jsonObj.source) {
+            var url = folderPath + jsonObj.source;
+            if (jsonObj.source.startsWith(".json")) {
+                ImportUtils.ImportByPath_JSON(jsonObj.source, (obj)=>{
+                    el.add(obj);
+                });
+            } else {
+                AssetCache.CloneByPath(url, (obj)=>{}, el);
+            }
+        }
+        if (jsonObj.children) {
+            for (var childIndex in jsonObj.children) {
+                var child = jsonObj.children[childIndex];
+                var res = ImportUtils.ImportJsonRecursive(child,folderPath);
+                if (!res.name) {
+                    res.name = "child" + childIndex;
+                }
+                el.add(res);
+            }
+        }
+        return el;
+    },
+
+    ImportByPath_JSON: function(path, callback) {
+        dawnUtils.downloadJson(path, (rawObj) => {
+            var folder = FolderUtils.PathParentFolder(path);
+            var el = ImportUtils.ImportJsonRecursive(rawObj, folder);
+            callback(el);
+        });
+    },
+
+    ImportByPath_OBJ: function(path, callback) {
+        var onProgress = (() => {});
+        var mtlPath = path.replace(".obj",".mtl");
+        var loadObjWithMaterials = ((materials) => {
+            if (materials) this.mObjLoader.setMaterials(materials);
+            this.mObjLoader.load( path, function ( object ) {
+                callback(object);
+            }, onProgress );
+        });
+        this.mMtlLoader.load( mtlPath, (materials)=>{
+            materials.preload();
+            loadObjWithMaterials(materials);
+        }, (progress) => {}, (errorInfo) => {
+            loadObjWithMaterials(null);
+        });
+
+    },
+
+    ExportSceneAsJson : function(el) {
+        var ans = {
+        };
+        if (el.name) {
+            ans.name = el.name;
+        }
+        if (el.children && el.children.length!=0) {
+            ans.children = [];
+            for (var ci in el.children) {
+                var child = el.children[ci];
+                ans.children.push(ImportUtils.ExportSceneAsJson(child));
+            }
+        }
+        return ans;
+    },
+
+
     mObjLoader: new THREE.OBJLoader(),
+    mMtlLoader: new THREE.MTLLoader(),
 
     setup: function() {
         //this.mObjLoader.setPath('models/src/obj/');
     }
-
 };
-FolderUtils.setup();
+ImportUtils.setup();
 
 var AssetCache = {
 
@@ -147,7 +178,7 @@ var AssetCache = {
         cache.readyCallbacks.push(onReady);
         if (!(cache.downloading)) {
             cache.downloading = true;
-            FolderUtils.ImportByPath(path, (obj)=>{
+            ImportUtils.ImportByPath(path, (obj)=>{
                 cache.cleanCopy = obj;
                 cache.downloading = false;
                 cache.ready = true;
@@ -256,7 +287,7 @@ var gameRenderThree_prototype = {
         const onProgress = function ( xhr ) {
             _this._xhrProgress(xhr);
         };
-        var testPath = "models/map_0.json";
+        var testPath = "models/part_floor.json";
         AssetCache.CloneByPath(testPath, (obj)=>{
             console.log("Loaded " + testPath);
         }, scene);
@@ -282,6 +313,12 @@ var gameRenderThree_prototype = {
             const percentComplete = xhr.loaded / xhr.total * 100;
             console.log( Math.round( percentComplete, 2 ) + '% downloaded' );
         }
+    },
+    debugNow: function() {
+        var scene = this.scene_root;
+        var obj = ImportUtils.ExportSceneAsJson(scene);
+        var txt = JSON.stringify(obj);
+        alert(txt);
     },
     redraw : function() {
         if (!this.game) return;

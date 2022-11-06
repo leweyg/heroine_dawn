@@ -73,6 +73,7 @@ var dawnSwipe_prototype = {
         "Enter" : "center",
         "Shift" : "menu",
         "Escape" : "avoid",
+        "~" : "debug",
         "1" : "cast[1]",
         "2" : "cast[2]",
         "3" : "cast[3]",
@@ -87,6 +88,10 @@ var dawnSwipe_prototype = {
             var dir = this._dirFromKeyboard[key];
             if ((key == "Escape") && (!this.game.isBattle())) {
                 dir = "menu";
+            }
+            if (key == "~") {
+                gameRenderThree.debugNow();
+                return;
             }
             var isPreview = isDown;
             this.game.doInput(dir,isPreview,0.5);
