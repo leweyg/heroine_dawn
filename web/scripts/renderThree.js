@@ -283,7 +283,7 @@ var gameRenderThree_prototype = {
         console.assert(THREE);
         const _this = this;
 
-        const camera = new THREE.PerspectiveCamera( 90, window.innerWidth / window.innerHeight, 0.1, 100 );
+        const camera = new THREE.PerspectiveCamera( 90, 640 / 480, 0.1, 100 );
         this.camera = camera;
         camera.position.z = 1;
         camera.position.y = 0.5;
@@ -369,11 +369,45 @@ var gameRenderThree_prototype = {
         "south":[ 0, 270*degToRad, 0 ],
         "east":[ 0, 0*degToRad, 0 ],
     },
+    _tempOffset : new THREE.Vector3(),
+    _tempForward : new THREE.Vector3(),
+    _tempRotation : new THREE.Quaternion(),
+    _tempEuler : new THREE.Euler(),
+    _tempRotationVec : new THREE.Vector3(),
     updateAvatar : function(avatar) {
-        this.camera.position.set(avatar.y*2, 1.0, -avatar.x*2);
-        var rot = this.rotationForFacing[avatar.facing];
-        this.camera.rotation.set(rot[0], rot[1], rot[2]);
+        
+        var basicRot = this.rotationForFacing[avatar.facing];
+        var rot = this._tempRotationVec;
+        rot.set(basicRot[0], basicRot[1], basicRot[2]);
+        var pos = this._tempOffset;
+        pos.set(avatar.y*2, 1.0, -avatar.x*2);
+
+        var euler = this._tempEuler;
+        euler.set(rot.x, rot.y, rot.z);
+        var fwd = this._tempForward;
+        fwd.set(0,0,-1);
+        fwd.applyEuler(euler);
+        
+        var preInput = this.game.state.input_preview;
+        var prePct = this.game.state.input_percent;
+        switch (preInput) {
+            case "left":
+            case "right":
+                var dir = ((preInput == "right") ? -1 : 1);
+                rot.y += prePct * (dir * 90.0 * degToRad);
+                break;
+            case "up":
+            case "down":
+                var dir = ((preInput == "up") ? 1 : -1);
+                pos.addScaledVector(fwd, dir * prePct * 2.0);
+                break;
+            default:
+                break;
+        }
+        this.camera.position.set(pos.x, pos.y, pos.z);
+        this.camera.rotation.set(rot.x, rot.y, rot.z);
         this.light.position.copy(this.camera.position);
+        
     },
     updateMap: function(map_id) {
         if (this.current_map && this.current_map.customData.map_id == map_id) {
