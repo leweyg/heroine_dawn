@@ -291,7 +291,7 @@ var gameRenderThree_prototype = {
         const scene = new THREE.Scene();
         this.scene_root = scene;
 
-        const light = new THREE.PointLight( 0xFFffFF, 1, 6 );
+        const light = new THREE.PointLight( 0xFFffFF, 1, 8 );
         this.light = light;
         light.position.set( 1, 1, 1 ).normalize();
         scene.add( light );
