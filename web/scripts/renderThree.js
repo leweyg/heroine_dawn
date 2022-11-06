@@ -227,11 +227,14 @@ var AssetCache = {
 
 };
 
+var degToRad = (3.14159 / 180.0);
+
 var gameRenderThree_prototype = {
     canvas : null,
     renderer : null,
     scene_root : null,
     camera : null,
+    light : null,
     unit_mesh : null,
     obj_loader : null,
     game : null,
@@ -257,7 +260,8 @@ var gameRenderThree_prototype = {
         const scene = new THREE.Scene();
         this.scene_root = scene;
 
-        const light = new THREE.DirectionalLight( 0x707070, 1 );
+        const light = new THREE.PointLight( 0x707070, 1, 8 );
+        this.light = light;
         light.position.set( 1, 1, 1 ).normalize();
         scene.add( light );
 
@@ -326,8 +330,20 @@ var gameRenderThree_prototype = {
         var txt = JSON.stringify(obj);
         alert(txt);
     },
+    rotationForFacing : {
+        "north":[ 0, 90*degToRad, 0 ],
+        "west":[ 0, 180*degToRad, 0 ],
+        "south":[ 0, 270*degToRad, 0 ],
+        "east":[ 0, 0*degToRad, 0 ],
+    },
     redraw : function() {
         if (!this.game) return;
+
+        var avatar = this.game.state.avatar;
+        this.camera.position.set(avatar.y*2, 1.0, -avatar.x*2);
+        var rot = this.rotationForFacing[avatar.facing];
+        this.camera.rotation.set(rot[0], rot[1], rot[2]);
+        this.light.position.copy(this.camera.position);
 
         if (this.unit_mesh) {
             this.unit_mesh.rotation.x += 0.5;
