@@ -418,6 +418,11 @@ var gameRenderThree_prototype = {
             default:
                 break;
         }
+        fwd.set(0,0,-1);
+        euler.set(rot.x, rot.y, rot.z);
+        fwd.applyEuler(euler);
+        pos.addScaledVector(fwd, -0.8);
+
         this.camera.position.set(pos.x, pos.y, pos.z);
         this.camera.rotation.set(rot.x, rot.y, rot.z);
         this.light.position.copy(this.camera.position);
