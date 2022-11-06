@@ -124,6 +124,7 @@ var ImportUtils = {
                 callback(object);
             }, onProgress );
         });
+        console.log("MtlPath = " + mtlPath);
         mMtlLoader.load( mtlPath, (materials)=>{
             materials.preload();
             loadObjWithMaterials(materials);
@@ -262,13 +263,13 @@ var gameRenderThree_prototype = {
         const scene = new THREE.Scene();
         this.scene_root = scene;
 
-        const light = new THREE.PointLight( 0x707070, 1, 8 );
+        const light = new THREE.PointLight( 0xFFffFF, 1, 6 );
         this.light = light;
         light.position.set( 1, 1, 1 ).normalize();
         scene.add( light );
 
-        const amlight = new THREE.AmbientLight( 0x707070 ); // soft white light
-        scene.add( amlight );
+        //const amlight = new THREE.AmbientLight( 0xFFffFF ); // soft white light
+        //scene.add( amlight );
 
         //const texture = new THREE.TextureLoader().load( 'textures/crate.gif' );
 
