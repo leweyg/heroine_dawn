@@ -86,7 +86,9 @@ var ImportUtils = {
                     el.add(obj);
                 });
             } else {
-                AssetCache.CloneByPath(url, (obj)=>{}, el);
+                AssetCache.CloneByPath(url, (obj)=>{
+                    el.add(obj);
+                });
             }
         }
         if (jsonObj.children) {
@@ -134,6 +136,9 @@ var ImportUtils = {
         if (el.name) {
             ans.name = el.name;
         }
+        if (el.type) {
+            ans.type = el.type;
+        }
         if (el.children && el.children.length!=0) {
             ans.children = [];
             for (var ci in el.children) {
@@ -162,7 +167,7 @@ var AssetCache = {
     CloneByPath: function(path, callback, parent) {
         var cache = this.EnsureCacher(path);
         var onReady = ((originalObj) => {
-            var obj = this.CustomClone(originalObj);
+            var obj = originalObj; //this.CustomClone(originalObj);
             if (parent) {
                 parent.add(obj);
             }
@@ -195,7 +200,7 @@ var AssetCache = {
     CustomClone : function(obj) {
         if (!obj) return obj;
         if ("clone" in obj) {
-            return obj.clone();
+            return obj.clone( /*recursive=*/true );
         }
         var derived = new Object(obj);
         return derived;
