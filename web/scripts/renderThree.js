@@ -238,6 +238,7 @@ var gameRenderThree_prototype = {
     unit_mesh : null,
     obj_loader : null,
     game : null,
+    current_map : null,
     world : null,
 
     initFromGameWorld : function(game, world, canvas, status) {
@@ -296,11 +297,13 @@ var gameRenderThree_prototype = {
         const onProgress = function ( xhr ) {
             _this._xhrProgress(xhr);
         };
+        /*
         var testPath = "models/map_0.json";
         ImportUtils.ImportByPath(testPath, (obj)=>{
             console.log("Loaded " + testPath);
             scene.add(obj);
         });
+        */
 
         this.obj_loader = new THREE.OBJLoader();
         this.obj_loader.setPath('models/src/obj/');
@@ -336,14 +339,37 @@ var gameRenderThree_prototype = {
         "south":[ 0, 270*degToRad, 0 ],
         "east":[ 0, 0*degToRad, 0 ],
     },
-    redraw : function() {
-        if (!this.game) return;
-
-        var avatar = this.game.state.avatar;
+    updateAvatar : function(avatar) {
         this.camera.position.set(avatar.y*2, 1.0, -avatar.x*2);
         var rot = this.rotationForFacing[avatar.facing];
         this.camera.rotation.set(rot[0], rot[1], rot[2]);
         this.light.position.copy(this.camera.position);
+    },
+    updateMap: function(map_id) {
+        if (this.current_map && this.current_map.customData.map_id == map_id) {
+            return;
+        }
+        if (this.current_map) {
+            this.current_map.removeFromParent();
+            this.current_map = null;
+        }
+        this.current_map = new THREE.Group();
+        this.scene_root.add(this.current_map);
+        this.current_map.customData = {
+            map_id : map_id
+        };
+        var path = "models/map_" + map_id + ".json";
+        ImportUtils.ImportByPath(path, (obj)=>{
+            console.log("Loaded " + path);
+            this.current_map.add(obj);
+        });
+    },
+    redraw : function() {
+        if (!this.game) return;
+
+        var avatar = this.game.state.avatar;
+        this.updateAvatar(avatar);
+        this.updateMap(avatar.map_id);
 
         if (this.unit_mesh) {
             this.unit_mesh.rotation.x += 0.5;
