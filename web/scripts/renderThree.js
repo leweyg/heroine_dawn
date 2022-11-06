@@ -112,6 +112,13 @@ var ImportUtils = {
         });
     },
 
+    ImportByPath_MTL: function(path, callback) {
+        var mMtlLoader = new THREE.MTLLoader();
+        mMtlLoader.load(path, (materials)=>{
+            callback(materials);
+        });
+    },
+
     ImportByPath_OBJ: function(path, callback) {
 
         var mObjLoader = new THREE.OBJLoader();
@@ -124,13 +131,25 @@ var ImportUtils = {
                 callback(object);
             }, onProgress );
         });
-        console.log("MtlPath = " + mtlPath);
-        mMtlLoader.load( mtlPath, (materials)=>{
-            materials.preload();
-            loadObjWithMaterials(materials);
-        }, (progress) => {}, (errorInfo) => {
-            loadObjWithMaterials(null);
-        });
+        
+        var useSeperateMaterials = false;
+        if (useSeperateMaterials) {
+            console.log("MtlPath = " + mtlPath);
+            mMtlLoader.load( mtlPath, (materials)=>{
+                materials.preload();
+                loadObjWithMaterials(materials);
+            }, (progress) => {}, (errorInfo) => {
+                loadObjWithMaterials(null);
+            });
+        } else {
+            var commonMtlPath = FolderUtils.PathParentFolder(path) + "common.mtl";
+            console.log("MtlPath = " + commonMtlPath);
+            AssetCache.CloneByPath(commonMtlPath, (materials)=>{
+                loadObjWithMaterials(materials);
+            }, null, {dont_clone:true,importer:(path,callback)=>{
+                ImportUtils.ImportByPath_MTL(path,callback);
+            }} );
+        }
 
     },
 
@@ -166,10 +185,13 @@ var AssetCache = {
     mKnownAssetsByPath: { },
     mCleanRoot: new THREE.Group(),
 
-    CloneByPath: function(path, callback, parent) {
+    CloneByPath: function(path, callback, parent, options) {
         var cache = this.EnsureCacher(path);
         var onReady = ((originalObj) => {
-            var obj = this.CustomClone(originalObj);
+            var obj = originalObj;
+            if ((!options) || (!options.no_clone)) {
+                obj = this.CustomClone(originalObj);
+            }
             if (parent) {
                 parent.add(obj);
             }
@@ -183,9 +205,15 @@ var AssetCache = {
             return;
         }
         cache.readyCallbacks.push(onReady);
+        var importer = ((path,cb)=>{
+            ImportUtils.ImportByPath(path, cb);
+        });
+        if (options && options.importer) {
+            importer = options.importer;
+        }
         if (!(cache.downloading)) {
             cache.downloading = true;
-            ImportUtils.ImportByPath(path, (obj)=>{
+            importer(path, (obj)=>{
                 cache.cleanCopy = obj;
                 cache.downloading = false;
                 cache.ready = true;
@@ -195,7 +223,7 @@ var AssetCache = {
                         cb(obj);
                     }
                 }
-            }, AssetCache.mCleanRoot, /*skipCache=*/true);
+            });
         }
     },
 
