@@ -81,8 +81,8 @@ var ImportUtils = {
         ImportUtils.ImportJsonTransform(el, jsonObj);
         if (jsonObj.source) {
             var url = folderPath + jsonObj.source;
-            if (jsonObj.source.startsWith(".json")) {
-                ImportUtils.ImportByPath_JSON(jsonObj.source, (obj)=>{
+            if (url.endsWith(".json")) {
+                ImportUtils.ImportByPath_JSON(url, (obj)=>{
                     el.add(obj);
                 });
             } else {
@@ -167,7 +167,7 @@ var AssetCache = {
     CloneByPath: function(path, callback, parent) {
         var cache = this.EnsureCacher(path);
         var onReady = ((originalObj) => {
-            var obj = originalObj; //this.CustomClone(originalObj);
+            var obj = this.CustomClone(originalObj);
             if (parent) {
                 parent.add(obj);
             }
@@ -292,10 +292,11 @@ var gameRenderThree_prototype = {
         const onProgress = function ( xhr ) {
             _this._xhrProgress(xhr);
         };
-        var testPath = "models/part_floor.json";
-        AssetCache.CloneByPath(testPath, (obj)=>{
+        var testPath = "models/map_0.json";
+        ImportUtils.ImportByPath(testPath, (obj)=>{
             console.log("Loaded " + testPath);
-        }, scene);
+            scene.add(obj);
+        });
 
         this.obj_loader = new THREE.OBJLoader();
         this.obj_loader.setPath('models/src/obj/');
