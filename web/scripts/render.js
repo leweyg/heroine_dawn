@@ -147,6 +147,8 @@ var dawnRenderer_prototype = {
     redraw : function() {
         if (!this.game) return;
 
+        this.mainContext.clearRect(0, 0, this.mainCanvas.width, this.mainCanvas.height);
+
         if (!this.isScene3D) {
             this.drawScene();
         }
