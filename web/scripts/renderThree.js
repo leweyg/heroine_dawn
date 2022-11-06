@@ -113,15 +113,18 @@ var ImportUtils = {
     },
 
     ImportByPath_OBJ: function(path, callback) {
+
+        var mObjLoader = new THREE.OBJLoader();
+        var mMtlLoader = new THREE.MTLLoader();
         var onProgress = (() => {});
         var mtlPath = path.replace(".obj",".mtl");
         var loadObjWithMaterials = ((materials) => {
-            if (materials) this.mObjLoader.setMaterials(materials);
-            this.mObjLoader.load( path, function ( object ) {
+            if (materials) mObjLoader.setMaterials(materials);
+            mObjLoader.load( path, function ( object ) {
                 callback(object);
             }, onProgress );
         });
-        this.mMtlLoader.load( mtlPath, (materials)=>{
+        mMtlLoader.load( mtlPath, (materials)=>{
             materials.preload();
             loadObjWithMaterials(materials);
         }, (progress) => {}, (errorInfo) => {
@@ -150,8 +153,6 @@ var ImportUtils = {
     },
 
 
-    mObjLoader: new THREE.OBJLoader(),
-    mMtlLoader: new THREE.MTLLoader(),
 
     setup: function() {
         //this.mObjLoader.setPath('models/src/obj/');
