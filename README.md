@@ -56,6 +56,5 @@ Game based on JSON: https://github.com/leweyg/heroine_dawn/tree/main/web
 # Future
 Anyone is welcome to fork/branch/whatever if this interests them:
 - Restore sounds and music (I usually code silently)
-- Rebuild the game in real-time 3D
 - Use directional swipes in battle
 - Ultimatly replace combat with 'healer' gameplay and story line (the original idea)
