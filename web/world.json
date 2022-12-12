@@ -199,7 +199,8 @@
       "index": 16,
       "src": "images/tiles/skull_pile.png",
       "topdown_src": "images/topdown/tile_0118.png",
-      "parts" : [ "part_floor.json", "part_skulls.json", "part_top.json" ],
+      "parts" : [ "part_floor.json", "part_top.json" ],
+      "parts_opt" : [ "part_skulls.json" ],
       "walkable": false
     },
     {
@@ -215,7 +216,8 @@
       "index": 18,
       "src": "images/tiles/locked_door.png",
       "topdown_src": "images/topdown/tile_0110.png",
-      "parts" : [ "part_floor.json", "part_door.json", "part_wall.json", "part_top.json" ],
+      "parts" : [ "part_floor.json", "part_top.json" ],
+      "parts_opt" : [ "part_door.json", "part_wall.json" ],
       "walkable": false
     },
     {
@@ -223,7 +225,8 @@
       "index": 19,
       "src": "images/tiles/death_speaker.png",
       "topdown_src": "images/topdown/tile_0120.png",
-      "parts" : [ "part_grass.json", "part_ending.json" ],
+      "parts" : [ "part_grass.json" ],
+      "parts_opt" : [ "part_ending.json" ],
       "walkable": true
     }
   ],

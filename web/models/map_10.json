@@ -504,10 +504,15 @@
       "name": "Skull Pile",
       "children": [
         {
-          "source": "part_floor.json"
+          "name": "parts_opt",
+          "children": [
+            {
+              "source": "part_skulls.json"
+            }
+          ]
         },
         {
-          "source": "part_skulls.json"
+          "source": "part_floor.json"
         },
         {
           "source": "part_top.json"
@@ -517,7 +522,8 @@
         4,
         0,
         -8
-      ]
+      ],
+      "parts_opt": true
     },
     {
       "name": "Dungeon Ceiling",
@@ -879,13 +885,18 @@
       "name": "Locked Door",
       "children": [
         {
+          "name": "parts_opt",
+          "children": [
+            {
+              "source": "part_door.json"
+            },
+            {
+              "source": "part_wall.json"
+            }
+          ]
+        },
+        {
           "source": "part_floor.json"
-        },
-        {
-          "source": "part_door.json"
-        },
-        {
-          "source": "part_wall.json"
         },
         {
           "source": "part_top.json"
@@ -895,7 +906,8 @@
         6,
         0,
         -22
-      ]
+      ],
+      "parts_opt": true
     },
     {
       "name": "Dungeon Wall",
@@ -920,13 +932,18 @@
       "name": "Locked Door",
       "children": [
         {
+          "name": "parts_opt",
+          "children": [
+            {
+              "source": "part_door.json"
+            },
+            {
+              "source": "part_wall.json"
+            }
+          ]
+        },
+        {
           "source": "part_floor.json"
-        },
-        {
-          "source": "part_door.json"
-        },
-        {
-          "source": "part_wall.json"
         },
         {
           "source": "part_top.json"
@@ -936,7 +953,8 @@
         6,
         0,
         -26
-      ]
+      ],
+      "parts_opt": true
     },
     {
       "name": "Dungeon Wall",
@@ -999,10 +1017,15 @@
       "name": "Skull Pile",
       "children": [
         {
-          "source": "part_floor.json"
+          "name": "parts_opt",
+          "children": [
+            {
+              "source": "part_skulls.json"
+            }
+          ]
         },
         {
-          "source": "part_skulls.json"
+          "source": "part_floor.json"
         },
         {
           "source": "part_top.json"
@@ -1012,7 +1035,8 @@
         8,
         0,
         -4
-      ]
+      ],
+      "parts_opt": true
     },
     {
       "name": "Dungeon Wall",

@@ -162,10 +162,15 @@
       "name": "Skull Pile",
       "children": [
         {
-          "source": "part_floor.json"
+          "name": "parts_opt",
+          "children": [
+            {
+              "source": "part_skulls.json"
+            }
+          ]
         },
         {
-          "source": "part_skulls.json"
+          "source": "part_floor.json"
         },
         {
           "source": "part_top.json"
@@ -175,7 +180,8 @@
         4,
         0,
         -16
-      ]
+      ],
+      "parts_opt": true
     },
     {
       "name": "Dungeon Floor",
@@ -520,10 +526,15 @@
       "name": "Skull Pile",
       "children": [
         {
-          "source": "part_floor.json"
+          "name": "parts_opt",
+          "children": [
+            {
+              "source": "part_skulls.json"
+            }
+          ]
         },
         {
-          "source": "part_skulls.json"
+          "source": "part_floor.json"
         },
         {
           "source": "part_top.json"
@@ -533,7 +544,8 @@
         10,
         0,
         -10
-      ]
+      ],
+      "parts_opt": true
     },
     {
       "name": "Dungeon Floor",
@@ -581,10 +593,15 @@
       "name": "Death Speaker",
       "children": [
         {
-          "source": "part_grass.json"
+          "name": "parts_opt",
+          "children": [
+            {
+              "source": "part_ending.json"
+            }
+          ]
         },
         {
-          "source": "part_ending.json"
+          "source": "part_grass.json"
         }
       ],
       "position": [
@@ -592,7 +609,8 @@
         0,
         -22
       ],
-      "walkable": true
+      "walkable": true,
+      "parts_opt": true
     },
     {
       "name": "Grave Stone",
