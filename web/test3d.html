@@ -130,10 +130,11 @@
                     } else {
                         heightGoal = Math.floor(window.innerHeight*0.9);
                         widthGoal = Math.floor(heightGoal * canAspect);
-                        
                     }
+                    var widthOffset = Math.floor((window.innerWidth - widthGoal)/2);
                     cnv.style["height"] = heightGoal + "px";
                     cnv.style["width"] = widthGoal + "px";
+                    cnv.style["left"] = widthOffset + "px";
                     cnv.style["max-height"] = undefined;
                     cnv.style["max-width"] = undefined;
                 }
