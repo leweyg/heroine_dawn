@@ -1,4 +1,5 @@
 
+var queueRedraw = (() => { });
 
 var FolderUtils = {
 
@@ -84,10 +85,12 @@ var ImportUtils = {
             if (url.endsWith(".json")) {
                 ImportUtils.ImportByPath_JSON(url, (obj)=>{
                     el.add(obj);
+                    queueRedraw();
                 });
             } else {
                 AssetCache.CloneByPath(url, (obj)=>{
                     el.add(obj);
+                    queueRedraw();
                 });
             }
         }
@@ -116,6 +119,7 @@ var ImportUtils = {
         var mMtlLoader = new THREE.MTLLoader();
         mMtlLoader.load(path, (materials)=>{
             callback(materials);
+            queueRedraw();
         });
     },
 
@@ -470,4 +474,16 @@ var gameRenderThree_prototype = {
 
 
 var gameRenderThree = new Object(gameRenderThree_prototype);
+
+var hasQueuedRedraw = false;
+queueRedraw = (() => {
+    if (hasQueuedRedraw) return;
+    hasQueuedRedraw = true;
+    var delay = 50;
+    setTimeout(() => {
+        hasQueuedRedraw = false;
+        gameRenderThree.redraw();
+    }, delay);
+});
+
 
