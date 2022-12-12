@@ -411,6 +411,12 @@ var gameRenderThree_prototype = {
                 return false;
             }
         }
+        var thingFwd = this.game.findThingForwardOfAvatar();
+        if (thingFwd) {
+            if (thingFwd.type == "exit") {
+                return false;
+            }
+        }
         return true;
     },
     _tempOffset : new THREE.Vector3(),
