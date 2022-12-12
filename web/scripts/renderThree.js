@@ -79,6 +79,9 @@ var ImportUtils = {
         if (jsonObj.name) {
             el.name = jsonObj.name;
         }
+        if (jsonObj.userData) {
+            el.userData = JSON.parse(JSON.stringify(jsonObj.userData));
+        }
         ImportUtils.ImportJsonTransform(el, jsonObj);
         if (jsonObj.source) {
             var url = folderPath + jsonObj.source;
@@ -320,6 +323,11 @@ var gameRenderThree_prototype = {
         }
 
         this.game.callOnChanged.push( (() => { _this.redraw(); }) );
+        this.game.onModifiedTile.push( (tile) => {
+            var el = this.findElForTile(tile);
+            if (!el) return;
+            el.children[0].visible = false;
+        });
 
         this.canvas = canvas;
         var renderer = new THREE.WebGLRenderer( { antialias:false, canvas:canvas, alpha:true } );
@@ -364,6 +372,25 @@ var gameRenderThree_prototype = {
             console.log( Math.round( percentComplete, 2 ) + '% downloaded' );
         }
     },
+    findElForTile : function(tile) {
+        if ((!this.current_map) || !(this.current_map.children)) {
+            return null;
+        }
+        if (this.current_map.children.length == 0) {
+            return null;
+        }
+        var rootEl = this.current_map.children[0];
+        for (var childIndex in rootEl.children) {
+            var el = rootEl.children[childIndex];
+            if (el.userData && el.userData.parts_opt) {
+                var ud = el.userData;
+                if ((ud.x == tile.x) && (ud.y == tile.y)) {
+                    return el;
+                }
+            }
+        }
+        return null;
+    },
     debugNow: function() {
         var scene = this.scene_root;
         var obj = ImportUtils.ExportSceneAsJson(scene);
@@ -407,6 +434,9 @@ var gameRenderThree_prototype = {
         
         var preInput = this.game.state.input_preview;
         var prePct = this.game.state.input_percent;
+        if (this.game.isBattle()) {
+            prePct *= 0.2;
+        }
         switch (preInput) {
             case "left":
             case "right":

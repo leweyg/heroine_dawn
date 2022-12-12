@@ -31,12 +31,16 @@ function exportMapToScene(map) {
                 cell.walkable = true;
             }
             if (type.parts_opt) {
+                cell.userData = {
+                    parts_opt : true,
+                    y : rowIndex,
+                    x : colIndex,
+                };
                 var optParts = {
                     name : "parts_opt",
                     children : [],
                 };
                 cell.children.push(optParts);
-                cell.parts_opt = true;
                 for (var partIndex in type.parts_opt) {
                     var path = type.parts_opt[partIndex];
                     var p = {

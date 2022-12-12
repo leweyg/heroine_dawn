@@ -211,6 +211,7 @@ var dawnGame_prototype = {
                 tile.map_id = this.state.avatar.map_id;
                 this.state.tile_changes.push(dawnUtils.cloneDeep(tile));
                 this.world.maps[tile.map_id].tiles[tile.y][tile.x] = spell.tile_to;
+                this.doModifiedTile(tile);
                 this.latest_status = "Cast " + spell.name;
                 return;
             } else {
@@ -221,6 +222,12 @@ var dawnGame_prototype = {
         
         this.latest_status = "Can't use " + spell.name + " here.";
         return;
+    },
+    onModifiedTile : [],
+    doModifiedTile : function(tile) {
+        for (var i in this.onModifiedTile) {
+            this.onModifiedTile[i](tile);
+        }
     },
     startBattle : function(enemId) {
         var enem = this.world.enemies[enemId];

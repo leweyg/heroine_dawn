@@ -523,7 +523,11 @@
         0,
         -8
       ],
-      "parts_opt": true
+      "userData": {
+        "parts_opt": true,
+        "y": "2",
+        "x": "4"
+      }
     },
     {
       "name": "Dungeon Ceiling",
@@ -907,7 +911,11 @@
         0,
         -22
       ],
-      "parts_opt": true
+      "userData": {
+        "parts_opt": true,
+        "y": "3",
+        "x": "11"
+      }
     },
     {
       "name": "Dungeon Wall",
@@ -954,7 +962,11 @@
         0,
         -26
       ],
-      "parts_opt": true
+      "userData": {
+        "parts_opt": true,
+        "y": "3",
+        "x": "13"
+      }
     },
     {
       "name": "Dungeon Wall",
@@ -1036,7 +1048,11 @@
         0,
         -4
       ],
-      "parts_opt": true
+      "userData": {
+        "parts_opt": true,
+        "y": "4",
+        "x": "2"
+      }
     },
     {
       "name": "Dungeon Wall",
