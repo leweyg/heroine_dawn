@@ -482,6 +482,10 @@ var gameRenderThree_prototype = {
         ImportUtils.ImportByPath(path, (obj)=>{
             console.log("Loaded " + path);
             this.current_map.add(obj);
+            // cause state to reload to fix map tiles:
+            if (this.game) {
+                this.game.loadStateExternal(this.game.state);
+            }
         });
     },
     redraw : function() {

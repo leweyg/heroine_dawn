@@ -43,6 +43,9 @@ var dawnGame_prototype = {
                 var chng = this.state.tile_changes[i];
                 if (chng.tile_type) {
                     this.world.maps[chng.map_id].tiles[chng.y][chng.x] = chng.tile_type;
+                    if (this.state.avatar.map_id == chng.map_id) {
+                        this.doModifiedTile(chng);
+                    }
                 }
                 if (chng.already_got) {
                     this.world.maps[chng.map_id].things[chng.thing_index].already_got = true;
