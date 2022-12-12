@@ -16,9 +16,14 @@ Heroine Dawn was adapted by Lewey Geselowitz http://lewcid.com
 
 Heroine Dusk was created by Clint Bellanger http://clintbellanger.net
 
-Heroine Dusk features music by Yubatake http://opengameart.org/users/yubatake
+3D Assets by Kay Lousberg https://kaylousberg.com/
+
+3D Authored in the Lewcid/Three.js Editor https://leweyg.github.io/lewcid_editor/
 
 Monochrome RPG assets by Kenney https://www.kenney.nl/assets/monochrome-rpg
+
+Heroine Dusk features music by Yubatake http://opengameart.org/users/yubatake
+
 
 # Why?
 While doing research for an up-coming game, I came across the open source game
