@@ -3,283 +3,329 @@
   "children": [
     {
       "name": "Chest Exterior",
-      "children": [
-        {
-          "source": "part_floor.json"
-        },
-        {
-          "source": "part_chest.json"
-        }
-      ],
       "position": [
         2,
         0,
         -4
       ],
-      "walkable": true
-    },
-    {
-      "name": "Pillar Interior",
       "children": [
         {
+          "name": "child0",
           "source": "part_floor.json"
         },
         {
-          "source": "part_pillar_full.json"
-        },
-        {
-          "source": "part_top.json"
+          "name": "child1",
+          "source": "part_chest.json"
         }
-      ],
+      ]
+    },
+    {
+      "name": "Pillar Interior",
       "position": [
         4,
         0,
         -2
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_pillar_full.json"
+        },
+        {
+          "name": "child2",
+          "source": "part_top.json"
+        }
       ]
     },
     {
       "name": "Dungeon Ceiling",
-      "children": [
-        {
-          "source": "part_floor.json"
-        },
-        {
-          "source": "part_top.json"
-        }
-      ],
       "position": [
         4,
         0,
         -4
       ],
-      "walkable": true
-    },
-    {
-      "name": "Pillar Interior",
       "children": [
         {
+          "name": "child0",
           "source": "part_floor.json"
         },
         {
-          "source": "part_pillar_full.json"
-        },
-        {
+          "name": "child1",
           "source": "part_top.json"
         }
-      ],
+      ]
+    },
+    {
+      "name": "Pillar Interior",
       "position": [
         4,
         0,
         -6
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_pillar_full.json"
+        },
+        {
+          "name": "child2",
+          "source": "part_top.json"
+        }
       ]
     },
     {
       "name": "Dungeon Ceiling",
-      "children": [
-        {
-          "source": "part_floor.json"
-        },
-        {
-          "source": "part_top.json"
-        }
-      ],
       "position": [
         6,
         0,
         -2
       ],
-      "walkable": true
-    },
-    {
-      "name": "Dungeon Ceiling",
       "children": [
         {
+          "name": "child0",
           "source": "part_floor.json"
         },
         {
+          "name": "child1",
           "source": "part_top.json"
         }
-      ],
-      "position": [
-        6,
-        0,
-        -4
-      ],
-      "walkable": true
-    },
-    {
-      "name": "Dungeon Ceiling",
-      "children": [
-        {
-          "source": "part_floor.json"
-        },
-        {
-          "source": "part_top.json"
-        }
-      ],
-      "position": [
-        6,
-        0,
-        -6
-      ],
-      "walkable": true
-    },
-    {
-      "name": "Pillar Interior",
-      "children": [
-        {
-          "source": "part_floor.json"
-        },
-        {
-          "source": "part_pillar_full.json"
-        },
-        {
-          "source": "part_top.json"
-        }
-      ],
-      "position": [
-        8,
-        0,
-        -2
       ]
     },
     {
       "name": "Dungeon Ceiling",
+      "position": [
+        6,
+        0,
+        -4
+      ],
       "children": [
         {
+          "name": "child0",
           "source": "part_floor.json"
         },
         {
+          "name": "child1",
           "source": "part_top.json"
         }
+      ]
+    },
+    {
+      "name": "Dungeon Ceiling",
+      "position": [
+        6,
+        0,
+        -6
       ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_top.json"
+        }
+      ]
+    },
+    {
+      "name": "Pillar Interior",
+      "position": [
+        8,
+        0,
+        -2
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_pillar_full.json"
+        },
+        {
+          "name": "child2",
+          "source": "part_top.json"
+        }
+      ]
+    },
+    {
+      "name": "Dungeon Ceiling",
       "position": [
         8,
         0,
         -4
       ],
-      "walkable": true
-    },
-    {
-      "name": "Pillar Interior",
       "children": [
         {
+          "name": "child0",
           "source": "part_floor.json"
         },
         {
-          "source": "part_pillar_full.json"
-        },
-        {
+          "name": "child1",
           "source": "part_top.json"
         }
-      ],
+      ]
+    },
+    {
+      "name": "Pillar Interior",
       "position": [
         8,
         0,
         -6
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_pillar_full.json"
+        },
+        {
+          "name": "child2",
+          "source": "part_top.json"
+        }
       ]
     },
     {
       "name": "Dungeon Wall",
-      "children": [
-        {
-          "source": "part_floor.json"
-        },
-        {
-          "source": "part_wall.json"
-        },
-        {
-          "source": "part_top.json"
-        }
-      ],
       "position": [
         10,
         0,
         0
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_wall.json"
+        },
+        {
+          "name": "child2",
+          "source": "part_top.json"
+        }
       ]
     },
     {
       "name": "Dungeon Wall",
-      "children": [
-        {
-          "source": "part_floor.json"
-        },
-        {
-          "source": "part_wall.json"
-        },
-        {
-          "source": "part_top.json"
-        }
-      ],
       "position": [
         10,
         0,
         -2
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_wall.json"
+        },
+        {
+          "name": "child2",
+          "source": "part_top.json"
+        }
       ]
     },
     {
       "name": "Dungeon Door",
-      "children": [
-        {
-          "source": "part_floor.json"
-        },
-        {
-          "source": "part_wall.json"
-        },
-        {
-          "source": "part_door.json"
-        },
-        {
-          "source": "part_top.json"
-        }
-      ],
       "position": [
         10,
         0,
         -4
       ],
-      "walkable": true
-    },
-    {
-      "name": "Dungeon Wall",
       "children": [
         {
+          "name": "child0",
           "source": "part_floor.json"
         },
         {
+          "name": "child1",
           "source": "part_wall.json"
         },
         {
+          "name": "child2",
+          "source": "part_door.json"
+        },
+        {
+          "name": "child3",
           "source": "part_top.json"
         }
-      ],
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
       "position": [
         10,
         0,
         -6
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_wall.json"
+        },
+        {
+          "name": "child2",
+          "source": "part_top.json"
+        }
       ]
     },
     {
       "name": "Dungeon Wall",
-      "children": [
-        {
-          "source": "part_floor.json"
-        },
-        {
-          "source": "part_wall.json"
-        },
-        {
-          "source": "part_top.json"
-        }
-      ],
       "position": [
         10,
         0,
         -8
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_wall.json"
+        },
+        {
+          "name": "child2",
+          "source": "part_top.json"
+        }
       ]
     }
   ],
   "metadata": {
-    "type": "lewcid_object"
+    "version": 0.2,
+    "type": "lewcid_object",
+    "camera": {
+      "position": [
+        8.163337609456326,
+        0.8234047238429733,
+        -4.736034308678923
+      ],
+      "rotation": [
+        2.811982039876433,
+        1.343964049184585,
+        -2.8198480049922954
+      ]
+    }
   }
 }

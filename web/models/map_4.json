@@ -3,2657 +3,2907 @@
   "children": [
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         0,
         0,
         -2
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         0,
         0,
         -4
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Dungeon Wall",
-      "children": [
-        {
-          "source": "part_floor.json"
-        },
-        {
-          "source": "part_wall.json"
-        },
-        {
-          "source": "part_top.json"
-        }
-      ],
       "position": [
         0,
         0,
         -6
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_wall.json"
+        },
+        {
+          "name": "child2",
+          "source": "part_top.json"
+        }
       ]
     },
     {
       "name": "Dungeon Wall",
-      "children": [
-        {
-          "source": "part_floor.json"
-        },
-        {
-          "source": "part_wall.json"
-        },
-        {
-          "source": "part_top.json"
-        }
-      ],
       "position": [
         0,
         0,
         -18
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_wall.json"
+        },
+        {
+          "name": "child2",
+          "source": "part_top.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         0,
         0,
         -20
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         2,
         0,
         0
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         2,
         0,
         -2
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         2,
         0,
         -4
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Dungeon Wall",
-      "children": [
-        {
-          "source": "part_floor.json"
-        },
-        {
-          "source": "part_wall.json"
-        },
-        {
-          "source": "part_top.json"
-        }
-      ],
       "position": [
         2,
         0,
         -6
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_wall.json"
+        },
+        {
+          "name": "child2",
+          "source": "part_top.json"
+        }
       ]
     },
     {
       "name": "Dungeon Wall",
-      "children": [
-        {
-          "source": "part_floor.json"
-        },
-        {
-          "source": "part_wall.json"
-        },
-        {
-          "source": "part_top.json"
-        }
-      ],
       "position": [
         2,
         0,
         -8
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_wall.json"
+        },
+        {
+          "name": "child2",
+          "source": "part_top.json"
+        }
       ]
     },
     {
       "name": "Dungeon Wall",
-      "children": [
-        {
-          "source": "part_floor.json"
-        },
-        {
-          "source": "part_wall.json"
-        },
-        {
-          "source": "part_top.json"
-        }
-      ],
       "position": [
         2,
         0,
         -10
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_wall.json"
+        },
+        {
+          "name": "child2",
+          "source": "part_top.json"
+        }
       ]
     },
     {
       "name": "Dungeon Door",
-      "children": [
-        {
-          "source": "part_floor.json"
-        },
-        {
-          "source": "part_wall.json"
-        },
-        {
-          "source": "part_door.json"
-        },
-        {
-          "source": "part_top.json"
-        }
-      ],
       "position": [
         2,
         0,
         -12
       ],
-      "walkable": true
-    },
-    {
-      "name": "Dungeon Wall",
       "children": [
         {
+          "name": "child0",
           "source": "part_floor.json"
         },
         {
+          "name": "child1",
           "source": "part_wall.json"
         },
         {
+          "name": "child2",
+          "source": "part_door.json"
+        },
+        {
+          "name": "child3",
           "source": "part_top.json"
         }
-      ],
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
       "position": [
         2,
         0,
         -14
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_wall.json"
+        },
+        {
+          "name": "child2",
+          "source": "part_top.json"
+        }
       ]
     },
     {
       "name": "Dungeon Wall",
-      "children": [
-        {
-          "source": "part_floor.json"
-        },
-        {
-          "source": "part_wall.json"
-        },
-        {
-          "source": "part_top.json"
-        }
-      ],
       "position": [
         2,
         0,
         -16
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_wall.json"
+        },
+        {
+          "name": "child2",
+          "source": "part_top.json"
+        }
       ]
     },
     {
       "name": "Dungeon Wall",
-      "children": [
-        {
-          "source": "part_floor.json"
-        },
-        {
-          "source": "part_wall.json"
-        },
-        {
-          "source": "part_top.json"
-        }
-      ],
       "position": [
         2,
         0,
         -18
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_wall.json"
+        },
+        {
+          "name": "child2",
+          "source": "part_top.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         2,
         0,
         -20
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         4,
         0,
         0
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         4,
         0,
         -2
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Chest Exterior",
-      "children": [
-        {
-          "source": "part_floor.json"
-        },
-        {
-          "source": "part_chest.json"
-        }
-      ],
       "position": [
         4,
         0,
         -4
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_chest.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         4,
         0,
         -6
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         4,
         0,
         -8
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         4,
         0,
         -10
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Dungeon Floor",
-      "children": [
-        {
-          "source": "part_floor.json"
-        }
-      ],
       "position": [
         4,
         0,
         -12
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         4,
         0,
         -14
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         4,
         0,
         -16
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         4,
         0,
         -18
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         4,
         0,
         -20
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         4,
         0,
         -22
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         6,
         0,
         0
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         6,
         0,
         -2
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         6,
         0,
         -4
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         6,
         0,
         -6
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         6,
         0,
         -8
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         6,
         0,
         -10
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Dungeon Floor",
-      "children": [
-        {
-          "source": "part_floor.json"
-        }
-      ],
       "position": [
         6,
         0,
         -12
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         6,
         0,
         -14
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         6,
         0,
         -16
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         6,
         0,
         -18
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         6,
         0,
         -20
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         6,
         0,
         -22
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         8,
         0,
         -2
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         8,
         0,
         -4
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         8,
         0,
         -6
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         8,
         0,
         -8
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         8,
         0,
         -10
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Dungeon Floor",
+      "position": [
+        8,
+        0,
+        -12
+      ],
       "children": [
         {
+          "name": "child0",
           "source": "part_floor.json"
         }
-      ],
-      "position": [
-        8,
-        0,
-        -12
-      ],
-      "walkable": true
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         8,
         0,
         -14
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         8,
         0,
         -16
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         8,
         0,
         -18
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         8,
         0,
         -20
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         8,
         0,
         -22
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         10,
         0,
         -4
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         10,
         0,
         -6
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         10,
         0,
         -8
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         10,
         0,
         -10
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         10,
         0,
         -12
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         10,
         0,
         -14
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         10,
         0,
         -16
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         10,
         0,
         -18
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         10,
         0,
         -20
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         10,
         0,
         -22
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         12,
         0,
         -6
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         12,
         0,
         -8
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         12,
         0,
         -10
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         12,
         0,
         -12
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         12,
         0,
         -14
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         12,
         0,
         -16
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         12,
         0,
         -18
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         12,
         0,
         -20
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         12,
         0,
         -22
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         12,
         0,
         -24
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         14,
         0,
         -4
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         14,
         0,
         -6
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         14,
         0,
         -8
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         14,
         0,
         -10
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         14,
         0,
         -12
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         14,
         0,
         -14
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         14,
         0,
         -16
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         14,
         0,
         -18
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         14,
         0,
         -20
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         14,
         0,
         -22
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         14,
         0,
         -24
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         16,
         0,
         -2
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         16,
         0,
         -4
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         16,
         0,
         -6
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         16,
         0,
         -8
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         16,
         0,
         -10
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         16,
         0,
         -12
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         16,
         0,
         -14
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         16,
         0,
         -16
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         16,
         0,
         -18
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         16,
         0,
         -20
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         16,
         0,
         -22
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         16,
         0,
         -24
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         18,
         0,
         -2
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         18,
         0,
         -4
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         18,
         0,
         -6
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         18,
         0,
         -8
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         18,
         0,
         -10
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         18,
         0,
         -12
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         18,
         0,
         -14
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         18,
         0,
         -16
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         18,
         0,
         -18
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         18,
         0,
         -20
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         18,
         0,
         -22
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         18,
         0,
         -24
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         20,
         0,
         -2
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         20,
         0,
         -4
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         20,
         0,
         -6
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         20,
         0,
         -8
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         20,
         0,
         -10
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         20,
         0,
         -12
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         20,
         0,
         -14
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         20,
         0,
         -16
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         20,
         0,
         -18
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         20,
         0,
         -20
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         20,
         0,
         -22
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         20,
         0,
         -24
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         22,
         0,
         -4
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         22,
         0,
         -6
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         22,
         0,
         -8
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         22,
         0,
         -10
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         22,
         0,
         -12
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         22,
         0,
         -14
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         22,
         0,
         -16
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         22,
         0,
         -18
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         22,
         0,
         -20
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         22,
         0,
         -22
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         22,
         0,
         -24
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         22,
         0,
         -26
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         24,
         0,
         -4
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         24,
         0,
         -6
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         24,
         0,
         -8
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         24,
         0,
         -10
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         24,
         0,
         -12
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         24,
         0,
         -14
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         24,
         0,
         -16
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         24,
         0,
         -18
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Dungeon Floor",
-      "children": [
-        {
-          "source": "part_floor.json"
-        }
-      ],
       "position": [
         24,
         0,
         -20
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         24,
         0,
         -22
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         24,
         0,
         -24
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         24,
         0,
         -26
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         26,
         0,
         -6
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Medieval House",
-      "children": [
-        {
-          "source": "part_house.json"
-        }
-      ],
       "position": [
         26,
         0,
         -8
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_house.json"
+        }
       ]
     },
     {
       "name": "Medieval Door",
-      "children": [
-        {
-          "source": "part_house.json"
-        },
-        {
-          "source": "part_door.json"
-        }
-      ],
       "position": [
         26,
         0,
         -10
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_house.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_door.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         26,
         0,
         -12
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         26,
         0,
         -14
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         26,
         0,
         -16
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         26,
         0,
         -18
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Dungeon Floor",
-      "children": [
-        {
-          "source": "part_floor.json"
-        }
-      ],
       "position": [
         26,
         0,
         -20
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         26,
         0,
         -22
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         26,
         0,
         -24
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         26,
         0,
         -26
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         28,
         0,
         -8
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         28,
         0,
         -10
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         28,
         0,
         -12
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         28,
         0,
         -14
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         28,
         0,
         -16
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         28,
         0,
         -18
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Dungeon Floor",
-      "children": [
-        {
-          "source": "part_floor.json"
-        }
-      ],
       "position": [
         28,
         0,
         -20
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        }
+      ]
     },
     {
       "name": "Grass",
-      "children": [
-        {
-          "source": "part_grass.json"
-        }
-      ],
       "position": [
         28,
         0,
         -22
       ],
-      "walkable": true
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        }
+      ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         28,
         0,
         -24
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         28,
         0,
         -26
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         30,
         0,
         -14
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         30,
         0,
         -16
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Dungeon Wall",
-      "children": [
-        {
-          "source": "part_floor.json"
-        },
-        {
-          "source": "part_wall.json"
-        },
-        {
-          "source": "part_top.json"
-        }
-      ],
       "position": [
         30,
         0,
         -18
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_wall.json"
+        },
+        {
+          "name": "child2",
+          "source": "part_top.json"
+        }
       ]
     },
     {
       "name": "Dungeon Door",
-      "children": [
-        {
-          "source": "part_floor.json"
-        },
-        {
-          "source": "part_wall.json"
-        },
-        {
-          "source": "part_door.json"
-        },
-        {
-          "source": "part_top.json"
-        }
-      ],
       "position": [
         30,
         0,
         -20
       ],
-      "walkable": true
-    },
-    {
-      "name": "Dungeon Wall",
       "children": [
         {
+          "name": "child0",
           "source": "part_floor.json"
         },
         {
+          "name": "child1",
           "source": "part_wall.json"
         },
         {
+          "name": "child2",
+          "source": "part_door.json"
+        },
+        {
+          "name": "child3",
           "source": "part_top.json"
         }
-      ],
+      ]
+    },
+    {
+      "name": "Dungeon Wall",
       "position": [
         30,
         0,
         -22
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_floor.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_wall.json"
+        },
+        {
+          "name": "child2",
+          "source": "part_top.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         30,
         0,
         -24
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     },
     {
       "name": "Tree Evergreen",
-      "children": [
-        {
-          "source": "part_grass.json"
-        },
-        {
-          "source": "part_tree.json"
-        }
-      ],
       "position": [
         30,
         0,
         -26
+      ],
+      "children": [
+        {
+          "name": "child0",
+          "source": "part_grass.json"
+        },
+        {
+          "name": "child1",
+          "source": "part_tree.json"
+        }
       ]
     }
   ],
   "metadata": {
-    "type": "lewcid_object"
+    "version": 0.2,
+    "type": "lewcid_object",
+    "camera": {
+      "position": [
+        17.77335877694118,
+        0.9206513054008194,
+        -15.391742996456834
+      ],
+      "rotation": [
+        0.0525349621802986,
+        -1.0880263019594585,
+        0.04654009020250102
+      ]
+    }
   }
 }
